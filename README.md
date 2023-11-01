@@ -21,7 +21,7 @@
 ## Deploy
 
 - **main ブランチ**: [https://yomogy.com/](https://yomogy.com/)
-- **staging ブランチ**: [https://yomogy-test.netlify.app/](https://yomogy-test.netlify.app/)
+- **staging ブランチ**: [https://yomogy-staging.netlify.app/](https://yomogy-staging.netlify.app/)
 
 ## ブランチについて
 

@@ -1,0 +1,226 @@
+---
+title: "バイオセンサーとは？  3つに分類して解説 ! "
+category: "synbio"
+publishedAt: "2021-12-21"
+updatedAt: "2021-04-23"
+author: "Yomogy"
+description: "
+バイオセンサーとは、細胞由来の物質を検出しようというセンサーのことを指します。これまでに、電気やレーザーなどを使用した物理的なシステムや、生物学的なシステムを応用したシステムなど、数多くのものが開発されてきました。
+
+<br /><br />
+一般的に、生物学的なシステムを使用する場合は、検出したい物質と反応する検出システムと、それらの情報を色や電気的なシグナルに変換する出力システムの2種類を組み合わせて使用されることが多いです。特に、前者のシステムは、検出したい物質に応じて、多種多様なシステムが開発されて来ています。
+
+<br /><br />
+このようなバイオセンサーは、古くから開発されてきました。
+例えば、酵素や抗体などを使用した、検出システムなどです。それらの技術開発により、グルコースやウイルスなどの検出を可能にするなど、さまざまな現象の理解が進んできました。
+
+<br /><br />
+近年では、それらの検出システムに加え、遺伝子工学的な手法の開発の発展により、よりミクロなスケールであったり、複雑なシステムを活用するシステムが発表されています。
+
+<br /><br />
+本記事では、近年のSynthetic biology (Synbio, 合成生物学)で使用されている、いくつかのバイオセンサーの検出方法について簡単に紹介します。
+"
+tag: [ "information"]
+rePost: false
+status: "published"
+---
+
+<h2>生物的なシステムを応用したバイオセンサーの3つの分類</h2>
+生物的なシステムを使用するバイオセンサーは、大きく3つのタイプにわけることができます。(※一般的に定義されてはいない、個人的な解釈になります)
+
+<br />
+<br />
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/biosensor-overview-fig1.png"
+  alt="Fig.1 - 生物的なシステムを応用したバイオセンサーの3つの分類"
+  caption="Fig.1 - 生物的なシステムを応用したバイオセンサーの3つの分類"
+/>
+<br />
+<br />
+
+- 1 つ目のシステムは、細胞を使用せず、酵素や抗体などを精製して使用する生化学的な系です。これらは、古くから生物学の研究に広く使用されてきているものが多いです。例えば、PCR も数種類の酵素とプライマーを使用した系であり、このようなタイプになります。また近年でも、遺伝子工学な発展により、安定した検出を行える系として、多くのシステムが開発されています。(例: Vilnius-Lithuania, iGEM 2020)、 (例: Parinaz Fozouni et al., Cell, 2021) 。
+
+<br />
+
+- 2 つ目のシステムは、生細胞を使用し、細胞の特定のシステムを利用する系です。これらでは、特定の遺伝子を細胞に組み込む(または削る)などの操作を行うことで、追加の働きを持たせ、ターゲットの物質を検出しやすいように変換し、検出を試みることがよく行われています。これらは、さまざまな細胞が持つ能力を活用しながら開発を行えるため、既存の多くの生物の知見を生かしつつ、システム全てを完全に再構築する必要がないため、1 つ目の系よりも開発を始める難易度が低く、遺伝子工学の発展初期から大きく成長してきています。 (例: XMU-China, iGEM 2020)。
+
+{" "}
+
+<br />
+
+- 3 つ目のシステムは、Cell-free System (無細胞タンパク質合成系)を使用する、1 つ目と 2 つ目の中間のような系です。cell-free System は、細胞の抽出液や細胞を模した系であり、複雑な代謝系や酵素反応を行うことができるものです。この系では、細胞の特性を生かしつつ、DNA や RNA、酵素の追加や削除などが、細胞よりも容易に行うことができます。そのため、拡張性に優れた自由度の高い、素早い開発が可能になります。この分野は、ここ数年で、大きな盛り上がりを見せている比較的新しい分野になります。
+
+<br />
+<br />
+Cell-free systemについてさらに詳しく知りたい方はこちらへ !
+<LinkCard url="https://yomogy.com/synbio/cell-free-overview/" size="small" />
+
+<br />
+<br />
+それぞれについて、多種多様なシステムが存在しますが、ここでは近年行われたいくつかの研究について紹介します。
+特に、国際的な合成生物学の大会である iGEM
+では、バイオセンサーを用いたプロジェクトが、多く発表されています。 iGEM 2020
+年の Undergrad の Finalist の 3 チーム中 2 チームや、2019 年の Overgrad の Grand
+Prize
+のチームは、ターゲット物質の検出のために、新たなバイオセンサーを構築を目指したプロジェクトを発表しています。
+また、2019 年年末から猛威をふるっている SARS-CoV-2
+についての検出を目指した系などを紹介します。
+(ここでは、簡単な紹介にとどめ、詳細なメカニズムや背景は、引用元を参照してください。)
+
+<h2>生化学的な系(化学系)</h2>
+生化学的な系は、酵素や抗体を使用した検出系に関しては、中学校や高校でも学ぶ、古くから確立された系が多くあります。しかし、それらの系を利用した、特定の物質を検出するための方法は、未だに確立されていないものも多いです。
+
+<h3>iGEM Vilnius-Lithuania 2020</h3>
+iGEM では、iGEM 2020 で Grand Prize を獲得した、Vilnius-Lithuania も酵素を使用した検出系の確立を目指しました。彼らは、養殖時に悪影響を与える細菌
+(Flavobacterium columnare and Flavobacterium psychrophilum bacteria) の存在を検出するために、それらの細菌特異的な
+DNA を検出することを目指しました。
+
+<br />
+<br />
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/biosensor-overview-fig2.png"
+  alt="Fig.2 - iGEM Vilnius-Lithuania 2020 の検出システムの概要 (iGEM Vilnius-Lithuania 2020より引用)"
+  caption="Fig.2 - iGEM Vilnius-Lithuania 2020 の検出システムの概要 (iGEM Vilnius-Lithuania 2020より引用)"
+/>
+
+<br />
+<br />
+
+まず、目的となる細菌の DNA を増幅するために、Helicase-dependent asymmetric DNA amplification (HDA)を行います。
+次に、細菌特異的な DNA 配列と結合するプローブをもった粒子を用意し、サンプルと反応させます。(検出システム)。
+最後に、Lateral flow assay (LFA, イムノクロマトグラフィー)によって、プローブと目的 DNA との結合について検出する(出力システム)というようになっています。
+
+<br />
+<br />
+参考文献 : [iGEM Vilnius-Lithuania
+2020](https://2020.igem.org/Team:Vilnius-Lithuania) (iGEM 2020, Grand Prize)
+
+<h3>Detection of SARS-CoV-2 with CRISPR-Cas13a</h3>
+他にも、2021年にParinaz Fozouniらによって、Cellに発表された、”Amplification-free
+detection of SARS-CoV-2 with CRISPR-Cas13a and mobile phone microscopy” という論文では、持ち運び可能なデバイスを用いて、30分以内に、SARS-CoV-2
+を検出するバイオセンサーを確立したことを発表しました。(CRISPR-Cas9の発見で、2020年にノーベル賞を受賞したJennifer
+A. Doudnaさんも著者として入っており、社会的にも大きな注目を集めている論文です。)
+
+<br />
+<br />
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/biosensor-overview-fig3.png"
+  alt="Fig.3 - Detection of SARS-CoV-2 with CRISPR-Cas13a 概要"
+  caption="Fig.3 - Detection of SARS-CoV-2 with CRISPR-Cas13a 概要"
+/>
+
+<br />
+<br />
+このシステムは、Cas13a(タンパク質)と配列をデザインした CRISPR RNA (crRNA) という
+RNA を結合させ、nuclease-inactive ribonucleoprotein complex (RNP)
+という複合体を使用し、SARS-CoV-2
+と反応させ、検出を試みています。そして、反応結果を確認するために、蛍光を発生させますが、Cas13a
+の標的 RNA と相互作用した場合に、周囲の ssRNA
+を切断するという機能を利用し、蛍光を発生させます。(ここでは切断されると、蛍光を発する
+ssRNA
+を使用します)。これらのシステムによって、発せられた蛍光をみることによって、SARS-CoV-2
+の素早い検出を可能にしました。
+
+<br />
+<br />
+生化学的な系は、これらの例のように、試験管内で(細胞内ではなくということ)行うことができ、再現性の高い系を構築することができます。
+
+<br />
+<br />
+参考文献 : [Parinaz Fozouni et al., Amplification-free detection of SARS-CoV-2
+with CRISPR-Cas13a and mobile phone microscopy, Cell,
+2021](https://doi.org/10.1016/j.cell.2020.12.001)
+
+<h2>細胞を使用した系 (細胞系)</h2>
+細胞を使用した系は、合成生物学分野で開発が進んでいる系になります。過去のiGEMでも、数多くのプロジェクトが発表されています。本記事では、最新のiGEM
+2020で、Second Runner Upを獲得した、 XMU-Chinaのプロジェクトについて紹介します。彼らは、お茶の栽培時に使用される、glyphosateという除草剤の成分を検出するを目指しました。
+
+<br />
+<br />
+
+<MediaCard
+  mediaType="image"
+  src="https://static.igem.org/mediawiki/2020/f/f1/T--XMU-China--XMU-China_2020-Mechanism_of_GOX_and_GRHPR.png"
+  alt="Fig.4 - iGEM XMU-China 2020 の検出システムの概要 (iGEM XMU-China 2020より引用)"
+  caption=" Fig.4 - iGEM XMU-China 2020 の検出システムの概要 (iGEM XMU-China 2020より引用)"
+/>
+
+<br />
+<br />
+彼らは目的物質を直接検出するのではなく、複数のシステムを段階的に変換させていくことで、検出を行うシステムを構築しました。
+まず、glyphosate を、EcAKR4-1 (タンパク質)と反応させ、AMPA と glyoxylate
+に変換します。 次に、glyoxylate を、GRHPR (タンパク質)と反応させ、glycolic acid
+に変換します。 その時に、NADPH が NADP+に変換させます。最後に、この
+NADP+を検出する iNap
+というバイオセンサーによって、蛍光として検出が可能になります。
+
+<br />
+<br />
+細胞を使用した系は、この例のように、生細胞に新たな遺伝子を組み込むことで、新しい機能を持たせ、バイオセンサーとして機能させることができる系になっています。
+
+<br /> <br />
+参考文献 : [XMU-China](https://2020.igem.org/Team:XMU-China) (iGEM 2020, Second RunnerUp)
+
+<h2>Cell-free System を使用した系 (無細胞系)</h2>
+Cell-free System を使用した系は、生物学の発展により、細胞内での現象が進んできたことで、ここ数年で大きな注目を集めています。
+また、Cell-free Systemを使用した系は、生細胞を用いないことから、実験室外でも作業が可能なため、既存の知見を活かしつつ、社会実装を行っていくことが期待できます。
+iGEMでもこのような系を採用したバイオセンサーを開発するチームは年々増加しています。
+その中でも、iGEM 2019でGrand Prizeを獲得した、EPFLのプロジェクトについて紹介します。
+彼らは、ぶどうの葉に生じる、Flavescence Doréeという病気について、その感染有無を検査するために、病気を媒介する生物の特異的なDNAを検出することを目指しました。
+
+<br />
+<br />
+
+<MediaCard
+  mediaType="video"
+  src="https://static.igem.org/mediawiki/2019/a/a9/T--EPFL--moleculardesignfd1.mp4"
+  alt="Fig.5 - iGEM EPFL 2019 の検出システムの概要 (iGEM EPFL 2019 より引用)"
+  caption="Fig.5 - iGEM EPFL 2019 の検出システムの概要 (iGEM EPFL 2019 より引用)"
+/>
+
+<br />
+<br />
+
+まず、目的となる DNA を、T7 Promoter を付加したプライマーを用いた Recombinase Polymerase Amplification (RPA)によって増幅させます。
+次に、増幅された DNA を Cell-free system によって、DNA から RNA に転写します。そして、その RNA に対して特異的に反応する toehold システムを利用し、蛍光タンパク質を発現させることで、蛍光として検出を可能にします。
+
+<br />
+<br />
+Cell-free System
+を使用した系は、この例のように、細胞で使用されているシステムを、うまく試験管内で利用することができる系です。
+この実験では、使用されたCell-free system の一つである、PURE
+Systemベースの溶液を使用しており、全ての反応溶液の組成(タンパク質やバッファー)がわかっており、再現性の高い系になっています。
+そのため、細胞を利用した系と化学的な系をつなげる系としての役割も期待できる系になっています。
+
+<br />
+<br />
+参考文献 : [EPFL](https://2019.igem.org/Team:EPFL) (iGEM 2019, Grand Prize)
+
+<h2>まとめ</h2>
+本記事では、生物的なシステムを応用したバイオセンサーを、3つに分類して紹介しました。
+
+一言で表すと以下のようになります。
+
+<br />
+<br />
+
+- 化学系: 酵素や抗体を使用した系 (PCR など)
+
+- 細胞系 : 細胞を利用した系(新たな遺伝子を導入した細胞など)
+
+- 無細胞系 : 生化学的な系と細胞を使用した系を合わせたような系
+
+<br />
+<br />
+また、これらの系では、生化学的な系→(Cell-free System
+を使用した系)→細胞を使用した系という順で、実験の安定度合いが変化します。
+しかし、開発の難易度は逆の順序になり、良い側面と悪い側面があることがわかります。
+<br />
+<br />
+本記事では、一部の例を取り上げましたが、多種多様なシステムが存在します。皆さんも興味のある分野で使用されている、バイオセンサーのシステムについて、調べて知識を深めて欲しいと思います。

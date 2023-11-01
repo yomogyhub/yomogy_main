@@ -1,0 +1,185 @@
+{
+  "add-post1": {
+    "id": "add-post1",
+    "path": "/posts/blog/yomogy/add-post1",
+    "title": "Githubからの投稿",
+    "publishedAt": "2023-08-11",
+    "updatedAt": "2023-08-11",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": "This is my first post.",
+    "tag": [
+      "java",
+      "react",
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/add-post1_cover.png",
+    "rePost": "https:yomogy.com",
+    "status": "published"
+  },
+  "biosensor-overview": {
+    "id": "biosensor-overview",
+    "path": "/posts/blog/yomogy/biosensor-overview",
+    "title": "バイオセンサーとは？  3つに分類して解説 ! ",
+    "publishedAt": "2021-12-21",
+    "updatedAt": "2021-04-23",
+    "category": "synbio",
+    "author": "Yomogy",
+    "description": " バイオセンサーとは、細胞由来の物質を検出しようというセンサーのことを指します。これまでに、電気やレーザーなどを使用した物理的なシステムや、生物学的なシステムを応用したシステムなど、数多くのものが開発されてきました。\n<br /><br /> 一般的に、生物学的なシステムを使用する場合は、検出したい物質と反応する検出システムと、それらの情報を色や電気的なシグナルに変換する出力システムの2種類を組み合わせて使用されることが多いです。特に、前者のシステムは、検出したい物質に応じて、多種多様なシステムが開発されて来ています。\n<br /><br /> このようなバイオセンサーは、古くから開発されてきました。 例えば、酵素や抗体などを使用した、検出システムなどです。それらの技術開発により、グルコースやウイルスなどの検出を可能にするなど、さまざまな現象の理解が進んできました。\n<br /><br /> 近年では、それらの検出システムに加え、遺伝子工学的な手法の開発の発展により、よりミクロなスケールであったり、複雑なシステムを活用するシステムが発表されています。\n<br /><br /> 本記事では、近年のSynthetic biology (Synbio, 合成生物学)で使用されている、いくつかのバイオセンサーの検出方法について簡単に紹介します。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/biosensor-overview_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "cell-free-biosensor": {
+    "id": "cell-free-biosensor",
+    "path": "/posts/blog/yomogy/cell-free-biosensor",
+    "title": "Cell-freeでのバイオセンサーについて 〜手法から社会実装まで〜",
+    "publishedAt": "2021-1-11",
+    "updatedAt": "2021-04-25",
+    "category": "synbio",
+    "author": "Yomogy",
+    "description": " 本記事では、Cell-free systemを活用したバイオセンサーの具体例や、基盤となる技術について紹介していきます。 <br /><br /> Cell-free systemを活用したバイオセンサーは、Synthetic Biology (合成生物学) の発展とともに、細胞の抽出液を使用した系や、転写・翻訳(TX-TL)などのシステムを再現した系を利用したバイオセンサーの開発が、近年急速に進んできています。 <br /> 本記事では、「どのように社会実装するのか」と「どのように物質を検出するのか」の2点について、紹介していきます。 <br /><br /> バイオセンサーって何？という方は、こちらの記事からお読みください。 [バイオセンサーとは？ 3つに分類して解説!](https://yomogy.com/igem/biosensor-overview) ",
+    "tag": [
+      "information",
+      "paper"
+    ],
+    "coverImage": "/blog/yomogy/images/cell-free-biosensor_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "cell-free-overview": {
+    "id": "cell-free-overview",
+    "path": "/posts/blog/yomogy/cell-free-overview",
+    "title": "Cell-free System (無細胞系) とは？",
+    "publishedAt": "2021-1-7",
+    "updatedAt": "2020-12-7",
+    "category": "synbio",
+    "author": "Yomogy",
+    "description": " Cell-free system (無細胞系、無細胞翻訳系) について、iGEMerの中でもあまり詳しく知らない方が多かった印象を受けたので、まずは概略だけ紹介したいと思います。 <br /><br />\n\nさらに発展的な内容は[こちら](https://yomogy.com/synbio/cell-free-biosensor)からどうぞ [Cell-freeでのバイオセンサーについて手法から社会実装まで](https://yomogy.com/synbio/cell-free-biosensor) ",
+    "tag": [
+      "information",
+      "paper"
+    ],
+    "coverImage": "/blog/yomogy/images/cell-free-overview_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem-japan-history-2006-2010": {
+    "id": "igem-japan-history-2006-2010",
+    "path": "/posts/blog/yomogy/igem-japan-history-2006-2010",
+    "title": "[ iGEM Japan の歴史 ① ] 2006年 ~ 2010年",
+    "publishedAt": "2020-12-3",
+    "updatedAt": "2023-08-11",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEM 2020 (アイジェム) において、日本人初のアンバサダーを務めたRyo Niwa氏の協力の元、新規のチームが2チーム参加するなど、iGEM Japanのコミュニティが徐々には発展しています。そこで、iGEM Japanの簡単な歴史を振り返りたいと思います。   ( 第二弾は[こちら](https://yomogy.com/igem/igem-japan-history-2011-2015) ) ( 第三弾は[こちら](https://yomogy.com/igem/igem-japan-history-2015-2019) ) <br /><br /> 第一弾として、iGEMが誕生し、日本チームが初めて参加した2006年から、出場数が100チームを超えるぐらいに成長した2010年まで、iGEMの歴史を振り返っていきたいと思います。当時の大会は、1年に1度、全チームがボストンに集まって大会を行う形式でした。",
+    "tag": [
+      "history",
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem-japan-history-2006-2010_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem-japan-history-2011-2015": {
+    "id": "igem-japan-history-2011-2015",
+    "path": "/posts/blog/yomogy/igem-japan-history-2011-2015",
+    "title": "[ iGEM Japan の歴史 ② ] 2011年 ~ 2015年",
+    "publishedAt": "2020-12-4",
+    "updatedAt": "2021-04-29",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": "\niGEM 2020 (アイジェム) において、日本人初のアンバサダーを務めたRyo Niwa氏の協力の元、新規のチームが2チーム参加するなど、iGEM Japanのコミュニティが徐々には発展しています。そこで、iGEM Japanの簡単な歴史を振り返りたいと思います。   ( 第一弾は[こちら](https://yomogy.com/igem/igem-japan-history-2006-2010) ) ( 第三弾は[こちら](https://yomogy.com/igem/igem-japan-history-2015-2019) )\n<br /><br />\n第二弾として、2011年 ~ 2015年のiGEMの歴史を振り返っていきたいと思います。   iGEM 2011, 2012, 2013では、地域大会が導入され、予選を勝ち上がったチームのみでの本戦が行われるなど、新しい取り組みが次々に取り入れらてきました。またiGEM 2012, 2013は、iGEM Japanから過去最多の11チームが参加するなど、最も活気があった時代でした。   ",
+    "tag": [
+      "history",
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem-japan-history-2011-2015_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem-japan-history-2016-2020": {
+    "id": "igem-japan-history-2016-2020",
+    "path": "/posts/blog/yomogy/igem-japan-history-2016-2020",
+    "title": "[ iGEM Japan の歴史 ③ ] 2016年 ~ 2020年",
+    "publishedAt": "2020-12-5",
+    "updatedAt": "2021-04-29",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": "\niGEM 2020 (アイジェム) において、日本人初のアンバサダーを務めたRyo Niwa氏の協力の元、新規のチームが2チーム参加するなど、iGEM Japanのコミュニティが徐々には発展しています。そこで、iGEM Japanの簡単な歴史を振り返りたいと思います。   ( 第一弾は[こちら](https://yomogy.com/igem/igem-japan-history-2006-2010) ) ( 第三弾は[こちら](https://yomogy.com/igem/igem-japan-history-2015-2019) )\n<br /><br />\n第三弾として、2015年 ~ 2020年のiGEMの歴史を振り返っていきたいと思います。   iGEM 2015から高校生チームが参加したり、中国勢の台頭が目立ち、iGEMに対する難易度が年々増加していく中で、日本チームも新しい顔ぶれに変化していく、変革の時代でした。iGEM 2016 ~ 2019は、1年に1度にボストンに、全チームが集まり、争う形式でした。   iGEM 2020はCOVID-19の影響もあり、完全オンラインで争う形式でした。 ",
+    "tag": [
+      "history",
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem-japan-history-2016-2020_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem2019-basic-information": {
+    "id": "igem2019-basic-information",
+    "path": "/posts/blog/yomogy/igem2019-basic-information",
+    "title": "iGEM 2019 の基本情報",
+    "publishedAt": "2020-12-1",
+    "updatedAt": "2021-04-29",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " この記事は[iGEM・合成生物学 Advent Calendar 2019](https://adventar.org/calendars/4509) 1日目の記事です。    <br /><br /> iGEM (アイジェム) や合成生物学 (Synbio, Synthetic biology) をもっと多くの人に興味を持ってもらいたいと思い、この ” iGEM・合成生物学 Advent Calendar 2019 ” を始めました。   <br /><br /> 明日からはiGEM・合成生物学研究の先輩方がiGEMの楽しさ、やりがい、厳しさ(?)などを書いてくれると思うので、楽しみにしています。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2019-basic-information_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem2020-basic-information": {
+    "id": "igem2020-basic-information",
+    "path": "/posts/blog/yomogy/igem2020-basic-information",
+    "title": "初のオンライン開催！ iGEM 2020 の基本情報",
+    "publishedAt": "2020-12-02",
+    "updatedAt": "2020-12-02",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " この記事は [iGEM・合成生物学 Advent Calendar](https://adventar.org/calendars/5333) 1日目の記事です。 <br /><br /> 今年も昨年に引き続き、iGEM (アイジェム) や合成生物学 (Synbio, Synthetic biology)をもっと多くの人に興味を持ってもらいたいと思い、この ” iGEM・合成生物学 Advent Calendar 2020 ” を始めました。 <br /><br /> 本記事では、iGEM 2019から、どのように変化していったのかを書いていきたいと思います。 <br /><br /> 2日目からは、iGEM・合成生物学研究に関する仲間が、iGEMや合成生物学の楽しさ、やりがい、厳しさ(?)などを書いてくれました！　まだご覧になっていない方は、そちらも合わせてお楽しみください。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2020-basic-information_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem2022-now-next": {
+    "id": "igem2022-now-next",
+    "path": "/posts/blog/yomogy/igem2022-now-next",
+    "title": "iGEMの現状と次なる目標 (2022年)",
+    "publishedAt": "2022-12-02",
+    "updatedAt": "2023-03-4",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEM 2022 Competition は、全世界から、5000人以上 ( 300チーム以上 ) が参加し、大きな盛り上がりを見せました。また、iGEMは19年間続いてきており、同窓生たちの各方面での活躍をみることも少なくありません。iGEMは、合成生物学 ( Synthtic Biology ) 業界の中で、最も大きな影響力を持つものになっていることは、疑いの余地がありません。 <br /><br /> COVID-19のため、オンライン開催であった2年の間に、多くの新規プロジェクトが開始され、Jamboreeで、それらの全貌を見ることができました。Jamboreeが、初めてボストンを離れ、パリで行われることに象徴されるように、これから新しいiGEMが創られていくように感じます。 <br/><br/> 本記事では、そんなiGEMについての現状と、次に向かう目標について、紹介したいと思います。 <br/><br/> また本記事は、[iGEM･Synthetic biology(合成生物学)･Japan Advent Calendar 2022の2日目](https://adventar.org/calendars/7510)の投稿になります。",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2022-now-next_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "synbio-media-yomogy": {
+    "id": "synbio-media-yomogy",
+    "path": "/posts/blog/yomogy/synbio-media-yomogy",
+    "title": "合成生物学に関する総合サイト「Yomogy」の開設",
+    "publishedAt": "2020-11-30",
+    "updatedAt": "2021-04-29",
+    "category": "synbio",
+    "author": "Yomogy",
+    "description": "合成生物学 (Synthetic biology, Synbio, 構成生物学) に関する総合サイト「Yomogy」の開設",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/synbio-media-yomogy_cover.png",
+    "rePost": false,
+    "status": "published"
+  }
+}

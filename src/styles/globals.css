@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #f5f9f5; /* ライトモードの背景色 */
+  color: #333333; /* ライトモードのテキスト色 */
+}
+
+.dark body {
+  background-color: #2a2a2a;
+  color: #f5f5f5; /* ダークモードのテキスト色 */
+}
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 10px 20px;
+  border-left: 5px solid #f1f1f1;
+  background-color: #f9f9f9;
+  font-style: italic;
+  color: #333;
+}
+
+.dark blockquote {
+  border-left: 5px solid #444;
+  background-color: #2b2b2b;
+  color: #ddd;
+}
+
+/* 目次 */
+.toc-list-item {
+  padding: 8px 0; /* 上下のスペースを追加 */
+  border-bottom: 1px solid #e2e8f0; /* ボーダーを追加 */
+}
+
+.toc-list-item:last-child {
+  border-bottom: none; /* 最後の項目のボーダーを削除 */
+}
+
+.toc-link {
+  color: #3182ce; /* リンクの色を設定 */
+  text-decoration: none; /* 下線を削除 */
+}
+
+.toc-link:hover {
+  text-decoration: underline; /* ホバー時に下線を追加 */
+}
+
+.node-name--H3 {
+  margin-left: 1.5rem; /* 例: 1.5remの左マージンを追加 */
+}
+
+/* サイドバー */
+@media (max-width: 768px) {
+  .custom-max-width-blogpost {
+    max-width: none;
+    width: 100%;
+  }
+  .custom-max-width-sidebar {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* 通常モードのスタイル */
+
+.blog_main h1 {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.blog_main h2 {
+  border-left: 2px solid #384359;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  padding: 0 12px;
+  margin-top: 2.4em;
+  margin-bottom: 0.8rem;
+}
+
+/* 通常モードの h3 スタイル */
+.blog_main h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  margin-top: 1.2em;
+  margin-bottom: 10px;
+  padding: 0 12px;
+  border-bottom: 2px solid #666;
+}
+.blog_main p {
+  padding: 0 12px;
+}
+.blog_main ul {
+  list-style: disc;
+  margin: 0 24px;
+  padding: 0 12px;
+}
+
+.link_a a:link,
+.link_a a:visited,
+.link_a a:active {
+  color: rgb(94, 173, 67);
+  text-decoration: none;
+}
+
+/* footerのスタイル */
+.footer h2 {
+  font-size: 1.4rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem;
+}
+
+/* dark モードのスタイル */
+.blog_main.dark h1,
+.blog_main.dark h2,
+.blog_main.dark h3 {
+  color: #ffffff; /* 文字を白に設定 */
+}
+
+.blog_main.dark h2 {
+  border-bottom-color: #aaa; /* ダークモードの下線の色 */
+}
+
+.blog_main.dark h3 {
+  border-left-color: #7b7b7b; /* 左の線の色をダークモードに適した色に変更 */
+}
+
+/* youtubeのリンクの埋め込み */
+.youtube-iframe {
+  max-width: 100%;
+}
+
+.youtube-iframe iframe {
+  max-width: 100%;
+}

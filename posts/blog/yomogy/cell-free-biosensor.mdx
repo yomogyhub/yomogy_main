@@ -1,0 +1,268 @@
+---
+title: "Cell-freeでのバイオセンサーについて 〜手法から社会実装まで〜"
+category: "synbio"
+publishedAt: "2021-1-11"
+updatedAt: "2021-04-25"
+author: "Yomogy"
+description: "
+本記事では、Cell-free systemを活用したバイオセンサーの具体例や、基盤となる技術について紹介していきます。
+<br /><br />
+Cell-free systemを活用したバイオセンサーは、Synthetic Biology (合成生物学) の発展とともに、細胞の抽出液を使用した系や、転写・翻訳(TX-TL)などのシステムを再現した系を利用したバイオセンサーの開発が、近年急速に進んできています。
+<br />
+本記事では、「どのように社会実装するのか」と「どのように物質を検出するのか」の2点について、紹介していきます。
+<br /><br />
+バイオセンサーって何？という方は、こちらの記事からお読みください。
+[バイオセンサーとは？ 3つに分類して解説!](https://yomogy.com/igem/biosensor-overview)
+"
+tag: ["information","paper"]
+rePost: false
+status: "published"
+---
+
+<h2>cell-free systemでのバイオセンサーの特徴は何か？ </h2>
+cell-free systemでのバイオセンサーとは、生細胞は使用しませんが、細胞内のシステムを活用したバイオセンサーのことを指します。
+cell-free systemを活用することによって、生細胞では調整が困難である、細胞内の中身を調整することが容易な自由度の高い系を構築することが可能になっています。
+また、細胞を使用しないことで、実験室外でも検証することが可能になります。
+
+また、この系は、自由度が高い系であることから、合成生物学との相性が良いことも注目されています。2019 年に Nature Communications に Peter L. Voyvodic らが発表した論文では、iGEM などの要素をパーツに分割して考える合成生物学を元に説明が詳細になされています。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/cell-free-biosensor-fig1.png"
+  alt="Fig.1 - Cell-free biosensor 概要 (Peter L. Voyvodic et al. 2019より引用)"
+  caption="Fig.1 - Cell-free biosensor 概要 (Peter L. Voyvodic et al. 2019より引用)"
+/>
+
+出典: [Peter L. Voyvodic et al., ”Plug-and-play metabolic transducers expand the
+chemical detection space of cell-free biosensors”, Nature Communications, 2019](https://doi.org/10.1038/s41467-019-09722-9)
+
+<br />
+<br />
+
+この図(元論文 fig1)a では、 cell-free でのバイオセンサーの要素の概略を表しています。
+まず、3~4 つのパーツで構成されていることを示しています。
+それは、Ligand (目的物質)と、Metabolic transducer module と sensor module (検出システム)と、output module (出力システム)という 3~4 つのパーツが、重要な役割を持っています。
+これらは、どのようなものでも、パーツ単位で組み合わせ可能であることを示しています。
+この図の b では、どのような反応の流れをするのかについて示されています。
+まず、Ligand が、Metabolic transducer module によって、sensor module と反応できる物質に変換されます。
+そして、その物質と sensor module の複合体が、プロモーターと結合します。
+それによって、output module としての遺伝子発現が行われるという流れになります。
+最後に、この図の C では、さらに詳しい要素のごとの手法の概略について示しています。
+目的物質を検出するために、検出可能な分子構造を考え、それに会うようシステムを探します。
+
+<br />
+<br />
+次に、そのシステムをコードしたプラスミドを構築します。
+それらのプラスミドと、Cell-free
+system(細胞抽出液やバッファーなど)と組み合わせて反応させます。
+その実験を最適化することによって、バイオセンサーを完成させます。
+
+<br />
+<br />
+参考文献 : [Peter L. Voyvodic et al., ”Plug-and-play metabolic transducers
+expand the chemical detection space of cell-free biosensors”, Nature
+Communications, 2019](https://doi.org/10.1038/s41467-019-09722-9)
+
+<h2>紙ベースのバイオセンサー</h2>
+Cell-free systemをベースにしたバイオセンサーを社会実装することにあたり、バイオセンサーをどのように保存するのかという問題があります。
+そのような問題を解決し、Cell-free systemをベースにしたバイオセンサーの可能性を大きく広げた技術として、Paper-basedなバイオセンサーがあります。
+<br />
+<br />
+
+この技術は、2014 年に Keith Pardee らによって開発されました。 その技術は、Cell-free
+system とシステムをコードしたプラスミドを混ぜ合わせ、それらを紙の上で、freeze-dry
+(乾燥凍結)処理を行うことで、紙に染み込ませることで作成されます。 そして使用時に、その紙に溶液を垂らすだけで反応を確認できます。
+
+<MediaCard
+  mediaType="image"
+  src="https://static.igem.org/mediawiki/2019/0/0b/T--iBowu-China--cell-free-system.jpeg"
+  alt="Fig.2 - 紙ベースのバイオセンサー (iGEM iBowu-China 2019より引用)"
+  caption="Fig.2 - 紙ベースのバイオセンサー (iGEM iBowu-China 2019より引用)"
+/>
+出典 : [iGEM iBowu-China 2019](https://2019.igem.org/Team:iBowu-China)
+
+<br />
+<br />
+このように、紙ベースのバイオセンサーにすることで、持ち運びが容易になり、さまざまな環境で使用することを可能にします。
+また、遺伝子組み換え生物ではない、Cell-free System
+を利用することで、実験室外での使用を可能にします。
+
+<br />
+<br />
+
+参考文献
+
+[Keith P Keith Pardee et al., Paper-Based Synthetic Gene Networks, Cell, 2014](https://doi.org/10.1016/j.cell.2014.10.004)
+
+[iGEM iBowu-China 2019](https://2019.igem.org/Team:iBowu-China)
+
+<h2>社会実装された例</h2>
+このような研究の発展を経て、いくつかのスタートアップが創業され始めています。
+<br />
+<br />
+2020年に Jaeyoung K. Jung らが、 ROSALIND という Freeze-dry にした cell-free
+system を使用して、飲料水の安全性を評価することを可能にするシステムを、Nature
+biotechnology に発表しました。 その研究チームが、その技術を元に、Stemloop,
+inc.を創業し、cell-free system を利用したバイオセンサーを販売しています。
+彼らは、COVID-19 の検査キットも販売するなど、多方面での活躍を始めています。
+
+<br />
+<br />
+参考文献 [Jaeyoung K. Jung et al., Cell-free biosensors for rapid detection of
+water contaminants, Nature biotechnology,
+2020](https://www.nature.com/articles/s41587-020-0571-7#Bib1){" "}
+
+[Stemloop,
+inc.](http://stemloop.com/)
+
+<h2>Cell-freeでのバイオセンサーで使用される特徴的なシステムの例</h2>
+次に、Cell-free systemで使用される代表的なシステムについて紹介します。 これらのシステムは、検出したい物質ごとに適切な手法を選択し、検出の特異度をあげるような改善を行うことで、効果を発揮します。
+
+<br />
+<br />
+また、これらのシステムで検出する前に、複数種類の酵素を組み合わせたり、削除したりして、物質を検出しやすい状態に変換することなどの工夫も多くなされています。
+特に、転写関連(プロモーターを抑制/促進させるものなど)
+や、翻訳関連(リボスイッチ、toefold
+スイッチ、CRISPRを活用したものなど)のシステムが、多く開発されます。
+これらのシステムは、Cell-free
+systemだけでなく、生細胞としても使用され、発展してきたシステムです。
+
+<br />
+<br />
+しかし、Cell-free
+systemを利用することによって、膜透過性や毒性の問題、細胞の成長に関連しないシステムを使用できる利点があります。
+ここでは、そのような具体例をいくつか紹介していきます。
+
+<h2>プロモーターを改変して目的物質を検出する</h2>
+プロモーターを活用したシステムは、目的の物質に対して、特異的に反応するプロモーターを使用し、検出システムを確立します。
+特定のプロモーターに対して、特異的に反応する物質というものは、多く存在します。 さらに、目的物質を変換し、既存のプロモーターと反応させることによって検出する手法も開発されています。
+
+<br />
+<br />
+2019年にNature CommunicationsにPeter L.
+Voyvodicらが発表した論文の中でも紹介されている、プロモーターを活用した具体例について紹介します。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/cell-free-biosensor-fig3.png"
+  alt="Fig.3 - プロモーターを活用した biosensor (Peter L. Voyvodic et al. 2019より引用)"
+  caption="Fig.3 - プロモーターを活用した biosensor (Peter L. Voyvodic et al. 2019より引用)"
+/>
+
+出典: [Peter L. Voyvodic et al., ”Plug-and-play metabolic transducers expand the
+chemical detection space of cell-free biosensors”, Nature Communications, 2019](https://doi.org/10.1038/s41467-019-09722-9)
+
+<br />
+<br />
+
+この例では、Benzoate (安息香酸)という物質を検出することを目的にしています。
+Benzoate を検出するために、BenR (タンパク質)と PBen (プロモーター)を使用します。
+BenR は、Benzoate と反応することで、PBen (プロモーター)と結合し、翻訳を促進させる機能を持ちます。
+そのため、Benzoate の検出が可能になり、プロモーターの下流に sfGFP (蛍光タンパク質)をコードすることで、蛍光タンパク質を発現させ、蛍光を検出可能にしています。
+
+<br />
+<br />
+参考文献 : [Peter L. Voyvodic et al., ”Plug-and-play metabolic transducers
+expand the chemical detection space of cell-free biosensors”, Nature
+Communications, 2019](https://doi.org/10.1038/s41467-019-09722-9)
+
+<h2>リボスイッチを使用して目的物質を検出する</h2>
+リボスイッチとは、RNAと目的物質を結合させ、RBSや開始コドン(AUG)などの翻訳開始領域の2次構造を変化させ、その後の転写翻訳を制御するものです。
+[A Nahvi et al.,Genetic control by a metabolite binding mRNA, Chemistry & biology,
+2002](<10.1016/s1074-5521(02)00224-7>)
+
+<MediaCard
+  mediaType="image"
+  src="https://static.igem.org/mediawiki/2015/c/c4/Exeter_translation_riboswitch.png"
+  alt="Fig.4 - リボスイッチ 概要 (iGEM Exeter 2015より引用)"
+  caption="Fig.4 - リボスイッチ 概要 (iGEM Exeter 2015より引用)"
+/>
+
+出典 : [iGEM Exeter 2015](https://2015.igem.org/Team:Exeter)
+
+<br />
+<br />
+
+このシステムは、iGEM でもよく使用されてきています。本記事では、2017 年の iGEM に参加した Heidelberg について取り上げ、紹介していきます。
+彼らのプロジェクトの目的は大変複雑なシステムになっているため、その中でも、リボスイッチを使用している部分について紹介していきます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/cell-free-biosensor-fig5.png"
+  alt="Fig.5 - リボスイッチ 例 (iGEM Heidelberg 2017より引用)"
+  caption="Fig.5 - リボスイッチ 例 (iGEM Heidelberg 2017より引用)"
+/>
+
+出典 : [iGEM Heidelberg 2017](http://2017.igem.org/Team:Heidelberg)
+
+<br />
+<br />
+
+彼らは、カフェインを検出し、GeneIII (ファージに必須な遺伝子)を生産するスイッチの確立を目指しました。
+そのシステムは、カフェインを直接検出するのではなく、theophylline (テオフィリン)を生産し、theophylline を検出するものです。
+まず、カフェインを、CYP1A2 (タンパク質)を反応させることにより、theophylline に変換します。
+そして、theophylline と RNA を反応させることにより、翻訳を進め、GeneIII を生産しました。
+このシステムによって、カフェインの有無によって、GeneIII の生産を調整できるスイッチを確立しました。
+
+<br />
+<br />
+参考文献
+
+[A Nahvi et al.,Genetic control by a metabolite binding mRNA, Chemistry &
+biology, 2002](<https://doi.org/10.1016/S1074-5521(02)00224-7>)
+
+[iGEM Exeter 2015](https://2015.igem.org/Team:Exeter)
+
+[iGEM Heidelberg 2017](http://2017.igem.org/Team:Heidelberg)
+
+<h2>toefold スイッチを使用して目的物質を検出する</h2>
+toefold スイッチとは、目的のRNAと検出したいRNAを結合させ、RBSや開始コドン(AUG)などの翻訳開始領域の2次構造を変化させ、その後の翻訳を制御するものです。
+[Detailed toehold sensor design schematic and putative detection mechanism, Green
+et al., Cell, 2014](https://www.sciencedirect.com/science/article/pii/S0092867414012896)
+
+<br />
+<br />
+
+このシステムは、どのような RNA にも対応できることから、RNA を検出するために、よく使用されてきています。本記事では、2019 年の iGEM に参加した EPFL について取り上げ、紹介していきます。
+
+<br />
+<br />
+
+彼らのプロジェクトは、ぶどうの葉に生じる、Flavescence Dorée という病気について、その感染有無を検査するために、病気を媒介する生物の特異的な DNA を検出することを目指しました。
+そのシステムは、目的となる DNA を RNA に変換し、toehold スイッチを使用することで検出するものです。
+そこでまず、目的となる DNA を、T7 Promoter を付加したプライマーを用いた Recombinase Polymerase Amplification (RPA)によって増幅させます。
+次に、増幅された DNA を Cell-free system によって、DNA から RNA に転写します。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/cell-free-biosensor-fig6.png"
+  alt="Fig.6 - toefold スイッチ 例 (iGEM EPFL 2019より引用)"
+  caption="Fig.6 - toefold スイッチ 例 (iGEM EPFL 2019より引用)"
+/>
+
+出典 : [iGEM EPFL 2019](https://2019.igem.org/Team:EPFL)
+
+<br />
+<br />
+
+これらの手法によって RNA を作成し、目的の RNA に対して特異的に反応する toehold システムを利用し、検出を行います。
+目的 RNA がデザインされた RNA に結合した場合、デザインされた RNA は、翻訳可能になります。
+そして、その下流にコードされた蛍光タンパク質を発現させることで、蛍光として検出を可能にします。
+
+<br />
+<br />
+参考文献
+
+[Detailed toehold sensor design schematic and putative detection mechanism, Green et al., Cell, 2014](https://www.sciencedirect.com/science/article/pii/S0092867414012896)
+
+[iGEM EPFL 2019](https://2019.igem.org/Team:EPFL)
+
+<h2>まとめ</h2>
+このように Cell-free system を活用したバイオセンサーは、既存の生細胞で使用されていたシステムの知見を取り入れながら、発展してきています。
+
+<br />
+<br />
+また、社会実装への適応の容易さにより、多くの新しいアプリケーションが日社会で使用できるようになってきています。
+<br />
+<br />
+皆さんも、何か検出したいものがある時には、Cell-free systemを活用したバイオセンサーについて検討してみてはいかがでしょうか。

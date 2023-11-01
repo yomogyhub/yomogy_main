@@ -1,0 +1,123 @@
+---
+# 基本ルール
+# 記事投稿時には、(この文を含む) コメントアウトは削除してください。
+# --- と --- の間に、記事の基本情報を必ず記載してください。過不足はエラーになります。
+# ファイル名は、ローマ字(半角英数字)で記載してください。スペースはハイフンに置換してください。これは、記事のURLになります。
+# <h2><h3>は、見出しとして機能します。必ず加えてください。
+# mdxフォーマット (mdの拡張) のみ受け付けます。ChatGPT等で整形するのもよいでしょう。プロンプトTips : mdにすると勝手に変換されるから、コードで囲んで。
+# 新しいテンプレートを作成したら、このblog-templateフォルダに追加してください。
+title: "Githubからの投稿" # タイトル
+category: "igem" # カテゴリー 現在は、igem or synbio
+publishedAt: "2023-08-11" # 投稿日
+updatedAt: "2023-08-11" # 更新日
+author: "Yomogy" # 投稿者
+description: "This is my first post." # 記事の説明
+tag: ["java", "react", "information"] # タグ任意 1つ以上 3つ程度まで
+rePost: false # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+status: "published" # "published" or "draft"
+---
+
+<h2>はじめての投稿h2</h2>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80">
+  <path
+    fill="#000"
+    d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"
+  />
+  <path
+    fill="white"
+    d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"
+  />
+</svg>
+
+<h2>埋め込みリンクの検証 h2</h2>
+{/* Linkcard形式で掲載したい時は、以下のように記述する。sizeは、"small"か"large"。*/}
+{/* SNSを掲載したい時は、以下のように記述する。X, tiktok, instagram, linkedin ,youtube, facebook, pinterest*/}
+{/* 埋め込みリンクの取得方法の参考 https://www.npmjs.com/package/react-social-media-embeds */}
+
+<LinkCard url="https://yomogy.com/synbio/biosensor-overview/" size="small" />
+or
+<LinkCard url="https://yomogy.com/synbio/biosensor-overview/" size="large" />
+
+<SNSCard url="https://twitter.com/y0m0gy/status/1642891661276745728" />
+<SNSCard url="https://www.tiktok.com/@igemcommunity/video/7133988878909803782" />
+<SNSCard url="https://www.instagram.com/p/CuOeA7KqzCK/" />
+<SNSCard url="https://www.youtube.com/embed/qSTFLJ0woXI?si=bUnHQOGvJ4jWQmR5" />
+
+```js
+console.log("Hello World: コードハイライトのテスト");
+```
+
+<h3>JSXの埋め込みテストh3</h3>
+<div style={{ padding: "20px", backgroundColor: "red" }}>
+  <p>JSXの埋め込みテスト</p>
+</div>
+
+<h3>画像の埋め込み</h3>
+<div style={{ width: "100%", height: "auto" }}>
+  <img
+    src="https://images.microcms-assets.io/assets/5b29df40b0df4001b2b4481340384329/3bc6d98ac34c4e4a8fe2219fe361c38a/%E3%83%8F%E3%82%99%E3%82%A4%E3%82%AA%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%A8%E3%81%AF%E8%A1%A8%E7%B4%99.png"
+    alt="cell-free-overview-fig1"
+  />
+  <figcaption
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      fontStyle: "italic",
+    }}
+  >
+    Fig.1 - Cell-free 概要
+  </figcaption>
+</div>
+
+or
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/yomogy/images/cell-free-overview-fig1.png"
+  alt="cell-free-overview-fig1"
+  caption="Fig.1 - Cell-free 概要"
+/>
+
+<h3>動画の埋め込み</h3>
+<div style={{ width: "100%", height: "auto" }}>
+  <video controls>
+    <source
+      src="https://static.igem.org/mediawiki/2019/a/a9/T--EPFL--moleculardesignfd1.mp4"
+      type="video/mp4"
+    />
+    お使いのブラウザは動画をサポートしていません。元画像 : https://static.igem.org/mediawiki/2019/a/a9/T--EPFL--moleculardesignfd1.mp4
+  </video>
+  <figcaption
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      fontStyle: "italic",
+    }}
+  >
+    Fig.1 - Cell-free 概要
+  </figcaption>
+</div>
+
+or
+
+<MediaCard
+  mediaType="video"
+  src="https://static.igem.org/mediawiki/2019/a/a9/T--EPFL--moleculardesignfd1.mp4"
+  alt="お使いのブラウザは動画をサポートしていません。元画像 : https://static.igem.org/mediawiki/2019/a/a9/T--EPFL--moleculardesignfd1.mp4"
+  caption="Fig.1 - Cell-free 概要"
+/>
+
+<h3>引用</h3>
+
+> iGEM の次の目標 : 合成生物学分野のすべてのことを、"どこでも"、"誰でも"、開発できるようにする
+
+出典 : [iGEM Vision](https://igem.org/about-us/our-vision)
+
+<h3>太字</h3>
+**太字**
+
+<p>
+  <u>**文頭 太字 +アンダーライン**</u>
+</p>
+
+<u>**文中 太字 +アンダーライン**</u>

@@ -1,21 +1,19 @@
 {
   "categories": {
-    "igem": 7,
-    "synbio": 4
+    "synbio": 4,
+    "igem": 6
   },
   "authors": {
-    "Yomogy": 11
+    "Yomogy": 10
   },
   "categoryTags": {
-    "igem": {
-      "java": 1,
-      "react": 1,
-      "information": 7,
-      "history": 3
-    },
     "synbio": {
       "information": 4,
       "paper": 2
+    },
+    "igem": {
+      "history": 3,
+      "information": 6
     }
   }
 }

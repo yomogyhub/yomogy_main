@@ -1,22 +1,4 @@
 {
-  "add-post1": {
-    "id": "add-post1",
-    "path": "/posts/blog/yomogy/add-post1",
-    "title": "Githubからの投稿",
-    "publishedAt": "2023-08-11",
-    "updatedAt": "2023-08-11",
-    "category": "igem",
-    "author": "Yomogy",
-    "description": "This is my first post.",
-    "tag": [
-      "java",
-      "react",
-      "information"
-    ],
-    "coverImage": "/blog/yomogy/images/add-post1_cover.png",
-    "rePost": "https:yomogy.com",
-    "status": "published"
-  },
   "biosensor-overview": {
     "id": "biosensor-overview",
     "path": "/posts/blog/yomogy/biosensor-overview",

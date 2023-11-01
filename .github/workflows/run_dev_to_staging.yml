@@ -1,0 +1,53 @@
+name: Run NPX and Push
+
+on:
+  pull_request:
+    branches:
+      - staging
+    types:
+      - opened
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  run-npx-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "19.1.0"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run NPX command
+        run: npx ts-node runFunction.ts
+
+      - name: Commit and push changes
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name 'GitHub Actions'
+          git config user.email 'actions@github.com'
+
+          # リモートの変更をフェッチして現在のブランチをリモートブランチの最新の状態にリセットします
+          git fetch origin dev
+          git reset --hard origin/dev
+
+          # 新たな変更をコミットします
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Automated Update by Github"
+          fi
+
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/yomogyhub/yomogy_main.git HEAD:dev

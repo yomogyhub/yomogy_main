@@ -1,0 +1,68 @@
+name: For dev MDX Validation
+
+on:
+  push:
+    branches:
+      - dev
+    paths:
+      - 'posts/**/*.mdx'
+
+permissions:
+  contents: write
+
+jobs:
+    check-json-fig-updated:
+      runs-on: ubuntu-latest
+  
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: "19.1.0"
+
+        - name: Install dependencies
+          run: npm install
+    
+        - name: Validate MDX files
+          id: validate_mdx
+          run: |
+            VALIDATION_FAILED=false
+            INVALID_FILES=""
+            
+            FILES_CHANGED=$(git diff --name-only HEAD~1 HEAD)
+            for FILE in $FILES_CHANGED
+            do
+              if [[ "$FILE" == 'posts/'*.mdx ]]; then
+                if ! npx ts-node src/utils/validation-mdx.ts "$FILE"; then
+                  echo "Validation failed for $FILE"
+                  VALIDATION_FAILED=true
+                  INVALID_FILES="$INVALID_FILES $FILE"
+                fi
+              fi
+            done
+        
+            echo "::set-output name=validation_failed::$VALIDATION_FAILED"
+            echo "INVALID_FILES=$INVALID_FILES" >> $GITHUB_ENV
+        
+  
+        - name: Set Git user
+          run: |
+              git config user.name "GitHub Actions"
+              git config user.email "github-actions@github.com"
+    
+        - name: Delete invalid files and push
+          if: steps.validate_mdx.outputs.validation_failed == 'true'
+          run: |
+              for FILE in $INVALID_FILES
+              do
+                git rm $FILE
+              done
+        
+              git commit -m "Deleted invalid MDX files"
+              git push origin HEAD:${{ github.ref }}
+        

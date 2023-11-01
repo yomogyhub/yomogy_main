@@ -1,0 +1,27 @@
+name: Merge main into dev
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge-to-dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: dev
+
+      - name: "[Force] Merge changes from main"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        run: |
+          git config user.name 'GitHub Actions'
+          git config user.email 'actions@github.com'
+          git fetch origin main
+          git reset --hard origin/main
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/yomogyhub/yomogy_main.git HEAD:dev --force

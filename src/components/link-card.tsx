@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Metadata {
   url: string;
@@ -70,7 +71,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ metadata, size = "small" }) => {
         {metadata.image && metadata.title && (
           <div className="max-w-1/4">
             <a href={metadata.url} target="_blank" rel="noreferrer">
-              <img
+              <Image
                 className="rounded"
                 src={metadata.image}
                 alt={metadata.title}

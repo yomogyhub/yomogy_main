@@ -63,6 +63,7 @@ export async function getStaticProps({
   const processedContent = await processMDXContentForMediaCard(
     processedContent2
   ); // for media card.
+
   const mdxSource = processedContent
     ? await serialize(processedContent, {
         mdxOptions: {
@@ -71,7 +72,6 @@ export async function getStaticProps({
         },
       })
     : null;
-
   return {
     props: {
       ...blogPostProps,

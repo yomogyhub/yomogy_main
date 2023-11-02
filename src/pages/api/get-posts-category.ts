@@ -431,6 +431,7 @@ export async function getData(params: Category & PostID) {
     content: content,
     data: data,
     coverImage: postInfo.coverImage,
+    path: postInfo.path,
   };
 }
 

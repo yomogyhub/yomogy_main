@@ -36,6 +36,7 @@ export async function getStaticProps({
   if ("notFound" in blogPostProps && blogPostProps.notFound) {
     return { notFound: true };
   }
+  console.log(blogPostProps.path);
 
   // Check if blogPostProps.data exists before referencing it
   const authorDetails = blogPostProps.data
@@ -81,6 +82,7 @@ export async function getStaticProps({
       id: params.id,
       adjacentPosts: adjacentPosts,
       coverImage: blogPostProps.coverImage,
+      path: blogPostProps.path,
     },
   };
 }
@@ -92,6 +94,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
   author,
   id,
   adjacentPosts,
+  path,
 }) => {
   return (
     <>
@@ -109,6 +112,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
             author={author}
             id={id}
             adjacentPosts={adjacentPosts}
+            path={path}
           />
         }
         rightComponent={

@@ -81,6 +81,7 @@ export async function getStaticProps({
       id: params.id,
       adjacentPosts: adjacentPosts,
       coverImage: blogPostProps.coverImage,
+      path: blogPostProps.path,
     },
   };
 }
@@ -92,6 +93,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
   author,
   id,
   adjacentPosts,
+  path,
 }) => {
   return (
     <>
@@ -109,6 +111,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
             author={author}
             id={id}
             adjacentPosts={adjacentPosts}
+            path={path}
           />
         }
         rightComponent={

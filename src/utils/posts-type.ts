@@ -68,6 +68,7 @@ export interface BlogPostProps {
   relatedPosts: Post[];
   author: AuthorData;
   adjacentPosts: AdjacentPosts;
+  path: string;
 }
 
 export interface BlogPostOnlyProps {
@@ -76,6 +77,7 @@ export interface BlogPostOnlyProps {
   author: AuthorData;
   id: string;
   adjacentPosts: AdjacentPosts;
+  path: string;
 }
 
 export interface AuthorData {

@@ -383,7 +383,13 @@ export async function getLatestPosts(limit = 5): Promise<Post[]> {
 // おすすめ記事を取得する
 export async function getRecommendPosts(): Promise<Post[]> {
   const allPosts = await getAllPosts();
-  const recommendId = ["post1", "post2", "post3", "post4", "post5"];
+  const recommendId = [
+    "post5",
+    "igem-japan-history-2016-2020",
+    "biosensor-overview",
+    "cell-free-biosensor",
+    "igem2022-now-next",
+  ];
 
   const recommendedPosts = allPosts.filter((post) =>
     recommendId.includes(post.id)
@@ -431,6 +437,7 @@ export async function getData(params: Category & PostID) {
     content: content,
     data: data,
     coverImage: postInfo.coverImage,
+    path: postInfo.path,
   };
 }
 

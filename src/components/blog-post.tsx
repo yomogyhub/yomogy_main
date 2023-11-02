@@ -53,6 +53,9 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
       Router.events.off("routeChangeComplete", handleRouteChange); // イベントリスナーの解除
     };
   }, []);
+  const GITHUB_POST_BASE_URL =
+    process.env.GITHUB_POST_BASE_URL ||
+    "https://github.com/yomogyhub/yomogy_main/tree/dev";
 
   return (
     <div className="blog_main bg-white dark:bg-gray-900 p-4 lg:p-8 max-w-6xl mx-auto w-full max-w-full">
@@ -144,7 +147,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
           className="flex items-center px-4 py-2 bg-transparent border border-gray-300 shadow-md rounded-lg hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
           rel="noopener noreferrer"
           target="_blank"
-          href={`${process.env.GITHUB_POST_BASE_URL}/${path}.mdx`}
+          href={`${GITHUB_POST_BASE_URL}/${path}.mdx`}
         >
           <span className="mr-2">
             <svg

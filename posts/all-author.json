@@ -2,19 +2,19 @@
   "Template": {
     "name": "テンプレート",
     "description": "テンプレートです。",
-    "twitter": "https://twitter.com/y0m0gy",
+    "twitter": "https://x.com/y0m0gy",
     "image": "/authors/y0m0gy.png"
   },
   "Yomogy": {
     "name": "Yomogy",
     "description": "サイト運営チームです。合成生物学やiGEMに関する情報をまとめています。",
-    "twitter": "https://twitter.com/y0m0gy",
+    "twitter": "https://x.com/y0m0gy",
     "image": "/authors/y0m0gy.png"
   },
   "Yom": {
     "name": "Yom",
     "description": "新規ユーザーです。プロフィールを更新してください。",
-    "twitter": "https://twitter.com/y0m0gy",
+    "twitter": "https://x.com/y0m0gy",
     "image": "/authors/y0m0gy.png"
   }
 }

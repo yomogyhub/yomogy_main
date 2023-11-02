@@ -36,7 +36,6 @@ export async function getStaticProps({
   if ("notFound" in blogPostProps && blogPostProps.notFound) {
     return { notFound: true };
   }
-  console.log(blogPostProps.path);
 
   // Check if blogPostProps.data exists before referencing it
   const authorDetails = blogPostProps.data

@@ -53,6 +53,9 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
       Router.events.off("routeChangeComplete", handleRouteChange); // イベントリスナーの解除
     };
   }, []);
+  const GITHUB_POST_BASE_URL =
+    process.env.GITHUB_POST_BASE_URL ||
+    "https://github.com/yomogyhub/yomogy_main/tree/dev";
 
   return (
     <div className="blog_main bg-white dark:bg-gray-900 p-4 lg:p-8 max-w-6xl mx-auto w-full max-w-full">
@@ -65,7 +68,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+      <h1 className="text-3xl md:text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">
         {data.title}
       </h1>
       <div className="flex items-center mb-4 space-x-4">
@@ -114,11 +117,11 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
         </div>
       )}
       <div className="link_a text-gray-800 dark:text-gray-300 pt-2 mb-4">
-        <p>
+        <span>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {data.description}
           </ReactMarkdown>
-        </p>
+        </span>
       </div>
 
       <div className="link_a bg-white dark:bg-gray-700 p-4 rounded shadow-md mb-4 divide-y divide-gray-300 dark:divide-gray-600">
@@ -144,7 +147,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
           className="flex items-center px-4 py-2 bg-transparent border border-gray-300 shadow-md rounded-lg hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
           rel="noopener noreferrer"
           target="_blank"
-          href={`${process.env.GITHUB_POST_BASE_URL}/${path}.mdx`}
+          href={`${GITHUB_POST_BASE_URL}/${path}.mdx`}
         >
           <span className="mr-2">
             <svg

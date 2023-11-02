@@ -27,9 +27,9 @@ const Sidebar: React.FC<SidebarProps> = ({ title, relatedPosts }) => {
           ))}
         </ul>
       </div>
-      <div className="mt-8 pt-8">
+      {/* <div className="mt-8 pt-8">
         <AdComponent />
-      </div>
+      </div> */}
     </div>
   );
 };

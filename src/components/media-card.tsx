@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface MediaCardProps {
   mediaType: "image" | "video";
   src: string;
@@ -22,7 +20,7 @@ const MediaCard: React.FC<MediaCardProps> = ({
   return (
     <div style={{ width: "100%", height: "auto", margin: "3em 0" }}>
       {mediaType === "image" ? (
-        <Image src={fixSrc} alt={alt} />
+        <img src={fixSrc} alt={alt} />
       ) : (
         <video controls>
           <source src={fixSrc} type="video/mp4" />

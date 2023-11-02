@@ -4,7 +4,8 @@ import { getAllPosts } from "../api/get-posts-category";
 import { Post } from "../../utils/posts-type";
 
 async function generateSitemap() {
-  const baseUrl = `${process.env.BASE_URL}`;
+  // const baseUrl = `${process.env.BASE_URL}`; // githubでやるので、直書きに変更
+  const baseUrl = "https://yomogy.com";
 
   // 投稿データを取得
   const posts = await getAllPosts();

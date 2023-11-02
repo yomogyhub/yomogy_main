@@ -6,12 +6,15 @@ import { getAllPosts } from "../api/get-posts-category"; // ここで関数を�
 import { Post } from "../../utils/posts-type";
 
 async function generateRssFeed() {
+  // const baseUrl = `${process.env.BASE_URL}`; // githubでやるので、直書きに変更
+  const baseUrl = "https://yomogy.com";
+
   const feed = new RSS({
     title: "Yomogy",
     description: "Yomogy",
-    feed_url: `${process.env.BASE_URL}/rss.xml`,
-    site_url: `${process.env.BASE_URL}`,
-    image_url: `${process.env.BASE_URL}/icon.png`,
+    feed_url: `${baseUrl}/rss.xml`,
+    site_url: baseUrl,
+    image_url: `${baseUrl}/icon.png`,
     managingEditor: "Yomogy",
     webMaster: "Yomogy",
     copyright: "All Copyright Notice",
@@ -26,7 +29,7 @@ async function generateRssFeed() {
     feed.item({
       title: post.title,
       description: post.title, // ここで全文としてタイトルを使用します（デモのため）
-      url: `${process.env.BASE_URL}/${post.category}/${post.id}`,
+      url: `${baseUrl}/${post.category}/${post.id}`,
       author: post.author,
       date: new Date(post.publishedAt),
     });

@@ -114,11 +114,11 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
         </div>
       )}
       <div className="link_a text-gray-800 dark:text-gray-300 pt-2 mb-4">
-        <p>
+        <span>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {data.description}
           </ReactMarkdown>
-        </p>
+        </span>
       </div>
 
       <div className="link_a bg-white dark:bg-gray-700 p-4 rounded shadow-md mb-4 divide-y divide-gray-300 dark:divide-gray-600">

@@ -107,6 +107,25 @@ blockquote {
   padding: 0 12px;
   border-bottom: 2px solid #666;
 }
+
+/* スマホの画面サイズでのスタイル */
+@media (max-width: 640px) {
+  .blog_main h1 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  .blog_main h2 {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+
+  .blog_main h3 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
+
 .blog_main p {
   padding: 0 12px;
 }

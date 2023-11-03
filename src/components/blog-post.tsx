@@ -68,7 +68,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
         </Link>
       </div>
 
-      <h1 className="text-3xl md:text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+      <h1 className="text-3xl md:text-sm font-bold mb-4 text-gray-800 dark:text-gray-100">
         {data.title}
       </h1>
       <div className="flex items-center mb-4 space-x-4">

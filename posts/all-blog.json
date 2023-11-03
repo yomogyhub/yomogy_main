@@ -15,6 +15,108 @@
     "rePost": "https://yomogy-old.netlify.app/igem/igem-gifu-2021",
     "status": "published"
   },
+  "igem-japan-2022-meeting-10-1": {
+    "id": "igem-japan-2022-meeting-10-1",
+    "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-1",
+    "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(NEFU-China2020 BOLD) - iGEM Japan 2022 定例会 (輪読会) #10-1",
+    "publishedAt": "2022-04-12",
+    "updatedAt": "2022-04-12",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・NEFU-China2020 BOLD <br /> ・Bielefeld-CeBiTec2021 P.L.A.N.T.\n\n<br /><br /> 本記事では、1つ目のプロジェクトである、NEFU-China2020について紹介していきます。\n<br /><br /> このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
+    "tag": [
+      "journal-club",
+      "information",
+      "history"
+    ],
+    "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-1_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-1",
+    "status": "published"
+  },
+  "igem-japan-2022-meeting-10-2": {
+    "id": "igem-japan-2022-meeting-10-2",
+    "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-2",
+    "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(Bielefeld-CeBiTec 2021 P.L.A.N.T.) - iGEM Japan 2022 定例会 (輪読会) #10-2",
+    "publishedAt": "2022-04-12",
+    "updatedAt": "2022-04-12",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・NEFU-China2020 BOLD <br /> ・Bielefeld-CeBiTec2021 P.L.A.N.T.\n\n<br /><br /> 本記事では、2つ目のプロジェクトである、Bielefeld-CeBiTec2021について紹介していきます。\n<br /><br /> このプロジェクトは、レポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みるプロジェクトです。このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
+    "tag": [
+      "journal-club",
+      "information",
+      "history"
+    ],
+    "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-2_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-2",
+    "status": "published"
+  },
+  "igem-japan-journal-club-epfl2019": {
+    "id": "igem-japan-journal-club-epfl2019",
+    "path": "/posts/blog/gifu/igem-japan-journal-club-epfl2019",
+    "title": "[iGEM Japan 輪読会]  テーマ : EPFL 2019 by iGEM Gifu",
+    "publishedAt": "2021-10-20",
+    "updatedAt": "2021-10-20",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) !\n<br /><br /> 本記事は、iGEM Japan 輪読会にて、iGEM Gifuによって紹介された、iGEM EPFL 2019 のプロジェクトについて紹介していきます。 ",
+    "tag": [
+      "journal-club",
+      "information",
+      "history"
+    ],
+    "coverImage": "/blog/gifu/images/igem-japan-journal-club-epfl2019_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-epfl2019",
+    "status": "published"
+  },
+  "igem-safety-policies": {
+    "id": "igem-safety-policies",
+    "path": "/posts/blog/gifu/igem-safety-policies",
+    "title": "iGEMにおける安全性に関する基本方針について",
+    "publishedAt": "2021-10-13",
+    "updatedAt": "2021-10-13",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) !\n<br /><br /> iGEMは「合成生物学の世界大会」なので、毎年大会を開催するたびに世界各国で大量の遺伝子組み換えパーツが作製されます。 そのためバイオセキュリティに関する教育活動が盛んに行われています。\n<br /><br /> 日本国内で行われるバイオセキュリティに関する教育ではカルタヘナ法が有名です。 ただiGEMではカルタヘナ法に記載されていることに限らず極めて幅広い範囲での「安全」に対する教育が参加者に行われています。\n<br /><br /> 本記事では、そのようなiGEMにおける「安全性」に対する考え方と実際に行われている活動について紹介します。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/gifu/images/igem-safety-policies_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-safety-policies",
+    "status": "published"
+  },
+  "igem-wiki-bootstrap-adopt": {
+    "id": "igem-wiki-bootstrap-adopt",
+    "path": "/posts/blog/gifu/igem-wiki-bootstrap-adopt",
+    "title": "iGEMのWikiにBootstrapを導入するには",
+    "publishedAt": "2021-10-20",
+    "updatedAt": "2021-10-20",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) ! <br /> ※ iGEM Gifu is nominated for the Best Wiki (iGEM 2021). Congratulations!\n<br /><br /> iGEMチームの皆さん。Wikiページの制作は順調でしょうか？\n<br /><br /> iGEMではあらかじめWikiページのテンプレートが用意されています。テンプレートをある程加工することで、一定のクオリティのWikiページを作ることができますが、時間をかけて作る以上、Wikiページのクオリティは少しでも上げたいところです。しかし、読者に伝わりやすいデザインを意識すると細かいパーツのデザインや配置の調整などに膨大な時間がかかってしまいます。\n<br /><br /> また、いきなりホームページ制作の経験が無ければ、Wikiページのデザインを考えることも容易ではないでしょう。そこで、これらの問題を解決するためのツールとしてGifuチームではBootstrapというCSSフレームワークを使っています。\n<br /><br /> 本記事ではBootStrapの簡単な説明とiGEMで用いられているMediaWiki上に導入する方法を説明します。\n<br /><br /> ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3) ",
+    "tag": [
+      "history"
+    ],
+    "coverImage": "/blog/gifu/images/igem-wiki-bootstrap-adopt_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-bootstrap-adopt",
+    "status": "published"
+  },
+  "igem-wiki-editing-first-step-tips": {
+    "id": "igem-wiki-editing-first-step-tips",
+    "path": "/posts/blog/gifu/igem-wiki-editing-first-step-tips",
+    "title": "iGEMにおける安全性に関する基本方針について",
+    "publishedAt": "2021-10-13",
+    "updatedAt": "2021-10-13",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) ! <br /> ※ iGEM Gifu is nominated for the Best Wiki (iGEM 2021). Congratulations!\n\n<br /><br /> 本記事では今年初めてWiki製作に携わった岐阜チームの1年生がiGEMでWikiページの制作がややこしくなっている原因であると考える以下の２点について解説を行います。\n<br /><br /> 1. サイト保全のため、Wikiページに使用するファイルはすべてiGEMサーバーにアップロードする必要がある <br /> 2. WikiページにMediaWikiが用いられており、その仕様に従う必要がある\n<br /><br /> ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3) ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/gifu/images/igem-wiki-editing-first-step-tips_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-editing-first-step-tips",
+    "status": "published"
+  },
   "igem2019-experience": {
     "id": "igem2019-experience",
     "path": "/posts/blog/gifu/igem2019-experience",
@@ -199,6 +301,22 @@
     "rePost": "https://yomogy-old.netlify.app/synbio/stock-price-summary",
     "status": "published"
   },
+  "igem-hq-wiki-rule": {
+    "id": "igem-hq-wiki-rule",
+    "path": "/posts/blog/qdai/igem-hq-wiki-rule",
+    "title": "iGEM 公式発表のWikiルール",
+    "publishedAt": "2021-09-06",
+    "updatedAt": "2021-09-06",
+    "category": "igem",
+    "author": "Qdai",
+    "description": " iGEMチームの皆さん、Wikiは書き始めているでしょうか？\n<br /><br /> iGEM Wikiは、独自のルールがいくつか存在し、それらを守ることが求められています。 さらに、Media Wikiというツールを利用しており、想定しない挙動が起こったりしてしまいます。\n<br /><br /> そこで本記事では、iGEM公式が発表しているWikiに関する情報について簡単にまとめましたので、参考にご覧ください。\n<br /><br /> また、wiki作成にあたっての注意点をQ&A形式でまとめましたので合わせてお読みください。 [iGEM Wiki を乗り切るためのTips10](https://yomogy.com/igem/igem-wiki-tips)\n<br /><br /> ※本記事は、iGEM Qdaiの協力で執筆されました。\n<br /><br /> ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3) ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/qdai/images/igem-hq-wiki-rule_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-hq-wiki-rule",
+    "status": "published"
+  },
   "igem-japan-2022-meeting-03": {
     "id": "igem-japan-2022-meeting-03",
     "path": "/posts/blog/qdai/igem-japan-2022-meeting-03",
@@ -217,6 +335,24 @@
     "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-03",
     "status": "published"
   },
+  "igem-japan-journal-club-szuchina2019": {
+    "id": "igem-japan-journal-club-szuchina2019",
+    "path": "/posts/blog/qdai/igem-japan-journal-club-szuchina2019",
+    "title": "[iGEM Japan 輪読会]  テーマ : SZU-China 2019 by iGEM Qdai",
+    "publishedAt": "2021-10-20",
+    "updatedAt": "2021-10-20",
+    "category": "igem",
+    "author": "Qdai",
+    "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) !\n<br /><br /> 本記事は、iGEM Japan 輪読会にて、iGEM Qdaiによって紹介された、iGEM SZU-China 2019 のプロジェクトについて紹介していきます。 ",
+    "tag": [
+      "journal-club",
+      "information",
+      "history"
+    ],
+    "coverImage": "/blog/qdai/images/igem-japan-journal-club-szuchina2019_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-szuchina2019",
+    "status": "published"
+  },
   "igem-qdai-2021": {
     "id": "igem-qdai-2021",
     "path": "/posts/blog/qdai/igem-qdai-2021",
@@ -231,6 +367,22 @@
     ],
     "coverImage": "/blog/qdai/images/igem-qdai-2021_cover.png",
     "rePost": "https://yomogy-old.netlify.app/igem/igem-qdai-2021",
+    "status": "published"
+  },
+  "igem-wiki-tips": {
+    "id": "igem-wiki-tips",
+    "path": "/posts/blog/qdai/igem-wiki-tips",
+    "title": "iGEM Wiki を乗り切るためのTips10",
+    "publishedAt": "2021-09-06",
+    "updatedAt": "2021-09-06",
+    "category": "igem",
+    "author": "Qdai",
+    "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) ! <br /> ※ iGEM Gifu is nominated for the Best Wiki (iGEM 2021). Congratulations!\n<br /><br /> iGEMチームの皆さん、Wikiは書き始めているでしょうか？\n<br /><br /> iGEM WikiはMedia Wikiというツールを利用しており、想定しない挙動が起こったりしてしまいます。\n<br /><br /> そこで本記事では、過去の経験からWiki作成にあたっての注意点Q&A形式でまとめたいと思います！ 一般的な良いwebページを作るというより大会の要件を満たすページを作るということを意識してwiki作成に望みましょう。\n<br /><br /> また、iGEM公式が発表しているWikiに関する情報についても簡単にまとめましたので、合わせてお読みください。 [iGEM 公式発表のWikiルール](https://yomogy.com/igem/igem-hq-wiki-rule)\n<br /><br /> ※本記事は、iGEM Qdaiの協力で執筆されました。\n<br /><br /> ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3) ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/qdai/images/igem-wiki-tips_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-tips",
     "status": "published"
   },
   "igem-toyaku-2022": {
@@ -249,6 +401,23 @@
     "rePost": "https://yomogy-old.netlify.app/igem/igem-toyaku-2022",
     "status": "published"
   },
+  "event-info-2021-10": {
+    "id": "event-info-2021-10",
+    "path": "/posts/blog/yomogy/event-info-2021-10",
+    "title": "[イベント] 「参加者から見たiGEM、アンバサダーから見たiGEM」",
+    "publishedAt": "2021-10-20",
+    "updatedAt": "2021-10-20",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEM Japanに大きな貢献を果たしたNiwa Ryoさんが、iGEM 2021をもってiGEM活動から卒業することを記念し、iGEM アンバサダーであるNiwa Ryoさんとともに、昨今のiGEMを振り返り、今後のiGEMについて考える会を開催します。 ",
+    "tag": [
+      "event",
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/event-info-2021-10_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/event-info-2021-10",
+    "status": "published"
+  },
   "how-to-start-igem": {
     "id": "how-to-start-igem",
     "path": "/posts/blog/yomogy/how-to-start-igem",
@@ -263,6 +432,22 @@
     ],
     "coverImage": "/blog/yomogy/images/how-to-start-igem_cover.png",
     "rePost": false,
+    "status": "published"
+  },
+  "igem-japan-2021-promotionvideo": {
+    "id": "igem-japan-2021-promotionvideo",
+    "path": "/posts/blog/yomogy/igem-japan-2021-promotionvideo",
+    "title": "[まとめ] iGEM Japan 2021 Promotion Video",
+    "publishedAt": "2021-09-05",
+    "updatedAt": "2021-09-05",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEMでは、参加するチームが大会の前に、自分たちのプロジェクトを説明するためのプロモーションビデオ(2分程度)の発表があります。 このプロモーションビデオは、全チームが発表するものであり、その年のチームのプロジェクトの概要が掴めるようになっています。\n<br /><br /> 本記事では、iGEM 2021年に日本から参加する、8チームのプレゼンテーションビデオについて、紹介していきたいと思います。\n<br /><br /> ※本記事では、iGEM Video Universeを引用しています。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem-japan-2021-promotionvideo_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2021-promotionvideo",
     "status": "published"
   },
   "igem-japan-2022-highschool-log": {
@@ -428,7 +613,7 @@
     "author": "Yomogy",
     "description": " この記事は[iGEM・合成生物学 Advent Calendar 2019](https://adventar.org/calendars/4509) 1日目の記事です。   \n<br /><br /> iGEM (アイジェム) や合成生物学 (Synbio, Synthetic biology) をもっと多くの人に興味を持ってもらいたいと思い、この 「iGEM・合成生物学 Advent Calendar 2019」 を始めました。  \n<br /><br /> 明日からはiGEM・合成生物学研究の先輩方がiGEMの楽しさ、やりがい、厳しさ(?)などを書いてくれると思うので、楽しみにしています。 ",
     "tag": [
-      "information"
+      "history"
     ],
     "coverImage": "/blog/yomogy/images/igem2019-basic-information_cover.png",
     "rePost": false,
@@ -492,7 +677,7 @@
     "author": "Yomogy",
     "description": " この記事は [iGEM・合成生物学 Advent Calendar](https://adventar.org/calendars/5333) 1日目の記事です。\n<br /><br /> 今年も昨年に引き続き、iGEM (アイジェム) や合成生物学 (Synbio, Synthetic biology)をもっと多くの人に興味を持ってもらいたいと思い、この ” iGEM・合成生物学 Advent Calendar 2020 ” を始めました。\n<br /><br /> 本記事では、iGEM 2019から、どのように変化していったのかを書いていきたいと思います。\n<br /><br /> 2日目からは、iGEM・合成生物学研究に関する仲間が、iGEMや合成生物学の楽しさ、やりがい、厳しさ(?)などを書いてくれました！　まだご覧になっていない方は、そちらも合わせてお楽しみください。 ",
     "tag": [
-      "information"
+      "history"
     ],
     "coverImage": "/blog/yomogy/images/igem2020-basic-information_cover.png",
     "rePost": false,
@@ -512,6 +697,22 @@
     ],
     "coverImage": "/blog/yomogy/images/igem2020-japan-media_cover.png",
     "rePost": false,
+    "status": "published"
+  },
+  "igem2021-basic-information": {
+    "id": "igem2021-basic-information",
+    "path": "/posts/blog/yomogy/igem2021-basic-information",
+    "title": "iGEM 2021 の基本情報",
+    "publishedAt": "2021-12-05",
+    "updatedAt": "2021-12-05",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEM 2021は、日本から出場したGifuとKyotoが、Special Awardにノミネートされるなど、チームの最高成績を更新するチームが多く、iGEM Japanとしては、とても盛り上がった大会になりました。\n<br /><br /> 本記事では、iGEM 2020から、どのように変化していったのかを、まとめています。\n<br /><br /> iGEM 2020については、こちらからご参照ください。 [初のオンライン開催！ iGEM 2020 の基本情報](https://yomogy.com/igem/igem2020-basic-information) ",
+    "tag": [
+      "history"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2021-basic-information_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem2021-basic-information",
     "status": "published"
   },
   "igem2021-japan-media": {

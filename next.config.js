@@ -7,7 +7,7 @@ const nextConfig = {
     GA_ADSENSE_ID: process.env.GA_ADSENSE_ID,
     GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
   },
-  // basePath: process.env.NODE_ENV === "development" ? "" : "/main", // Sub directory
+  // basePath: process.env.NODE_ENV === "development" ? "" : "/main", //  Sub directory
   // assetPrefix: process.env.NODE_ENV === "development" ? undefined : "/main/", // Nginx
 };
 

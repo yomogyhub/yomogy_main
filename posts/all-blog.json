@@ -7,12 +7,28 @@
     "updatedAt": "2021-07-17",
     "category": "igem",
     "author": "Gifu",
-    "description": " 本記事は、日本のiGEMチームととして、2014年に岐阜大学を主体として誕生した、 iGEM GIFUチームについて紹介していきます。 彼らは、iGEM 2021には2年ぶりの参加となりますが、日々どのような活動をおこなっているのか、どのようなテーマで挑むのかなどについて紹介していきます。 ",
+    "description": " 本記事では、日本のiGEMチームととして、2014年に岐阜大学を主体として誕生した、 iGEM GIFUチームについて紹介していきます。 彼らは、iGEM 2021には2年ぶりの参加となりますが、日々どのような活動をおこなっているのか、どのようなテーマで挑むのかなどについて紹介していきます。 ",
     "tag": [
       "information"
     ],
     "coverImage": "/blog/gifu/images/igem-gifu-2021_cover.png",
     "rePost": "https://yomogy-old.netlify.app/igem/igem-gifu-2021",
+    "status": "published"
+  },
+  "igem2019-experience": {
+    "id": "igem2019-experience",
+    "path": "/posts/blog/gifu/igem2019-experience",
+    "title": "俺のせいでiGEMの賞を逃した",
+    "publishedAt": "2022-11-26",
+    "updatedAt": "2022-11-26",
+    "category": "igem",
+    "author": "Gifu",
+    "description": " 結果を出すために限界まで追い込みをかけたところ、見事に体調を崩し、結果を出せなかった話。\n<br /><br /> ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。 ",
+    "tag": [
+      "history"
+    ],
+    "coverImage": "/blog/gifu/images/igem2019-experience_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-experience",
     "status": "published"
   },
   "igem-gunma-2021": {
@@ -23,7 +39,7 @@
     "updatedAt": "2021-06-15",
     "category": "igem",
     "author": "Gunma",
-    "description": " 本記事は、日本のiGEMチームととして、2019年に群馬大学を主体として誕生した、 iGEM GUNMAチームについて紹介していきます。 比較的新しく誕生したチームですが、彼らがどのような活動をおこなっているのか、2年ぶりの参加となるiGEM 2021にはどのようなテーマで挑むのかなどについて、紹介していきます。 ",
+    "description": " 本記事では、日本のiGEMチームととして、2019年に群馬大学を主体として誕生した、 iGEM GUNMAチームについて紹介していきます。 比較的新しく誕生したチームですが、彼らがどのような活動をおこなっているのか、2年ぶりの参加となるiGEM 2021にはどのようなテーマで挑むのかなどについて、紹介していきます。 ",
     "tag": [
       "information"
     ],
@@ -39,12 +55,113 @@
     "updatedAt": "2021-05-27",
     "category": "igem",
     "author": "HokkaidoU",
-    "description": " 本記事は、日本のiGEMチームととして、2010年に北海道大学を主体として誕生し、2017年以来の活動再開を目指す、  iGEM HokkaidoUチームについて紹介していきます。",
+    "description": " 本記事では、日本のiGEMチームととして、2010年に北海道大学を主体として誕生し、2017年以来の活動再開を目指す、  iGEM HokkaidoUチームについて紹介していきます。",
     "tag": [
       "information"
     ],
     "coverImage": "/blog/hokkaidou/images/igem-hokkaidou-2021_cover.png",
     "rePost": "https://yomogy-old.netlify.app/igem/igem-hokkaidou-2021",
+    "status": "published"
+  },
+  "biosensor-overview": {
+    "id": "biosensor-overview",
+    "path": "/posts/blog/ishish/biosensor-overview",
+    "title": "バイオセンサーとは？  3つに分類して解説 ! ",
+    "publishedAt": "2021-12-21",
+    "updatedAt": "2021-04-23",
+    "category": "synbio",
+    "author": "ishish",
+    "description": " バイオセンサーとは、細胞由来の物質を検出しようというセンサーのことを指します。これまでに、電気やレーザーなどを使用した物理的なシステムや、生物学的なシステムを応用したシステムなど、数多くのものが開発されてきました。\n<br /><br /> 一般的に、生物学的なシステムを使用する場合は、検出したい物質と反応する検出システムと、それらの情報を色や電気的なシグナルに変換する出力システムの2種類を組み合わせて使用されることが多いです。特に、前者のシステムは、検出したい物質に応じて、多種多様なシステムが開発されて来ています。\n<br /><br /> このようなバイオセンサーは、古くから開発されてきました。 例えば、酵素や抗体などを使用した、検出システムなどです。それらの技術開発により、グルコースやウイルスなどの検出を可能にするなど、さまざまな現象の理解が進んできました。\n<br /><br /> 近年では、それらの検出システムに加え、遺伝子工学的な手法の開発の発展により、よりミクロなスケールであったり、複雑なシステムを活用するシステムが発表されています。\n<br /><br /> 本記事では、近年のSynthetic biology (Synbio, 合成生物学)で使用されている、いくつかのバイオセンサーの検出方法について簡単に紹介します。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/biosensor-overview_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "cell-free-biosensor": {
+    "id": "cell-free-biosensor",
+    "path": "/posts/blog/ishish/cell-free-biosensor",
+    "title": "Cell-freeでのバイオセンサーについて 〜手法から社会実装まで〜",
+    "publishedAt": "2021-01-11",
+    "updatedAt": "2021-04-25",
+    "category": "synbio",
+    "author": "ishish",
+    "description": " 本記事では、Cell-free systemを活用したバイオセンサーの具体例や、基盤となる技術について紹介していきます。\n<br /><br /> Cell-free systemを活用したバイオセンサーは、Synthetic Biology (合成生物学) の発展とともに、 細胞の抽出液を使用した系や、転写・翻訳(TX-TL)などのシステムを再現した系を利用したバイオセンサーの開発が、近年急速に進んできています。\n<br /><br /> 本記事では、「どのように社会実装するのか」と「どのように物質を検出するのか」の2点について、紹介していきます。\n<br /><br /> バイオセンサーって何？という方は、こちらの記事からお読みください。 [バイオセンサーとは？ 3つに分類して解説!](https://yomogy.com/igem/biosensor-overview) ",
+    "tag": [
+      "information",
+      "paper"
+    ],
+    "coverImage": "/blog/ishish/images/cell-free-biosensor_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "cell-free-overview": {
+    "id": "cell-free-overview",
+    "path": "/posts/blog/ishish/cell-free-overview",
+    "title": "Cell-free System (無細胞系) とは？",
+    "publishedAt": "2021-01-07",
+    "updatedAt": "2020-12-07",
+    "category": "synbio",
+    "author": "ishish",
+    "description": " Cell-free system (無細胞系、無細胞翻訳系) について、iGEMerの中でもあまり詳しく知らない方が多かった印象を受けたので、まずは概略だけ紹介したいと思います。\n<br /><br /> さらに発展的な内容は[こちら](https://yomogy.com/synbio/cell-free-biosensor)からどうぞ [Cell-freeでのバイオセンサーについて手法から社会実装まで](https://yomogy.com/synbio/cell-free-biosensor) ",
+    "tag": [
+      "information",
+      "paper"
+    ],
+    "coverImage": "/blog/ishish/images/cell-free-overview_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "ginkgo-2021": {
+    "id": "ginkgo-2021",
+    "path": "/posts/blog/ishish/ginkgo-2021",
+    "title": "[企業価値 1.9 兆円！] Ginkgo Bioworks とは (2021年)",
+    "publishedAt": "2021-07-26",
+    "updatedAt": "2021-07-26",
+    "category": "synbio",
+    "author": "ishish",
+    "description": " 今回は、iGEMや合成生物学分野に大きな影響を与える企業であるGinkgo Bioworks (ギンコ・バイオワークス)について紹介します。\n<br /><br /> この企業は、2021年5月にSPACを利用した上場を発表しました。企業評価額が総額175 億ドル(1.92 兆円、1ドル=110円換算)にもなり、業界内外から大きな注目を集めている企業です。 今回はそんな企業について、”どのような経緯で創業時されたのか”と、”現在の主な活動について”を、まとめました。\n<br /><br /> 本記事では後編部分である、”現在の主な活動について”について紹介します。前編部分である、”どのような経緯で創業時されたのか”については、こちらをお読みください。\n<br /><br /> ※本記事は、特定銘柄および株式市場全般の推奨や株価動向の上昇または下落を示唆するものではありません ",
+    "tag": [
+      "startup",
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/ginkgo-2021_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-2021",
+    "status": "published"
+  },
+  "ginkgo-history": {
+    "id": "ginkgo-history",
+    "path": "/posts/blog/ishish/ginkgo-history",
+    "title": "合成生物学 ユニコーン企業 Ginkgo Bioworks はどのように創業されたか",
+    "publishedAt": "2021-07-25",
+    "updatedAt": "2021-07-25",
+    "category": "synbio",
+    "author": "ishish",
+    "description": " 今回は、iGEMや合成生物学分野に大きな影響を与える企業であるGinkgo Bioworks (ギンコ・バイオワークス)について紹介します。\n<br /><br /> この企業は、2021年5月にSPACを利用した上場を発表しました。企業評価額が総額175 億ドル(1.92 兆円、1ドル=110円換算)にもなり、業界内外から大きな注目を集めている企業です。 今回はそんな企業について、”どのような経緯で創業時されたのか”と、”現在の主な活動について”を、まとめました。\n<br /><br /> 本記事では前編部分である、”どのような経緯で創業時されたのか”について紹介します。後編部分である、”現在の主な活動について”については、こちらをお読みください。\n<br /><br /> ※本記事は、特定銘柄および株式市場全般の推奨や株価動向の上昇または下落を示唆するものではありません ",
+    "tag": [
+      "startup",
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
+    "status": "published"
+  },
+  "stock-price-summary": {
+    "id": "stock-price-summary",
+    "path": "/posts/blog/ishish/stock-price-summary",
+    "title": "[まとめ] 合成生物学 関連銘柄 ",
+    "publishedAt": "2021-07-27",
+    "updatedAt": "2021-07-27",
+    "category": "synbio",
+    "author": "ishish",
+    "description": " 本記事では、Synbio (Synthetic biology, 合成生物学)関連で、株式が公開されている企業についてまとめました。\n<br /><br /> 株価の推移などに関しては、Yahoo financeへのリンクを掲載しておりますので、そちらを参照ください。\n<br /><br /> ※本記事は、特定銘柄および株式市場全般の推奨や株価動向の上昇または下落を示唆するものではありません。 ",
+    "tag": [
+      "startup",
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/stock-price-summary_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/synbio/stock-price-summary",
     "status": "published"
   },
   "igem-qdai-2021": {
@@ -55,7 +172,7 @@
     "updatedAt": "2021-05-11",
     "category": "igem",
     "author": "Qdai",
-    "description": " 本記事は、日本のiGEMチームとして、2020年に九州大学を主体として誕生した、Qdaiチームについて紹介していきます。 比較的新しく誕生したチームですが、彼らがどのような活動をおこなっているのか、iGEM 2021にはどのようなテーマで挑むのかなどについて、紹介していきます。 ",
+    "description": " 本記事では、日本のiGEMチームとして、2020年に九州大学を主体として誕生した、Qdaiチームについて紹介していきます。 比較的新しく誕生したチームですが、彼らがどのような活動をおこなっているのか、iGEM 2021にはどのようなテーマで挑むのかなどについて、紹介していきます。 ",
     "tag": [
       "information"
     ],
@@ -71,7 +188,7 @@
     "updatedAt": "2022-03-28",
     "category": "igem",
     "author": "Toyaku",
-    "description": " 本記事は、2021年に新たに誕生し、iGEM初出場を目指す、 iGEM TOYAKUチームについて紹介していきます。 ",
+    "description": " 本記事では、2021年に新たに誕生し、iGEM初出場を目指す、 iGEM TOYAKUチームについて紹介していきます。 ",
     "tag": [
       "information"
     ],
@@ -79,54 +196,20 @@
     "rePost": "https://yomogy-old.netlify.app/igem/igem-toyaku-2022",
     "status": "published"
   },
-  "biosensor-overview": {
-    "id": "biosensor-overview",
-    "path": "/posts/blog/yomogy/biosensor-overview",
-    "title": "バイオセンサーとは？  3つに分類して解説 ! ",
-    "publishedAt": "2021-12-21",
-    "updatedAt": "2021-04-23",
-    "category": "synbio",
+  "igem-japan-2022-highschool-log": {
+    "id": "igem-japan-2022-highschool-log",
+    "path": "/posts/blog/yomogy/igem-japan-2022-highschool-log",
+    "title": "日本で最初の学校に依存しないiGEMチームの立ち上げを目指した備忘録",
+    "publishedAt": "2023-03-04",
+    "updatedAt": "2023-03-04",
+    "category": "igem",
     "author": "Yomogy",
-    "description": " バイオセンサーとは、細胞由来の物質を検出しようというセンサーのことを指します。これまでに、電気やレーザーなどを使用した物理的なシステムや、生物学的なシステムを応用したシステムなど、数多くのものが開発されてきました。\n<br /><br /> 一般的に、生物学的なシステムを使用する場合は、検出したい物質と反応する検出システムと、それらの情報を色や電気的なシグナルに変換する出力システムの2種類を組み合わせて使用されることが多いです。特に、前者のシステムは、検出したい物質に応じて、多種多様なシステムが開発されて来ています。\n<br /><br /> このようなバイオセンサーは、古くから開発されてきました。 例えば、酵素や抗体などを使用した、検出システムなどです。それらの技術開発により、グルコースやウイルスなどの検出を可能にするなど、さまざまな現象の理解が進んできました。\n<br /><br /> 近年では、それらの検出システムに加え、遺伝子工学的な手法の開発の発展により、よりミクロなスケールであったり、複雑なシステムを活用するシステムが発表されています。\n<br /><br /> 本記事では、近年のSynthetic biology (Synbio, 合成生物学)で使用されている、いくつかのバイオセンサーの検出方法について簡単に紹介します。 ",
+    "description": " 本記事は、日本で最初の学校に依存しないiGEMチームを作成しようと挑戦した記録になります。 今後、分野は違えど同じような挑戦をする人の参考になれば幸いです。 ",
     "tag": [
-      "information"
+      "history"
     ],
-    "coverImage": "/blog/yomogy/images/biosensor-overview_cover.png",
-    "rePost": false,
-    "status": "published"
-  },
-  "cell-free-biosensor": {
-    "id": "cell-free-biosensor",
-    "path": "/posts/blog/yomogy/cell-free-biosensor",
-    "title": "Cell-freeでのバイオセンサーについて 〜手法から社会実装まで〜",
-    "publishedAt": "2021-01-11",
-    "updatedAt": "2021-04-25",
-    "category": "synbio",
-    "author": "Yomogy",
-    "description": " 本記事では、Cell-free systemを活用したバイオセンサーの具体例や、基盤となる技術について紹介していきます。\n<br /><br /> Cell-free systemを活用したバイオセンサーは、Synthetic Biology (合成生物学) の発展とともに、 細胞の抽出液を使用した系や、転写・翻訳(TX-TL)などのシステムを再現した系を利用したバイオセンサーの開発が、近年急速に進んできています。\n<br /><br /> 本記事では、「どのように社会実装するのか」と「どのように物質を検出するのか」の2点について、紹介していきます。\n<br /><br /> バイオセンサーって何？という方は、こちらの記事からお読みください。 [バイオセンサーとは？ 3つに分類して解説!](https://yomogy.com/igem/biosensor-overview) ",
-    "tag": [
-      "information",
-      "paper"
-    ],
-    "coverImage": "/blog/yomogy/images/cell-free-biosensor_cover.png",
-    "rePost": false,
-    "status": "published"
-  },
-  "cell-free-overview": {
-    "id": "cell-free-overview",
-    "path": "/posts/blog/yomogy/cell-free-overview",
-    "title": "Cell-free System (無細胞系) とは？",
-    "publishedAt": "2021-01-07",
-    "updatedAt": "2020-12-07",
-    "category": "synbio",
-    "author": "Yomogy",
-    "description": " Cell-free system (無細胞系、無細胞翻訳系) について、iGEMerの中でもあまり詳しく知らない方が多かった印象を受けたので、まずは概略だけ紹介したいと思います。\n<br /><br /> さらに発展的な内容は[こちら](https://yomogy.com/synbio/cell-free-biosensor)からどうぞ [Cell-freeでのバイオセンサーについて手法から社会実装まで](https://yomogy.com/synbio/cell-free-biosensor) ",
-    "tag": [
-      "information",
-      "paper"
-    ],
-    "coverImage": "/blog/yomogy/images/cell-free-overview_cover.png",
-    "rePost": false,
+    "coverImage": "/blog/yomogy/images/igem-japan-2022-highschool-log_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-highschool-log",
     "status": "published"
   },
   "igem-japan-history-2006-2010": {
@@ -196,6 +279,54 @@
     "rePost": false,
     "status": "published"
   },
+  "igem2019-basic-knowledge": {
+    "id": "igem2019-basic-knowledge",
+    "path": "/posts/blog/yomogy/igem2019-basic-knowledge",
+    "title": "iGEMについての基礎知識編 [2019]",
+    "publishedAt": "2022-11-27",
+    "updatedAt": "2022-11-27",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " 本記事では、iGEMの基礎知識について、まとめています。\n<br /><br /> ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2019-basic-knowledge_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-basic-knowledge",
+    "status": "published"
+  },
+  "igem2019-criteria": {
+    "id": "igem2019-criteria",
+    "path": "/posts/blog/yomogy/igem2019-criteria",
+    "title": "iGEMのCriteriaについて [2019]",
+    "publishedAt": "2022-11-27",
+    "updatedAt": "2022-11-27",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEMというとサークルの名前だと考えている人が極めて多いが、iGEMはコンペティションの名前である。「iGEM 〇〇」は各大学に存在するiGEM参加チームの名前であり、あくまで「iGEM」は大会の名前である。\n<br /><br /> そして、コンペティションであるということは競争なのである。学会とは違い、iGEMでは審査がある。言葉を選ばずに言えば、研究の良し悪しを決める。 ジャッジは企業研究者や大学の教員が務め、各チームは大会本部が決めた基準を満たしているかどうかを判定される。研究テーマに良い、悪いはないが、iGEMでは順序がつけられる。\n<br /><br /> ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2019-criteria_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-criteria",
+    "status": "published"
+  },
+  "igem2020-ambassador": {
+    "id": "igem2020-ambassador",
+    "path": "/posts/blog/yomogy/igem2020-ambassador",
+    "title": "iGEM Ambassadorから見たiGEM2020",
+    "publishedAt": "2022-11-29",
+    "updatedAt": "2022-11-29",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " 本記事では、iGEM Ambassadorから見た、iGEMについて紹介します。 [アドベントカレンダー iGEM・Synthetic biology 2020](https://adventar.org/calendars/5333)の一記事です。 <br /><br /> ※本記事は、iGEMerにより、2020年年末に書かれた記事をアーカイブしたものになります。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2020-ambassador_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem2020-ambassador",
+    "status": "published"
+  },
   "igem2020-basic-information": {
     "id": "igem2020-basic-information",
     "path": "/posts/blog/yomogy/igem2020-basic-information",
@@ -226,6 +357,22 @@
     ],
     "coverImage": "/blog/yomogy/images/igem2022-now-next_cover.png",
     "rePost": false,
+    "status": "published"
+  },
+  "is-igem-fee-expensive": {
+    "id": "is-igem-fee-expensive",
+    "path": "/posts/blog/yomogy/is-igem-fee-expensive",
+    "title": "iGEMのチーム登録費用は高いか",
+    "publishedAt": "2022-11-28",
+    "updatedAt": "2022-11-28",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " まず始めに、iGEMは無料で参加できる大会ではない。NPO法人が開催している大会にはなるが、本当にNPOか疑いたくなるレベルで参加費用は高い。\n<br /><br /> ''' The International Genetically Engineered Machine (iGEM) Foundation is an independent, non-profit organization dedicated to the advancement of synthetic biology, education and competition, and the development of an open community and collaboration. '''\n<br /><br /> それはさておき、今回はiGEMでかかる参加費用が高いかどうかを金額的な話ではなく、受けられるサービスと天秤にかけて検討してみたい。 そこからiGEMでかかるお金は高いかどうか独自に論じてみようと思う。\n<br /><br /> ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/is-igem-fee-expensive_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/igem/is-igem-fee-expensive",
     "status": "published"
   },
   "synbio-media-yomogy": {

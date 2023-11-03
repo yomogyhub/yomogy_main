@@ -2,13 +2,14 @@
   "categories": {
     "igem": 26,
     "synbio": 7,
-    "book": 1
+    "book": 1,
+    "tech": 1
   },
   "authors": {
     "Gifu": 2,
     "Gunma": 1,
     "HokkaidoU": 1,
-    "ishish": 7,
+    "ishish": 8,
     "Yomogy": 21,
     "Qdai": 1,
     "Toyaku": 1
@@ -26,6 +27,12 @@
       "startup": 3
     },
     "book": {
+      "information": 1
+    },
+    "tech": {
+      "app": 1,
+      "paper": 1,
+      "synbio": 1,
       "information": 1
     }
   }

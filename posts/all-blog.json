@@ -163,6 +163,25 @@
     "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
     "status": "published"
   },
+  "slack-biorxiv-synbio": {
+    "id": "slack-biorxiv-synbio",
+    "path": "/posts/blog/ishish/slack-biorxiv-synbio",
+    "title": "SlackにbioRxivのSynthetic Biology分野の新着論文・人気論文をながす方法",
+    "publishedAt": "2021-05-07",
+    "updatedAt": "2021-05-07",
+    "category": "tech",
+    "author": "ishish",
+    "description": " みなさん、新着論文をどのように探していますか？\n<br /> 近年の研究業界では、日々大量の論文が生み出され、それを読むことができる状態になりつつあります。 そんな中で、有益な情報素早く、労力をかけずに見極めるための補助ツールとして、本記事を参考にしていただけるといいなと思います。\n<br /><br /> 本記事では、Synthetic Biologyについて取り扱いますが、bioRxivで扱うジャンルでは、どのようなものでも作成が可能です。 ",
+    "tag": [
+      "app",
+      "paper",
+      "synbio",
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/slack-biorxiv-synbio_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/synbio/slack-biorxiv-synbio",
+    "status": "published"
+  },
   "stock-price-summary": {
     "id": "stock-price-summary",
     "path": "/posts/blog/ishish/stock-price-summary",

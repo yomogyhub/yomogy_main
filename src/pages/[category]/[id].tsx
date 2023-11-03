@@ -7,7 +7,6 @@ import {
   getAuthorDetails,
 } from "../api/get-posts-category";
 import { Category, PostID, BlogPostProps } from "../../utils/posts-type";
-import { addUniqueIdsToHeadings } from "../../utils/mdx-htag";
 import { processMDXContent } from "../../utils/mdx-link-card";
 import { processMDXContentForMediaCard } from "../../utils/mdx-media-card";
 
@@ -58,10 +57,11 @@ export async function getStaticProps({
   const adjacentPosts = await getAdjacentPosts(params.id);
 
   // mdx
-  const processedContent1 = addUniqueIdsToHeadings(blogPostProps.content ?? ""); // "h1", "h2", "h3"を見つけたら、idを付与する。コードブロックの中も除外できないので注意
-  const processedContent2 = await processMDXContent(processedContent1); // for link card. コードブロックの中も除外できないので注意
+  const processedContent1 = await processMDXContent(
+    blogPostProps.content ?? ""
+  ); // for link card. コードブロックの中も除外できないので注意
   const processedContent = await processMDXContentForMediaCard(
-    processedContent2
+    processedContent1
   ); // for media card.
 
   const mdxSource = processedContent

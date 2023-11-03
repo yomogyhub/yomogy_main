@@ -13,6 +13,7 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { ReactNode, DetailedHTMLProps, HTMLAttributes } from "react";
 
 const BlogPost: React.FC<BlogPostOnlyProps> = ({
   content,
@@ -56,6 +57,56 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
   const GITHUB_POST_BASE_URL =
     process.env.GITHUB_POST_BASE_URL ||
     "https://github.com/yomogyhub/yomogy_main/tree/dev";
+
+  // IDを生成するヘルパー関数
+  const generateId = (text: string) => {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  };
+
+  const H1WithId = ({
+    children,
+    ...props
+  }: DetailedHTMLProps<
+    HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  >) => {
+    const id = generateId(children as string);
+    return (
+      <h1 {...props} id={id}>
+        {children}
+      </h1>
+    );
+  };
+
+  const H2WithId = ({
+    children,
+    ...props
+  }: DetailedHTMLProps<
+    HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  >) => {
+    const id = generateId(children as string);
+    return (
+      <h2 {...props} id={id}>
+        {children}
+      </h2>
+    );
+  };
+
+  const H3WithId = ({
+    children,
+    ...props
+  }: DetailedHTMLProps<
+    HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  >) => {
+    const id = generateId(children as string);
+    return (
+      <h3 {...props} id={id}>
+        {children}
+      </h3>
+    );
+  };
 
   return (
     <div className="blog_main bg-white dark:bg-gray-900 p-4 lg:p-8 max-w-6xl mx-auto w-full max-w-full">
@@ -132,7 +183,17 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
       </div>
 
       <div className="mdx-content link_a pb-20">
-        <MDXRemote {...content} components={{ LinkCard, SNSCard, MediaCard }} />
+        <MDXRemote
+          {...content}
+          components={{
+            h1: H1WithId,
+            h2: H2WithId,
+            h3: H3WithId,
+            LinkCard,
+            SNSCard,
+            MediaCard,
+          }}
+        />
       </div>
 
       <div className="flex justify-between items-center mt-4 mb-4">

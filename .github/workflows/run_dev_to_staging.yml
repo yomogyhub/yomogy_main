@@ -39,9 +39,11 @@ jobs:
           git config user.email 'actions@github.com'
 
           # リモートの変更をフェッチして現在のブランチをリモートブランチの最新の状態にリセットします
+          git status
           git fetch origin dev
-          git reset --hard origin/dev
+          git reset --soft origin/dev  # ローカルの変更を維持する
 
+          git status
           # 新たな変更をコミットします
           git add -A
           if git diff --staged --quiet; then

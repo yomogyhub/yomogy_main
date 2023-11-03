@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-          <loc>undefined</loc>
+          <loc>https://yomogy.com</loc>
       </url>
         <url>
-            <loc>undefined/synbio/biosensor-overview</loc>
+            <loc>https://yomogy.com/igem/igem-gifu-2021</loc>
+            <lastmod>2021-07-17</lastmod>
+        </url>
+        <url>
+            <loc>https://yomogy.com/igem/igem-gunma-2021</loc>
+            <lastmod>2021-06-15</lastmod>
+        </url>
+        <url>
+            <loc>https://yomogy.com/igem/igem-hokkaidou-2021</loc>
+            <lastmod>2021-05-27</lastmod>
+        </url>
+        <url>
+            <loc>https://yomogy.com/igem/igem-qdai-2021</loc>
+            <lastmod>2021-05-11</lastmod>
+        </url>
+        <url>
+            <loc>https://yomogy.com/igem/igem-toyaku-2022</loc>
+            <lastmod>2022-03-28</lastmod>
+        </url>
+        <url>
+            <loc>https://yomogy.com/synbio/biosensor-overview</loc>
             <lastmod>2021-04-23</lastmod>
         </url>
         <url>
-            <loc>undefined/synbio/cell-free-biosensor</loc>
+            <loc>https://yomogy.com/synbio/cell-free-biosensor</loc>
             <lastmod>2021-04-25</lastmod>
         </url>
         <url>
-            <loc>undefined/synbio/cell-free-overview</loc>
-            <lastmod>2020-12-7</lastmod>
+            <loc>https://yomogy.com/synbio/cell-free-overview</loc>
+            <lastmod>2020-12-07</lastmod>
         </url>
         <url>
-            <loc>undefined/igem/igem-japan-history-2006-2010</loc>
+            <loc>https://yomogy.com/igem/igem-japan-history-2006-2010</loc>
             <lastmod>2023-08-11</lastmod>
         </url>
         <url>
-            <loc>undefined/igem/igem-japan-history-2011-2015</loc>
+            <loc>https://yomogy.com/igem/igem-japan-history-2011-2015</loc>
             <lastmod>2021-04-29</lastmod>
         </url>
         <url>
-            <loc>undefined/igem/igem-japan-history-2016-2020</loc>
+            <loc>https://yomogy.com/igem/igem-japan-history-2016-2020</loc>
             <lastmod>2021-04-29</lastmod>
         </url>
         <url>
-            <loc>undefined/igem/igem2019-basic-information</loc>
-            <lastmod>2021-04-29</lastmod>
+            <loc>https://yomogy.com/igem/igem2019-basic-information</loc>
+            <lastmod>2020-12-01</lastmod>
         </url>
         <url>
-            <loc>undefined/igem/igem2020-basic-information</loc>
+            <loc>https://yomogy.com/igem/igem2020-basic-information</loc>
             <lastmod>2020-12-02</lastmod>
         </url>
         <url>
-            <loc>undefined/igem/igem2022-now-next</loc>
-            <lastmod>2023-03-4</lastmod>
+            <loc>https://yomogy.com/igem/igem2022-now-next</loc>
+            <lastmod>2023-03-04</lastmod>
         </url>
         <url>
-            <loc>undefined/synbio/synbio-media-yomogy</loc>
+            <loc>https://yomogy.com/synbio/synbio-media-yomogy</loc>
             <lastmod>2021-04-29</lastmod>
         </url></urlset>

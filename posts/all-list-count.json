@@ -1,25 +1,25 @@
 {
   "categories": {
-    "igem": 26,
+    "igem": 38,
     "synbio": 7,
     "book": 1,
     "tech": 1
   },
   "authors": {
-    "Gifu": 2,
+    "Gifu": 8,
     "Gunma": 1,
     "HokkaidoU": 1,
     "ishish": 8,
-    "Yomogy": 21,
-    "Qdai": 1,
+    "Qdai": 4,
+    "Yomogy": 24,
     "Toyaku": 1
   },
   "categoryTags": {
     "igem": {
-      "information": 21,
-      "history": 7,
-      "journal-club": 4,
-      "event": 5
+      "information": 29,
+      "journal-club": 8,
+      "history": 15,
+      "event": 6
     },
     "synbio": {
       "information": 7,

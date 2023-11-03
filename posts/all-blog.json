@@ -79,6 +79,22 @@
     "rePost": false,
     "status": "published"
   },
+  "bookreview-synbio-impact": {
+    "id": "bookreview-synbio-impact",
+    "path": "/posts/blog/ishish/bookreview-synbio-impact",
+    "title": "[書評]『合成生物学の衝撃』合成生物学に興味を持ったら最初に読むべき人気作",
+    "publishedAt": "2021-05-06",
+    "updatedAt": "2021-05-06",
+    "category": "book",
+    "author": "ishish",
+    "description": " 本サイトでは、日々合成生物学に関する研究を行う研究者や、合成生物学に関する世界最大のコンテストiGEMに参加する人たちが、どのような本を読んでいるのかについて、紹介しています。\n<br /><br /> 本記事では、日本の中で最も合成生物学分野を紹介する本として人気がある、須田桃子氏の『合成生物学の衝撃』について、その分野の研究者の視点から、まとめました。(感想やレビューを含みます) ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/bookreview-synbio-impact_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
   "cell-free-biosensor": {
     "id": "cell-free-biosensor",
     "path": "/posts/blog/ishish/cell-free-biosensor",
@@ -145,6 +161,25 @@
     ],
     "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
     "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
+    "status": "published"
+  },
+  "slack-biorxiv-synbio": {
+    "id": "slack-biorxiv-synbio",
+    "path": "/posts/blog/ishish/slack-biorxiv-synbio",
+    "title": "SlackにbioRxivのSynthetic Biology分野の新着論文・人気論文をながす方法",
+    "publishedAt": "2021-05-07",
+    "updatedAt": "2021-05-07",
+    "category": "tech",
+    "author": "ishish",
+    "description": " みなさん、新着論文をどのように探していますか？\n<br /> 近年の研究業界では、日々大量の論文が生み出され、それを読むことができる状態になりつつあります。 そんな中で、有益な情報素早く、労力をかけずに見極めるための補助ツールとして、本記事を参考にしていただけるといいなと思います。\n<br /><br /> 本記事では、Synthetic Biologyについて取り扱いますが、bioRxivで扱うジャンルでは、どのようなものでも作成が可能です。 ",
+    "tag": [
+      "app",
+      "paper",
+      "synbio",
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/slack-biorxiv-synbio_cover.png",
+    "rePost": "https://yomogy-old.netlify.app/synbio/slack-biorxiv-synbio",
     "status": "published"
   },
   "stock-price-summary": {
@@ -364,6 +399,22 @@
       "event"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-meetup-2022_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem-schedule": {
+    "id": "igem-schedule",
+    "path": "/posts/blog/yomogy/igem-schedule",
+    "title": "iGEMの年間スケジュールはどのようなものか",
+    "publishedAt": "2021-05-05",
+    "updatedAt": "2021-05-05",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEMでは、年間を通じてどのようなことをするのか、日本チーム向けにまとめました。iGEMは、3月ごろから参加登録が始まり、11月ごろに本大会があります。 そのため、本記事では、1月からの予定について、月ごとに締め切りやイベントについて、紹介していきたいと思います。\n<br /><br /> ※その年ごとに、どのようなスケジュールになるかは変動しますので、詳細な日付等は、公式のカレンダーを随時チェックしてください。\n<br /><br /> 例:  <br /> - [2020年のカレンダー](https://2020.igem.org/Calendar) (かなりイレギュラーな年ですので、参考程度にしてください) <br /> - [2021年のカレンダー](https://2021.igem.org/Calendar) (Giant Jamboreeの日程等、決定していないものが多数あります)\n\n<br /><br /> iGEM 本部から、2020年大会におけるチームのスケージュールについて、アンケートベースでまとめたレポートが公開されました。 [まとめレポート](https://blog.igem.org/blog/2021/7/21/lessons-shared-by-igem-2020-teams-tips-and-timelines) ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem-schedule_cover.png",
     "rePost": false,
     "status": "published"
   },

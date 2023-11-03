@@ -172,3 +172,79 @@ blockquote {
 .youtube-iframe iframe {
   max-width: 100%;
 }
+
+/*********
+アフィリエイト
+*********/
+.af-box {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  padding: 10px;
+  margin: 0 8px;
+}
+.af-imgbox {
+  width: 160px;
+  margin-right: 10px;
+  float: left;
+  text-align: center;
+}
+.af-textbox {
+  width: 100%;
+}
+.af-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.af-desc {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.af-kobox {
+  width: 120px;
+  margin: 0 5px 0 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  float: left;
+  text-align: center;
+}
+.af-kobox a.aflink {
+  display: block;
+  padding: 5px 0 5px 0;
+  text-decoration: none;
+}
+.af-amazon {
+  border: 1px solid #f3a847;
+}
+.af-amazon a {
+  color: #f3a847 !important;
+}
+.af-rakuten {
+  border: 1px solid #bf0000;
+  color: #bf0000;
+}
+.af-rakuten a {
+  color: #bf0000 !important;
+}
+.af-blue {
+  border: 1px solid #1995df;
+  color: #1995df;
+}
+.af-blue a {
+  color: #1995df !important;
+}
+.clear {
+  clear: both;
+}
+@media screen and (max-width: 399px) {
+  .af-imgbox {
+    margin: 0 auto;
+    text-align: center;
+    float: none;
+  }
+}

@@ -1,6 +1,6 @@
 {
   "categories": {
-    "igem": 17,
+    "igem": 25,
     "synbio": 7
   },
   "authors": {
@@ -8,14 +8,16 @@
     "Gunma": 1,
     "HokkaidoU": 1,
     "ishish": 6,
+    "Yomogy": 20,
     "Qdai": 1,
-    "Toyaku": 1,
-    "Yomogy": 12
+    "Toyaku": 1
   },
   "categoryTags": {
     "igem": {
-      "information": 15,
-      "history": 5
+      "information": 20,
+      "history": 7,
+      "journal-club": 4,
+      "event": 5
     },
     "synbio": {
       "information": 7,

@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, relatedPosts }) => {
             <li key={post.id} className="mb-4">
               <Link href={`/${post.category}/${post.id}`}>
                 <div className="block p-4 rounded bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors cursor-pointer shadow">
-                  <div className="truncate text-lg font-semibold text-gray-900 dark:text-gray-300">
+                  <div className="line-clamp-2 text-lg font-semibold text-gray-900 dark:text-gray-300">
                     {post.title}
                   </div>
                   <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mt-2">

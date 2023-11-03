@@ -28,9 +28,11 @@ export const AuthorDetails: React.FC<AuthorDetailsProps> = ({ author }) => {
             </div>
           </div>
           <div className="flex space-x-4">
-            <span className="link_a hover:underline transition-all duration-300">
-              <a href={author.twitter}>X (Twitter)</a>
-            </span>
+            {author.twitter.length >= 3 && (
+              <span className="link_a hover:underline transition-all duration-300">
+                <a href={author.twitter}>X (Twitter)</a>
+              </span>
+            )}
             <span className="link_a hover:underline transition-all duration-300">
               <Link href={`/author/${author.name}/1`}>記事一覧</Link>
             </span>

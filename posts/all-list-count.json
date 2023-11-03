@@ -1,19 +1,24 @@
 {
   "categories": {
-    "synbio": 4,
-    "igem": 6
+    "igem": 11,
+    "synbio": 4
   },
   "authors": {
+    "Gifu": 1,
+    "Gunma": 1,
+    "HokkaidoU": 1,
+    "Qdai": 1,
+    "Toyaku": 1,
     "Yomogy": 10
   },
   "categoryTags": {
+    "igem": {
+      "information": 11,
+      "history": 3
+    },
     "synbio": {
       "information": 4,
       "paper": 2
-    },
-    "igem": {
-      "history": 3,
-      "information": 6
     }
   }
 }

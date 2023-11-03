@@ -230,7 +230,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
       </div>
 
       {/* 前後の記事 */}
-      <div className="w-full flex justify-between mt-8 mb-8 my-4 p-4 border-t border-b border-gray-400 dark:border-gray-200">
+      <div className="w-full flex justify-between mt-8 mb-8 my-4 p-4 px-0 border-t border-b border-gray-400 dark:border-gray-200">
         <div className="w-full flex flex-col items-start pr-4">
           {adjacentPosts.afterAdjacentPost ? (
             <>

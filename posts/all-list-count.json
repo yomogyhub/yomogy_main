@@ -1,20 +1,22 @@
 {
   "categories": {
-    "igem": 25,
-    "synbio": 7
+    "igem": 26,
+    "synbio": 7,
+    "book": 1,
+    "tech": 1
   },
   "authors": {
     "Gifu": 2,
     "Gunma": 1,
     "HokkaidoU": 1,
-    "ishish": 6,
-    "Yomogy": 20,
+    "ishish": 8,
+    "Yomogy": 21,
     "Qdai": 1,
     "Toyaku": 1
   },
   "categoryTags": {
     "igem": {
-      "information": 20,
+      "information": 21,
       "history": 7,
       "journal-club": 4,
       "event": 5
@@ -23,6 +25,15 @@
       "information": 7,
       "paper": 2,
       "startup": 3
+    },
+    "book": {
+      "information": 1
+    },
+    "tech": {
+      "app": 1,
+      "paper": 1,
+      "synbio": 1,
+      "information": 1
     }
   }
 }

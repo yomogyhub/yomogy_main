@@ -450,6 +450,23 @@
     "rePost": false,
     "status": "published"
   },
+  "igem-advent-calendar-summary": {
+    "id": "igem-advent-calendar-summary",
+    "path": "/posts/blog/yomogy/igem-advent-calendar-summary",
+    "title": "iGEM 合成生物学 Advent Calendar まとめ",
+    "publishedAt": "2023-10-10",
+    "updatedAt": "2023-10-10",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEM・合成生物学 Advent Calendar のまとめです。これまで、2019、2020、2022とやってきました。記事の移行などの状況もまとめています。 <br /> ※毎年情報を更新する可能性がある記事になります。 ",
+    "tag": [
+      "history",
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem-advent-calendar-summary_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
   "igem-japan-2021-promotionvideo": {
     "id": "igem-japan-2021-promotionvideo",
     "path": "/posts/blog/yomogy/igem-japan-2021-promotionvideo",
@@ -470,7 +487,7 @@
     "id": "igem-japan-2022-highschool-log",
     "path": "/posts/blog/yomogy/igem-japan-2022-highschool-log",
     "title": "日本で最初の学校に依存しないiGEMチームの立ち上げを目指した備忘録",
-    "publishedAt": "2023-03-04",
+    "publishedAt": "2022-12-08",
     "updatedAt": "2023-03-04",
     "category": "igem",
     "author": "Yomogy",

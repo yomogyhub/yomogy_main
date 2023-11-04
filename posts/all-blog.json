@@ -48,7 +48,7 @@
       "history"
     ],
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-2_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-2",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-",
     "status": "published"
   },
   "igem-japan-journal-club-epfl2019": {
@@ -263,6 +263,22 @@
     ],
     "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
     "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
+    "status": "published"
+  },
+  "igem-high-school-links-china": {
+    "id": "igem-high-school-links-china",
+    "path": "/posts/blog/ishish/igem-high-school-links-china",
+    "title": "iGEM 高校生年代で最強を誇る LINKS-Chinaとは (2018, 19, 21優勝)",
+    "publishedAt": "2023-10-20",
+    "updatedAt": "2023-10-20",
+    "category": "igem",
+    "author": "ishish",
+    "description": " iGEM High school section (高校生年代) には、大学生チームも実力で凌駕する圧倒的な集団が存在します。 それは、Boxiang Wang さん 率いる LINKS-Chinaです。彼ら(母体チームも含む)は、高校生年代で圧倒的な実力を示し、iGEM 2018、 IGEM 2019、iGEM2021大会で優勝を果たしています。\n<br /><br /> 本記事では、彼らのここ数年のメインプロジェクトを振り返りたいと思います。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/igem-high-school-links-china_cover.png",
+    "rePost": false,
     "status": "published"
   },
   "slack-biorxiv-synbio": {
@@ -744,6 +760,22 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem2022-now-next_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem2023-Jugding-handbook-summary": {
+    "id": "igem2023-Jugding-handbook-summary",
+    "path": "/posts/blog/yomogy/igem2023-Jugding-handbook-summary",
+    "title": "iGEM Jugding Handbook 2023 要点",
+    "publishedAt": "2023-09-16",
+    "updatedAt": "2023-09-16",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " 本記事では、iGEM Competition における評価の絶対の基準となる、iGEM Jugding Handbook 2023 についての要点について紹介する。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/igem2023-Jugding-handbook-summary_cover.png",
     "rePost": false,
     "status": "published"
   },

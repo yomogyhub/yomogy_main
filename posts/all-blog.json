@@ -18,7 +18,7 @@
   "igem-japan-2022-meeting-10-1": {
     "id": "igem-japan-2022-meeting-10-1",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-1",
-    "title": "安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る - iGEM Japan 2022 定例会 (輪読会) #10-1",
+    "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(NEFU-China2020 BOLD) - iGEM Japan 2022 定例会 (輪読会) #10-1",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -36,7 +36,7 @@
   "igem-japan-2022-meeting-10-2": {
     "id": "igem-japan-2022-meeting-10-2",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-2",
-    "title": "安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る - iGEM Japan 2022 定例会 (輪読会) #10-2",
+    "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(Bielefeld-CeBiTec 2021 P.L.A.N.T.) - iGEM Japan 2022 定例会 (輪読会) #10-2",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -48,7 +48,7 @@
       "history"
     ],
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-2_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-2",
+    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-",
     "status": "published"
   },
   "igem-japan-journal-club-epfl2019": {
@@ -268,7 +268,7 @@
   "igem-high-school-links-china": {
     "id": "igem-high-school-links-china",
     "path": "/posts/blog/ishish/igem-high-school-links-china",
-    "title": "iGEM 高校生年代で最強を誇る 　　 LINKS-Chinaとは (18, 19, 21優勝)",
+    "title": "iGEM 高校生年代で最強を誇る LINKS-Chinaとは (2018, 19, 21優勝)",
     "publishedAt": "2023-10-20",
     "updatedAt": "2023-10-20",
     "category": "igem",

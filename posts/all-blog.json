@@ -18,7 +18,7 @@
   "igem-japan-2022-meeting-10-1": {
     "id": "igem-japan-2022-meeting-10-1",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-1",
-    "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(NEFU-China2020 BOLD) - iGEM Japan 2022 定例会 (輪読会) #10-1",
+    "title": "安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る - iGEM Japan 2022 定例会 (輪読会) #10-1",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -36,7 +36,7 @@
   "igem-japan-2022-meeting-10-2": {
     "id": "igem-japan-2022-meeting-10-2",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-2",
-    "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(Bielefeld-CeBiTec 2021 P.L.A.N.T.) - iGEM Japan 2022 定例会 (輪読会) #10-2",
+    "title": "安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る - iGEM Japan 2022 定例会 (輪読会) #10-2",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -263,6 +263,22 @@
     ],
     "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
     "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
+    "status": "published"
+  },
+  "igem-high-school-links-china": {
+    "id": "igem-high-school-links-china",
+    "path": "/posts/blog/ishish/igem-high-school-links-china",
+    "title": "iGEM 高校生年代で最強を誇る 　　 LINKS-Chinaとは (18, 19, 21優勝)",
+    "publishedAt": "2023-10-20",
+    "updatedAt": "2023-10-20",
+    "category": "igem",
+    "author": "ishish",
+    "description": " iGEM High school section (高校生年代) には、大学生チームも実力で凌駕する圧倒的な集団が存在します。 それは、Boxiang Wang さん 率いる LINKS-Chinaです。彼ら(母体チームも含む)は、高校生年代で圧倒的な実力を示し、iGEM 2018、 IGEM 2019、iGEM2021大会で優勝を果たしています。\n<br /><br /> 本記事では、彼らのここ数年のメインプロジェクトを振り返りたいと思います。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/igem-high-school-links-china_cover.png",
+    "rePost": false,
     "status": "published"
   },
   "slack-biorxiv-synbio": {

@@ -3,7 +3,7 @@
 # 記事投稿時には、(この文を含む) コメントアウトは削除してください。
 # --- と --- の間に、記事の基本情報を必ず記載してください。過不足はエラーになります。
 # ファイル名は、ローマ字(半角英数字)で記載してください。スペースはハイフンに置換してください。これは、記事のURLになります。
-# <h2><h3>は、見出しとして機能します。必ず加えてください。
+# h2 h3 は、見出しとして機能します。必ず加えてください。
 # mdxフォーマット (mdの拡張) のみ受け付けます。ChatGPT等で整形するのもよいでしょう。プロンプトTips : mdにすると勝手に変換されるから、コードで囲んで。
 # 新しいテンプレートを作成したら、このblog-templateフォルダに追加してください。
 title: "Githubからの投稿" # タイトル
@@ -17,7 +17,8 @@ rePost: false # 記事の転載の場合は"url"を記入。例 : "https//yomogy
 status: "published" # "published" or "draft"
 ---
 
-<h2>はじめての投稿h2</h2>
+## はじめての投稿
+
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80">
   <path
     fill="#000"
@@ -47,12 +48,14 @@ or
 console.log("Hello World: コードハイライトのテスト");
 ```
 
-<h3>JSXの埋め込みテストh3</h3>
+### JSX の埋め込みテスト h3
+
 <div style={{ padding: "20px", backgroundColor: "red" }}>
   <p>JSXの埋め込みテスト</p>
 </div>
 
-<h3>画像の埋め込み</h3>
+### 画像の埋め込み
+
 <div style={{ width: "100%", height: "auto" }}>
   <img
     src="https://images.microcms-assets.io/assets/5b29df40b0df4001b2b4481340384329/3bc6d98ac34c4e4a8fe2219fe361c38a/%E3%83%8F%E3%82%99%E3%82%A4%E3%82%AA%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%A8%E3%81%AF%E8%A1%A8%E7%B4%99.png"
@@ -78,7 +81,8 @@ or
   caption="Fig.1 - Cell-free 概要"
 />
 
-<h3>動画の埋め込み</h3>
+### 動画の埋め込み
+
 <div style={{ width: "100%", height: "auto" }}>
   <video controls>
     <source
@@ -107,13 +111,14 @@ or
   caption="Fig.1 - Cell-free 概要"
 />
 
-<h3>引用</h3>
+### 引用
 
 > iGEM の次の目標 : 合成生物学分野のすべてのことを、"どこでも"、"誰でも"、開発できるようにする
 
 出典 : [iGEM Vision](https://igem.org/about-us/our-vision)
 
-<h3>太字</h3>
+### 太字
+
 **太字**
 
 <p>
@@ -121,3 +126,12 @@ or
 </p>
 
 <u>**文中 太字 +アンダーライン**</u>
+
+### 折りたたみ
+
+<div>
+  <details>
+    <summary>すごく長い文章とかプログラムとか</summary>
+    <div>{/* Your content here */}</div>
+  </details>
+</div>

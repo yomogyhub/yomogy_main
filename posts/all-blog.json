@@ -281,6 +281,38 @@
     "rePost": false,
     "status": "published"
   },
+  "igem-japan-road-to-grandprize copy": {
+    "id": "igem-japan-road-to-grandprize copy",
+    "path": "/posts/blog/ishish/igem-japan-road-to-grandprize copy",
+    "title": "なぜ日本は20年間もGrandprizeを取れなかったのか",
+    "publishedAt": "2023-11-07",
+    "updatedAt": "2023-11-07",
+    "category": "igem",
+    "author": "ishish",
+    "description": " i日本が20年間もGrandprizeを取れなかった理由は、そもそも、Grandprizeをとるために、活動していた人がほぼいなかったからです。 しっかりと運営側にまで入り込んで仕組みを理解し、世界トップの標準レベルで活動した結果、ちゃんと取れるようになりました。以上です。\n<br /><br /> さすがに、これだけだと何もわからないので、どのような考えが重要であったか、個人的経験を踏まえて、紹介します。\n<br /><br /> 日本では、Grand Prizeをとることを目標にしていないチームが大半であることも知っています。 それでも、私はGrand Prizeを目指す過程で培われる視野の広がりは、大きな価値があると考えています。 目標を高く持つことで得られる経験は、単なる賞の受賞を遥かに超えた意義を持ちます。 本記事が、そのような選択肢を最初から捨てることなく、知った上で判断するための良い材料になることを願います。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/igem-japan-road-to-grandprize copy_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem-japan-road-to-grandprize": {
+    "id": "igem-japan-road-to-grandprize",
+    "path": "/posts/blog/ishish/igem-japan-road-to-grandprize",
+    "title": "なぜ日本は20年間も　　　　　　　Grandprizeを取れなかったのか",
+    "publishedAt": "2023-11-07",
+    "updatedAt": "2023-11-07",
+    "category": "igem",
+    "author": "ishish",
+    "description": " i日本が20年間もGrandprizeを取れなかった理由は、そもそも、Grandprizeをとるために、活動していた人がほぼいなかったからです。 しっかりと運営側にまで入り込んで仕組みを理解し、世界トップの標準レベルで活動した結果、ちゃんと取れるようになりました。以上です。\n<br /><br /> さすがに、これだけだと何もわからないので、どのような考えが重要であったか、個人的経験を踏まえて、紹介します。\n<br /><br /> 日本では、Grand Prizeをとることを目標にしていないチームが大半であることも知っています。 それでも、私はGrand Prizeを目指す過程で培われる視野の広がりは、大きな価値があると考えています。 目標を高く持つことで得られる経験は、単なる賞の受賞を遥かに超えた意義を持ちます。 本記事が、そのような選択肢を最初から捨てることなく、知った上で判断するための良い材料になることを願います。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/ishish/images/igem-japan-road-to-grandprize_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
   "slack-biorxiv-synbio": {
     "id": "slack-biorxiv-synbio",
     "path": "/posts/blog/ishish/slack-biorxiv-synbio",

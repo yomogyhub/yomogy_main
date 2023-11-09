@@ -52,5 +52,11 @@
     "description": "ish-ishです。",
     "twitter": "",
     "image": "/authors/ishish.png"
+  },
+  "Bobcat": {
+    "name": "Bobcat",
+    "description": "Bobcatです。",
+    "twitter": "",
+    "image": ""
   }
 }

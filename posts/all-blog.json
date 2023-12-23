@@ -130,7 +130,7 @@
       "history"
     ],
     "coverImage": "/blog/gifu/images/igem2019-experience_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-experience",
+    "rePost": false,
     "status": "published"
   },
   "igem-gunma-2021": {
@@ -507,12 +507,12 @@
     "updatedAt": "2023-03-04",
     "category": "igem",
     "author": "Yomogy",
-    "description": " 本記事は、日本で最初の学校に依存しないiGEMチームを作成しようと挑戦した記録になります。 今後、分野は違えど同じような挑戦をする人の参考になれば幸いです。 ",
+    "description": " 本記事は、日本で最初の学校に依存しないiGEMチームを作成しようと挑戦した記録になります。 今後、分野は違えど同じような挑戦をする人の参考になれば幸いです。\n(追記) 本記事は、iGEM Japan United 2023よりも、以前のチームについてです。このチームから分裂する形で、iGEM Japan United 2023は誕生しました。 ",
     "tag": [
       "history"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-2022-highschool-log_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-highschool-log",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-00": {
@@ -843,6 +843,22 @@
     ],
     "coverImage": "/blog/yomogy/images/is-igem-fee-expensive_cover.png",
     "rePost": "https://yomogy-old.netlify.app/igem/is-igem-fee-expensive",
+    "status": "published"
+  },
+  "preparing-for-igem": {
+    "id": "preparing-for-igem",
+    "path": "/posts/blog/yomogy/preparing-for-igem",
+    "title": "iGEMを始める前の準備",
+    "publishedAt": "2023-12-23",
+    "updatedAt": "2023-12-23",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " iGEMのチームを作りたいと考えている人に向けて、いくつかの資料をまとめました。 (2023年12月時点 ※1) \n<br /><br /> iGEMは、iGEM Competitionを軸とした、20年の歴史を持つ合成生物学のコミュニティです。iGEMへの参加は、Competitionのみに留まりませんが、本記事ではcompetitionに参加するチームを立ち上げる人向けの記事になります。\n<br /><br /> ※1 本記事を読んで、iGEMを始めた人は、最新情報を更新してくれることを願っています。このサイトは、オープンになっていますので、ぜひ編集してください。 ",
+    "tag": [
+      "information"
+    ],
+    "coverImage": "/blog/yomogy/images/preparing-for-igem_cover.png",
+    "rePost": false,
     "status": "published"
   },
   "synbio-media-yomogy": {

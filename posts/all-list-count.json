@@ -1,6 +1,6 @@
 {
   "categories": {
-    "igem": 43,
+    "igem": 44,
     "synbio": 7,
     "book": 1,
     "tech": 1
@@ -11,12 +11,12 @@
     "HokkaidoU": 1,
     "ishish": 10,
     "Qdai": 4,
-    "Yomogy": 27,
+    "Yomogy": 28,
     "Toyaku": 1
   },
   "categoryTags": {
     "igem": {
-      "information": 34,
+      "information": 35,
       "journal-club": 8,
       "history": 17,
       "event": 6

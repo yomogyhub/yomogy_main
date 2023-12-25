@@ -290,7 +290,7 @@
     "updatedAt": "2023-11-07",
     "category": "igem",
     "author": "ishish",
-    "description": " 日本が20年間もGrandprizeを取れなかった理由は、Grandprizeをとるために、活動していた人がほぼいなかったからです。 しっかりと運営側にまで入り込んで仕組みを理解し、世界トップの標準レベルで活動した結果、ちゃんと取れるようになりました。以上です。\n<br /><br /> さすがに、これだけだと何もわからないので、どのような考えが重要であったか、個人的経験を踏まえて、紹介します。\n<br /><br /> 日本では、Grand Prizeをとることを目標にしていないチームが大半であることも知っています。 それでも、私はGrand Prizeを目指す過程で培われる視野の広がりは、大きな価値があると考えています。 目標を高く持つことで得られる経験は、単なる賞の受賞を遥かに超えた意義を持ちます。\n<br /><br /> 本記事が、そのような選択肢を最初から捨てることなく、知った上で判断するための良い材料になることを願います。 ",
+    "description": " 日本が20年間もGrandprizeを取れなかった理由は、Grandprizeをとるために、活動していた人がほぼいなかったからです。 しっかりと運営側にまで入り込んで仕組みを理解し、世界トップの標準レベルで活動した結果、ちゃんと取れるようになりました。\n<br /><br /> 私は、合成生物学分野で何かを行うことを目指す人にとって、Grand Prizeを目指す過程で培われる視野の広がりは、大きな価値があると考えています。 目標を高く持つことで得られる経験は、単なる賞の受賞を遥かに超えた意義を持ちます。\n<br /><br /> 本記事では、どのような考えが重要であったか、個人的経験を踏まえて、紹介します。 本記事が、最初からGrand Prizeというを目標を捨てることなく、その背景を知った上で判断するための良い材料になることを願っています。\n<br /><br /> しかし、日本では、合成生物学に興味はあまりなくても、研究者としてのトレーニングとしてiGEMに参加している人が多いです。そのような人たちは、iGEMに特化 してGrand Prizeを目指すよりも、自身の目標に対して積極的になるべきかもしれません。そのような人にとっても、現在のiGEMを知ることで、目標に対する取捨選択ができるようになると思います。 ",
     "tag": [
       "information"
     ],
@@ -434,6 +434,23 @@
     "rePost": "https://yomogy-old.netlify.app/igem/igem-toyaku-2022",
     "status": "published"
   },
+  "end-of-igem-community-2023": {
+    "id": "end-of-igem-community-2023",
+    "path": "/posts/blog/yomogy/end-of-igem-community-2023",
+    "title": "End of the iGEM Japan Community The Next...",
+    "publishedAt": "2023-12-25",
+    "updatedAt": "2023-12-25",
+    "category": "igem",
+    "author": "Yomogy",
+    "description": " Since Japanese teams first participated in the iGEM competition in 2006, multiple teams have consistently participated each year. However, currently, there are few Japanese iGEMers at the forefront of iGEM's diverse and expanding activities.\n<br /> In Japan, we established the iGEM Japan Community, working in collaboration with the broader iGEM Community to expand our initiatives. However, these activities end in 2023.\n<br /> During the iGEM Competition 2023, the Japan-United Team, originating from the iGEM Japan community, became the first finalist from Japan in iGEM's 20-year history and won the Grand Prize. Their success highlighted the challenges faced by previous Japanese teams. ",
+    "tag": [
+      "information",
+      "history"
+    ],
+    "coverImage": "/blog/yomogy/images/end-of-igem-community-2023_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
   "event-info-2021-10": {
     "id": "event-info-2021-10",
     "path": "/posts/blog/yomogy/event-info-2021-10",
@@ -472,7 +489,7 @@
     "path": "/posts/blog/yomogy/igem-advent-calendar-summary",
     "title": "iGEM 合成生物学 Advent Calendar まとめ",
     "publishedAt": "2023-10-10",
-    "updatedAt": "2023-10-10",
+    "updatedAt": "2023-12-25",
     "category": "igem",
     "author": "Yomogy",
     "description": " iGEM・合成生物学 Advent Calendar のまとめです。これまで、2019、2020、2022とやってきました。記事の移行などの状況もまとめています。 <br /> ※本記事は、情報を更新する可能性があります。 ",

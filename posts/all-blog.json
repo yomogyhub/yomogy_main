@@ -434,10 +434,10 @@
     "rePost": "https://yomogy-old.netlify.app/igem/igem-toyaku-2022",
     "status": "published"
   },
-  "end-of-igem-community-2023": {
-    "id": "end-of-igem-community-2023",
-    "path": "/posts/blog/yomogy/end-of-igem-community-2023",
-    "title": "End of the iGEM Japan Community, The Next...",
+  "dissolution-of-igem-community-2023": {
+    "id": "dissolution-of-igem-community-2023",
+    "path": "/posts/blog/yomogy/dissolution-of-igem-community-2023",
+    "title": "The dissolution of iGEM Japan Community, The Next...",
     "publishedAt": "2023-12-25",
     "updatedAt": "2023-12-25",
     "category": "igem",
@@ -447,7 +447,7 @@
       "information",
       "history"
     ],
-    "coverImage": "/blog/yomogy/images/end-of-igem-community-2023_cover.png",
+    "coverImage": "/blog/yomogy/images/dissolution-of-igem-community-2023_cover.png",
     "rePost": false,
     "status": "published"
   },

@@ -548,7 +548,7 @@
       "event"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-2022-meeting-00_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-00",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-01": {

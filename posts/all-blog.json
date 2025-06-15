@@ -465,7 +465,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/event-info-2021-10_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/event-info-2021-10",
+    "rePost": false,
     "status": "published"
   },
   "how-to-start-igem": {

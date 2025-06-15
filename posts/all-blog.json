@@ -852,7 +852,7 @@
     "path": "/posts/blog/yomogy/is-igem-fee-expensive",
     "title": "iGEMのチーム登録費用は高いか",
     "publishedAt": "2022-11-28",
-    "updatedAt": "2022-11-28",
+    "updatedAt": "2025-06-15",
     "category": "igem",
     "author": "Yomogy",
     "description": " まず始めに、iGEMは無料で参加できる大会ではない。NPO法人が開催している大会にはなるが、本当にNPOか疑いたくなるレベルで参加費用は高い。\n<br /><br /> ''' The International Genetically Engineered Machine (iGEM) Foundation is an independent, non-profit organization dedicated to the advancement of synthetic biology, education and competition, and the development of an open community and collaboration. '''\n<br /><br /> それはさておき、今回はiGEMでかかる参加費用が高いかどうかを金額的な話ではなく、受けられるサービスと天秤にかけて検討してみたい。 そこからiGEMでかかるお金は高いかどうか独自に論じてみようと思う。\n<br /><br /> ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。 ",
@@ -860,7 +860,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/is-igem-fee-expensive_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/is-igem-fee-expensive",
+    "rePost": false,
     "status": "published"
   },
   "preparing-for-igem": {

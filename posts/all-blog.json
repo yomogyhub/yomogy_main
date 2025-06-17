@@ -715,7 +715,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem2019-criteria_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-criteria",
+    "rePost": false,
     "status": "published"
   },
   "igem2020-ambassador": {

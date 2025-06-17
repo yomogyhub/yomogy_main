@@ -779,7 +779,7 @@
       "history"
     ],
     "coverImage": "/blog/yomogy/images/igem2021-basic-information_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2021-basic-information",
+    "rePost": false,
     "status": "published"
   },
   "igem2021-japan-media": {

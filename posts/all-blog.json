@@ -699,7 +699,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem2019-basic-knowledge_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-basic-knowledge",
+    "rePost": false,
     "status": "published"
   },
   "igem2019-criteria": {

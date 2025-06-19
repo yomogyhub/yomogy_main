@@ -514,7 +514,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-2021-promotionvideo_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2021-promotionvideo",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-highschool-log": {

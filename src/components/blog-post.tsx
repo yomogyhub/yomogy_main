@@ -7,6 +7,7 @@ import ShareButtons from "../components/share-buttons";
 import LinkCard from "../components/link-card";
 import SNSCard from "../components/sns-card";
 import MediaCard from "../components/media-card";
+import IframeCard from "../components/iframe-card";
 import AdComponent from "../components/ad";
 import tocbot from "tocbot";
 import React, { useEffect } from "react";
@@ -192,6 +193,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
             LinkCard,
             SNSCard,
             MediaCard,
+            IframeCard,
           }}
         />
       </div>

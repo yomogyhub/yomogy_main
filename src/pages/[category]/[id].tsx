@@ -67,8 +67,8 @@ export async function getStaticProps({
   const mdxSource = processedContent
     ? await serialize(processedContent, {
         mdxOptions: {
-          remarkPlugins: [remarkPrism],
-          rehypePlugins: [rehypePrism],
+          remarkPlugins: [remarkPrism as any],
+          rehypePlugins: [rehypePrism as any],
         },
       })
     : null;

@@ -15,10 +15,197 @@ iGEMというとサークルの名前だと考えている人が極めて多い�
 ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。
 " # 記事の説明
 tag: ["information"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem2019-criteria" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: False
 status: "published" # "published" or "draft"
 ---
 
-## サイト移行中です。
+## iGEM メダル基準の解説
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem2019-criteria)から記事をお読みください。
+先に述べた判定の基準は**Medal Criteria**と呼ばれており、Google で「Medal Criteria iGEM」と検索すると、トップヒットで原本が出てくる。iGEM の表彰には主に**Bronze, Silver, Gold**があり、各項目に対して基準があり、達成するとその賞が授与される。近年では大会のルール変更やシステム変更に伴い、Criteria が更新されつつある。さらに、参加チーム数増加に伴い、Criteria 達成を判断するジャッジも厳しくなってきているように感じている。今回は各項目について軽く説明し、どのようにプロジェクトを設計すると良いかについて考えてみる。
+
+---
+
+## 銅賞の基準
+
+以下の 5 項目が銅賞の基準となる。
+
+### 1\. Registration and Giant Jamboree Attendance
+
+これはどのチームでも達成できるので説明は省く。
+
+### 2\. Competition Deliverables
+
+Competition Deliverables には **\#1 Wiki, \#2 Poster, \#3 Presentation, \#4 Judging Form** の 4 種類がある。要は Wiki などをちゃんと作成し、ジャッジングフォームを埋めなさいということである。これも期限さえ守っていれば誰でも達成できるので説明は省く。
+
+### 3\. Attributions
+
+iGEM の Criteria における Attributions では以下の事柄を掲載しなくてはいけない。
+
+<br />
+
+- Clearly state what the team accomplished
+- General support
+- Project support and advice
+- Fundraising help and advice
+- Lab support
+- Difficult technique support
+- Project advisor support
+- Wiki support
+- Presentation coaching
+- Human Practices support
+- Thanks and acknowledgments for all other people involved in helping make a successful iGEM team
+
+<br />
+Attributions には帰属の意味があるが、ここでは**誰が何をしたか、誰にどう助けてもらったか**を書く必要がある。また、論文における
+acknowledgments のような役割も果たしており、ラボに対するサポートなどに感謝を述べるページも作成するのが慣例となっている。
+
+### 4\. Project Inspiration and Description (new\!)
+
+4 番の項目は**注意点**である。2019 年大会から変更された点であり、**Inspiration and Description 専用ページの作成が必要**となる。ジャッジされる際、URL が指定されているので正しいページに書かないと審査されない。いくらすごいプロジェクトを行っても、銅賞すら取れなくなるので注意する必要がある。書き方については右記を参照してほしい。[HERE](https://www.google.com/search?q=https://2019.igem.org/Judging/Pages_for_Judging)
+
+### 5\. Characterization / Contribution (new\!)
+
+5 番の項目が銅賞の基準で**最も過酷**となる。具体的に何をするかは以下の通りである。
+
+<br />
+
+> **Characterization - Standard Tracks**
+> Convince the judges that you have added quantitative experimental characterization data to an existing Part from the Registry of Standard Biological Parts.
+> Clearly document the experimental characterization on the Part's Main Page on the Registry (see the Registry Document Parts page for instructions). This existing part may be a Basic or Composite part and must be BioBrick RFC10 or Type IIS compatible. The part that you are characterizing must NOT be from a 2019 part number range. **It is acceptable to add new data to an already highly characterized part.** Sample submission is not required.
+
+<br />
+つまり、2019 年に提出されるパーツ以外 (過去のパーツ) において定量的な評価を行い、それを
+Registry Page に明確に記述せよということである。ここで重要なのは「**It is acceptable
+to add new data to an already highly characterized part**」である。
+
+<br />
+つまり、どんなパーツを選んでもいい。もし、iGEM 初心者であれば、迷わず評価が簡単な
+GFP や RFP を選ぶといい。可能ならプロジェクトを絡めたいところである。うまくストーリーを構築するとプロジェクトにデータを絡められるので、Gold
+に出てくる Parts Improvement を同時にアッセイできるかもしれない。
+
+---
+
+## 銀賞の基準
+
+以下の 3 項目が銀賞の基準となる。
+
+### Validated Part / Validated Contribution
+
+iGEM によれば以下が Validated ということらしい。
+
+<br />
+
+> **Validated Part - Standard Tracks**
+> Convince the judges that at least one new BioBrick Part of your own design that is related to your project works as expected.
+> Clearly document the experimental characterization on that Part's Main Page on the Registry (see the Registry Document Parts page for instructions). This new part may be a Basic or Composite part. This new part must be BioBrick RFC10 or Type IIS compatible. If your team is creating a new part for Gold \#2, this part must be different from the new part documented for Gold \#2. Sample submission is not required.
+
+<br />
+
+すでに存在するので実際には不可能だが、例として GFP を挙げてみる。まず GFP の ORF だけの Basic part でアッセイはできないので、GFP をプロモーターの下流に入れて動く状態にする。これを大腸菌に発現させることができれば、パーツが 2 つできる。一つは GFP だけのパーツ、もう一つは実際に GFP を生産できるパーツである。
+
+<br />
+パーツとして Validate するためには Composite が必要になる。2018 年以前の iGEM では
+Basic と Composite の両方のプラスミドを本部に送る必要があった。(データではなく、プラスミド本体を送付)
+2019 年から全てのプラスミドはデータに基づいて、Twist Bioscience 社が合成することになったので、送付ということが必要なくなった。したがって、当方として進めたいのは
+Composite を作り、データ登録だけ Basic と Composite の両方で済ませる方法である。ルール的にどうかは確認していないが、定量的アッセイだけ済ませておけば問題ないと考えられる。
+
+<br />
+パーツ登録は非常にややこしく、4 年参加した今でもよく分からない部分がある。iGEM 本部はメールを出すと平日なら次の日には返信をくれるので質問するといい。なお、やけにバケーションが多いので、焦ってやるとなかなか返信が返ってこないことがある。**余裕が重要であること**を強調しておく。
+
+### Collaboration
+
+> Convince the judges you have significantly worked with one (or more) currently registered 2019 iGEM team(s) in a meaningful way. For example, mentor a team (or be mentored by a team), characterize a part, troubleshoot a project, host a meetup, model/simulate a system, or validate a software/hardware solution to a synthetic biology problem.
+> Document your collaboration in detail on your wiki. Judges will look at your collaborator's wiki to see what they say about your interaction. **Simply filling out a survey for a team is not enough to demonstrate a significant interaction.**
+
+<br />
+この基準については日本のチームが最も苦手とする点だと考えている。自分自身がそうだったが、形だけの
+Collaboration をしてドキュメントを作成するパターンに陥りがちであろう。そんなことをしても評価はもらえるが、意味はない。
+
+<br />
+ここでやってほしいのは**意味のあること**である。Meetup を開催するにしても、常にテーマを持ってほしい。たくさん質問する、質問される経験があれば、それは自分自身のプロジェクトを考え直すきっかけになるし、さらにそのようなディスカッションの中から熱いプロジェクトが産まれるかもしれない。単に形で済ませては非常に勿体無いので、このような機会を使い、「**他チームに助けを求め、他チームを助ける**」ということが重要だと考えている。実際、僕はラストイヤーには半年以上にわたり、Gunma
+チームにめちゃめちゃアドバイスした。非常に良い Collaboration だったと信じている。
+
+### Human Practices
+
+> Convince the judges you have thought carefully and creatively about whether your work is responsible and good for the world. Document how you have investigated these issues, how you engaged with communities relevant to your goals, why you chose this approach, what you have learned, and the potential impact of your project’s success.
+
+<br />
+
+> See the Human Practices Hub for more information and examples of previous teams' exemplary work. **Please note that surveys will not fulfill this criteria unless you follow scientifically valid methods.**
+
+<br />
+僕自身、Human Practices については非常に悩まされた。そもそも何をすればいいのかよく分からないからである。この問題点をうまく解決していた日本のチームとして**Kyoto
+2019**と**TokyoTech 2018**がある。
+
+<br />
+両チームは Human Practices をプロジェクトの開始点としておいて活動していた。
+
+- **Kyoto 2019**: マイクロプラスチックを沈殿させて除去するというプロジェクトを行っていたが、これは実際に浄化槽を見学し職員さんに質問して考えたというストーリーを作っていた。
+- **TokyoTech 2018**: デング熱ウイルスの簡易検出法に関して研究していたが、専門家に話を聞いてデング熱ウイルスをより簡便に見つけるという需要の存在を知ったというストーリーを作っていた。
+
+<br />
+この 2 つは極めて説得力がある Human Practices だと考えている。もしも、Human Practices
+に悩むことがあれば**スタートをここにする**というのも面白いかもしれない。
+
+<br />
+2017 以前は学校に行き、高校生などに合成生物学を教えるというのが流行りだったと思うが、近年ではより意味のある
+Human Practices が求められてきている。Kyoto 2019 と TokyoTech 2018 が行っていたようなプロジェクトを複数考える必要性があるかもしれない。なお、ここで説明したものは次に説明する
+Integrated Human Practices にも共通する。
+
+---
+
+## 金賞の基準
+
+金賞の基準については以下 4 つのうち、**2 つを満たせば**達成したことになる。
+
+### Integrated Human Practices
+
+> Expand on your silver medal activity by demonstrating how you have integrated the investigated issues into the purpose, design, and/or execution of your project. Document your process and describe how your human practices work informed and shaped your project at different stages.
+
+<br />
+Integrated Human Practices はさらに難しい。[Examples](https://2019.igem.org/Human_Practices/Examples)で紹介されているが、レベルが高すぎてできる気がしない。社会を動かすような活動と言われてもパッとは思いつかない。一番いいのは**Engaging
+with potential users, stakeholders and other experts**かもしれない。実際に使ってくれそうな人に聞いてみる。多分ダメ出しされるだろうが、それもまたいい意見として採用できる。
+
+### Improve a Previous Part / Project
+
+> Convince the judges that you have created a new BioBrick Part that has a functional improvement of an existing BioBrick Part. You must perform experiments with both parts to demonstrate this improvement.
+
+<br />
+
+> Clearly document the quantitative experimental characterization data on the Part's Main Page on the Registry for both the existing and new parts (see the Registry Document Parts page for instructions). The new part must be BioBrick RFC10 or Type IIS compatible. The sequences of the new and existing parts must be different. Making an existing part compatible to RFC10 or Type IIS is not sufficient to fulfill this criterion. The existing part must NOT be from your 2019 part number range. The existing part must be different from the part you used in Bronze \#5. The new part you create must be different from the new part documented in Silver \#1. Sample submission is not required.
+
+<br />
+例えば iGEM Sydney のように配列を変えて効果の高いものを作るのが一番シンプルで一番難しいが、そんなことをしろということはどこに書いていない。重要なのは**使い方の変更**だと考えている。
+
+<br />
+例として Valencia 2018 を挙げてみる。Valencia 2018 は配列変更はなく、新しい部分を付加するという作業を行うことで、
+Biobrick と GoldenGate の両方を使えるようにしたというものらしい。つまり、**新しい使い方を生み出す**というのも一つのアイデアである。
+
+### Model Your Project
+
+> Convince the judges that your project's design and/or implementation is based on insight you have gained from modeling. This could be either a new model you develop or the implementation of a model from a previous team. You must thoroughly document your model's contribution to your project on your team's wiki, including assumptions, relevant data, model results, and a clear explanation of your model that anyone can understand.
+
+<br />
+
+> The model should impact your project design in a meaningful way. Modeling may include, but is not limited to, deterministic, exploratory, molecular dynamic, and stochastic models. Teams may also explore the physical modeling of a single component within a system or utilize mathematical modeling for predicting function of a more complex device.
+
+<br />
+モデリングについてはガチプロに見られて指摘されるのが怖いので説明は控える。
+
+### Demonstration of Your Work
+
+> Convince the judges that your engineered system works.
+
+<br />
+
+> Your engineered system has to work under realistic conditions. Your system must comply with all rules and policies approved by the iGEM Safety Committee. Your system can derive from or make functional a previous iGEM project by your team or by another team. For multi-component projects, the judges may consider the function of individual components.
+
+<br />
+
+最後はわかりやすい。プロジェクトのプラン通りにパーツが動くことを示すということである。難しいが、やはりこの部分を達成できているプロジェクトを見ると iGEM は楽しい。
+
+---
+
+## 最後に
+
+長々と書いてしまったが、いずれの賞を取得することは非常に険しい道となる。**冬の段階で明確なプロジェクトを構築し、春には実験を開始してしまうことが極めて肝要**である。何れにしても、構築したプロジェクトがきちんと Criteria を通る道になっているかを何度も確かめてほしい。

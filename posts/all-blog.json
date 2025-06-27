@@ -465,7 +465,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/event-info-2021-10_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/event-info-2021-10",
+    "rePost": false,
     "status": "published"
   },
   "how-to-start-igem": {
@@ -514,7 +514,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-2021-promotionvideo_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2021-promotionvideo",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-highschool-log": {
@@ -548,7 +548,7 @@
       "event"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-2022-meeting-00_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-00",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-01": {
@@ -584,7 +584,7 @@
       "event"
     ],
     "coverImage": "/blog/yomogy/images/igem-japan-2022-meeting-02_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-03",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-history-2006-2010": {
@@ -699,7 +699,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem2019-basic-knowledge_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-basic-knowledge",
+    "rePost": false,
     "status": "published"
   },
   "igem2019-criteria": {
@@ -715,7 +715,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem2019-criteria_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2019-criteria",
+    "rePost": false,
     "status": "published"
   },
   "igem2020-ambassador": {
@@ -731,7 +731,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/igem2020-ambassador_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2020-ambassador",
+    "rePost": false,
     "status": "published"
   },
   "igem2020-basic-information": {
@@ -779,7 +779,7 @@
       "history"
     ],
     "coverImage": "/blog/yomogy/images/igem2021-basic-information_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem2021-basic-information",
+    "rePost": false,
     "status": "published"
   },
   "igem2021-japan-media": {
@@ -835,7 +835,7 @@
     "path": "/posts/blog/yomogy/igemer-interview",
     "title": "iGEMer Interview まとめ",
     "publishedAt": "2023-10-09",
-    "updatedAt": "2023-10-09",
+    "updatedAt": "2025-06-28",
     "category": "igem",
     "author": "Yomogy",
     "description": " 歴代iGEMerのインタビューのまとめです。 <br /> ※大変申し訳ございませんが、本記事では敬称略とさせていただいております。 <br /> ※本記事は、情報を更新する可能性があります。 ",
@@ -852,7 +852,7 @@
     "path": "/posts/blog/yomogy/is-igem-fee-expensive",
     "title": "iGEMのチーム登録費用は高いか",
     "publishedAt": "2022-11-28",
-    "updatedAt": "2022-11-28",
+    "updatedAt": "2022-11-29",
     "category": "igem",
     "author": "Yomogy",
     "description": " まず始めに、iGEMは無料で参加できる大会ではない。NPO法人が開催している大会にはなるが、本当にNPOか疑いたくなるレベルで参加費用は高い。\n<br /><br /> ''' The International Genetically Engineered Machine (iGEM) Foundation is an independent, non-profit organization dedicated to the advancement of synthetic biology, education and competition, and the development of an open community and collaboration. '''\n<br /><br /> それはさておき、今回はiGEMでかかる参加費用が高いかどうかを金額的な話ではなく、受けられるサービスと天秤にかけて検討してみたい。 そこからiGEMでかかるお金は高いかどうか独自に論じてみようと思う。\n<br /><br /> ※本記事は、iGEMerにより、2019年年末に書かれた記事をアーカイブしたものになります。 ",
@@ -860,7 +860,7 @@
       "information"
     ],
     "coverImage": "/blog/yomogy/images/is-igem-fee-expensive_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/is-igem-fee-expensive",
+    "rePost": false,
     "status": "published"
   },
   "preparing-for-igem": {

@@ -314,7 +314,7 @@
       "information"
     ],
     "coverImage": "/blog/ishish/images/slack-biorxiv-synbio_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/synbio/slack-biorxiv-synbio",
+    "rePost": false,
     "status": "published"
   },
   "stock-price-summary": {

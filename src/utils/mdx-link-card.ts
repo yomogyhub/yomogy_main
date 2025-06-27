@@ -1,4 +1,4 @@
-import { JSDOM } from "jsdom";
+import { JSDOM, VirtualConsole } from "jsdom";
 
 export interface Metadata {
   url: string;
@@ -17,7 +17,18 @@ export async function fetchPageMetadata(url: string): Promise<Metadata> {
     }
 
     const html = await response.text();
-    const dom = new JSDOM(html);
+    
+    // Create virtual console to suppress CSS parsing errors
+    const virtualConsole = new VirtualConsole();
+    virtualConsole.on("error", () => {
+      // Suppress CSS parsing errors silently
+    });
+    
+    const dom = new JSDOM(html, {
+      virtualConsole,
+      resources: "usable",
+      runScripts: "outside-only"
+    });
     const document = dom.window.document;
 
     const getTitle = () => {

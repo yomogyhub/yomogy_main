@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface Metadata {
   url: string;
@@ -8,13 +8,50 @@ interface Metadata {
 }
 
 interface LinkCardProps {
-  metadata: Metadata;
-  size: "small" | "large";
+  metadata?: Metadata;
+  url?: string;
+  size?: "small" | "large";
 }
 
-const LinkCard: React.FC<LinkCardProps> = ({ metadata, size = "small" }) => {
+const LinkCard: React.FC<LinkCardProps> = ({ metadata, url, size = "small" }) => {
+  const [cardMetadata, setCardMetadata] = useState<Metadata | null>(metadata || null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // If metadata is provided, use it directly
+    if (metadata) {
+      setCardMetadata(metadata);
+      return;
+    }
+
+    // If URL is provided but no metadata, fetch it client-side
+    if (url && !metadata) {
+      setIsLoading(true);
+      // For now, just show the URL as title to avoid server-side fetching
+      setCardMetadata({
+        url: url,
+        title: url,
+        description: null,
+        image: null,
+      });
+      setIsLoading(false);
+    }
+  }, [metadata, url]);
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="bg-white dark:bg-gray-800 p-4 mt-8 mb-8 rounded shadow-md">
+        <div className="animate-pulse">
+          <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+          <div className="h-3 bg-gray-300 rounded w-1/2"></div>
+        </div>
+      </div>
+    );
+  }
+
   // metadataが未定義の場合、何も表示しない
-  if (!metadata || !metadata.url) {
+  if (!cardMetadata || !cardMetadata.url) {
     return null;
   }
 
@@ -23,25 +60,25 @@ const LinkCard: React.FC<LinkCardProps> = ({ metadata, size = "small" }) => {
       <div className="bg-white dark:bg-gray-800 p-4 mt-8 mb-8 rounded shadow-md">
         <a
           className="block"
-          href={metadata.url}
+          href={cardMetadata.url}
           target="_blank"
           rel="noreferrer"
         >
-          {metadata.image && metadata.title && (
+          {cardMetadata.image && cardMetadata.title && (
             <img
               className="w-full rounded-t"
-              src={metadata.image}
-              alt={metadata.title}
+              src={cardMetadata.image}
+              alt={cardMetadata.title}
             />
           )}
           <div className="p-2">
             <div className="text-gray-900 text-xl font-bold dark:text-gray-300">
-              {metadata.title}
+              {cardMetadata.title}
             </div>
             <p className="text-sm text-gray-600  mt-1 mb-2 dark:text-gray-400">
-              {metadata.description}
+              {cardMetadata.description}
             </p>
-            <span>{new URL(metadata.url).hostname}</span>
+            <span>{new URL(cardMetadata.url).hostname}</span>
           </div>
         </a>
       </div>
@@ -54,26 +91,26 @@ const LinkCard: React.FC<LinkCardProps> = ({ metadata, size = "small" }) => {
           {/* max-w-xl を追加 */}
           <a
             className="block"
-            href={metadata.url}
+            href={cardMetadata.url}
             target="_blank"
             rel="noreferrer"
           >
             <div className="text-gray-900 text-xl font-bold dark:text-gray-300">
-              {metadata.title}
+              {cardMetadata.title}
             </div>
             <p className="text-sm text-gray-600 mt-1 mb-2 dark:text-gray-400 ">
-              {metadata.description}
+              {cardMetadata.description}
             </p>
-            <span>{new URL(metadata.url).hostname}</span>
+            <span>{new URL(cardMetadata.url).hostname}</span>
           </a>
         </div>
-        {metadata.image && metadata.title && (
+        {cardMetadata.image && cardMetadata.title && (
           <div className="max-w-1/4">
-            <a href={metadata.url} target="_blank" rel="noreferrer">
+            <a href={cardMetadata.url} target="_blank" rel="noreferrer">
               <img
                 className="rounded"
-                src={metadata.image}
-                alt={metadata.title}
+                src={cardMetadata.image}
+                alt={cardMetadata.title}
               />
             </a>
           </div>

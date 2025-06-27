@@ -8,6 +8,16 @@ export interface Metadata {
 }
 
 export async function fetchPageMetadata(url: string): Promise<Metadata> {
+  // Skip external fetching during build to reduce bundle size
+  if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
+    return {
+      url: url,
+      title: url,
+      description: null,
+      image: null,
+    };
+  }
+
   try {
     const response = await fetch(url);
 
@@ -76,19 +86,7 @@ export async function fetchPageMetadata(url: string): Promise<Metadata> {
 export async function processMDXContent(
   originalContent: string
 ): Promise<string> {
-  let processedContent = originalContent;
-
-  const linkCardPattern = /<LinkCard url="([^"]+)"/g;
-
-  let match;
-  while ((match = linkCardPattern.exec(originalContent)) !== null) {
-    const url = match[1];
-    const metadata = await fetchPageMetadata(url);
-
-    // 元の<LinkCard>タグを新しいタグに置き換えます。
-    const replacement = `<LinkCard metadata={${JSON.stringify(metadata)}}`;
-    processedContent = processedContent.replace(match[0], replacement);
-  }
-
-  return processedContent;
+  // Skip metadata fetching during build to reduce bundle size
+  // Link cards will fetch metadata on the client side instead
+  return originalContent;
 }

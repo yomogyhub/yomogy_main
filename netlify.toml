@@ -1,7 +1,7 @@
 # netlify.toml
 
 [build]
-  command = "npm run build && rm -rf .next/cache && rm -rf .next/trace"
+  command = "npm run build && rm -rf .next/cache"
   publish = ".next"
 
 [context.production.environment]

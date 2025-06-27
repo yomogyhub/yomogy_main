@@ -15,12 +15,39 @@ const nextConfig = {
     optimizePackageImports: ['react-icons'],
   },
   
+  // Minimize output size for Netlify
+  // output: 'standalone', // Disabled for Netlify compatibility
+  
   // Configure build output
   webpack: (config, { isServer }) => {
     if (isServer) {
       // Externalize large dependencies that don't need to be bundled
-      config.externals = [...(config.externals || []), 'canvas'];
+      config.externals = [
+        ...config.externals,
+        'canvas',
+        'jsdom',
+        '@octokit/rest',
+        'react-ace'
+      ];
     }
+    
+    // Minimize bundle size
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        ...config.optimization.splitChunks,
+        cacheGroups: {
+          ...config.optimization.splitChunks?.cacheGroups,
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            maxSize: 200000,
+          },
+        },
+      },
+    };
+    
     return config;
   },
 };

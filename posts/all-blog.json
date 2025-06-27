@@ -314,7 +314,7 @@
       "information"
     ],
     "coverImage": "/blog/ishish/images/slack-biorxiv-synbio_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/synbio/slack-biorxiv-synbio",
+    "rePost": false,
     "status": "published"
   },
   "stock-price-summary": {
@@ -331,7 +331,7 @@
       "information"
     ],
     "coverImage": "/blog/ishish/images/stock-price-summary_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/synbio/stock-price-summary",
+    "rePost": false,
     "status": "published"
   },
   "igem-hq-wiki-rule": {

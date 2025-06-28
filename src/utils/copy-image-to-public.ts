@@ -78,3 +78,18 @@ export function copyImagesToPublic(
   const validFiles = filterValidFiles(allFiles);
   copyFilesToDestination(validFiles, sourceDir, destinationDir);
 }
+
+// 同期機能：古いファイルを削除してから新しいファイルをコピー
+export function syncImagesToPublic(
+  sourceDir: string,
+  destinationDir: string
+): void {
+  // 既存の宛先ディレクトリが存在する場合は削除
+  if (fs.existsSync(destinationDir)) {
+    fs.rmSync(destinationDir, { recursive: true, force: true });
+    console.log(`Removed existing directory: ${destinationDir}`);
+  }
+
+  // 新しくディレクトリを作成してファイルをコピー
+  copyImagesToPublic(sourceDir, destinationDir);
+}

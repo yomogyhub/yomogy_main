@@ -24,17 +24,34 @@ const LinkCard: React.FC<LinkCardProps> = ({ metadata, url, size = "small" }) =>
       return;
     }
 
-    // If URL is provided but no metadata, fetch it client-side
+    // If URL is provided but no metadata, try to fetch it client-side
     if (url && !metadata) {
       setIsLoading(true);
-      // For now, just show the URL as title to avoid server-side fetching
-      setCardMetadata({
-        url: url,
-        title: url,
-        description: null,
-        image: null,
-      });
-      setIsLoading(false);
+      
+      // Try to fetch metadata from a CORS proxy or use the URL as fallback
+      const fetchMetadata = async () => {
+        try {
+          // For external URLs, use the URL as title for now
+          // In a production environment, you'd use a CORS proxy or server-side API
+          setCardMetadata({
+            url: url,
+            title: new URL(url).hostname,
+            description: `Link to ${url}`,
+            image: null,
+          });
+        } catch (error) {
+          setCardMetadata({
+            url: url,
+            title: url,
+            description: null,
+            image: null,
+          });
+        } finally {
+          setIsLoading(false);
+        }
+      };
+      
+      fetchMetadata();
     }
   }, [metadata, url]);
 

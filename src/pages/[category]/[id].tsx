@@ -68,12 +68,9 @@ export async function getStaticProps({
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { content } = matter(fileContents);
 
-    // Process MDX content
-    const processedContent1 = await processMDXContent(content);
-    const processedContent = await processMDXContentForMediaCard(processedContent1);
-
-    mdxSource = processedContent
-      ? await serialize(processedContent, {
+    // Process MDX content directly with serialize
+    mdxSource = content
+      ? await serialize(content, {
           mdxOptions: {
             remarkPlugins: [remarkPrism as any],
             rehypePlugins: [rehypePrism as any],

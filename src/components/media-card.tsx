@@ -1,5 +1,5 @@
 interface MediaCardProps {
-  mediaType: "image" | "video";
+  mediaType?: "image" | "video";
   src: string;
   alt: string;
   caption?: string;
@@ -16,9 +16,18 @@ const MediaCard: React.FC<MediaCardProps> = ({
     ? src.replace("https://yomogy.com/", "/")
     : src;
 
+  // Auto-detect media type if not provided
+  const detectedMediaType = mediaType || (
+    src.toLowerCase().includes('.mp4') || 
+    src.toLowerCase().includes('.webm') || 
+    src.toLowerCase().includes('.ogg')
+      ? "video" 
+      : "image"
+  );
+
   return (
     <div style={{ width: "100%", height: "auto", margin: "3em 0" }}>
-      {mediaType === "image" ? (
+      {detectedMediaType === "image" ? (
         <img src={fixSrc} alt={alt} />
       ) : (
         <video controls>

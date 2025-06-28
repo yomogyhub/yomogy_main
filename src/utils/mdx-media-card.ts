@@ -42,19 +42,7 @@ export async function fetchMediaMetadata(url: string): Promise<MediaMetadata> {
 export async function processMDXContentForMediaCard(
   originalContent: string
 ): Promise<string> {
-  let processedContent = originalContent;
-
-  const mediaCardPattern = /<MediaCard src="([^"]+)"/g;
-
-  let match;
-  while ((match = mediaCardPattern.exec(originalContent)) !== null) {
-    const url = match[1];
-    const metadata = await fetchMediaMetadata(url);
-
-    // Replace the original <MediaCard> tag with the new tag with metadata.
-    const replacement = `<MediaCard mediaType="${metadata.mediaType}" src="${metadata.src}" alt="${metadata.alt}" caption="${metadata.caption}"`;
-    processedContent = processedContent.replace(match[0], replacement);
-  }
-
-  return processedContent;
+  // For static export, skip metadata fetching and use default values
+  // MediaCard component will handle the display with provided props
+  return originalContent;
 }

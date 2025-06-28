@@ -21,6 +21,8 @@ interface AuthorData {
   name: string;
   bio: string;
   image?: string;
+  description?: string;
+  twitter?: string;
 }
 
 interface ListCount {
@@ -112,7 +114,9 @@ async function generateJSONFiles() {
         allAuthors[author] = {
           name: author,
           bio: `Posts by ${author}`,
+          description: `Posts by ${author}`,
           image: `/authors/${author.toLowerCase()}.png`,
+          twitter: '',
         };
       }
     }

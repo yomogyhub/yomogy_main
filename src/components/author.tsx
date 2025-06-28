@@ -28,7 +28,7 @@ export const AuthorDetails: React.FC<AuthorDetailsProps> = ({ author }) => {
             </div>
           </div>
           <div className="flex space-x-4">
-            {author.twitter.length >= 3 && (
+            {author.twitter && author.twitter.length >= 3 && (
               <span className="link_a hover:underline transition-all duration-300">
                 <a href={author.twitter}>X (Twitter)</a>
               </span>

@@ -68,8 +68,11 @@ export async function getStaticProps({
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { content } = matter(fileContents);
 
+    // Convert absolute URLs to relative URLs for static export
+    let contentWithRelativeUrls = content.replace(/https:\/\/yomogy\.com\//g, '/');
+    
     // Process MDX content
-    const processedContent1 = await processMDXContent(content);
+    const processedContent1 = await processMDXContent(contentWithRelativeUrls);
     const processedContent = await processMDXContentForMediaCard(processedContent1);
 
     mdxSource = processedContent

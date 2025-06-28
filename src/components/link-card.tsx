@@ -49,26 +49,30 @@ const LinkCard: React.FC<LinkCardProps> = ({
     if (url && !metadata && title === undefined && description === undefined && image === undefined) {
       setIsLoading(true);
       
-      // Fetch metadata using Next.js API Routes
+      // Fetch metadata using external OGP service
       const fetchMetadata = async () => {
         try {
-          // Use Next.js API route for OGP fetching
-          const apiUrl = `/api/fetch-metadata?url=${encodeURIComponent(url)}`;
+          // Use external OGP API service (CORS-enabled)
+          const apiUrl = `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=false&screenshot=false&video=false`;
           const response = await fetch(apiUrl);
           
           if (response.ok) {
-            const metadata = await response.json();
-            setCardMetadata({
-              url: url,
-              title: metadata.title || new URL(url).hostname,
-              description: metadata.description || "External link",
-              image: metadata.image || null,
-            });
+            const data = await response.json();
+            if (data.status === 'success' && data.data) {
+              setCardMetadata({
+                url: url,
+                title: data.data.title || new URL(url).hostname,
+                description: data.data.description || "External link",
+                image: data.data.image?.url || null,
+              });
+            } else {
+              throw new Error('API response not successful');
+            }
           } else {
             throw new Error(`API response: ${response.status}`);
           }
         } catch (error) {
-          console.warn('Failed to fetch metadata via API:', error);
+          console.warn('Failed to fetch metadata via external API:', error);
           // Fallback to basic metadata
           setCardMetadata({
             url: url,

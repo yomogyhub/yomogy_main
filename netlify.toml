@@ -2,10 +2,7 @@
 
 [build]
   command = "npx ts-node runFunction.ts && npm run build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "out"
 
 [context.production.environment]
   NODE_VERSION = "20"

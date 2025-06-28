@@ -15,10 +15,309 @@ description: "
 本記事では、Synthetic Biologyについて取り扱いますが、bioRxivで扱うジャンルでは、どのようなものでも作成が可能です。
 " # 記事の説明
 tag: ["app", "paper", "synbio", "information"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/synbio/slack-biorxiv-synbio" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published" # "published" or "draft"
 ---
 
-## サイト移行中です。
+## 概要
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/synbio/slack-biorxiv-synbio)から記事をお読みください。
+この記事では、近年バイオ領域で注目を集めているプレプリントサーバーである bioRxiv のジャンルごとの新着論文、人気論文を Slack に毎週ながすための方法をまとめてあります。主に GAS を使いますので、ローカル環境を汚さずに手軽に管理でき、すべての機能については無料で構築が可能になっております。コードは最後にまとめてあります。
+
+<br />
+**注意:** 2019年の夏頃作成したものです。2020年4月では動作しておりますが、状況の変化は早いので、最新情報も確認するようにしてください。
+
+---
+
+## モチベーション
+
+[bioRxiv](https://www.biorxiv.org) はプレプリントサーバーであり、情報の信頼度は高くないが、査読前の論文などが上がっており、情報のスピードが速いのが特徴です。
+
+<br />
+しかし、それらの特徴の反面、大量の論文がアップされ、全てを網羅することは不可能に近いです。さらに、その中でも本当に有用な論文は一握りです。
+
+<br />
+時間を無駄に浪費しないで、有用な論文に素早くたどり着けるように、なるべく毎回のコストを少なくするにはどうすれば良いかということから、このようなスタイルになりました。
+
+---
+
+## 1\. GAS で bioRxiv の最新記事を取得する
+
+**GAS とは？**
+GAS とは [Google Apps Script](https://developers.google.com/apps-script) という Google が提供しているクラウドベースのプログラミングツールです。書き方は JavaScript に似ています。
+（GAS は怠惰な生活を送るためのツールを開発するにはちょうどいいと思う。）
+
+### GAS でプロジェクトを立ち上げる
+
+Google Drive にアクセスし、新規作成 \> その他 \> Google Apps Script を選択することで、新規プロジェクトが立ち上がります。
+
+<br />
+次にスプレッドシート連携し、スプレッドシートを簡易 DB として使用します。まず Google
+Drive 内にスプレッドシートを新規作成してください。
+
+<br />
+そして、このようになっているリンクの`xxxspreadsheet_idxxx`部分を記録します。
+
+> `https://docs.google.com/spreadsheets/d/xxxspreadsheet_idxxx/`
+
+<br />
+次にシートの名前を main にして、DB の項目を以下のように作成します。
+
+> `id, Doi, title, title_japanese, url, date, up_data, altmetric_pct|, altmetric_score, how_altmetric_check, score_flag`
+
+<br />
+これらを 1 列目に記入しておきます。これはコードと紐付けるため、場所が重要です。{" "}
+
+※ 参考ですので、各自変更してもらって構いません
+
+<br />
+
+プログラムを実行すると認証ページが出てくることがあります。
+開発者である場合問題ありませんので、[こちらの方の記事](https://tonari-it.com/)などから認証お願いします。
+
+### GAS でスクレイピング
+
+bioRxiv にはカテゴリーわけがすでにされています。
+今回は Synthetic Biology に興味がありますので、
+
+> `http://connect.biorxiv.org/biorxiv_xml.php?subject=synthetic_biology`
+
+<br />
+ここの情報をとってきたいです。最後の部分を目的のカテゴリーに変更することで、様々なカテゴリーで可能になります。
+
+<br />
+スクレイピングは Parser ライブラリを使用します。 設定方法につきましては[こちらの方の記事](https://www.kotanin0.work/)などからお願いします。
+
+<br />
+準備が整ったら、スクレイピングをしていきます。 目的部分を抽出して、先ほどのスプレッドシートに追記していきます。
+記事の重複は避けたいので、DB に登録してある直近の 50 論文の DOI を確認し、未登録な最新論文のみ新規登録していきます。
+
+<br />
+**注意:** 最初に始める時は 50 論文もないのでエラーが出るかもしれません。適宜変更してください。
+
+<br />
+この時、論文タイトルも取得できますが、英語であるため、Google 翻訳のライブラリを導入し、日本語のタイトルも登録しています。
+
+---
+
+## 2\. bioRxiv の記事の流行度合いを確認する
+
+DOI を使用し、論文の SNS での流行度合いを簡単に調べることができる、Altmetric の API を利用します。
+
+<br />
+Altmetric での score を取得するために、先ほどのスクレイピングと同様に、Parser ライブラリを使用し、API
+にアクセスし、情報を取得します。スコアは 0 \~ 100 に正規化された`pct`を利用します。
+
+<br />
+90 以上のスコアで流行しているものだと判断するようにしました。(週 1 本ぐらいが 90
+以上です)
+
+<br />
+今回は DB にあるすべての論文に対して、流行度を調べ続けるのではなく、4 回(1 週間ごとだと
+1 ヶ月)のみ調べるようにしています。
+
+<br />
+これまでの条件を元に、取得した情報を分類して、スプレッドシートに上書きしていきます。
+
+<br />
+ここまでで、bioRxiv の論文を適切に分類することアプリケーションは完成です。
+
+---
+
+## 3\. GAS と Slack を連携する
+
+エンドポイントとして Slack に分類されたデータをながれるようにします。
+＊エンドポイントは Twitter でも Discord でもなんでも、API さえあれば基本的には可能です。
+
+<br />
+まず Slack と連携するために、Slack 側で媒介するアプリを作成し、slack api token を取得します。
+主な手順は
+
+> - slack api にアクセスし、Create App を選択しアプリを作成する - OAuth & Permissons \> Scopes \> SelectPermission Scopes で Send messages as xxxx を選択する - Slack 側でアプリを登録し、slack api token( OAuth Access Token)を取得する
+
+<br />
+slack api token を GAS 側に記述し、メッセージの送信を可能にします。 そして、メッセージを送りたいチャネルを選択します。
+
+<br />
+設定方法につきましては[こちらの方の記事](https://breezegroup.co.jp/)などからお願いします。(定期的にプログラムを実行する方法も書かれています。)
+
+---
+
+## 4\. 定期的にプログラムを実行する
+
+GAS ではプログラムを自動で定期的に実行することができます。
+
+<br />
+GAS の 編集\>すべてのトリガー から指定した時間にプログラム( 今回だったら main)を実行できるように設定します。
+その機能を利用して、1 週間に 1 回決まった時間にプログラムを実行するように設定しています。
+
+<br />
+これで完成です。1 週間に 1 回、新着論文と人気論文をチェックすることができるようになりました！
+
+---
+
+## 5\. コード
+
+```javascript
+function main() {
+  //スプレッドシートのid
+  var id = "xxxspreadsheet_idxxx"; // 各自変更してください
+  var sheet_main = spreadsheet_select(id, "main"); // スクレイピングの部分
+
+  var keyword = "synthetic_biology";
+  var url_path =
+    "http://connect.biorxiv.org/biorxiv_xml.php?subject=" + keyword;
+  var html = UrlFetchApp.fetch(url_path).getContentText();
+  var parser = Parser.data(html); // 細かくする
+
+  var doi = Parser.data(html)
+    .from("<dc:identifier>doi:")
+    .to("</dc:identifier>")
+    .iterate();
+  var date = Parser.data(html).from("<dc:date>").to("</dc:date>").iterate();
+  var up_data = Parser.data(html)
+    .from("<prism:publicationDate>")
+    .to("</prism:publicationDate>")
+    .iterate();
+  var title = Parser.data(html)
+    .from("<dc:title><![CDATA[")
+    .to("]]></dc:title>")
+    .iterate();
+  var link = Parser.data(html)
+    .from('<rdf:li rdf:resource="')
+    .to('"/>')
+    .iterate(); //Logger.log(parser); //Logger.log(doi); // slack用
+
+  var slackallinfo = [];
+  var slackhotinfo = []; // DBに格納する
+  var Main_lastRow = sheet_main.getLastRow();
+  var db_id = sheet_main.getRange("B2:B" + Main_lastRow).getValues();
+  for (i = title.length - 1; i >= 0; i--) {
+    //Logger.log(title[i]);
+    var old_check_flag = 0;
+    for (j = Main_lastRow - 1; j >= Main_lastRow - 51; j--) {
+      // 最初は51を適切に変更してください
+      if (db_id[j] == doi[i]) {
+        old_check_flag = 1;
+        break;
+      } else if (doi[i] == "10.1101/825406") {
+        // たまにエラーになる記事がある
+        old_check_flag = 1;
+        break;
+      }
+    }
+
+    if (old_check_flag == 0) {
+      Main_lastRow += 1;
+      Logger.log(doi[i]);
+      var japanese_title = LanguageApp.translate(title[i], "en", "ja");
+      sheet_main.getRange("A" + Main_lastRow).setValue(Main_lastRow - 1);
+      sheet_main.getRange("B" + Main_lastRow).setValue(doi[i]);
+      sheet_main.getRange("C" + Main_lastRow).setValue(title[i]);
+      sheet_main.getRange("D" + Main_lastRow).setValue(japanese_title);
+      sheet_main.getRange("E" + Main_lastRow).setValue(link[i]);
+      sheet_main.getRange("F" + Main_lastRow).setValue(date[i]);
+      sheet_main.getRange("G" + Main_lastRow).setValue(up_data[i]);
+      sheet_main.getRange("J" + Main_lastRow).setValue(0);
+      sheet_main.getRange("K" + Main_lastRow).setValue(0);
+      slackallinfo.push([title[i], japanese_title, link[i]]);
+    }
+  } // score調べる
+
+  var check_raw = Main_lastRow + 0;
+  for (i = check_raw; i > 0; i--) {
+    // 何回チェックしたか、４回（１ヶ月)行ったら終わり
+    var check_count = sheet_main.getRange("J" + i).getValues();
+    if (check_count < 4) {
+      // altmetric_scoreを調べる
+      var check_doi = sheet_main.getRange("B" + i).getValues();
+      try {
+        var check_url = "https://api.altmetric.com/v1/doi/" + check_doi;
+        var check_html = UrlFetchApp.fetch(check_url).getContentText();
+        var check_parser = Parser.data(check_html);
+        var check_pct = Parser.data(check_html)
+          .from('"pct":')
+          .to(',"higher_than"')
+          .iterate();
+        var check_score = Parser.data(check_html)
+          .from('"score":')
+          .to(',"history":')
+          .iterate();
+        var altmetric_flag = true;
+      } catch (e) {
+        var altmetric_flag = false;
+      }
+
+      if (altmetric_flag == true) {
+        sheet_main.getRange("H" + i).setValue(check_pct[1]);
+        sheet_main.getRange("I" + i).setValue(check_score);
+        sheet_main.getRange("J" + i).setValue(parseInt(check_count) + 1);
+
+        if (check_pct[1] > 89) {
+          // 89以上で人気と判断
+          if (sheet_main.getRange("K" + i).getValues() == 0) {
+            sheet_main.getRange("K" + i).setValue(1);
+            slackhotinfo.push([
+              sheet_main.getRange("C" + i).getValues(),
+              sheet_main.getRange("D" + i).getValues(),
+              sheet_main.getRange("E" + i).getValues(),
+            ]); // title, jp_title, link
+          }
+        }
+      } else {
+        sheet_main.getRange("H" + i).setValue(0);
+        sheet_main.getRange("I" + i).setValue(0);
+        sheet_main.getRange("J" + i).setValue(parseInt(check_count) + 1);
+      }
+    } else if (check_count == 4) {
+      break;
+    }
+  } // slack
+
+  var all_new = "今週追加された論文\n";
+  var hot_new = "今週話題になった論文\n";
+  slackFunction(all_new, slackallinfo, "#task"); // 各自変更してください
+  slackFunction(hot_new, slackhotinfo, "#random"); // 各自変更してください
+}
+
+// Slack部分
+function slackFunction(ms, info, channel) {
+  //送信メッセージ
+  var mss = ms;
+  for (i = 0; i < info.length; i++) {
+    mss += info[i][0] + "\n" + info[i][1] + "\n" + info[i][2] + "\n\n";
+  } //送るパラメータの定義
+
+  var payload = {
+    token: "xxxxslack_api_tokenxxxx", // 各自変更してください
+    text: mss,
+    channel: channel,
+  };
+  var options = {
+    method: "POST",
+    payload: payload,
+  };
+  UrlFetchApp.fetch("https://slack.com/api/chat.postMessage", options);
+}
+
+function spreadsheet_select(path, name) {
+  var ss = SpreadsheetApp.openById(String(path)); //スプレッドシート名
+  var sheet_active = ss.getSheetByName(String(name)); //シートの名前
+  return sheet_active;
+}
+```
+
+---
+
+## 参考文献
+
+多くの方の記事を参考にさせていただきました。ありがとうございます。
+
+<br />- **今回の主なベース (プログラムを GAS に変更しました。)**
+[imamachi-n.hatenablog.com](https://imamachi-n.hatenablog.com/)
+
+<br />- **GAS でのスクレイピング**
+[www.kotanin0.work](https://www.kotanin0.work/)
+
+<br />- **GAS と Slack の連携** [breezegroup.co.jp](https://breezegroup.co.jp/)
+
+<br />- **GAS の認証** [tonari-it.com](https://tonari-it.com/)

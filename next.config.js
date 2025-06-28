@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   env: {
     BASE_URL: process.env.BASE_URL,
     SEARCH_BASE_URL: process.env.SEARCH_BASE_URL,

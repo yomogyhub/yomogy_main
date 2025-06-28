@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import {
   getPostsPaths,
@@ -5,9 +8,9 @@ import {
   getAdjacentPosts,
   getListData,
   getAuthorDetails,
-} from "../api/get-posts-category";
+} from "../../lib/posts";
 import { Category, PostID, BlogPostProps } from "../../utils/posts-type";
-import { processMDXContent } from "../../utils/mdx-link-card";
+import { processMDXContent, extractOGPMetadata } from "../../utils/mdx-link-card";
 import { processMDXContentForMediaCard } from "../../utils/mdx-media-card";
 
 import Seo from "../../components/seo";
@@ -41,37 +44,49 @@ export async function getStaticProps({
     ? getAuthorDetails(blogPostProps.data.author)
     : null;
 
-  const listDataResult = blogPostProps.data
+  const listDataResult = blogPostProps.data && blogPostProps.data.tag && blogPostProps.data.tag.length > 0
     ? await getListData(params.category, blogPostProps.data.tag[0])
     : await getListData(params.category);
 
   const relatedPosts = "posts" in listDataResult ? listDataResult.posts : [];
 
-  // Check if data.id is undefined, and if so, replace it with null
+  // Check if data.id is undefined, and if so, replace it with empty string
   if (blogPostProps.data && blogPostProps.data.id === undefined) {
-    blogPostProps.data.id = null;
+    (blogPostProps.data as any).id = params.id;
     blogPostProps.data.coverImage = blogPostProps.coverImage ?? null;
   }
 
   // 前後の記事を取得
   const adjacentPosts = await getAdjacentPosts(params.id);
 
-  // mdx
-  const processedContent1 = await processMDXContent(
-    blogPostProps.content ?? ""
-  ); // for link card. コードブロックの中も除外できないので注意
-  const processedContent = await processMDXContentForMediaCard(
-    processedContent1
-  ); // for media card.
+  // Read MDX file directly in getStaticProps
+  let mdxSource = null;
+  let ogpMetadata = {};
+  
+  try {
+    // Use the path from JSON instead of constructing from author
+    const relativePath = blogPostProps.data?.path || `/posts/blog/${blogPostProps.data?.author}/${params.id}`;
+    const filePath = path.join(process.cwd(), `${relativePath}.mdx`);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { content } = matter(fileContents);
 
-  const mdxSource = processedContent
-    ? await serialize(processedContent, {
-        mdxOptions: {
-          remarkPlugins: [remarkPrism],
-          rehypePlugins: [rehypePrism],
-        },
-      })
-    : null;
+    // Process MDX content and extract OGP metadata
+    const processedContent = await processMDXContent(content);
+    ogpMetadata = await extractOGPMetadata(content);
+    
+    mdxSource = processedContent
+      ? await serialize(processedContent, {
+          mdxOptions: {
+            remarkPlugins: [remarkPrism as any],
+            rehypePlugins: [rehypePrism as any],
+          },
+        })
+      : null;
+  } catch (error) {
+    console.error(`Error reading MDX file for ${params.id}:`, error);
+    return { notFound: true };
+  }
+
   return {
     props: {
       ...blogPostProps,
@@ -82,6 +97,7 @@ export async function getStaticProps({
       adjacentPosts: adjacentPosts,
       coverImage: blogPostProps.coverImage,
       path: blogPostProps.path,
+      ogpMetadata: ogpMetadata,
     },
   };
 }
@@ -94,6 +110,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
   id,
   adjacentPosts,
   path,
+  ogpMetadata,
 }) => {
   return (
     <>
@@ -112,6 +129,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
             id={id}
             adjacentPosts={adjacentPosts}
             path={path}
+            ogpMetadata={ogpMetadata}
           />
         }
         rightComponent={

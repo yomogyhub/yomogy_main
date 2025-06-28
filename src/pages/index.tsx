@@ -1,4 +1,4 @@
-import { getListData, getBasicContent } from "./api/get-posts-category";
+import { getListData, getBasicContent } from "../lib/posts";
 import { FrameTemplate } from "../components/frame-template";
 import PageList from "../components/page-list";
 import { PostLists, PageNationProps } from "../utils/posts-type";

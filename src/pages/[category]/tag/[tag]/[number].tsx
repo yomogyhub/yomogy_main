@@ -3,7 +3,7 @@ import {
   getAllCategoryTagsPath,
   getListData,
   getBasicContent,
-} from "../../../api/get-posts-category";
+} from "../../../../lib/posts";
 import PageList from "../../../../components/page-list";
 import {
   PostLists,

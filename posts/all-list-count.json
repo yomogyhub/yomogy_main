@@ -5,15 +5,6 @@
     "book": 1,
     "tech": 1
   },
-  "authors": {
-    "Gifu": 8,
-    "Gunma": 1,
-    "HokkaidoU": 1,
-    "ishish": 10,
-    "Qdai": 4,
-    "Yomogy": 29,
-    "Toyaku": 1
-  },
   "categoryTags": {
     "igem": {
       "information": 37,
@@ -35,5 +26,14 @@
       "synbio": 1,
       "information": 1
     }
+  },
+  "authors": {
+    "gifu": 8,
+    "gunma": 1,
+    "hokkaidou": 1,
+    "ishish": 10,
+    "qdai": 5,
+    "toyaku": 1,
+    "yomogy": 28
   }
 }

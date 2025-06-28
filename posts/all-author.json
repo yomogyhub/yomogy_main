@@ -1,56 +1,51 @@
 {
-  "Template": {
-    "name": "テンプレート",
-    "description": "テンプレートです。",
-    "twitter": "https://x.com/y0m0gy",
-    "image": "/authors/y0m0gy.png"
+  "gifu": {
+    "name": "gifu",
+    "bio": "Posts by gifu",
+    "description": "Posts by gifu",
+    "image": "/authors/gifu.png",
+    "twitter": ""
   },
-  "Yomogy": {
-    "name": "Yomogy",
-    "description": "サイト運営チームです。合成生物学やiGEMに関する情報をまとめています。",
-    "twitter": "https://x.com/y0m0gy",
-    "image": "/authors/y0m0gy.png"
+  "gunma": {
+    "name": "gunma",
+    "bio": "Posts by gunma",
+    "description": "Posts by gunma",
+    "image": "/authors/gunma.png",
+    "twitter": ""
   },
-  "Qdai": {
-    "name": "Qdai",
-    "description": "iGEM Qdaiです。",
-    "twitter": "https://x.com/igemqdai",
-    "image": "/authors/qdai.png"
-  },
-  "HokkaidoU": {
-    "name": "HokkaidoU",
-    "description": "iGEM HokkaidoUです。",
-    "twitter": "https://x.com/igemhokkaidou",
-    "image": "/authors/hokkaidou.png"
-  },
-  "Gunma": {
-    "name": "Gunma",
-    "description": "iGEM Gunmaです。",
-    "twitter": "https://x.com/iGEM_Gunma",
-    "image": "/authors/gunma.png"
-  },
-  "Toyaku": {
-    "name": "Toyaku",
-    "description": "iGEM Toyakuです。",
-    "twitter": "https://x.com/iGEMToyaku",
-    "image": "/authors/toyaku.png"
-  },
-  "Gifu": {
-    "name": "Gifu",
-    "description": "iGEM Gifuです。",
-    "twitter": "https://x.com/iGEMgifu",
-    "image": "/authors/gifu.png"
-  },
-  "Waseda": {
-    "name": "Waseda",
-    "description": "iGEM Wasedaです。",
-    "twitter": "https://x.com/Wasedaigem",
-    "image": "/authors/waseda.png"
+  "hokkaidou": {
+    "name": "hokkaidou",
+    "bio": "Posts by hokkaidou",
+    "description": "Posts by hokkaidou",
+    "image": "/authors/hokkaidou.png",
+    "twitter": ""
   },
   "ishish": {
     "name": "ishish",
-    "description": "ish-ishです。",
-    "twitter": "",
-    "image": "/authors/ishish.png"
+    "bio": "Posts by ishish",
+    "description": "Posts by ishish",
+    "image": "/authors/ishish.png",
+    "twitter": ""
+  },
+  "qdai": {
+    "name": "qdai",
+    "bio": "Posts by qdai",
+    "description": "Posts by qdai",
+    "image": "/authors/qdai.png",
+    "twitter": ""
+  },
+  "toyaku": {
+    "name": "toyaku",
+    "bio": "Posts by toyaku",
+    "description": "Posts by toyaku",
+    "image": "/authors/toyaku.png",
+    "twitter": ""
+  },
+  "yomogy": {
+    "name": "yomogy",
+    "bio": "Posts by yomogy",
+    "description": "Posts by yomogy",
+    "image": "/authors/y0m0gy.png",
+    "twitter": ""
   }
 }

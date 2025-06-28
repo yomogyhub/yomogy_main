@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FrameTemplate } from "../../components/frame-template";
 import Sidebar from "../../components/sidebar";
-import { getBasicContent, getJsonAllList } from "../api/get-posts-category";
+import { getBasicContent, getJsonAllList } from "../../lib/posts";
 import { PostLists, ListCount } from "../../utils/posts-type";
 
 export async function getStaticProps() {

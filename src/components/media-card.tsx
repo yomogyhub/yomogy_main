@@ -1,5 +1,7 @@
+import Image from "next/image";
+
 interface MediaCardProps {
-  mediaType: "image" | "video";
+  mediaType?: "image" | "video";
   src: string;
   alt: string;
   caption?: string;
@@ -11,16 +13,32 @@ const MediaCard: React.FC<MediaCardProps> = ({
   alt,
   caption,
 }) => {
-  const baseDomain = "https://yomogy.com";
-  const isFromYomogy = src.startsWith(baseDomain);
-  const fixSrc = isFromYomogy
-    ? src.replace("https://yomogy.com", `${process.env.BASE_URL}`)
+  // For static export, use relative paths
+  const fixSrc = src.startsWith("https://yomogy.com/")
+    ? src.replace("https://yomogy.com/", "/")
     : src;
+
+  // Auto-detect media type if not provided
+  const detectedMediaType = mediaType || (
+    src.toLowerCase().includes('.mp4') || 
+    src.toLowerCase().includes('.webm') || 
+    src.toLowerCase().includes('.ogg')
+      ? "video" 
+      : "image"
+  );
 
   return (
     <div style={{ width: "100%", height: "auto", margin: "3em 0" }}>
-      {mediaType === "image" ? (
-        <img src={fixSrc} alt={alt} />
+      {detectedMediaType === "image" ? (
+        <Image 
+          src={fixSrc} 
+          alt={alt}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+          unoptimized
+        />
       ) : (
         <video controls>
           <source src={fixSrc} type="video/mp4" />

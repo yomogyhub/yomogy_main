@@ -183,6 +183,7 @@ export async function processMDXContent(
     
     try {
       const metadata = await fetchPageMetadata(url);
+      console.log(`Processing LinkCard for ${url}:`, metadata);
       
       // Replace the original <LinkCard> tag with metadata
       const replacement = `<LinkCard url="${url}" title="${metadata.title || ''}" description="${metadata.description || ''}" image="${metadata.image || ''}"${existingProps} />`;

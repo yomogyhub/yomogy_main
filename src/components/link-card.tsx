@@ -103,8 +103,10 @@ const LinkCard: React.FC<LinkCardProps> = ({
               className="w-full rounded-t"
               src={cardMetadata.image}
               alt={cardMetadata.title}
-              width={400}
-              height={200}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
               unoptimized
             />
           )}
@@ -150,8 +152,10 @@ const LinkCard: React.FC<LinkCardProps> = ({
                 className="rounded"
                 src={cardMetadata.image}
                 alt={cardMetadata.title}
-                width={120}
-                height={80}
+                width={0}
+                height={0}
+                sizes="25vw"
+                style={{ width: "100%", height: "auto" }}
                 unoptimized
               />
             </a>

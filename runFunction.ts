@@ -111,11 +111,14 @@ async function generateJSONFiles() {
       
       // Add author data if not exists
       if (!allAuthors[author]) {
+        // Handle special case for Yomogy -> y0m0gy
+        const imageFilename = author === 'yomogy' ? 'y0m0gy' : author.toLowerCase();
+        
         allAuthors[author] = {
           name: author,
           bio: `Posts by ${author}`,
           description: `Posts by ${author}`,
-          image: `/authors/${author.toLowerCase()}.png`,
+          image: `/authors/${imageFilename}.png`,
           twitter: '',
         };
       }

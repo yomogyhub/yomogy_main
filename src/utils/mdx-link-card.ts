@@ -171,29 +171,7 @@ export async function fetchPageMetadata(url: string): Promise<Metadata> {
 export async function processMDXContent(
   originalContent: string
 ): Promise<string> {
-  let processedContent = originalContent;
-
-  // LinkCard url="..." の正規表現パターン
-  const linkCardPattern = /<LinkCard\s+url="([^"]+)"([^>]*?)\/?>|<LinkCard\s+url="([^"]+)"([^>]*?)>.*?<\/LinkCard>/g;
-
-  let match;
-  while ((match = linkCardPattern.exec(originalContent)) !== null) {
-    const url = match[1] || match[3];
-    const existingProps = match[2] || match[4] || '';
-    
-    try {
-      const metadata = await fetchPageMetadata(url);
-      console.log(`Processing LinkCard for ${url}:`, metadata);
-      
-      // Replace the original <LinkCard> tag with metadata
-      const replacement = `<LinkCard url="${url}" title="${metadata.title || ''}" description="${metadata.description || ''}" image="${metadata.image || ''}"${existingProps} />`;
-      
-      processedContent = processedContent.replace(match[0], replacement);
-    } catch (error) {
-      console.warn(`Failed to fetch metadata for ${url}:`, error);
-      // Keep original if metadata fetching fails
-    }
-  }
-
-  return processedContent;
+  // Disable server-side processing to avoid MDX syntax issues
+  // LinkCard components will handle OGP fetching client-side
+  return originalContent;
 }

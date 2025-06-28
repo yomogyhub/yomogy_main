@@ -24,7 +24,6 @@ const LinkCard: React.FC<LinkCardProps> = ({
   image, 
   size = "small" 
 }) => {
-  console.log('LinkCard props:', { metadata, url, title, description, image });
   const [cardMetadata, setCardMetadata] = useState<Metadata | null>(metadata || null);
   const [isLoading, setIsLoading] = useState(false);
 

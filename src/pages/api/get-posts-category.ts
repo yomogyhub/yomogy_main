@@ -61,6 +61,7 @@ export async function createJsonForAuthorsAndPosts() {
         coverImage: `/blog/${authorDir}/images/${id}_cover.png`,
         rePost: matterResult.data.rePost,
         status: matterResult.data.status,
+        content: matterResult.content, // Store content in JSON
       };
 
       if (allAuthorsCount[author]) {
@@ -421,21 +422,16 @@ export async function getData(params: Category & PostID) {
   if (!params.category || !params.id) return { notFound: true };
   const postInfo = await getJsonPost(params.id);
 
-  const filePath = path.join(process.cwd(), `${postInfo.path}.mdx`);
-  const fileContents = await fs.promises.readFile(filePath, "utf8");
-  const { data, content } = matter(fileContents);
-
-  if (!data || !data.title) {
-    return {
-      notFound: true,
-    };
+  if (!postInfo) {
+    return { notFound: true };
   }
 
+  // Use pre-processed content from JSON instead of reading files at runtime
   return {
-    category: data.category,
-    id: data.id,
-    content: content,
-    data: data,
+    category: postInfo.category,
+    id: postInfo.id,
+    content: postInfo.content || '', // Use content from JSON
+    data: postInfo,
     coverImage: postInfo.coverImage,
     path: postInfo.path,
   };

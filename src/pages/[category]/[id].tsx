@@ -47,9 +47,9 @@ export async function getStaticProps({
 
   const relatedPosts = "posts" in listDataResult ? listDataResult.posts : [];
 
-  // Check if data.id is undefined, and if so, replace it with null
+  // Check if data.id is undefined, and if so, replace it with empty string
   if (blogPostProps.data && blogPostProps.data.id === undefined) {
-    blogPostProps.data.id = null;
+    (blogPostProps.data as any).id = params.id;
     blogPostProps.data.coverImage = blogPostProps.coverImage ?? null;
   }
 

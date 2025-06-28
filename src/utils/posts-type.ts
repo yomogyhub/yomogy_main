@@ -29,6 +29,7 @@ export interface PrePost {
 export interface Post extends PrePost {
   id: string;
   coverImage: string;
+  content?: string; // Add content field
 }
 
 export interface PostLists {

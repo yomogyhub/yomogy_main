@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { AuthorData } from "../utils/posts-type";
 
 type AuthorDetailsProps = {
@@ -9,9 +10,11 @@ export const AuthorDetails: React.FC<AuthorDetailsProps> = ({ author }) => {
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <div className="flex items-center space-x-6">
-        <img
+        <Image
           src={author.image}
           alt={author.name}
+          width={80}
+          height={80}
           className="w-20 h-20 rounded-full border-2 border-black-500 dark:border-white-300 hover:border-blue-500 transition-all duration-300"
         />
         <div className="space-y-4">

@@ -6,7 +6,8 @@
       "Bash(rm:*)",
       "Bash(git checkout:*)",
       "Bash(node:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }

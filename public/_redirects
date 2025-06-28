@@ -1,0 +1,11 @@
+# Netlify redirects for static site
+# Handle trailing slashes for Next.js static export
+
+# Redirect pages without trailing slash to with trailing slash
+/igem/page/:number /igem/page/:number/ 301
+/:category/page/:number /:category/page/:number/ 301
+/:category/tag/:tag/:number /:category/tag/:tag/:number/ 301
+/author/:name/:number /author/:name/:number/ 301
+
+# Catch all for SPA behavior
+/*    /index.html   200

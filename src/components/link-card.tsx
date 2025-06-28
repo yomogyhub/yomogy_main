@@ -10,10 +10,20 @@ interface Metadata {
 interface LinkCardProps {
   metadata?: Metadata;
   url?: string;
+  title?: string;
+  description?: string;
+  image?: string;
   size?: "small" | "large";
 }
 
-const LinkCard: React.FC<LinkCardProps> = ({ metadata, url, size = "small" }) => {
+const LinkCard: React.FC<LinkCardProps> = ({ 
+  metadata, 
+  url, 
+  title, 
+  description, 
+  image, 
+  size = "small" 
+}) => {
   const [cardMetadata, setCardMetadata] = useState<Metadata | null>(metadata || null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,8 +34,19 @@ const LinkCard: React.FC<LinkCardProps> = ({ metadata, url, size = "small" }) =>
       return;
     }
 
+    // If individual props are provided, create metadata from them
+    if (url && (title || description || image)) {
+      setCardMetadata({
+        url: url,
+        title: title || null,
+        description: description || null,
+        image: image || null,
+      });
+      return;
+    }
+
     // If URL is provided but no metadata, try to fetch it client-side
-    if (url && !metadata) {
+    if (url && !metadata && !title && !description && !image) {
       setIsLoading(true);
       
       // Try to fetch metadata from a CORS proxy or use the URL as fallback
@@ -53,7 +74,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ metadata, url, size = "small" }) =>
       
       fetchMetadata();
     }
-  }, [metadata, url]);
+  }, [metadata, url, title, description, image]);
 
   // Show loading state
   if (isLoading) {

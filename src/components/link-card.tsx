@@ -49,23 +49,11 @@ const LinkCard: React.FC<LinkCardProps> = ({
     if (url && !metadata && title === undefined && description === undefined && image === undefined) {
       setIsLoading(true);
       
-      // Fetch metadata using Netlify Functions (production) or fallback (development)
+      // Fetch metadata using Next.js API Routes
       const fetchMetadata = async () => {
         try {
-          // In development, use fallback since Netlify Functions aren't available
-          if (process.env.NODE_ENV === 'development') {
-            // Development fallback - show domain with indication it would work in production
-            setCardMetadata({
-              url: url,
-              title: new URL(url).hostname,
-              description: "External link (OGP will load in production)",
-              image: null,
-            });
-            return;
-          }
-          
-          // Production: Use Netlify Functions API
-          const apiUrl = `/.netlify/functions/fetch-metadata?url=${encodeURIComponent(url)}`;
+          // Use Next.js API route for OGP fetching
+          const apiUrl = `/api/fetch-metadata?url=${encodeURIComponent(url)}`;
           const response = await fetch(apiUrl);
           
           if (response.ok) {

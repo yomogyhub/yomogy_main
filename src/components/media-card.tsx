@@ -11,10 +11,9 @@ const MediaCard: React.FC<MediaCardProps> = ({
   alt,
   caption,
 }) => {
-  const baseDomain = "https://yomogy.com";
-  const isFromYomogy = src.startsWith(baseDomain);
-  const fixSrc = isFromYomogy
-    ? src.replace("https://yomogy.com", `${process.env.BASE_URL}`)
+  // For static export, use relative paths
+  const fixSrc = src.startsWith("https://yomogy.com/")
+    ? src.replace("https://yomogy.com/", "/")
     : src;
 
   return (

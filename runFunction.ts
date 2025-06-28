@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { createImage } from "./src/utils/make-fig";
-import { syncImagesToPublic } from "./src/utils/copy-image-to-public";
+import { copyImagesToPublic } from "./src/utils/copy-image-to-public";
 
 interface Post {
   id: string;
@@ -174,7 +174,13 @@ async function generateJSONFiles() {
     const destinationPath = path.join(process.cwd(), "public", "blog", author);
     
     try {
-      syncImagesToPublic(sourcePath, destinationPath);
+      // Simple sync: remove existing directory and copy fresh
+      if (fs.existsSync(destinationPath)) {
+        fs.rmSync(destinationPath, { recursive: true, force: true });
+        console.log(`Removed existing directory: ${destinationPath}`);
+      }
+      
+      copyImagesToPublic(sourcePath, destinationPath);
       console.log(`Synced images for author: ${author}`);
     } catch (error) {
       console.error(`Failed to sync images for ${author}:`, error);

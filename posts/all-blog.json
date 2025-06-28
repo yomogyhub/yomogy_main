@@ -6,9 +6,7 @@
     "publishedAt": "2021-07-17",
     "updatedAt": "2021-07-17",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-gifu-2021",
     "coverImage": "/blog/gifu/images/igem-gifu-2021_cover.png",
@@ -22,11 +20,7 @@
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
-    "tag": [
-      "journal-club",
-      "information",
-      "history"
-    ],
+    "tag": ["journal-club", "information", "history"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-1",
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-1_cover.png",
@@ -40,11 +34,7 @@
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
-    "tag": [
-      "journal-club",
-      "information",
-      "history"
-    ],
+    "tag": ["journal-club", "information", "history"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-2",
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-2_cover.png",
@@ -58,11 +48,7 @@
     "publishedAt": "2021-10-20",
     "updatedAt": "2021-10-20",
     "category": "igem",
-    "tag": [
-      "journal-club",
-      "information",
-      "history"
-    ],
+    "tag": ["journal-club", "information", "history"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-journal-club-epfl2019",
     "coverImage": "/blog/gifu/images/igem-japan-journal-club-epfl2019_cover.png",
@@ -76,9 +62,7 @@
     "publishedAt": "2021-10-13",
     "updatedAt": "2021-10-13",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-safety-policies",
     "coverImage": "/blog/gifu/images/igem-safety-policies_cover.png",
@@ -92,9 +76,7 @@
     "publishedAt": "2021-10-20",
     "updatedAt": "2021-10-20",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-wiki-bootstrap-adopt",
     "coverImage": "/blog/gifu/images/igem-wiki-bootstrap-adopt_cover.png",
@@ -108,9 +90,7 @@
     "publishedAt": "2021-10-13",
     "updatedAt": "2021-10-13",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-wiki-editing-first-step-tips",
     "coverImage": "/blog/gifu/images/igem-wiki-editing-first-step-tips_cover.png",
@@ -124,10 +104,7 @@
     "publishedAt": "2022-11-26",
     "updatedAt": "2022-11-26",
     "category": "igem",
-    "tag": [
-      "information",
-      "history"
-    ],
+    "tag": ["information", "history"],
     "author": "gifu",
     "path": "/posts/blog/gifu/igem2019-experience",
     "coverImage": "/blog/gifu/images/igem2019-experience_cover.png",
@@ -141,9 +118,7 @@
     "publishedAt": "2021-06-15",
     "updatedAt": "2021-06-15",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "gunma",
     "path": "/posts/blog/gunma/igem-gunma-2021",
     "coverImage": "/blog/gunma/images/igem-gunma-2021_cover.png",
@@ -157,9 +132,7 @@
     "publishedAt": "2021-05-27",
     "updatedAt": "2021-05-27",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "hokkaidou",
     "path": "/posts/blog/hokkaidou/igem-hokkaidou-2021",
     "coverImage": "/blog/hokkaidou/images/igem-hokkaidou-2021_cover.png",
@@ -173,9 +146,7 @@
     "publishedAt": "2021-04-23",
     "updatedAt": "2021-04-23",
     "category": "synbio",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/biosensor-overview",
     "coverImage": "/blog/ishish/images/biosensor-overview_cover.png",
@@ -189,9 +160,7 @@
     "publishedAt": "2021-05-06",
     "updatedAt": "2021-05-06",
     "category": "book",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/bookreview-synbio-impact",
     "coverImage": "/blog/ishish/images/bookreview-synbio-impact_cover.png",
@@ -205,10 +174,7 @@
     "publishedAt": "2021-01-11",
     "updatedAt": "2021-04-25",
     "category": "synbio",
-    "tag": [
-      "information",
-      "paper"
-    ],
+    "tag": ["information", "paper"],
     "author": "ishish",
     "path": "/posts/blog/ishish/cell-free-biosensor",
     "coverImage": "/blog/ishish/images/cell-free-biosensor_cover.png",
@@ -222,10 +188,7 @@
     "publishedAt": "2021-01-07",
     "updatedAt": "2020-12-07",
     "category": "synbio",
-    "tag": [
-      "information",
-      "paper"
-    ],
+    "tag": ["information", "paper"],
     "author": "ishish",
     "path": "/posts/blog/ishish/cell-free-overview",
     "coverImage": "/blog/ishish/images/cell-free-overview_cover.png",
@@ -239,10 +202,7 @@
     "publishedAt": "2021-07-26",
     "updatedAt": "2021-07-26",
     "category": "synbio",
-    "tag": [
-      "startup",
-      "information"
-    ],
+    "tag": ["startup", "information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/ginkgo-2021",
     "coverImage": "/blog/ishish/images/ginkgo-2021_cover.png",
@@ -256,10 +216,7 @@
     "publishedAt": "2021-07-25",
     "updatedAt": "2021-07-25",
     "category": "synbio",
-    "tag": [
-      "startup",
-      "information"
-    ],
+    "tag": ["startup", "information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/ginkgo-history",
     "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
@@ -273,9 +230,7 @@
     "publishedAt": "2023-10-20",
     "updatedAt": "2023-10-20",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/igem-high-school-links-china",
     "coverImage": "/blog/ishish/images/igem-high-school-links-china_cover.png",
@@ -289,9 +244,7 @@
     "publishedAt": "2023-11-07",
     "updatedAt": "2023-11-07",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/igem-japan-road-to-grandprize",
     "coverImage": "/blog/ishish/images/igem-japan-road-to-grandprize_cover.png",
@@ -305,12 +258,7 @@
     "publishedAt": "2021-05-07",
     "updatedAt": "2021-05-07",
     "category": "tech",
-    "tag": [
-      "app",
-      "paper",
-      "synbio",
-      "information"
-    ],
+    "tag": ["app", "paper", "synbio", "information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/slack-biorxiv-synbio",
     "coverImage": "/blog/ishish/images/slack-biorxiv-synbio_cover.png",
@@ -324,10 +272,7 @@
     "publishedAt": "2021-07-27",
     "updatedAt": "2021-07-27",
     "category": "synbio",
-    "tag": [
-      "startup",
-      "information"
-    ],
+    "tag": ["startup", "information"],
     "author": "ishish",
     "path": "/posts/blog/ishish/stock-price-summary",
     "coverImage": "/blog/ishish/images/stock-price-summary_cover.png",
@@ -341,9 +286,7 @@
     "publishedAt": "2021-09-06",
     "updatedAt": "2021-09-06",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-hq-wiki-rule",
     "coverImage": "/blog/qdai/images/igem-hq-wiki-rule_cover.png",
@@ -357,11 +300,7 @@
     "publishedAt": "2022-01-03",
     "updatedAt": "2022-01-03",
     "category": "igem",
-    "tag": [
-      "information",
-      "journal-club",
-      "event"
-    ],
+    "tag": ["information", "journal-club", "event"],
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-japan-2022-meeting-03",
     "coverImage": "/blog/qdai/images/igem-japan-2022-meeting-03_cover.png",
@@ -375,11 +314,7 @@
     "publishedAt": "2021-10-20",
     "updatedAt": "2021-10-20",
     "category": "igem",
-    "tag": [
-      "journal-club",
-      "information",
-      "history"
-    ],
+    "tag": ["journal-club", "information", "history"],
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-japan-journal-club-szuchina2019",
     "coverImage": "/blog/qdai/images/igem-japan-journal-club-szuchina2019_cover.png",
@@ -393,9 +328,7 @@
     "publishedAt": "2021-05-11",
     "updatedAt": "2021-05-11",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-qdai-2021",
     "coverImage": "/blog/qdai/images/igem-qdai-2021_cover.png",
@@ -409,9 +342,7 @@
     "publishedAt": "2021-09-06",
     "updatedAt": "2021-09-06",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-wiki-tips",
     "coverImage": "/blog/qdai/images/igem-wiki-tips_cover.png",
@@ -425,9 +356,7 @@
     "publishedAt": "2022-03-28",
     "updatedAt": "2022-03-28",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "toyaku",
     "path": "/posts/blog/toyaku/igem-toyaku-2022",
     "coverImage": "/blog/toyaku/images/igem-toyaku-2022_cover.png",
@@ -441,10 +370,7 @@
     "publishedAt": "2023-12-25",
     "updatedAt": "2023-12-25",
     "category": "igem",
-    "tag": [
-      "information",
-      "history"
-    ],
+    "tag": ["information", "history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/dissolution-of-igem-community-2023",
     "coverImage": "/blog/yomogy/images/dissolution-of-igem-community-2023_cover.png",
@@ -458,10 +384,7 @@
     "publishedAt": "2021-10-20",
     "updatedAt": "2021-10-20",
     "category": "igem",
-    "tag": [
-      "event",
-      "information"
-    ],
+    "tag": ["event", "information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/event-info-2021-10",
     "coverImage": "/blog/yomogy/images/event-info-2021-10_cover.png",
@@ -475,9 +398,7 @@
     "publishedAt": "2020-12-15",
     "updatedAt": "2020-12-15",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/how-to-start-igem",
     "coverImage": "/blog/yomogy/images/how-to-start-igem_cover.png",
@@ -491,10 +412,7 @@
     "publishedAt": "2023-10-10",
     "updatedAt": "2023-12-25",
     "category": "igem",
-    "tag": [
-      "history",
-      "information"
-    ],
+    "tag": ["history", "information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-advent-calendar-summary",
     "coverImage": "/blog/yomogy/images/igem-advent-calendar-summary_cover.png",
@@ -508,9 +426,7 @@
     "publishedAt": "2021-09-05",
     "updatedAt": "2021-09-05",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-2021-promotionvideo",
     "coverImage": "/blog/yomogy/images/igem-japan-2021-promotionvideo_cover.png",
@@ -524,9 +440,7 @@
     "publishedAt": "2022-12-08",
     "updatedAt": "2023-03-04",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-2022-highschool-log",
     "coverImage": "/blog/yomogy/images/igem-japan-2022-highschool-log_cover.png",
@@ -540,11 +454,7 @@
     "publishedAt": "2021-12-11",
     "updatedAt": "2021-12-11",
     "category": "igem",
-    "tag": [
-      "information",
-      "journal-club",
-      "event"
-    ],
+    "tag": ["information", "journal-club", "event"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-2022-meeting-00",
     "coverImage": "/blog/yomogy/images/igem-japan-2022-meeting-00_cover.png",
@@ -558,11 +468,7 @@
     "publishedAt": "2021-12-14",
     "updatedAt": "2021-12-14",
     "category": "igem",
-    "tag": [
-      "information",
-      "journal-club",
-      "event"
-    ],
+    "tag": ["information", "journal-club", "event"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-2022-meeting-01",
     "coverImage": "/blog/yomogy/images/igem-japan-2022-meeting-01_cover.png",
@@ -576,11 +482,7 @@
     "publishedAt": "2021-12-15",
     "updatedAt": "2021-12-15",
     "category": "igem",
-    "tag": [
-      "information",
-      "journal-club",
-      "event"
-    ],
+    "tag": ["information", "journal-club", "event"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-2022-meeting-02",
     "coverImage": "/blog/yomogy/images/igem-japan-2022-meeting-02_cover.png",
@@ -594,10 +496,7 @@
     "publishedAt": "2020-12-03",
     "updatedAt": "2023-08-11",
     "category": "igem",
-    "tag": [
-      "history",
-      "information"
-    ],
+    "tag": ["history", "information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-history-2006-2010",
     "coverImage": "/blog/yomogy/images/igem-japan-history-2006-2010_cover.png",
@@ -611,10 +510,7 @@
     "publishedAt": "2020-12-04",
     "updatedAt": "2021-04-29",
     "category": "igem",
-    "tag": [
-      "history",
-      "information"
-    ],
+    "tag": ["history", "information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-history-2011-2015",
     "coverImage": "/blog/yomogy/images/igem-japan-history-2011-2015_cover.png",
@@ -628,10 +524,7 @@
     "publishedAt": "2020-12-05",
     "updatedAt": "2021-04-29",
     "category": "igem",
-    "tag": [
-      "history",
-      "information"
-    ],
+    "tag": ["history", "information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-history-2016-2020",
     "coverImage": "/blog/yomogy/images/igem-japan-history-2016-2020_cover.png",
@@ -645,9 +538,7 @@
     "publishedAt": "2022-11-10",
     "updatedAt": "2022-11-10",
     "category": "igem",
-    "tag": [
-      "event"
-    ],
+    "tag": ["event"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-japan-meetup-2022",
     "coverImage": "/blog/yomogy/images/igem-japan-meetup-2022_cover.png",
@@ -661,9 +552,7 @@
     "publishedAt": "2021-05-05",
     "updatedAt": "2021-05-05",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem-schedule",
     "coverImage": "/blog/yomogy/images/igem-schedule_cover.png",
@@ -677,9 +566,7 @@
     "publishedAt": "2020-12-01",
     "updatedAt": "2020-12-01",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2019-basic-information",
     "coverImage": "/blog/yomogy/images/igem2019-basic-information_cover.png",
@@ -693,9 +580,7 @@
     "publishedAt": "2022-11-27",
     "updatedAt": "2022-11-27",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2019-basic-knowledge",
     "coverImage": "/blog/yomogy/images/igem2019-basic-knowledge_cover.png",
@@ -709,9 +594,7 @@
     "publishedAt": "2022-11-27",
     "updatedAt": "2022-11-27",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2019-criteria",
     "coverImage": "/blog/yomogy/images/igem2019-criteria_cover.png",
@@ -725,9 +608,7 @@
     "publishedAt": "2022-11-29",
     "updatedAt": "2022-11-29",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2020-ambassador",
     "coverImage": "/blog/yomogy/images/igem2020-ambassador_cover.png",
@@ -741,9 +622,7 @@
     "publishedAt": "2020-12-02",
     "updatedAt": "2020-12-02",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2020-basic-information",
     "coverImage": "/blog/yomogy/images/igem2020-basic-information_cover.png",
@@ -757,9 +636,7 @@
     "publishedAt": "2022-11-26",
     "updatedAt": "2022-11-26",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2020-japan-media",
     "coverImage": "/blog/yomogy/images/igem2020-japan-media_cover.png",
@@ -773,9 +650,7 @@
     "publishedAt": "2021-12-05",
     "updatedAt": "2021-12-05",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2021-basic-information",
     "coverImage": "/blog/yomogy/images/igem2021-basic-information_cover.png",
@@ -789,9 +664,7 @@
     "publishedAt": "2022-11-11",
     "updatedAt": "2022-11-11",
     "category": "igem",
-    "tag": [
-      "history"
-    ],
+    "tag": ["history"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2021-japan-media",
     "coverImage": "/blog/yomogy/images/igem2021-japan-media_cover.png",
@@ -805,28 +678,24 @@
     "publishedAt": "2022-12-02",
     "updatedAt": "2023-03-04",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2022-now-next",
     "coverImage": "/blog/yomogy/images/igem2022-now-next_cover.png",
     "rePost": false,
     "status": "published"
   },
-  "igem2023-jugding-handbook-summary": {
-    "id": "igem2023-jugding-handbook-summary",
-    "title": "iGEM Jugding Handbook 2023 要点",
-    "description": " 本記事では、iGEM Competition における評価の絶対の基準となる、iGEM Jugding Handbook 2023 についての要点について紹介する。 ",
+  "igem2023-judging-handbook-summary": {
+    "id": "igem2023-judging-handbook-summary",
+    "title": "iGEM Judging Handbook 2023 要点",
+    "description": " 本記事では、iGEM Competition における評価の絶対の基準となる、iGEM Judging Handbook 2023 についての要点について紹介する。 ",
     "publishedAt": "2023-09-16",
     "updatedAt": "2023-09-16",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
-    "path": "/posts/blog/yomogy/igem2023-jugding-handbook-summary",
-    "coverImage": "/blog/yomogy/images/igem2023-jugding-handbook-summary_cover.png",
+    "path": "/posts/blog/yomogy/igem2023-judging-handbook-summary",
+    "coverImage": "/blog/yomogy/images/igem2023-judging-handbook-summary_cover.png",
     "rePost": false,
     "status": "published"
   },
@@ -837,10 +706,7 @@
     "publishedAt": "2023-10-09",
     "updatedAt": "2025-06-28",
     "category": "igem",
-    "tag": [
-      "history",
-      "information"
-    ],
+    "tag": ["history", "information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igemer-interview",
     "coverImage": "/blog/yomogy/images/igemer-interview_cover.png",
@@ -854,9 +720,7 @@
     "publishedAt": "2022-11-28",
     "updatedAt": "2022-11-29",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/is-igem-fee-expensive",
     "coverImage": "/blog/yomogy/images/is-igem-fee-expensive_cover.png",
@@ -870,9 +734,7 @@
     "publishedAt": "2023-12-23",
     "updatedAt": "2023-12-23",
     "category": "igem",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/preparing-for-igem",
     "coverImage": "/blog/yomogy/images/preparing-for-igem_cover.png",
@@ -886,9 +748,7 @@
     "publishedAt": "2020-11-30",
     "updatedAt": "2021-04-29",
     "category": "synbio",
-    "tag": [
-      "information"
-    ],
+    "tag": ["information"],
     "author": "yomogy",
     "path": "/posts/blog/yomogy/synbio-media-yomogy",
     "coverImage": "/blog/yomogy/images/synbio-media-yomogy_cover.png",

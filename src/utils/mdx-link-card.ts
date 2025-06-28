@@ -170,6 +170,12 @@ async function fetchInternalMetadata(url: string): Promise<Metadata> {
     const path = require('path');
     
     const jsonPath = path.join(process.cwd(), 'posts', 'all-blog.json');
+    
+    // JSON ファイルの存在確認
+    if (!fs.existsSync(jsonPath)) {
+      throw new Error(`JSON file not found: ${jsonPath}`);
+    }
+    
     const postsData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
     
     // 該当する投稿を検索（オブジェクト形式なのでObject.valuesで配列に変換）
@@ -185,9 +191,9 @@ async function fetchInternalMetadata(url: string): Promise<Metadata> {
       };
     }
     
-    throw new Error('Post not found');
+    throw new Error(`Post not found: ${category}/${id}`);
   } catch (error) {
-    console.warn(`Failed to fetch internal metadata for ${url}:`, error);
+    console.error(`❌ Failed to fetch internal metadata for ${url}:`, error);
     return {
       url: url,
       title: "yomogy.com",
@@ -211,8 +217,6 @@ export async function extractOGPMetadata(content: string): Promise<Record<string
   
   for (const url of Array.from(urlsToProcess)) {
     try {
-      console.log(`Fetching metadata for: ${url}`);
-      
       // 内部リンクかどうかチェック
       if (url.includes('yomogy.com/synbio/') || url.includes('yomogy.com/igem/')) {
         const metadata = await fetchInternalMetadata(url);

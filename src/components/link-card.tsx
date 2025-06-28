@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { useOGP } from "../contexts/OGPContext";
 
 // Simple markdown link parser
@@ -98,10 +99,13 @@ const LinkCard: React.FC<LinkCardProps> = ({
           rel="noreferrer"
         >
           {cardMetadata.image && cardMetadata.title && (
-            <img
+            <Image
               className="w-full rounded-t"
               src={cardMetadata.image}
               alt={cardMetadata.title}
+              width={400}
+              height={200}
+              unoptimized
             />
           )}
           <div className="p-2">
@@ -142,10 +146,13 @@ const LinkCard: React.FC<LinkCardProps> = ({
         {cardMetadata.image && cardMetadata.title && (
           <div className="max-w-1/4">
             <a href={cardMetadata.url} target="_blank" rel="noreferrer">
-              <img
+              <Image
                 className="rounded"
                 src={cardMetadata.image}
                 alt={cardMetadata.title}
+                width={120}
+                height={80}
+                unoptimized
               />
             </a>
           </div>

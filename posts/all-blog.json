@@ -147,7 +147,7 @@
     "author": "gunma",
     "path": "/posts/blog/gunma/igem-gunma-2021",
     "coverImage": "/blog/gunma/images/igem-gunma-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-gunma-2021",
+    "rePost": false,
     "status": "published"
   },
   "igem-hokkaidou-2021": {
@@ -163,7 +163,7 @@
     "author": "hokkaidou",
     "path": "/posts/blog/hokkaidou/igem-hokkaidou-2021",
     "coverImage": "/blog/hokkaidou/images/igem-hokkaidou-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-hokkaidou-2021",
+    "rePost": false,
     "status": "published"
   },
   "biosensor-overview": {

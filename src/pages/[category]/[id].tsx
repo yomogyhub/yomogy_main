@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import {
   getPostsPaths,
@@ -5,7 +8,7 @@ import {
   getAdjacentPosts,
   getListData,
   getAuthorDetails,
-} from "../api/get-posts-category";
+} from "../../lib/posts";
 import { Category, PostID, BlogPostProps } from "../../utils/posts-type";
 import { processMDXContent } from "../../utils/mdx-link-card";
 import { processMDXContentForMediaCard } from "../../utils/mdx-media-card";
@@ -56,18 +59,14 @@ export async function getStaticProps({
   // 前後の記事を取得
   const adjacentPosts = await getAdjacentPosts(params.id);
 
-  // Read MDX file directly in getStaticProps (not bundled in server function)
+  // Read MDX file directly in getStaticProps
   let mdxSource = null;
   try {
-    const fs = await import('fs');
-    const path = await import('path');
-    const matter = await import('gray-matter');
-    
     // Use the path from JSON instead of constructing from author
     const relativePath = blogPostProps.data?.path || `/posts/blog/${blogPostProps.data?.author}/${params.id}`;
     const filePath = path.join(process.cwd(), `${relativePath}.mdx`);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const { content } = matter.default(fileContents);
+    const { content } = matter(fileContents);
 
     // Process MDX content
     const processedContent1 = await processMDXContent(content);

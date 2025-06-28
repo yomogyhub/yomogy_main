@@ -3,7 +3,7 @@ import {
   getAllAuthorPath,
   getPostsByAuthor,
   getBasicContent,
-} from "../../api/get-posts-category";
+} from "../../../lib/posts";
 import PageList from "../../../components/page-list";
 import { PageNationProps, PostLists } from "../../../utils/posts-type";
 import Sidebar from "../../../components/sidebar";

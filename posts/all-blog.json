@@ -814,8 +814,8 @@
     "rePost": false,
     "status": "published"
   },
-  "igem2023-jugding-handbook-summary": {
-    "id": "igem2023-jugding-handbook-summary",
+  "igem2023-Jugding-handbook-summary": {
+    "id": "igem2023-Jugding-handbook-summary",
     "title": "iGEM Jugding Handbook 2023 要点",
     "description": " 本記事では、iGEM Competition における評価の絶対の基準となる、iGEM Jugding Handbook 2023 についての要点について紹介する。 ",
     "publishedAt": "2023-09-16",
@@ -825,8 +825,8 @@
       "information"
     ],
     "author": "yomogy",
-    "path": "/posts/blog/yomogy/igem2023-jugding-handbook-summary",
-    "coverImage": "/blog/yomogy/images/igem2023-jugding-handbook-summary_cover.png",
+    "path": "/posts/blog/yomogy/igem2023-Jugding-handbook-summary",
+    "coverImage": "/blog/yomogy/images/igem2023-Jugding-handbook-summary_cover.png",
     "rePost": false,
     "status": "published"
   },

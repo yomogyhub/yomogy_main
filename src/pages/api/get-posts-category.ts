@@ -61,7 +61,7 @@ export async function createJsonForAuthorsAndPosts() {
         coverImage: `/blog/${authorDir}/images/${id}_cover.png`,
         rePost: matterResult.data.rePost,
         status: matterResult.data.status,
-        content: matterResult.content, // Store content in JSON
+        // content: matterResult.content, // Removed to reduce JSON size
       };
 
       if (allAuthorsCount[author]) {
@@ -417,7 +417,7 @@ export async function getBasicContent() {
   };
 }
 
-// ファイル名からデータを取得する
+// ファイル名からメタデータを取得する（contentは含まない）
 export async function getData(params: Category & PostID) {
   if (!params.category || !params.id) return { notFound: true };
   const postInfo = await getJsonPost(params.id);
@@ -426,11 +426,11 @@ export async function getData(params: Category & PostID) {
     return { notFound: true };
   }
 
-  // Use pre-processed content from JSON instead of reading files at runtime
+  // Return metadata only, content will be read in getStaticProps
   return {
     category: postInfo.category,
     id: postInfo.id,
-    content: postInfo.content || '', // Use content from JSON
+    content: '', // Empty content, will be read separately
     data: postInfo,
     coverImage: postInfo.coverImage,
     path: postInfo.path,

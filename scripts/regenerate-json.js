@@ -48,7 +48,7 @@ async function createJsonForAuthorsAndPosts() {
         coverImage: `/blog/${authorDir}/images/${id}_cover.png`,
         rePost: matterResult.data.rePost,
         status: matterResult.data.status,
-        content: matterResult.content, // Store content in JSON
+        // content: matterResult.content, // Removed to reduce JSON size
       };
 
       if (allAuthorsCount[author]) {

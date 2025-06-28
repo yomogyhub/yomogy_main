@@ -56,22 +56,36 @@ export async function getStaticProps({
   // 前後の記事を取得
   const adjacentPosts = await getAdjacentPosts(params.id);
 
-  // mdx
-  const processedContent1 = await processMDXContent(
-    blogPostProps.content ?? ""
-  ); // for link card. コードブロックの中も除外できないので注意
-  const processedContent = await processMDXContentForMediaCard(
-    processedContent1
-  ); // for media card.
+  // Read MDX file directly in getStaticProps (not bundled in server function)
+  let mdxSource = null;
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    const matter = await import('gray-matter');
+    
+    // Use the path from JSON instead of constructing from author
+    const relativePath = blogPostProps.data?.path || `/posts/blog/${blogPostProps.data?.author}/${params.id}`;
+    const filePath = path.join(process.cwd(), `${relativePath}.mdx`);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { content } = matter.default(fileContents);
 
-  const mdxSource = processedContent
-    ? await serialize(processedContent, {
-        mdxOptions: {
-          remarkPlugins: [remarkPrism as any],
-          rehypePlugins: [rehypePrism as any],
-        },
-      })
-    : null;
+    // Process MDX content
+    const processedContent1 = await processMDXContent(content);
+    const processedContent = await processMDXContentForMediaCard(processedContent1);
+
+    mdxSource = processedContent
+      ? await serialize(processedContent, {
+          mdxOptions: {
+            remarkPlugins: [remarkPrism as any],
+            rehypePlugins: [rehypePrism as any],
+          },
+        })
+      : null;
+  } catch (error) {
+    console.error(`Error reading MDX file for ${params.id}:`, error);
+    return { notFound: true };
+  }
+
   return {
     props: {
       ...blogPostProps,

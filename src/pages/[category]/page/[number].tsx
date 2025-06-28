@@ -2,7 +2,7 @@ import {
   getCategoriesPagePaths,
   getListData,
   getBasicContent,
-} from "../../api/get-posts-category";
+} from "../../../lib/posts";
 import { FrameTemplate } from "../../../components/frame-template";
 import PageList from "../../../components/page-list";
 import { PostLists, PageNationProps } from "../../../utils/posts-type";

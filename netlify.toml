@@ -1,8 +1,8 @@
 # netlify.toml
 
 [build]
-  command = "npm run build && rm -rf .next/cache"
-  publish = ".next"
+  command = "npm run build"
+  publish = "out"
 
 [context.production.environment]
   NODE_VERSION = "20"
@@ -10,6 +10,3 @@
   # BASE_URL = "https://yomogy.com"
   # GA_MEASUREMENT_ID = "G-XXXXXXXXXX"
   # GA_ADSENSE_ID = "ca-pub-XXXXXXXXXXXX"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"

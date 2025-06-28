@@ -24,6 +24,7 @@ const LinkCard: React.FC<LinkCardProps> = ({
   image, 
   size = "small" 
 }) => {
+  console.log('LinkCard props:', { metadata, url, title, description, image });
   const [cardMetadata, setCardMetadata] = useState<Metadata | null>(metadata || null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +36,7 @@ const LinkCard: React.FC<LinkCardProps> = ({
     }
 
     // If individual props are provided, create metadata from them
-    if (url && (title || description || image)) {
+    if (url && (title !== undefined || description !== undefined || image !== undefined)) {
       setCardMetadata({
         url: url,
         title: title || null,
@@ -46,7 +47,7 @@ const LinkCard: React.FC<LinkCardProps> = ({
     }
 
     // If URL is provided but no metadata, try to fetch it client-side
-    if (url && !metadata && !title && !description && !image) {
+    if (url && !metadata && title === undefined && description === undefined && image === undefined) {
       setIsLoading(true);
       
       // Try to fetch metadata from a CORS proxy or use the URL as fallback

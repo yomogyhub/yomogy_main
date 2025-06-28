@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useOGP } from "../contexts/OGPContext";
 
 interface Metadata {
   url: string;
@@ -24,9 +25,9 @@ const LinkCard: React.FC<LinkCardProps> = ({
   image, 
   size = "small" 
 }) => {
-  console.log('LinkCard props:', { metadata, url, title, description, image });
+  const { metadata: ogpMetadata } = useOGP();
   const [cardMetadata, setCardMetadata] = useState<Metadata | null>(metadata || null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   useEffect(() => {
     // If metadata is provided, use it directly
@@ -46,36 +47,22 @@ const LinkCard: React.FC<LinkCardProps> = ({
       return;
     }
 
-    // If URL is provided but no metadata, try to fetch it client-side
+    // If URL is provided but no metadata, check OGP context first
     if (url && !metadata && title === undefined && description === undefined && image === undefined) {
-      setIsLoading(true);
-      
-      // Try to fetch metadata from a CORS proxy or use the URL as fallback
-      const fetchMetadata = async () => {
-        try {
-          // For external URLs, use the URL as title for now
-          // In a production environment, you'd use a CORS proxy or server-side API
-          setCardMetadata({
-            url: url,
-            title: new URL(url).hostname,
-            description: `Link to ${url}`,
-            image: null,
-          });
-        } catch (error) {
-          setCardMetadata({
-            url: url,
-            title: url,
-            description: null,
-            image: null,
-          });
-        } finally {
-          setIsLoading(false);
-        }
-      };
-      
-      fetchMetadata();
+      const ogpData = ogpMetadata[url];
+      if (ogpData) {
+        setCardMetadata(ogpData);
+      } else {
+        // Fallback to basic metadata
+        setCardMetadata({
+          url: url,
+          title: new URL(url).hostname,
+          description: "External link",
+          image: null,
+        });
+      }
     }
-  }, [metadata, url, title, description, image]);
+  }, [metadata, url, title, description, image, ogpMetadata]);
 
   // Show loading state
   if (isLoading) {

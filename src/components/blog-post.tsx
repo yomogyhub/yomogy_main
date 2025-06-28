@@ -15,6 +15,7 @@ import Router from "next/router";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from "react";
+import { OGPProvider } from "../contexts/OGPContext";
 
 const BlogPost: React.FC<BlogPostOnlyProps> = ({
   content,
@@ -23,6 +24,7 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
   id,
   adjacentPosts,
   path,
+  ogpMetadata,
 }) => {
   useEffect(() => {
     const initTocbot = () => {
@@ -184,18 +186,20 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
       </div>
 
       <div className="mdx-content link_a pb-20">
-        <MDXRemote
-          {...content}
-          components={{
-            h1: H1WithId,
-            h2: H2WithId,
-            h3: H3WithId,
-            LinkCard,
-            SNSCard,
-            MediaCard,
-            IframeCard,
-          }}
-        />
+        <OGPProvider metadata={ogpMetadata}>
+          <MDXRemote
+            {...content}
+            components={{
+              h1: H1WithId,
+              h2: H2WithId,
+              h3: H3WithId,
+              LinkCard,
+              SNSCard,
+              MediaCard,
+              IframeCard,
+            }}
+          />
+        </OGPProvider>
       </div>
 
       <div className="flex justify-between items-center mt-4 mb-4">

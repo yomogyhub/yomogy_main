@@ -61,6 +61,13 @@ export interface AdjacentPosts {
   afterAdjacentPost: { id: string; title: string; category: string } | null;
 }
 
+export interface Metadata {
+  url: string;
+  title: string | null;
+  description: string | null;
+  image: string | null;
+}
+
 export interface BlogPostProps {
   category: string;
   id: string;
@@ -70,6 +77,7 @@ export interface BlogPostProps {
   author: AuthorData;
   adjacentPosts: AdjacentPosts;
   path: string;
+  ogpMetadata: Record<string, Metadata>;
 }
 
 export interface BlogPostOnlyProps {
@@ -79,6 +87,7 @@ export interface BlogPostOnlyProps {
   id: string;
   adjacentPosts: AdjacentPosts;
   path: string;
+  ogpMetadata: Record<string, Metadata>;
 }
 
 export interface AuthorData {

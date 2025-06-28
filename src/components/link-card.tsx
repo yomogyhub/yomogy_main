@@ -49,40 +49,89 @@ const LinkCard: React.FC<LinkCardProps> = ({
     if (url && !metadata && title === undefined && description === undefined && image === undefined) {
       setIsLoading(true);
       
-      // Fetch metadata using external OGP service
+      // Fetch metadata using multiple CORS proxies with fallback
       const fetchMetadata = async () => {
-        try {
-          // Use external OGP API service (CORS-enabled)
-          const apiUrl = `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=false&screenshot=false&video=false`;
-          const response = await fetch(apiUrl);
-          
-          if (response.ok) {
-            const data = await response.json();
-            if (data.status === 'success' && data.data) {
-              setCardMetadata({
-                url: url,
-                title: data.data.title || new URL(url).hostname,
-                description: data.data.description || "External link",
-                image: data.data.image?.url || null,
-              });
-            } else {
-              throw new Error('API response not successful');
+        const proxies = [
+          `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+          `https://corsproxy.io/?${encodeURIComponent(url)}`,
+          `https://cors-anywhere.herokuapp.com/${url}`,
+        ];
+
+        for (let i = 0; i < proxies.length; i++) {
+          try {
+            const proxyUrl = proxies[i];
+            const response = await fetch(proxyUrl);
+            
+            if (response.ok) {
+              let htmlContent;
+              
+              if (i === 0) {
+                // AllOrigins format
+                const data = await response.json();
+                htmlContent = data.contents;
+              } else {
+                // Direct HTML response
+                htmlContent = await response.text();
+              }
+              
+              if (htmlContent) {
+                // Parse HTML to extract OGP metadata
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlContent, 'text/html');
+                
+                // Extract title
+                const ogTitle = doc.querySelector('meta[property="og:title"]')?.getAttribute('content');
+                const twitterTitle = doc.querySelector('meta[name="twitter:title"]')?.getAttribute('content');
+                const htmlTitle = doc.querySelector('title')?.textContent;
+                const title = ogTitle || twitterTitle || htmlTitle || new URL(url).hostname;
+                
+                // Extract description
+                const ogDescription = doc.querySelector('meta[property="og:description"]')?.getAttribute('content');
+                const twitterDescription = doc.querySelector('meta[name="twitter:description"]')?.getAttribute('content');
+                const metaDescription = doc.querySelector('meta[name="description"]')?.getAttribute('content');
+                const description = ogDescription || twitterDescription || metaDescription || "External link";
+                
+                // Extract image
+                const ogImage = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+                const twitterImage = doc.querySelector('meta[name="twitter:image"]')?.getAttribute('content');
+                let image = ogImage || twitterImage || null;
+                
+                // Make image URL absolute if it's relative
+                if (image && !image.startsWith('http')) {
+                  try {
+                    const baseUrl = new URL(url);
+                    image = new URL(image, baseUrl.origin).href;
+                  } catch (e) {
+                    image = null;
+                  }
+                }
+                
+                console.log(`OGP extracted for ${url} via proxy ${i + 1}:`, { title, description, image });
+                
+                setCardMetadata({
+                  url: url,
+                  title: title.trim(),
+                  description: description.trim(),
+                  image: image,
+                });
+                
+                return; // Success, exit the loop
+              }
             }
-          } else {
-            throw new Error(`API response: ${response.status}`);
+          } catch (error) {
+            console.warn(`Proxy ${i + 1} failed for ${url}:`, error);
+            // Continue to next proxy
           }
-        } catch (error) {
-          console.warn('Failed to fetch metadata via external API:', error);
-          // Fallback to basic metadata
-          setCardMetadata({
-            url: url,
-            title: new URL(url).hostname,
-            description: "External link",
-            image: null,
-          });
-        } finally {
-          setIsLoading(false);
         }
+        
+        // All proxies failed, use fallback
+        console.warn(`All proxies failed for ${url}`);
+        setCardMetadata({
+          url: url,
+          title: new URL(url).hostname,
+          description: "External link",
+          image: null,
+        });
       };
       
       fetchMetadata();

@@ -306,5 +306,7 @@ export async function getAdjacentPosts(
 
 // 記事の並び替え 最新→古い
 function sortByPublishedDate(a: any, b: any): number {
-  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  const dateA = new Date(a.publishedAt || a.date || '1970-01-01').getTime();
+  const dateB = new Date(b.publishedAt || b.date || '1970-01-01').getTime();
+  return dateB - dateA;
 }

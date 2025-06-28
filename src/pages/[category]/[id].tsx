@@ -44,7 +44,7 @@ export async function getStaticProps({
     ? getAuthorDetails(blogPostProps.data.author)
     : null;
 
-  const listDataResult = blogPostProps.data
+  const listDataResult = blogPostProps.data && blogPostProps.data.tag && blogPostProps.data.tag.length > 0
     ? await getListData(params.category, blogPostProps.data.tag[0])
     : await getListData(params.category);
 

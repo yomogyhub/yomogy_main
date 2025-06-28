@@ -2,36 +2,50 @@
   "gifu": {
     "name": "gifu",
     "bio": "Posts by gifu",
-    "image": "/authors/gifu.png"
+    "description": "Posts by gifu",
+    "image": "/authors/gifu.png",
+    "twitter": ""
   },
   "gunma": {
     "name": "gunma",
     "bio": "Posts by gunma",
-    "image": "/authors/gunma.png"
+    "description": "Posts by gunma",
+    "image": "/authors/gunma.png",
+    "twitter": ""
   },
   "hokkaidou": {
     "name": "hokkaidou",
     "bio": "Posts by hokkaidou",
-    "image": "/authors/hokkaidou.png"
+    "description": "Posts by hokkaidou",
+    "image": "/authors/hokkaidou.png",
+    "twitter": ""
   },
   "ishish": {
     "name": "ishish",
     "bio": "Posts by ishish",
-    "image": "/authors/ishish.png"
+    "description": "Posts by ishish",
+    "image": "/authors/ishish.png",
+    "twitter": ""
   },
   "qdai": {
     "name": "qdai",
     "bio": "Posts by qdai",
-    "image": "/authors/qdai.png"
+    "description": "Posts by qdai",
+    "image": "/authors/qdai.png",
+    "twitter": ""
   },
   "toyaku": {
     "name": "toyaku",
     "bio": "Posts by toyaku",
-    "image": "/authors/toyaku.png"
+    "description": "Posts by toyaku",
+    "image": "/authors/toyaku.png",
+    "twitter": ""
   },
   "yomogy": {
     "name": "yomogy",
     "bio": "Posts by yomogy",
-    "image": "/authors/yomogy.png"
+    "description": "Posts by yomogy",
+    "image": "/authors/yomogy.png",
+    "twitter": ""
   }
 }

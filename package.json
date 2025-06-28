@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint",
-    "fetch-ogp": "node scripts/fetch-ogp-metadata.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "5.11.4",

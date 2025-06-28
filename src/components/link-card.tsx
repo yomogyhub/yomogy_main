@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useOGP } from "../contexts/OGPContext";
 
 interface Metadata {
   url: string;
@@ -24,8 +25,9 @@ const LinkCard: React.FC<LinkCardProps> = ({
   image, 
   size = "small" 
 }) => {
+  const { metadata: ogpMetadata } = useOGP();
   const [cardMetadata, setCardMetadata] = useState<Metadata | null>(metadata || null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   useEffect(() => {
     // If metadata is provided, use it directly
@@ -45,57 +47,22 @@ const LinkCard: React.FC<LinkCardProps> = ({
       return;
     }
 
-    // If URL is provided but no metadata, try to fetch it client-side
+    // If URL is provided but no metadata, check OGP context first
     if (url && !metadata && title === undefined && description === undefined && image === undefined) {
-      setIsLoading(true);
-      
-      // Fetch metadata from pre-built static OGP data
-      const fetchMetadata = async () => {
-        try {
-          console.log(`Loading OGP data for: ${url}`);
-          // Try to load from static OGP metadata file
-          const response = await fetch('/ogp-metadata.json');
-          
-          if (response.ok) {
-            const ogpData = await response.json();
-            console.log('OGP data loaded:', Object.keys(ogpData).length, 'entries');
-            
-            if (ogpData[url]) {
-              const metadata = ogpData[url];
-              console.log(`Found metadata for ${url}:`, metadata);
-              setCardMetadata({
-                url: url,
-                title: metadata.title,
-                description: metadata.description || "External link",
-                image: metadata.image,
-              });
-              setIsLoading(false);
-              return;
-            } else {
-              console.warn(`No metadata found for ${url} in static data`);
-              console.log('Available URLs:', Object.keys(ogpData).slice(0, 5));
-            }
-          } else {
-            console.error('Failed to load OGP metadata file:', response.status);
-          }
-        } catch (error) {
-          console.warn('Failed to load static OGP data:', error);
-        }
-        
-        // Fallback to basic metadata if not found in static data
-        console.log(`Using fallback for ${url}`);
+      const ogpData = ogpMetadata[url];
+      if (ogpData) {
+        setCardMetadata(ogpData);
+      } else {
+        // Fallback to basic metadata
         setCardMetadata({
           url: url,
           title: new URL(url).hostname,
           description: "External link",
           image: null,
         });
-        setIsLoading(false);
-      };
-      
-      fetchMetadata();
+      }
     }
-  }, [metadata, url, title, description, image]);
+  }, [metadata, url, title, description, image, ogpMetadata]);
 
   // Show loading state
   if (isLoading) {

@@ -830,22 +830,6 @@
     "rePost": false,
     "status": "published"
   },
-  "igemer-interview-test": {
-    "id": "igemer-interview-test",
-    "title": "Test iGEMer Interview",
-    "description": "Test file",
-    "publishedAt": "2023-10-09",
-    "updatedAt": "2025-06-28",
-    "category": "igem",
-    "tag": [
-      "test"
-    ],
-    "author": "yomogy",
-    "path": "/posts/blog/yomogy/igemer-interview-test",
-    "coverImage": "/blog/yomogy/images/igemer-interview-test_cover.png",
-    "rePost": false,
-    "status": "published"
-  },
   "igemer-interview": {
     "id": "igemer-interview",
     "title": "iGEMer Interview まとめ",

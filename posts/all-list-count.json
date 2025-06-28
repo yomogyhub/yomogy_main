@@ -1,6 +1,6 @@
 {
   "categories": {
-    "igem": 46,
+    "igem": 45,
     "synbio": 7,
     "book": 1,
     "tech": 1
@@ -10,8 +10,7 @@
       "information": 37,
       "journal-club": 8,
       "history": 18,
-      "event": 6,
-      "test": 1
+      "event": 6
     },
     "synbio": {
       "information": 7,
@@ -35,6 +34,6 @@
     "ishish": 10,
     "qdai": 5,
     "toyaku": 1,
-    "yomogy": 29
+    "yomogy": 28
   }
 }

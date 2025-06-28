@@ -10,7 +10,7 @@ import {
   getAuthorDetails,
 } from "../../lib/posts";
 import { Category, PostID, BlogPostProps } from "../../utils/posts-type";
-import { processMDXContent } from "../../utils/mdx-link-card";
+import { processMDXContent, extractOGPMetadata } from "../../utils/mdx-link-card";
 import { processMDXContentForMediaCard } from "../../utils/mdx-media-card";
 
 import Seo from "../../components/seo";
@@ -61,6 +61,8 @@ export async function getStaticProps({
 
   // Read MDX file directly in getStaticProps
   let mdxSource = null;
+  let ogpMetadata = {};
+  
   try {
     // Use the path from JSON instead of constructing from author
     const relativePath = blogPostProps.data?.path || `/posts/blog/${blogPostProps.data?.author}/${params.id}`;
@@ -68,8 +70,9 @@ export async function getStaticProps({
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { content } = matter(fileContents);
 
-    // Process MDX content with OGP metadata fetching
+    // Process MDX content and extract OGP metadata
     const processedContent = await processMDXContent(content);
+    ogpMetadata = await extractOGPMetadata(content);
     
     mdxSource = processedContent
       ? await serialize(processedContent, {
@@ -94,6 +97,7 @@ export async function getStaticProps({
       adjacentPosts: adjacentPosts,
       coverImage: blogPostProps.coverImage,
       path: blogPostProps.path,
+      ogpMetadata: ogpMetadata,
     },
   };
 }
@@ -106,6 +110,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
   id,
   adjacentPosts,
   path,
+  ogpMetadata,
 }) => {
   return (
     <>
@@ -124,6 +129,7 @@ const BlogPostPage: React.FC<BlogPostProps> = ({
             id={id}
             adjacentPosts={adjacentPosts}
             path={path}
+            ogpMetadata={ogpMetadata}
           />
         }
         rightComponent={

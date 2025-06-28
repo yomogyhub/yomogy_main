@@ -1,5 +1,39 @@
 {
-  "categories": {},
-  "categoryTags": {},
-  "authors": {}
+  "categories": {
+    "igem": 45,
+    "synbio": 7,
+    "book": 1,
+    "tech": 1
+  },
+  "categoryTags": {
+    "igem": {
+      "information": 37,
+      "journal-club": 8,
+      "history": 18,
+      "event": 6
+    },
+    "synbio": {
+      "information": 7,
+      "paper": 2,
+      "startup": 3
+    },
+    "book": {
+      "information": 1
+    },
+    "tech": {
+      "app": 1,
+      "paper": 1,
+      "synbio": 1,
+      "information": 1
+    }
+  },
+  "authors": {
+    "gifu": 8,
+    "gunma": 1,
+    "hokkaidou": 1,
+    "ishish": 10,
+    "qdai": 5,
+    "toyaku": 1,
+    "yomogy": 28
+  }
 }

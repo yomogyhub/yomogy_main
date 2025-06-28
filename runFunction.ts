@@ -6,17 +6,21 @@ interface Post {
   id: string;
   title: string;
   description: string;
-  date: string;
+  publishedAt: string;
+  updatedAt: string;
   category: string;
   tag: string[];
   author: string;
   path: string;
   coverImage?: string;
+  rePost?: boolean;
+  status?: string;
 }
 
 interface AuthorData {
   name: string;
   bio: string;
+  image?: string;
 }
 
 interface ListCount {
@@ -35,94 +39,84 @@ async function generateJSONFiles() {
     authors: {},
   };
 
-  // Get all authors from directory structure
-  function getAllAuthors(dir: string): string[] {
-    const authors: string[] = [];
-    const items = fs.readdirSync(dir);
-    
-    for (const item of items) {
-      const itemPath = path.join(dir, item);
-      if (fs.statSync(itemPath).isDirectory()) {
-        authors.push(item);
-      }
-    }
-    return authors;
-  }
+  // Get all author directories
+  const authorDirs = fs.readdirSync(postsDirectory).filter(item => {
+    const itemPath = path.join(postsDirectory, item);
+    return fs.statSync(itemPath).isDirectory();
+  });
 
-  // Process all MDX files
-  function processDirectory(dir: string, category: string = "") {
-    const items = fs.readdirSync(dir);
+  console.log(`Found ${authorDirs.length} author directories:`, authorDirs);
+
+  // Process each author directory
+  for (const author of authorDirs) {
+    const authorPath = path.join(postsDirectory, author);
     
-    for (const item of items) {
-      const itemPath = path.join(dir, item);
-      const stat = fs.statSync(itemPath);
+    // Skip if this is an images directory
+    if (author === 'images') continue;
+    
+    // Get all MDX files in this author directory
+    const files = fs.readdirSync(authorPath).filter(file => file.endsWith('.mdx'));
+    
+    console.log(`Processing ${files.length} MDX files for author: ${author}`);
+    
+    for (const file of files) {
+      const filePath = path.join(authorPath, file);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data } = matter(fileContents);
       
-      if (stat.isDirectory()) {
-        if (!category) {
-          // This is a category directory
-          processDirectory(itemPath, item);
-        } else {
-          // This is an author directory within a category
-          const authorFiles = fs.readdirSync(itemPath);
-          for (const file of authorFiles) {
-            if (file.endsWith('.mdx')) {
-              const filePath = path.join(itemPath, file);
-              const fileContents = fs.readFileSync(filePath, 'utf8');
-              const { data } = matter(fileContents);
-              
-              const id = path.basename(file, '.mdx');
-              const post: Post = {
-                id,
-                title: data.title || '',
-                description: data.description || '',
-                date: data.date || '',
-                category,
-                tag: data.tag || [],
-                author: item, // author is the directory name
-                path: `/posts/blog/${category}/${item}/${id}`,
-                coverImage: data.coverImage || `/blog/${item}/images/${id}_cover.png`,
-              };
-              
-              allPosts[id] = post;
-              
-              // Update counts
-              if (!listCount.categories[category]) {
-                listCount.categories[category] = 0;
-              }
-              listCount.categories[category]++;
-              
-              if (!listCount.categoryTags[category]) {
-                listCount.categoryTags[category] = {};
-              }
-              
-              for (const tag of post.tag) {
-                if (!listCount.categoryTags[category][tag]) {
-                  listCount.categoryTags[category][tag] = 0;
-                }
-                listCount.categoryTags[category][tag]++;
-              }
-              
-              if (!listCount.authors[item]) {
-                listCount.authors[item] = 0;
-              }
-              listCount.authors[item]++;
-              
-              // Add author data if not exists
-              if (!allAuthors[item]) {
-                allAuthors[item] = {
-                  name: item,
-                  bio: `Posts by ${item}`,
-                };
-              }
-            }
+      const id = path.basename(file, '.mdx');
+      const post: Post = {
+        id,
+        title: data.title || '',
+        description: data.description || '',
+        publishedAt: data.publishedAt || '',
+        updatedAt: data.updatedAt || data.publishedAt || '',
+        category: data.category || 'igem',
+        tag: Array.isArray(data.tag) ? data.tag : (data.tag ? [data.tag] : []),
+        author,
+        path: `/posts/blog/${author}/${id}`,
+        coverImage: data.coverImage || `/blog/${author}/images/${id}_cover.png`,
+        rePost: data.rePost || false,
+        status: data.status || 'published',
+      };
+      
+      allPosts[id] = post;
+      
+      // Update counts
+      const category = post.category;
+      if (!listCount.categories[category]) {
+        listCount.categories[category] = 0;
+      }
+      listCount.categories[category]++;
+      
+      if (!listCount.categoryTags[category]) {
+        listCount.categoryTags[category] = {};
+      }
+      
+      if (Array.isArray(post.tag)) {
+        for (const tag of post.tag) {
+          if (!listCount.categoryTags[category][tag]) {
+            listCount.categoryTags[category][tag] = 0;
           }
+          listCount.categoryTags[category][tag]++;
         }
       }
+      
+      if (!listCount.authors[author]) {
+        listCount.authors[author] = 0;
+      }
+      listCount.authors[author]++;
+      
+      // Add author data if not exists
+      if (!allAuthors[author]) {
+        allAuthors[author] = {
+          name: author,
+          bio: `Posts by ${author}`,
+          image: `/authors/${author.toLowerCase()}.png`,
+        };
+      }
     }
   }
-
-  // Process all posts
-  processDirectory(postsDirectory);
 
   // Write JSON files
   const postsOutputPath = path.join(process.cwd(), "posts", "all-blog.json");

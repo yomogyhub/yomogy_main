@@ -265,7 +265,12 @@ export function getAuthorDetails(authorName: string): AuthorData {
   const allAuthorsData: Record<string, AuthorData> = JSON.parse(jsonString);
 
   const authorDetails = allAuthorsData[authorName];
-  authorDetails.image = getPublicPath(authorDetails.image);
+  
+  // Add default image if not exists
+  if (authorDetails) {
+    const defaultImage = `/authors/${authorName.toLowerCase()}.png`;
+    authorDetails.image = authorDetails.image ? getPublicPath(authorDetails.image) : defaultImage;
+  }
 
   return authorDetails;
 }

@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { createImage } from "./src/utils/make-fig";
+import { syncImagesToPublic } from "./src/utils/copy-image-to-public";
 
 interface Post {
   id: string;
@@ -133,6 +135,51 @@ async function generateJSONFiles() {
   fs.writeFileSync(postsOutputPath, JSON.stringify(allPosts, null, 2));
   fs.writeFileSync(authorsOutputPath, JSON.stringify(allAuthors, null, 2));
   fs.writeFileSync(listCountOutputPath, JSON.stringify(listCount, null, 2));
+
+  // Generate missing cover images in posts directory
+  for (const [id, post] of Object.entries(allPosts)) {
+    const sourceImagePath = path.join(process.cwd(), "posts", post.coverImage!);
+    
+    if (!fs.existsSync(sourceImagePath)) {
+      console.log(`Creating missing cover image for: ${id}`);
+      try {
+        // Ensure directory exists
+        const imageDir = path.dirname(sourceImagePath);
+        if (!fs.existsSync(imageDir)) {
+          fs.mkdirSync(imageDir, { recursive: true });
+        }
+        
+        await createImage(
+          sourceImagePath,
+          post.title,
+          post.author,
+          allAuthors[post.author].image!
+        );
+        console.log(`✅ Created cover image: ${sourceImagePath}`);
+      } catch (error) {
+        console.error(`❌ Failed to create image for ${id}:`, error);
+      }
+    }
+  }
+
+  // Sync images to public directory (removes old files and copies new ones)
+  const blogDirectory = path.join(process.cwd(), "posts", "blog");
+  const authorDirsForSync = fs.readdirSync(blogDirectory).filter(item => {
+    const itemPath = path.join(blogDirectory, item);
+    return fs.statSync(itemPath).isDirectory() && item !== 'images';
+  });
+
+  for (const author of authorDirsForSync) {
+    const sourcePath = path.join(blogDirectory, author);
+    const destinationPath = path.join(process.cwd(), "public", "blog", author);
+    
+    try {
+      syncImagesToPublic(sourcePath, destinationPath);
+      console.log(`Synced images for author: ${author}`);
+    } catch (error) {
+      console.error(`Failed to sync images for ${author}:`, error);
+    }
+  }
 
   console.log(`Generated ${Object.keys(allPosts).length} posts`);
   console.log(`Generated ${Object.keys(allAuthors).length} authors`);

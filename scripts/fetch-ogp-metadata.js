@@ -84,6 +84,15 @@ function extractMetadata(html, url) {
   const htmlTitle = titleMatch ? titleMatch[1].trim() : null;
   
   const title = ogTitle || twitterTitle || htmlTitle || new URL(url).hostname;
+  
+  // Debug specific problematic URLs
+  if (url.includes('identity_academy')) {
+    console.log('Debug identity_academy:');
+    console.log('ogTitle:', ogTitle);
+    console.log('twitterTitle:', twitterTitle);
+    console.log('htmlTitle:', htmlTitle);
+    console.log('HTML sample:', html.substring(0, 1000));
+  }
 
   // Extract description
   const description = 

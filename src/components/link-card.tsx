@@ -52,34 +52,45 @@ const LinkCard: React.FC<LinkCardProps> = ({
       // Fetch metadata from pre-built static OGP data
       const fetchMetadata = async () => {
         try {
+          console.log(`Loading OGP data for: ${url}`);
           // Try to load from static OGP metadata file
           const response = await fetch('/ogp-metadata.json');
           
           if (response.ok) {
             const ogpData = await response.json();
+            console.log('OGP data loaded:', Object.keys(ogpData).length, 'entries');
             
             if (ogpData[url]) {
               const metadata = ogpData[url];
+              console.log(`Found metadata for ${url}:`, metadata);
               setCardMetadata({
                 url: url,
                 title: metadata.title,
                 description: metadata.description || "External link",
                 image: metadata.image,
               });
+              setIsLoading(false);
               return;
+            } else {
+              console.warn(`No metadata found for ${url} in static data`);
+              console.log('Available URLs:', Object.keys(ogpData).slice(0, 5));
             }
+          } else {
+            console.error('Failed to load OGP metadata file:', response.status);
           }
         } catch (error) {
           console.warn('Failed to load static OGP data:', error);
         }
         
         // Fallback to basic metadata if not found in static data
+        console.log(`Using fallback for ${url}`);
         setCardMetadata({
           url: url,
           title: new URL(url).hostname,
           description: "External link",
           image: null,
         });
+        setIsLoading(false);
       };
       
       fetchMetadata();

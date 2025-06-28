@@ -49,22 +49,31 @@ const LinkCard: React.FC<LinkCardProps> = ({
     if (url && !metadata && title === undefined && description === undefined && image === undefined) {
       setIsLoading(true);
       
-      // Try to fetch metadata from a CORS proxy or use the URL as fallback
+      // Fetch metadata using Netlify Functions
       const fetchMetadata = async () => {
         try {
-          // For external URLs, use the URL as title for now
-          // In a production environment, you'd use a CORS proxy or server-side API
+          // Try to fetch metadata from Netlify Functions API
+          const apiUrl = `/.netlify/functions/fetch-metadata?url=${encodeURIComponent(url)}`;
+          const response = await fetch(apiUrl);
+          
+          if (response.ok) {
+            const metadata = await response.json();
+            setCardMetadata({
+              url: url,
+              title: metadata.title || new URL(url).hostname,
+              description: metadata.description || "External link",
+              image: metadata.image || null,
+            });
+          } else {
+            throw new Error(`API response: ${response.status}`);
+          }
+        } catch (error) {
+          console.warn('Failed to fetch metadata via API:', error);
+          // Fallback to basic metadata
           setCardMetadata({
             url: url,
             title: new URL(url).hostname,
-            description: `Link to ${url}`,
-            image: null,
-          });
-        } catch (error) {
-          setCardMetadata({
-            url: url,
-            title: url,
-            description: null,
+            description: "External link",
             image: null,
           });
         } finally {

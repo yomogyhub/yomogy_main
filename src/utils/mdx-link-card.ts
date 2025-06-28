@@ -151,10 +151,57 @@ export async function processMDXContent(originalContent: string): Promise<string
 /**
  * MDXからLinkCard URLsを抽出してOGPメタデータを取得
  */
+/**
+ * 内部リンクからメタデータを取得する
+ */
+async function fetchInternalMetadata(url: string): Promise<Metadata> {
+  try {
+    // URLからカテゴリとIDを抽出
+    const urlParts = url.replace('https://yomogy.com/', '').split('/');
+    const category = urlParts[0];
+    const id = urlParts[1];
+    
+    if (!category || !id) {
+      throw new Error('Invalid internal URL format');
+    }
+
+    // JSONファイルから投稿データを取得
+    const fs = require('fs');
+    const path = require('path');
+    
+    const jsonPath = path.join(process.cwd(), 'posts', 'all-blog.json');
+    const postsData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+    
+    // 該当する投稿を検索（オブジェクト形式なのでObject.valuesで配列に変換）
+    const posts = Object.values(postsData);
+    const post = posts.find((p: any) => p.category === category && p.id === id);
+    
+    if (post) {
+      return {
+        url: url,
+        title: post.title,
+        description: post.description,
+        image: post.coverImage ? `https://yomogy.com${post.coverImage}` : null,
+      };
+    }
+    
+    throw new Error('Post not found');
+  } catch (error) {
+    console.warn(`Failed to fetch internal metadata for ${url}:`, error);
+    return {
+      url: url,
+      title: "yomogy.com",
+      description: "Internal link",
+      image: null,
+    };
+  }
+}
+
 export async function extractOGPMetadata(content: string): Promise<Record<string, Metadata>> {
   const linkCardPattern = /<LinkCard\s+url="([^"]+)"[^>]*\/>/g;
   const urlsToProcess = new Set<string>();
   
+  // Extract URLs from LinkCard components
   let match;
   while ((match = linkCardPattern.exec(content)) !== null) {
     urlsToProcess.add(match[1]);
@@ -165,11 +212,19 @@ export async function extractOGPMetadata(content: string): Promise<Record<string
   for (const url of Array.from(urlsToProcess)) {
     try {
       console.log(`Fetching metadata for: ${url}`);
-      const metadata = await fetchPageMetadata(url);
-      metadataMap[url] = metadata;
       
-      // Add delay to be respectful to servers
-      await new Promise(resolve => setTimeout(resolve, 500));
+      // 内部リンクかどうかチェック
+      if (url.includes('yomogy.com/synbio/') || url.includes('yomogy.com/igem/')) {
+        const metadata = await fetchInternalMetadata(url);
+        metadataMap[url] = metadata;
+      } else {
+        // 外部リンクの場合は通常のOGP取得
+        const metadata = await fetchPageMetadata(url);
+        metadataMap[url] = metadata;
+        
+        // Add delay to be respectful to servers
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
     } catch (error) {
       console.warn(`Failed to fetch metadata for ${url}:`, error);
       metadataMap[url] = {

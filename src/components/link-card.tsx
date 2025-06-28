@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useOGP } from "../contexts/OGPContext";
 
+// Simple markdown link parser
+const parseMarkdownLinks = (text: string) => {
+  if (!text) return text;
+  
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+};
+
 interface Metadata {
   url: string;
   title: string | null;
@@ -101,9 +108,10 @@ const LinkCard: React.FC<LinkCardProps> = ({
             <div className="text-gray-900 text-xl font-bold dark:text-gray-300">
               {cardMetadata.title}
             </div>
-            <p className="text-sm text-gray-600  mt-1 mb-2 dark:text-gray-400">
-              {cardMetadata.description}
-            </p>
+            <p 
+              className="text-sm text-gray-600  mt-1 mb-2 dark:text-gray-400"
+              dangerouslySetInnerHTML={{ __html: parseMarkdownLinks(cardMetadata.description || '') }}
+            ></p>
             <span>{new URL(cardMetadata.url).hostname}</span>
           </div>
         </a>
@@ -124,9 +132,10 @@ const LinkCard: React.FC<LinkCardProps> = ({
             <div className="text-gray-900 text-xl font-bold dark:text-gray-300">
               {cardMetadata.title}
             </div>
-            <p className="text-sm text-gray-600 mt-1 mb-2 dark:text-gray-400 ">
-              {cardMetadata.description}
-            </p>
+            <p 
+              className="text-sm text-gray-600 mt-1 mb-2 dark:text-gray-400"
+              dangerouslySetInnerHTML={{ __html: parseMarkdownLinks(cardMetadata.description || '') }}
+            ></p>
             <span>{new URL(cardMetadata.url).hostname}</span>
           </a>
         </div>

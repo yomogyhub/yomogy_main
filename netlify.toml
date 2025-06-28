@@ -1,7 +1,7 @@
 # netlify.toml
 
 [build]
-  command = "npm run build"
+  command = "npx ts-node runFunction.ts && npm run build"
   publish = "out"
 
 [context.production.environment]

@@ -1,1 +1,37 @@
-{}
+{
+  "gifu": {
+    "name": "gifu",
+    "bio": "Posts by gifu",
+    "image": "/authors/gifu.png"
+  },
+  "gunma": {
+    "name": "gunma",
+    "bio": "Posts by gunma",
+    "image": "/authors/gunma.png"
+  },
+  "hokkaidou": {
+    "name": "hokkaidou",
+    "bio": "Posts by hokkaidou",
+    "image": "/authors/hokkaidou.png"
+  },
+  "ishish": {
+    "name": "ishish",
+    "bio": "Posts by ishish",
+    "image": "/authors/ishish.png"
+  },
+  "qdai": {
+    "name": "qdai",
+    "bio": "Posts by qdai",
+    "image": "/authors/qdai.png"
+  },
+  "toyaku": {
+    "name": "toyaku",
+    "bio": "Posts by toyaku",
+    "image": "/authors/toyaku.png"
+  },
+  "yomogy": {
+    "name": "yomogy",
+    "bio": "Posts by yomogy",
+    "image": "/authors/yomogy.png"
+  }
+}

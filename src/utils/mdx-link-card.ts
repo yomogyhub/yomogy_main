@@ -173,14 +173,14 @@ async function fetchInternalMetadata(url: string): Promise<Metadata> {
     const postsData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
     
     // 該当する投稿を検索（オブジェクト形式なのでObject.valuesで配列に変換）
-    const posts = Object.values(postsData);
+    const posts = Object.values(postsData) as any[];
     const post = posts.find((p: any) => p.category === category && p.id === id);
     
     if (post) {
       return {
         url: url,
-        title: post.title,
-        description: post.description,
+        title: post.title || new URL(url).hostname,
+        description: post.description || "Internal link",
         image: post.coverImage ? `https://yomogy.com${post.coverImage}` : null,
       };
     }

@@ -1,5 +1,5 @@
 ---
-title: "iGEMにおける安全性に関する基本方針について" # タイトル
+title: "初めてのiGEM Wiki編集で困ったこと2選" # タイトル
 category: "igem" # カテゴリー 現在は、igem or synbio
 publishedAt: "2021-10-13" # 投稿日
 updatedAt: "2021-10-13" # 更新日
@@ -25,14 +25,59 @@ Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 
 ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3)
 " #  記事の説明
 tag: ["information"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem-wiki-editing-first-step-tips" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published"
 ---
 
-## サイト移行中です。
+> (追記 2023/12/29) ※iGEM 2022 以降では、Mediawiki システムによる Wiki の管理が変更されたため、本記事が参考にならない可能性があります。 iGEM 2023 に参加し、その時のログを残してくださっている、ろぼいんさんのブログを確認しましょう。 [iGEM のチーム Wiki 担当としての振り返り](https://roboin.io/article/2023/12/08/behind-the-scenes-of-japan-united-teams-igem-2023/) Great Tips for iGEM Wiki!
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-wiki-editing-first-step-tips)から記事をお読みください。
+## サーバーの話とファイルのアップロード
 
-※iGEM 2022 以降では、Mediawiki システムによる Wiki の管理が変更されたため、本記事が参考にならない可能性があります。(追記 2023/12/29)
-iGEM 2023 に参加し、その時のログを残してくださっている、ろぼいんさんのブログを確認しましょう。
-[iGEM のチーム Wiki 担当としての振り返り](https://roboin.io/article/2023/12/08/behind-the-scenes-of-japan-united-teams-igem-2023/) Great Tips for iGEM Wiki!
+サーバーとはネットワーク上のデータの保管庫のことです。Web サーバーであれば、ホームページのデータを保存しておき、アクセスがあれば HTML や画像などのホームページを構成するデータをユーザーのデバイスに提供する役割を担っています。
+ホームページをインターネットユーザーに見てもらうには、そのホームページのデータをサーバーに保存しなければいけません。サーバー上にホームページを含め、各データやファイルを保存する作業のことをアップロードと呼びます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-wiki-editing-first-step-tips-fig1.png"
+  alt="Fig.1 - iGEM Wiki のファイルアップロード方法"
+  caption="Fig.1 - iGEM Wiki のファイルアップロード方法"
+/>
+
+<br />
+画像などのファイルのアップロードは、iGEM Wiki のメニューバーから Wiki tools -> Upload
+files へ移動し、Source file で任意のファイルを指定し、File description で「T--チーム名--任意のファイル名」の形でファイル名を指定した後、Upload
+files をクリックすることで行えます。
+
+<br />
+詳細は iGEM Qdai チームが執筆した「iGEM Wiki を乗り切るための Tips10 」を参考にしてください。
+参考記事 : [iGEM Wiki を乗り切るための Tips10]
+
+<LinkCard url="https://yomogy.com/igem/igem-wiki-tips" size="small" />
+
+<br />
+iGEM には使用するすべてのファイルを iGEM サーバー上にアップロードする必要があるという独特のルールがあります。なぜなら、iGEM
+サーバーがメンテナンスされ続ければ、外部サーバーが止まってもサイトは保全されるからです。
+仮に外部サーバー内にファイルを保存していた場合、そのサーバーの運営が止まってしまうとそこに保存していたファイルを参照できなり画像や表が欠けてしまうという問題が生じることになります。
+
+## ファイルの参照と Media Wiki の仕様
+
+iGEM では自身のチームの Wiki のメインページで `{{チーム名/任意のファイル名}}`と記述し保存すると任意の名前のファイルを、`{{チーム名/テンプレート名}}`と記述し保存すると任意の名前のテンプレートファイルを iGEM サーバー内に生成し参照できます。
+
+<br />
+ここで、テンプレート名は HTML、CSS、Javascript、MathJax の 4 種存在します。例えば、`{{Gifu/CSS}}`と記述すると CSS のテンプレートファイルが生成され参照できるようになります。参照の仕組みは以下の図を見ると分かりやすいでしょう。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-wiki-editing-first-step-tips-fig2.png"
+  alt="Fig.2 - iGEM Wiki のファイル参照方法"
+  caption="Fig.2 - iGEM Wiki のファイル参照方法"
+/>
+
+wiki ページで`{{}}`を用いて参照を起こなう必要があるのは、MediaWiki というツール独自の仕様です。MediaWiki
+とは、チームなど複数のメンバー間で協力してコンテンツを作成するコラボレーションツールの
+1 つでオンライン百科事典 Wikipedia にも用いられています。iGEM の Wiki ページは MediaWiki
+によってサポートされているため MediaWiki の仕様に従う必要があるというわけです。
+
+## まとめ
+
+今回 iGEM で Wiki ページの制作がややこしくなっている原因として挙げた 2 点を押さえておけば、Wiki 制作で困ることはほとんどなくなるでしょう。レギュレーションをしっかり守りつつ、よりよい Wiki ページを目指しましょう。

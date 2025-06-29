@@ -66,7 +66,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-journal-club-epfl2019",
     "coverImage": "/blog/gifu/images/igem-japan-journal-club-epfl2019_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-epfl2019",
+    "rePost": false,
     "status": "published"
   },
   "igem-safety-policies": {
@@ -98,12 +98,12 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-wiki-bootstrap-adopt",
     "coverImage": "/blog/gifu/images/igem-wiki-bootstrap-adopt_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-bootstrap-adopt",
+    "rePost": false,
     "status": "published"
   },
   "igem-wiki-editing-first-step-tips": {
     "id": "igem-wiki-editing-first-step-tips",
-    "title": "iGEMにおける安全性に関する基本方針について",
+    "title": "初めてのiGEM Wiki編集で困ったこと2選",
     "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) ! <br /> ※ iGEM Gifu is nominated for the Best Wiki (iGEM 2021). Congratulations!\n\n<br /><br /> 本記事では今年初めてWiki製作に携わった岐阜チームの1年生がiGEMでWikiページの制作がややこしくなっている原因であると考える以下の２点について解説を行います。\n<br /><br /> 1. サイト保全のため、Wikiページに使用するファイルはすべてiGEMサーバーにアップロードする必要がある <br /> 2. WikiページにMediaWikiが用いられており、その仕様に従う必要がある\n<br /><br /> ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3) ",
     "publishedAt": "2021-10-13",
     "updatedAt": "2021-10-13",
@@ -114,7 +114,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-wiki-editing-first-step-tips",
     "coverImage": "/blog/gifu/images/igem-wiki-editing-first-step-tips_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-editing-first-step-tips",
+    "rePost": false,
     "status": "published"
   },
   "igem2019-experience": {

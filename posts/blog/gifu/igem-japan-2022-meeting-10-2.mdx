@@ -9,9 +9,9 @@ iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す
 <br />
 
 <br />
-・NEFU-China2020 BOLD
+・[NEFU-China2020 BOLD](https://2020.igem.org/Team:NEFU_China)
 <br />
-・Bielefeld-CeBiTec2021 P.L.A.N.T.
+・[Bielefeld-CeBiTec2021 P.L.A.N.T.](https://2021.igem.org/Team:Bielefeld-CeBiTec)
 
 
 <br /><br />
@@ -21,10 +21,265 @@ iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す
 このプロジェクトは、レポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みるプロジェクトです。このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。
 " #  記事の説明
 tag: ["journal-club","information", "history"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published"
 ---
 
-## サイト移行中です。
+前編はこちらです。
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-2)から記事をお読みください。
+<LinkCard
+  url="https://yomogy.com/igem/igem-japan-2022-meeting-10-1/"
+  size="small"
+/>
+
+# はじめに
+
+現在、世界大戦によってドイツやフランスをはじめとする多くの国に残された化学兵器やその分解生成物が問題視されています。しかし、土壌中に残されたこれらの化学兵器の位置は正確に把握されておらず、それらの検出及び除染には莫大な費用と労力がかかります。
+
+<br />
+また、残存が既知の地域と疑いのある地域において検知・除染が完了するまでには、費用のみならず莫大な時間を要します。しかし、その間に化学兵器内から化学物質が土壌中に漏れる可能性があり、非常に危険であるため早急に検出・除染を行わなくてはなりません。
+
+<br />
+現在、化学兵器前駆体や分解生成物を広範囲において検出が行えるようなシステムは確立されておらず、疑わしい地域を含めた世界中の国々に残された全ての化学兵器を早急に発見することは困難です。
+
+<br />
+そこでこのチームはレポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みました。
+
+## 検出システムの概要
+
+以下のような過程により、植物によって化学兵器の検出を行いました。
+
+- 1\. 化学兵器に含まれる化学物質に関連しつつも比較的安全な化学物質を選択し、植物に吸収させる
+- 2\. 化学物質が受容体に結合し認識されると、植物に導入されたレポーター遺伝子が発現し、赤色色素が生成される
+- 3\. 植物の葉が赤く変色することにより、化学物質を検出する
+
+ここからは、上記のシステム作成のために行った研究の内容を大きく次の 4 つに分けて説明していきます。
+
+- ① 植物への化学物質の添加
+- ② 大腸菌でのシグナル伝達カスケードの確立
+- ③ RUBY レポーターとシグナル伝達カスケードのテスト
+- ④ 肉眼で検出可能なレポーターシステムの作成と最適化
+
+## ① 植物の化学物質吸収
+
+まず、植物が検出したい化学物質に対して耐性を持つのか、またどれくらいの化学物質を吸収するのかを調べました。今回使用した植物は、Nicotiana benthamiana というたばこ植物です。一過性に形質転換できるという性質があります。
+
+<br />
+化学物質に選択した化学物質を添加し観察したところ、植物に対する化学物質の毒性は確認されませんでした。
+また、GC/MS 分析（ガスクロマトグラフィー/質量分析）を用いて吸収量を測定した結果、TDG、MPA、BTCA
+が植物に取り込まれ、栽培から 1 日後はもちろん 9 日後でも検出されることが分かりました。（DIMP、DEEP
+は抽出不可により、吸収量の分析は行えませんでした。）
+
+## ② 大腸菌でのシグナル伝達カスケードの確立
+
+次に、化学物質を検出するために必要となるシグナル伝達カスケードを大腸菌でおいて確立しました。
+
+### ⑴ カスケードの構築
+
+シグナル伝達カスケードの構築には大腸菌の走化性の機構を利用しました。走化性には、リガンド、ペリプラスムに存在する特定の受容体、PBP（ペリプラスム結合タンパク質）が必要になります。今回は、リガンドに BTCA、特定の受容体には Trg 受容体、タンパク質には RBP を使用しました。
+
+<br />
+今回利用するカスケードは右図のような流れで進みます。まず、リガンドである BTCA が
+Trg 受容体に結合し、そこに付加した RBP がプロモーターを活性化させます。このプロモーターは、緑色蛍光タンパク質
+GFP の発現を制御します。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig1.png"
+  alt="Fig.1 - Bielefeld-CeBiTec 2021 P.L.A.N.T. カスケードの概要"
+  caption="Fig.1 - Bielefeld-CeBiTec 2021 P.L.A.N.T. カスケードの概要"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑵ 使用したプラスミド
+
+今回は、こちらのアラビノース誘導性のプラスミドを選択しました。このプラスミドはカスケードに必要となる TNT 受容体の発現を制御するプロモーターを含みます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig2.png"
+  alt="Fig.2 - プラスミド"
+  caption="Fig.2 - プラスミド"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑶ 内在性 RBP はカスケードの活性化に十分か
+
+最初に、受容体に付加してプロモーターを活性化する RBP が大腸菌に含まれている分で十分であるのか確かめました。様々な組み合わせで誘導を試みた結果、アラビノースとリボースによる誘導が最も高い蛍光を示しました。また、全体的に蛍光が低くなったことから内在性の RBP はカスケードの活性化に不十分であると考えられます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig3.png"
+  alt="Fig.3 - CLSM "
+  caption="Fig.3 - CLSM "
+/>
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig4.png"
+  alt="Fig.4 - 顕微鏡での観察"
+  caption="Fig.4 - 顕微鏡での観察"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria
+より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑷RBP の過剰発現
+
+⑶ の実験で蛍光が全体的に低いのは、内在性の RBP 発現が低いからではないかと考え、RBP を過剰発現させれば蛍光が増加するのかを調べました。
+結果は右のグラフのようになり、RBP を過剰発現させると、させていない場合よりも高い蛍光を示しました。このことから内在性の RBP はカスケードにおける鍵であるといえます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig5.png"
+  alt="Fig.5 - RBP の過剰発現"
+  caption="Fig.5 - RBP の過剰発現"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑸BTCA 受容体の過剰発現
+
+次に、計算的に設計された BTCA 受容体の過剰発現を行いました。様々な組み合わせで蛍光を測定した結果右のグラフから分かるように、リガンドである BTCA とカスケードの誘導に必要なアラビノースの両方が添加されたときに最も高い蛍光を示すことが分かりました。BTCA、アラビノースそれぞれを片方のみ添加した場合には蛍光が増加しなかったことから、カスケードが蛍光レベルの上昇に寄与しているといえます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig6.png"
+  alt="Fig.6 - BTCA 受容体の過剰発現"
+  caption="Fig.6 - BTCA 受容体の過剰発現"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑹BTCA 受容体と RBP のリガンド結合効率の比較
+
+BTCA 受容体発現株とと RBP 発現株において、様々な組み合わせで蛍光を測定した結果、BTCA 受容体結合 BTCA は、RBP 結合 BTCA と比べて約 2 倍も高い蛍光強度を示すことが分かりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig7.png"
+  alt="Fig.7 - BTCA 受容体と RBP のリガンド結合効率の比較"
+  caption="Fig.7 - BTCA 受容体と RBP のリガンド結合効率の比較"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑺BTCA 受容体の機能の確認
+
+BTCA 受容体 BTCA とネガティブコントロールを使用して蛍光強度を測定したところ、BTCA 受容体培養物のみ GFP が発現し、蛍光が見られることが確認できました。このことから、GFP の蛍光はカスケードによるものであるといえます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig8.png"
+  alt="Fig.8 - BTCA 受容体の機能の確認"
+  caption="Fig.8 - BTCA 受容体の機能の確認"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteria より引用](https://2021.igem.org/Team:Bielefeld-CeBiTec/Bacteriaより引用)_
+
+### ⑻ 化学物質の大腸菌への毒性試験
+
+大腸菌が選択した化学物質に対しどのくらいの耐性を持つのかを調べました。この結果、大腸菌が増殖可能である限界の濃度がそれぞれの化学物質において分かりました。また、一部の化学物質は大腸菌によって代謝されるため、培地中の濃度変化を考慮する必要があることが分かりました。
+
+## ③ RUBY レポーターとシグナル伝達カスケードのテスト
+
+この章では、アグロインフィルトレーションを用いて植物のシグナル伝達カスケードと RUBY レポーターのシステム機能性をテストした。
+
+まず、植物を形質転換する最も一般的な方法として、アグロインフィルトレーションが選ばれている。アグロインフィルトレーションとは、植物の安定した形質転換と比較して、速くスクリーニングするための方法である。
+
+今回の研究で化学物質の検出に用いたのが RUBY Reporter である。RUBY Reporter の機能を植物で検証するために、アグロインフィルトレーションを用いて植物に浸潤させた。その結果、右図のように RUBY が発現し、機能することが分かる。そのため、RUBY は植物におけるレポーターとして適していると言える。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig9.png"
+  alt="Fig.9 - RUBY レポーターの機能性テスト"
+  caption="Fig.9 - RUBY レポーターの機能性テスト"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Tobacco](https://2021.igem.org/Team:Bielefeld-CeBiTec/Tobacco)
+より引用_
+
+<br />
+
+② では大腸菌内で BTCA を検出する機構を作った。そのときでは、GFP をレポーターとしてもちいたが、実際には RUBY レポーターを使用する。よって、RUBY レポーターを導入したプラスミドを作成した。
+また、プラスミドの情報量が多すぎるために分割構築をして、後で 1 つに合成できるようにした。
+
+<br />
+シグナル伝達カスケードを 2 つのプラスミドに分配するためには、植物に 2 つのプラスミドを形質転換する必要があるため、アグロインフィルトレーションを用いた共形質転換が可能かどうかを検証した。
+RUBY レポータープラスミドで植物を形質転換しました結果、顕微鏡により、RUBY が浸潤したスポットに発現していることを証明することができた。よって、シグナル伝達カスケードを
+2 つのプラスミドに分配可能であることが示された。
+
+<br />
+これまでの章から、TNT 代替物質 BTCA が植物に取り込まれ、検出できることが示された。よって、BTCA
+はカスケードの機能テストに適した物質であると思われたため、実際に BTCA を含む植物を水耕栽培して実証実験を行った。結果は予想に反して、試験植物の葉は赤くならず、カスケードがうまく機能しなかった。ただし、これまでの実験によって、計算機で設計した
+BTCA 受容体がバクテリアで機能することは証明できたので、植物でもテストすることができる。
+
+## ④ 新たなレポーターシステムの作成と最適化
+
+この章では現在のレポーターシステムは屋外での使用に向いていないことが問題だった。そこで、屋外でも使用できるように肉眼で簡単に検出できるレポーターシステムの作成を目指した。
+
+<br />
+そのレポーターシステムが RUBY と ANTHOS です。RUBY は赤色の色素ベタレインを合成するための
+3 つの酵素を 1 つにまとめたものである。ただし、今回使用する植物にはベタレインの合成能力がない。一方で、ANTHOS
+は今回実験する植物の葉に存在する天然アントシアニンの合成を活性化する 3 つの転写因子から構成されている。結果を先に述べると、一過性に形質転換させた結果、RUBY
+レポーターだけが赤色色素の生産に成功した。
+
+### (1)RUBY
+
+RUBY レポーターの特性を評価するために、植物の葉に、RUBY を一過性に形質転換させた。その結果、右図のように葉の色が赤色に変化し、2 日後には RUBY がはっきりと認識できる。さらに、9 週間後でも RUBY がはっきりと認識できており植物の葉に RUBY は長期間安定に存在することが分かった。
+この色の変化について、いくつかの種類の解析をしたので紹介する。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig10.png"
+  alt="Fig.10 - RUBY レポーターの特性評価"
+  caption="Fig.10 - RUBY レポーターの特性評価"
+/>
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig11.png"
+  alt="Fig.11 - RUBY レポーターの特性評価"
+  caption="Fig.11 - RUBY レポーターの特性評価"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Reporter](https://2021.igem.org/Team:Bielefeld-CeBiTec/Reporter)
+より引用_
+
+<br />
+植物の葉からベタレインを抽出して定量したものが左上のグラフになる。このグラフは RUBY
+が作ったベタレインの合成量が示されている。前のスライドつづいて RUBY は長期間安定に存在することが数値的に確認できた。アグロインフィルトレーション後の
+2 つの異なる時点での転写物を解析したものがこちらのグラフです。このグラフからは、3
+種類の RUBY 酵素はすべて発現したことが確認できた。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig12.png"
+  alt="Fig.12 - RUBY レポーターの特性評価"
+  caption="Fig.12 - RUBY レポーターの特性評価"
+/>
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-2022-meeting-10-2-fig13.png"
+  alt="Fig.13 - RUBY レポーターの特性評価"
+  caption="Fig.13 - RUBY レポーターの特性評価"
+/>
+_※画像は[https://2021.igem.org/Team:Bielefeld-CeBiTec/Reporter](https://2021.igem.org/Team:Bielefeld-CeBiTec/Reporter)
+より引用_
+
+<br />
+また、RUBY の発現が光合成に悪影響を及ぼさないかどうかを確認するためにクロロフィル蛍光の測定を行いました。クロロフィル蛍光の測定は、光合成の複雑な制御を調査・解明するための強力なツールです。ここで、非光化学消光
+NPQ とは、吸収した光エネルギーを無害に変換して過剰な励起エネルギーを消散させるプロセスが強化されることを言う。測定の結果、RUBY
+レポーターの発現は通常の光条件下での光合成を損なわないことが分かった。ただ、RUBY
+レポーターの発現は、高い光強度に対応する葉の能力を損なわせているが、それと同時に、RUBY
+の発現は、光強度の増加とともに NPQ の増加をもたらしていることが分かった。
+
+### (2)ANTHOS
+
+ここで、ANTHOS の話題に移る。植物がもともともっているアントシアニンの合成を活性化するのが ANTHOS の目標となっています。アントシアニンの生成の活性化には MBW 複合体が必要となります。
+MBW 複合体は R2R3MYB 転写因子、bHLH 転写因子、WD Repeat Protein の 3 つの物質から構成されています。
+
+<br />
+
+先ほど述べた実験では、ANTHOS は色素を発現しなかったので、ANTHOS を機能させるにはどの転写因子を組み合わせて発現させればよいかということを専門家との助言を得て実験中となっている。
+
+## まとめ
+
+- 1\. 植物が化学物質を吸収して、その検出に成功した。
+- 2\. TNT 代用物質 BTCA を検出するためのシグナル伝達カスケードを大腸菌における確立して、ベースとなった受容体よりも特異的にリガンドと結合する受容体を計算的に設計することに成功した。
+- 3\. シグナル伝達カスケードのテストは、TNT と化学構造が似ていることから、BTCA を受容体リガンドとして使用し、RUBY は植物におけるレポーターとして機能することを確認した。また、プラスミドに RUBY を導入して、カスケードの分割構築に成功し、計算機で作成された BTCA 受容体がバクテリアで機能することを確認した。
+- 4\. RUBY レポーターは一過性形質転換により植物に導入することに成功しました。RUBY の発現を活性化することで、赤色色素の生産も確認することができ、その色素は植物の葉に長期間安定に存在することを確認した。
+
+_※今回使用した画像は全て Bielefeld-CeBiTec2021 の wiki の Result から引用しています。（引用日 2022.3.26）_

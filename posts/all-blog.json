@@ -36,7 +36,7 @@
   "igem-japan-2022-meeting-10-2": {
     "id": "igem-japan-2022-meeting-10-2",
     "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(Bielefeld-CeBiTec 2021 P.L.A.N.T.) - iGEM Japan 2022 定例会 (輪読会) #10-2",
-    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・NEFU-China2020 BOLD <br /> ・Bielefeld-CeBiTec2021 P.L.A.N.T.\n\n<br /><br /> 本記事では、2つ目のプロジェクトである、Bielefeld-CeBiTec2021について紹介していきます。\n<br /><br /> このプロジェクトは、レポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みるプロジェクトです。このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
+    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・[NEFU-China2020 BOLD](https://2020.igem.org/Team:NEFU_China) <br /> ・[Bielefeld-CeBiTec2021 P.L.A.N.T.](https://2021.igem.org/Team:Bielefeld-CeBiTec)\n\n<br /><br /> 本記事では、2つ目のプロジェクトである、Bielefeld-CeBiTec2021について紹介していきます。\n<br /><br /> このプロジェクトは、レポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みるプロジェクトです。このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -48,7 +48,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-2",
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-2_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-journal-club-epfl2019": {
@@ -263,7 +263,7 @@
     "author": "ishish",
     "path": "/posts/blog/ishish/ginkgo-history",
     "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
+    "rePost": false,
     "status": "published"
   },
   "igem-high-school-links-china": {

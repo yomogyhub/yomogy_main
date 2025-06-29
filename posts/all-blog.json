@@ -246,7 +246,7 @@
     "author": "ishish",
     "path": "/posts/blog/ishish/ginkgo-2021",
     "coverImage": "/blog/ishish/images/ginkgo-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-2021",
+    "rePost": false,
     "status": "published"
   },
   "ginkgo-history": {
@@ -365,7 +365,7 @@
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-japan-2022-meeting-03",
     "coverImage": "/blog/qdai/images/igem-japan-2022-meeting-03_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-03",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-journal-club-szuchina2019": {

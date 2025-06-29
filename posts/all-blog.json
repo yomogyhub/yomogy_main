@@ -347,7 +347,7 @@
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-hq-wiki-rule",
     "coverImage": "/blog/qdai/images/igem-hq-wiki-rule_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-hq-wiki-rule",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-03": {
@@ -399,7 +399,7 @@
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-qdai-2021",
     "coverImage": "/blog/qdai/images/igem-qdai-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-qdai-2021",
+    "rePost": false,
     "status": "published"
   },
   "igem-wiki-tips": {
@@ -415,7 +415,7 @@
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-wiki-tips",
     "coverImage": "/blog/qdai/images/igem-wiki-tips_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-tips",
+    "rePost": false,
     "status": "published"
   },
   "igem-toyaku-2022": {

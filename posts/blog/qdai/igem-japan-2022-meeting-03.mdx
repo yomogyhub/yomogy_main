@@ -15,6 +15,506 @@ rePost: "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-03" # 記�
 status: "published" # "published" or "draft"
 ---
 
-## サイト移行中です。
+## 始めに
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-03)から記事をお読みください。
+今回の輪読会のテーマは「iGEM における RNAi の応用方法」で、以下の 2 つのプロジェクトが紹介されました。
+
+- [SZU-China 2019 Micrancide](https://2019.igem.org/Team:SZU-China)
+- [Bielefeld-CeBiTec 2018 nanoFactory](https://2018.igem.org/Team:Bielefeld-CeBiTec)
+
+## RNAi とは？
+
+RNAi は、細胞内に、標的の mRNA と相補的な低分子 RNA が存在する時に、標的の mRNA に、mRNA を分解する酵素が誘導されることにより、mRNA が分解され、それによって遺伝子の発現が抑制される現象です。
+
+### RNAi において重要な役割を果たす要素
+
+**siRNA**
+
+標的となる mRNA へと分解酵素を誘導する役割と果たします。
+
+<br/ >
+**ダイサー**
+
+RNA 分解酵素の一種であるダイサーは細胞内へと低分子 RNA を導入する働きをもつベクターである dsRNA や pre-miRNA をそれぞれ siRNA や miRNA に分解します。
+
+<br/ >
+**RISC**
+
+RISC の正式な名称は RNA 誘導サイレンシング複合体で、低分子 RNA と分解酵素の一種であるアルゴノートタンパク質から構成されるヌクレアーぜ複合体です。この RISC の触媒部分が低分子 RNA の誘導のもと、標的 mRNA を分解します。
+
+### RNAi の作用機序
+
+<img
+  src="https://bsd.neuroinf.jp/w/images/thumb/b/be/RNA干渉.jpg/600px-RNA干渉.jpg"
+  alt="RNAiの作用機序"
+  title="RNAiの作用機序"
+  width="430px"
+/>
+
+RNAi の作用機序
+出典 : ]脳科学辞典 RNA 干渉](https://bsd.neuroinf.jp/wiki/RNA干渉)
+
+<br />
+
+- 1\. 細胞内へ外部から dsRNA などの siRNA のベクターを導入すると、まずダイサーが働き、ベクターを siRNA へと分解します。
+
+- 2\. siRNA が RISC タンパク質（アルゴノート）と結合することによって RISC を形成します。
+
+- 3\. 低分子 RNA の誘導のもと、標的 mRNA と RISC が特異的に結合すると、RISC 自身のもつヌクレアーぜによって破壊されます。
+
+<br />
+以上が RNAi の大まかな流れです。
+
+## SZU-China 2019
+
+一つ目のプロジェクトです。このプロジェクトは、侵略的外来種として世界中で生態系に大きな悪影響を与えている植物であるツルヒヨドリに対する除草剤を RNAi を用いることで作成しようというものです。
+
+### ツルヒヨドリとは？
+
+ツルヒヨドリは世界ワースト 10 の雑草とされている熱帯原生の蔓性植物です。
+
+<img
+  src="https://2019.igem.org/wiki/images/f/f3/T--SZU-CHINA--Des_fig1.png"
+  alt="ツルヒヨドリの繁茂する様子"
+  title="ツルヒヨドリの繁茂する様子"
+  width="500px"
+/>
+
+SZU-China のキャンパス内に繁茂するツルヒヨドリ
+
+出典 : [iGEM2019 SZU-China Micrancide Description](https://2019.igem.org/Team:SZU-China/Description)
+
+### 特徴
+
+成長速度が速く、繁殖力が高い。
+新芽には他の植物の成長などを抑制する他感作用を引き起こす物質を分泌する能力がある。
+他の植物の上を覆うように広がることにより、日光を遮り枯らす。
+温暖化の影響により、生息域が拡大している
+
+## SZU-China による従来の駆除方法の検討
+
+- 物理的駆除
+
+  機械や人の手によって抜く、刈る方法。物理的に引っこ抜くのが駆除に最良の方法であるという一方で、間違って違う植物を引っこ抜いてしまうなどのリスクが存在します。
+
+- 化学的駆除
+
+  化学的な除草剤を用いる方法ではツルヒヨドリの密集度が高い場合に非常に効果的である一方、有害物質の残留などによる環境への影響が懸念されます。
+
+- 生物的駆除
+
+  生物的防除の方法は、持続的な管理方法として最適であるとこのチームは述べていましたが、外来生物を連れてくることによる生態系への影響は計り知れず、リスクが高いです。
+
+## SZU-China による提案
+
+そんな中、SZU-China は RNAi に目をつけました。具体的には、CRISPR などを用いた遺伝子改変技術とは異なり、遺伝子発現の永続的な変化を引き起こさない。
+RNA は他の除草剤に用いられる化学物質よりも不安定である。ターゲットであるツルヒヨドリ以外には害を及ぼさないという点から RNAi を利用した除草剤を作成しようとプロジェクトを立案しました。
+
+## プロジェクトの流れ
+
+**① ターゲット遺伝子の決定**
+
+初めにターゲットとする遺伝子を決定し、それに対する siRNA の配列の決定が行われました。初めは植物内でよく発現する呼吸関連の遺伝子をターゲットとしていましたが、途中からは実験する際に目で見て除草剤の効果が確認できるようにクロロフィル関係の遺伝子をターゲットとしました。
+
+siRNA の配列は、ツルヒヨドリの葉から抽出して得た、Total RNA (全長 RNA)を、RNA-seq で解析することで決定されました。その際、オフターゲットの確認も行い、ツルヒヨドリにユニークな遺伝子を選択しました。
+
+<br />
+**②siRNA を細胞内へ届けるベクターの決定**
+
+次に細胞内へ siRNA を届けるベクターの決定が行われました。SZU-China は複数のベクターを検討した結果、SZU-China は、shRNA ベクターをベクターとして選びました。
+
+<br />
+**③ プラスミドの構築**
+
+SZU-China が構築したプラスミドには、ターゲット遺伝子に対する shRNA を生産する領域
+環境が酸性となると、細胞の自死を引き起こす self-cracking Mechanism が組み込まれたようです。
+
+残念ながら、SZU-China が wiki に記載していたプラスミドの設計図は不明瞭であり、判別不能でした。
+
+<br />
+**④shRNA の生産**
+
+<img
+  src="https://2019.igem.org/wiki/images/4/40/T--SZU-CHINA--exp4.jpg"
+  alt="shRNAの生産"
+  title="shRNAの生産"
+  width="500px"
+/>
+
+<img
+  src="https://2019.igem.org/wiki/images/4/48/T--SZU-CHINA--exp5.jpg"
+  width="500px"
+/>
+
+<img
+  src="https://2019.igem.org/wiki/images/2/23/T--SZU-CHINA--exp6.jpg"
+  width="500px"
+/>
+
+shRNA の生産方法
+出典 : iGEM2019 SZU-China Micrancide Design https://2019.igem.org/Team:SZU-China/Design
+
+<br />
+1\. shRNA の生産するプラスミドを大腸菌に形質転換して導入
+
+2\. IPTG 誘導により、プラスミドの転写を促進し、細胞内での shRNA の合成を促進
+
+3\. 溶液を酸性に傾けることによって大腸菌を死滅させる。
+
+4\. 溶液から shRNA を抽出、精製することで除草剤の原料が生産されます。
+
+<br />
+得られた shRNA を溶かした溶液をツルヒヨドリに噴霧することで RNAi が引き起こされます。
+
+## 実験による効果の検証
+
+SZU-China が除草剤の効果を測るために
+
+- 効果に関する実験
+- 特異性についての実験
+- 安定性についての実験
+
+の 3 つの実験を行いました。
+
+### 除草剤の効果に関する実験
+
+遺伝子の発現状況を定量的に計測した実験です。
+
+<img
+  src="https://2019.igem.org/wiki/images/5/5c/T--SZU-CHINA--siRNA_detect_comparison.png"
+  alt="遺伝子の発現状況"
+  title="遺伝子の発現状況"
+  width="1000px"
+/>
+
+左）遺伝子の発現量 右）蛍光により測定した細胞内の siRNA の量
+
+出典 : iGEM2019 SZU-China Micrancide Results https://2019.igem.org/Team:SZU-China/Results
+
+<br />
+図より生体内の siRNA の量が増加すると、標的遺伝子の発現量が減少し、またその逆の傾向も読み取ることができます。
+
+<img
+  src="https://2019.igem.org/wiki/images/c/c9/T--SZU-CHINA--rfig17.png"
+  alt="除草剤による葉への影響"
+  title="除草剤による葉への影響"
+  width="500px"
+/>
+
+shRNA を 7 日間毎日噴霧した葉の形態
+
+出典 : iGEM2019 SZU-China Micrancide Results https://2019.igem.org/Team:SZU-China/Results
+
+<br />
+写真より毎日 shRNA を噴霧した方の葉は日が経つに連れて萎れている一方で、純粋な水を噴霧した方の葉は変化がないことがわかります。
+
+### 除草剤の特異性に関する実験
+
+実験ではシロイヌナズナやタバコといった植物に対して shRNA を噴霧して変化が起きるかどうかを調べています。
+
+<img
+  src="https://2019.igem.org/wiki/images/3/35/T--SZU-CHINA--demo12_1.jpg"
+  alt="除草剤の特異性（ツルヒヨドリ）"
+  title="除草剤の特異性（ツルヒヨドリ）"
+  width="600px"
+/>
+
+<img
+  src="https://2019.igem.org/wiki/images/5/58/T--SZU-CHINA--res22.jpg"
+  width="430px"
+/>
+<img
+  src="https://2019.igem.org/wiki/images/e/e6/T--SZU-CHINA--rfig044.png"
+  width="400px"
+/>
+
+上) ツルヒヨドリ, 中) シロイヌナズナ, 下) タバコ
+
+出典 : iGEM2019 SZU-China Micrancide Results https://2019.igem.org/Team:SZU-China/Results
+
+<br />
+ツルヒヨドリには変化が見られる一方で、他の二つには変化が見られないことがわかります。
+
+### 除草剤の安定性についての実験
+
+shRNA の安定性についての検証です。SZU-China は除草剤として実際に製品として売り出すことになった時の保管推奨温度を決定しようとしてこの実験を行いました。
+
+<img
+  src="https://2019.igem.org/wiki/images/5/58/T--SZU-CHINA--res14.png"
+  alt="shRNAのバンド"
+  title="shRNAのバンド"
+  width="500px"
+/>
+
+大腸菌から得られた shRNA の電気泳動写真
+
+出典 : iGEM2019 SZU-China Micrancide Results https://2019.igem.org/Team:SZU-China/Results
+
+<br />
+280bp のバンドが shRNA のものです。
+
+<img
+  src="https://2019.igem.org/wiki/images/7/7d/T--SZU-CHINA--res15.png"
+  alt="保存状態"
+  title="保存状態"
+  width="800px"
+/>
+
+各保存方法の結果
+出典 : iGEM2019 SZU-China Micrancide Results https://2019.igem.org/Team:SZU-China/Results
+
+<br />
+保存方法はそれぞれ、
+
+(左上) 1 日間野外で放置
+(右上) -80℃ で 10 日間保存
+(左下) 4℃ で 10 日間保存
+(右下) 20℃ で 10 日間保存
+
+となっています。
+
+右上の図と右下の図には 280bp のバンドを見ることができる一方で、他の二つからは消失してしまっているという結果から、SZU-China は-20℃ をこの除草剤の保管推奨温度として設定しました。
+
+## まとめ
+
+2019 年のプロジェクトとして SZU-China は RNAi を用いたツルヒヨドリに対する除草剤を作成しました。それは、ツルヒヨドリのクロロフィルに関する遺伝子をターゲットとした siRNA を取り込ませることによって、クロロフィルに関する遺伝子の発現を抑えることによって、ツルヒヨドリを枯らしてしますものです。それらは、ツルヒヨドリ以外の植物には影響を及ぼさないものでした。
+
+## Bielefeld-CeBiTec 2018 NanoFactory
+
+二つ目のプロジェクトです。このプロジェクトは、2018 年に Bielefeld-CeBiTec が行った大腸菌を用いて金属を回収しようというものです。このプロジェクトは 4 つのサブプロジェクト（Toxicity, Accumulation, Silencing, Nanoparticles）により構成されており、今回はその中から Silencing を取り上げられました。
+
+Silencing は CRISPR/Cas9 の類似現象を、原核生物である大腸菌において、RNAi を模倣した反応によるノックダウンを行い、再現しようというサブプロジェクトです。
+
+## CRISPR/Cas9 とは？
+
+関連の深い CRISPR/Cas9 の解説です。
+CRISPR-Cas9 では、標的の DNA 配列に対して配列特異的な 20 塩基程度のガイド RNA を利用して Cas9 ヌクレアーゼをその標的座位に誘導し、標的となった DNA の二本鎖を切断します。
+
+<br />
+切断に対し、真核生物は大きく分けて二種類の応答を行います。
+
+- 1\. 染色体上の 2 つの遊離末端を再度結合させる非相同性末端結合
+
+- 2\. 片方の染色体で損傷が起きた際、もう片方の染色体の相同な部位を鋳型にして修復を行う相同組換え修復。この相同な部位を実験者が用意した DNA に置き換えてしまえば、DNA 配列を編集できます。
+
+### iGEM における CRISPR の問題点
+
+iGEM には合成生物学を用いた製品の社会実装を目指すという理念があります。その点、CRISPR の特許によるライセンス契約の必要性は、パーツの商用利用においてネックとなってきます。
+これを踏まえて Bielefeld-CeBiTec は iGEM 内で自由に使えるオープンソースなシステムを構築しようと考えました。
+
+### 大腸菌に備わる siRNA による反応の問題点
+
+大腸菌で RNAi を再現する一番大きな問題点は、ほとんどの真核生物とは異なり、細菌の多くは RNAi 機構を持っていないということが挙げられます。多くの siRNA はタンパク質と結合したり、RNA のアンチセンス鎖として働くことによって遺伝子の発現を抑制します。しかしこの手法をそのまま用いると、
+
+<br />
+
+- siRNA が再び分離することによって絶対的に発現を抑制することができない
+- 翻訳の抑制から無制限の発現へと移行する速度が遅い
+
+<br />
+という欠点が存在します。そのため、Bielefeld-CeBiTec は大腸菌内で真核生物における
+RNAi を模倣した遺伝子発現制御機構を作成しようと考えました。
+
+## 改善策
+
+Bielefeld2018 による改善案は二種類です。
+
+- 1\. 大腸菌に存在する相同タンパク質である Hfq, RppH, RNase E を用いてターゲット RNA を分解する機構を作成する。
+
+- 2\. 立体障害による翻訳の阻害を行う。
+
+### 1 の方法
+
+一つ目の方法についてです。このチームは大腸菌で RNAi と同様のメカニズムを確立しつつ、代謝機構への影響を最小限にするために、すでに大腸菌内に豊富に存在するタンパク質を用いて模倣した機構を作ることにしました。
+
+用いられたタンパク質
+
+- Hfq
+
+  シャペロンの一種で、模倣機構において siRNA とターゲット RNA の結合や RppH との結合を誘導する役割を果たします。
+
+- RppH
+
+  RNaseE の活性化を行います。
+
+- RNaseE
+
+  ターゲット RNA の分解を行います。
+
+<img
+  src="https://2018.igem.org/wiki/images/4/46/T--Bielefeld-CeBiTec--RNAi_scaffolds_new2.png"
+  alt="1の方法におけるsiRNAの修飾"
+  title="1の方法におけるsiRNAの修飾"
+  width="800px"
+/>
+
+1 の方法における siRNA の修飾
+出典 : iGEM2018 Belefeld-CeBiTec nanoFactory Software https://2018.igem.org/Team:Bielefeld-CeBiTec/Software
+
+<br />
+(A) のように何も修飾されていない siRNA は細胞内のヌクレアーゼによって分解されてしまいます。しかし、(B)
+のように siRNA の 5 末端が一リン酸である場合、RNaseE の触媒活性を増加させ、ターゲット
+RNA の分解を誘導することができるようになります。また、siRNA の 5 末端に AGNN 配列を付加すると、RNaseE
+の活性を促進するようです。なお、(C) のように 3 末端に MicC というスキャフォールドを結合させると、siRNA
+とターゲット RNA の結合を促進し、また siRNA の安定性も上昇させるようです。
+
+<br />
+このように修飾された siRNA は、RNA シャペロン Hfq によって結合した RppH によって活性化、5
+末端をピロリン酸から一リン酸へ変換されます。 そして変換された siRNA が標的 mRNA に結合すると、RNase
+E によって mRNA が分解されます。
+
+### 2 の方法
+
+次に立体障害による翻訳阻害です。この場合 siRNA は安定である方がより良いです。
+
+<img
+  src="https://2018.igem.org/wiki/images/4/4c/T--Bielefeld-CeBiTec--siRNA_scaffolds_new_vk_2.png"
+  alt="2の方法におけるsiRNAの修飾"
+  title="2の方法におけるsiRNAの修飾"
+  width="500px"
+/>
+
+2 の方法における siRNA の修飾
+出典 : iGEM2018 Bielefeld-CeBiTec nanoFactory Software http://2018.igem.org/Team:Bielefeld-CeBiTec/Software
+
+<br />
+wiki によると、5 末端に ompA を修飾した siRNA は半減期がかなり長くなるようです。またシャペロン
+Hfq は siRNA と mRNA の結合を促進しますが、3 末端に先ほどと同じ MicC を持つものはその効率を最も良くするようです。このようにして作成された
+siRNA はブロッキングにより mRNA の翻訳を阻害します。
+
+## システムの検証
+
+この二つの手法による原核生物である大腸菌で RNAi を模倣したシステムを Bielefeld-CeBiTec は考案しました。そして彼らはそのシステムが想定通りに働くか、大腸菌内で検証を行うためのシステム TACE を設計、構築しました。
+
+TACE は主に siRNA を発現するベクターと、ターゲット RNA を発現するベクターに分かれています。
+
+### siRNA を発現するベクター
+
+siRNA の発現を行うベクターの方では、発現させた siRNA を全て比較できるようにすることが重要です。Bielefeld-CeBiTec はそうなるように同じプロモーターを搭載した以下の 4 つの BioBrick を設計しました。
+
+<img
+  src="https://2018.igem.org/wiki/images/3/3e/T--Bielefeld-CeBiTec--ALE-pGuide_V2_Genkarte.png"
+  alt="pGuide"
+  title="pGuide"
+  width="500px"
+/>
+
+<img
+  src="https://2018.igem.org/wiki/images/b/b4/T--Bielefeld-CeBiTec--ALE-pGuide-Hfq_V2.png"
+  alt="pGuide_Hfq"
+  title="pGuide_Hfq"
+  width="500px"
+/>
+
+<img
+  src="https://2018.igem.org/wiki/images/7/77/T--Bielefeld-CeBiTec--ALE-pGuide_OmpA_V2.png"
+  alt="pGuide_OmpA"
+  title="pGuide_OmpA"
+  width="500px"
+/>
+
+<img
+  src="https://2018.igem.org/wiki/images/7/7d/T--Bielefeld-CeBiTec--ALE-pGuide_OmpA_Hfq_V2.png"
+  alt="pGuide_Hfq_OmpA"
+  title="pGuide_Hfq_OmpA"
+  width="500px"
+/>
+
+4 つの BioBrick の設計図
+出典 : iGEM2018 Bielefeld-CeBiTec nanoFactory Silencing Results http://2018.igem.org/Team:Bielefeld-CeBiTec/siRNA_Results
+
+<br />
+いずれも制限酵素 BbsI を用いて切り出すことができる Golden Gate Assembly (GGA) カセットを含んでいます。そのため、GGA
+プロトコルを用いることで、GGA カセット全体を特定の siRNA に置き換えることが可能となっています。siRNA
+の転写は、strong TerminatorBBa_B0015 によって終了され、全ての発現過程が完全に終了されます。
+
+<br />各 BioBrick の相違点は、一番上の配列ではそのまま siRNA
+を転写するようになっていますが、二つ目の配列では MicC-siRNA 由来の Hfq
+結合配列も含まれています。また、三つ目の配列では siRNA
+挿入部位の上流に保護配列として ompA 由来の 5'-UTR
+を含み、最後の配列は、二つ目の配列と三つ目の配列の両方の特徴を持つ siRNA
+を含んでいます。 これらの発現ベクターのうちの 1 つを、TACE
+システムの最初の部分として用いることができます。
+
+### ターゲット RNA を発現するベクター
+
+次にターゲット RNA を発現するベクターについてです。このベクターには pTale という名前がついており、一つの特定の mRNA を転写します。選択された RNA は、先ほどのいずれかの siRNA 発現ベクターを使用して作成された siRNA によってサイレンシングされる必要があり、Bielefeld-CeFiTec は siRNA のサイレンシング効果を測定するための最適な条件を得るために、2 世代のターゲットベクターを構築しました。
+
+### pTale 第一世代
+
+<img
+  src="https://2018.igem.org/wiki/images/0/0a/T--Bielefeld-CeBiTec--ALE-pTale_V1.png"
+  alt="pTale第一世代"
+  title="pTale第一世代"
+  width="500px"
+/>
+
+pTale の設計図
+出典 : iGEM2018 Bielefeld-CeBiTec nanoFactory Silencing Results https://2018.igem.org/Team:Bielefeld-CeBiTec/siRNA_Results
+
+<br />
+レポータータンパク質としてはクロモプロテイン AmilCp と青色蛍光タンパク質 BFP の 2
+種類が使われています。ターゲット BioBrick には、GGA カセットとレポータータンパク質の間にリンカーがあることが特徴です。リンカーは立体構造への影響が一般的に軽減されることが知られているために、挿入されたターゲット
+mRNA は、機能を失うことなくレポータータンパク質と結合を形成すると、Bielefeld-CeBiTec
+は想定していました。しかし、その相互作用については絶対的なことではないため、それを確認するために
+pTale2 の設計も行っています。 また、mRNA が破壊された場合、Bielefeld-CeBiTec は、レポータータンパク質は形成されないため、第一世代の
+pTale を使用した場合、測定可能な発光はサイレンシング効果により減少すると主張していますが、siRNA
+がターゲット配列のどこと相補的に結合するか、はっきりと wiki に書かれていなかったため、疑問が残ります。
+
+### pTale 第二世代
+
+<img
+  src="https://2018.igem.org/wiki/images/7/73/T--Bielefeld-CeBiTec--ALE-pTale2_V1.png"
+  alt="pTale第二世代"
+  title="pTale第二世代"
+  width="500px"
+/>
+
+pTale 第二世代の設計図
+出典 : iGEM2018 Bielefeld-CeBiTec nanoFactory Silencing Results https://2018.igem.org/Team:Bielefeld-CeBiTec/siRNA_Results
+
+<br />
+第二世代のターゲットベクターは、ターゲット遺伝子とレポーター遺伝子が直接結合しない形となっており、レポーターが
+Lac プロモーターの後ろにクローニングされる形となっています。ターゲット配列は Lac
+リプレッサーのコーディング領域に融合しているという構造となっているため、ターゲット
+RNA がサイレンシングされると、測定可能な蛍光が増加することとなります。さらに、Lac
+プロモーターは誘導および抑制することができるため、TACE システムに新たに別の制御軸を導入することが可能になっています。
+
+<br />
+第一世代との大きな違いは、サイレンシング効果が高くなると蛍光が減少するのではなく、増加するように設計されている点です。この構造により、非機能的なレポータータンパク質によって生成される偽陽性を防ぐことができようになっています。
+
+## 実験
+
+Bielefeld-CeBiTec が行った実験です。彼らは検証システム TACE のベクターの構築に時間がかかってしまい、実験を時間かけて行うことができなかったようです。そんな中でも、ターゲット遺伝子を緑色蛍光タンパク質 GFP とした pTale 第一世代のベクターを構築し、検証実験を行いました。検証の方法としては OD600 と BFP と GFP の蛍光を測定が行われ、また各サンプルにつき、3 回測定を行ったようです。
+
+<img
+  src="https://2018.igem.org/wiki/images/d/d4/T--Bielefeld-CeBiTec--ALE-Vectortest_T1B_BFP.png"
+  width="400px"
+/>
+
+<img
+  src="https://2018.igem.org/wiki/images/5/5d/T--Bielefeld-CeBiTec--ALE-Vectortest_T1B_GFP_V1.png"
+  width="400px"
+/>
+
+実験結果 上) 1 回目, 右) 2 回目
+出典 : iGEM2018 Bielefeld-CeBiTec nanoFactory Silencing Results https://2018.igem.org/Team:Bielefeld-CeBiTec/siRNA_Results
+
+<br />2 つのクローンにおけるそれぞれの実験結果です。左の図のクローンでは BFP
+が発現しているものの、GFP は発現していませんでした。また右の図のクローンでは GFP
+が発現しているものの、BFP は発現していませんでした。
+
+<br />
+実験の仮説としては、BFP と GFP の両方のタンパク質が発現しますが、両方発現している結果は得られませんでした。
+実験結果より、Bielefeld-CeBiTec は、酸素制限培養条件下では実験期間中の細胞の増殖スピードが非常に遅いと主張していますが、OD
+の条件が揃っていないなど、この主張には疑問が残ります。また、左図の実験結果は、BFP
+が発現したものの、GFP が発現しなかったというものでしたが、シーケンシングの結果、ターゲットベクターには
+GFP は 50bp しか挿入されていなかったことがわかり、蛍光シグナルの欠損が確認されたようです。
+
+<br />
+他にも実験を行っていたようですが、結果が wiki に載っていなかったためその内容は割愛させていただきます。
+
+## まとめ
+
+今回の輪読会を通して遺伝子のノックダウンを行う RNAi は iGEM の中で、特定の種に特異的に作用させることができる除草剤や、遺伝子のノックアウトを行う CRISPR/CAS9 の代わりとなるように応用することができそうだということがわかりました。
+また、今回の輪読会を通して、iGEM の合成生物を用いた製品の社会実装を目指すという理念と CRISPR の特許によるライセンス契約に必要性の衝突といった深い部分も垣間見ることができました。

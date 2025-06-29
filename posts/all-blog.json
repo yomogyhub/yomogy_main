@@ -12,7 +12,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-gifu-2021",
     "coverImage": "/blog/gifu/images/igem-gifu-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-gifu-2021",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-10-1": {

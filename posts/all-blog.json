@@ -383,7 +383,7 @@
     "author": "qdai",
     "path": "/posts/blog/qdai/igem-japan-journal-club-szuchina2019",
     "coverImage": "/blog/qdai/images/igem-japan-journal-club-szuchina2019_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-szuchina2019",
+    "rePost": false,
     "status": "published"
   },
   "igem-qdai-2021": {

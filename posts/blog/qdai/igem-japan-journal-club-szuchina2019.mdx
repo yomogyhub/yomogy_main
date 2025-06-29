@@ -14,10 +14,367 @@ Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 
 本記事は、iGEM Japan 輪読会にて、iGEM Qdaiによって紹介された、iGEM SZU-China 2019 のプロジェクトについて紹介していきます。
 " #  記事の説明
 tag: ["journal-club","information", "history"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-szuchina2019" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published"
 ---
 
-## サイト移行中です。
+## テーマ
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-japan-journal-club-szuchina2019)から記事をお読みください。
+iGEM SZU-China 2019 - RNA 干渉技術を用いた除草剤の開発
+
+## 導入
+
+SZU-China が拠点を置く深圳大学のキャンパス内の雑木林には Mikania micrantha (ツルヒヨドリ) が繁茂しています。ツルヒヨドリは、中南米原産の外来植物で最悪の雑草の一つとされており、生態系に大きな悪影響をを及ぼします。
+
+<br />
+また、地球温暖化が進行している現在、ツルヒヨドリは分布域の拡大を続けており、今後さらなる被害の拡大が予想されています。
+深圳も大きな被害を受けており、深圳島の国有自然保護区の 40 ～ 60％にツルヒヨドリが生育しています。中国の保護生物であるアカゲザルの生息域でもあるため、生態系の破壊がもたらす影響を危惧されています。
+
+<br />
+この問題に対処するため、これまで草刈り機を用いた除草、強力な農薬を用いた駆除、昆虫とダニを用いたツルヒヨドリの排除などの対策が行われてきました。
+しかし、それぞれツルヒヨドリ以外の植物を誤って引き抜いたり、土地を踏み荒らすことによる環境への悪影響、農薬による環境汚染、外来生物による予期しない生態系への影響などの問題点が挙げられます。
+
+<br />
+これらの対策を踏まえ、SZU-China は、ツルヒヨドリに対する特異性持ち、周囲の環境に与える影響が小さく、安全性の高い駆除方法を開発する必要があると考えました。そこで、RNA
+干渉の高い特異性と、RNA 分子の分解の速さに注目し、RNA 干渉技術を用いたツルヒヨドリの除草剤の作成を目標としました。
+
+## RNA 干渉 (RNAi) とは
+
+研究の概要を説明する前に RNA 干渉（RNAi）について簡単に解説します。RNAi に用いる siRNA は、化学合成されたものを使用する場合と、siRNA 発現ベクターで形質転換することにより得られたものを使用する場合に大きく分けられます。SZU-China は形質転換により得られた siRNA を用いる方法を選びました。
+
+<br />
+RNAi を担う siRNA は、ベクターである dsRNA がダイサーと呼ばれる RNaseⅢ ファミリーに属する酵素が切断されることで生じる、21
+から 25 塩基程度の低分子の RNA です。siRNA は細胞内でアルゴノートと呼ばれるタンパク質と複合体を形成します。
+
+<br />
+この複合体のことを RNA Induced Silencing Complex (RISC)と呼びます。活性化した RISC
+は siRNA の配列をもとに標的 mRNA と特異的に結合して分解します。これによって標的遺伝子の発現を抑制します。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig1.png"
+  alt="図 1 ヘアピン siRNA の形成概略"
+  caption="図 1 ヘアピン siRNA の形成概略"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Description](https://2019.igem.org/Team:SZU-China/Description)_
+
+<br />
+SZU-China では、このように設計された配列を含むプラスミドで大腸菌を形質転換し、転写された
+RNAi 分子を抽出することで、除草剤の原料となる siRNA 分子を作成しました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig2.png"
+  alt="図 2 除草剤としての作用機序"
+  caption="図 2 除草剤としての作用機序"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Description](https://2019.igem.org/Team:SZU-China/Description)_
+
+<br />
+また、さらなる RNAi についての詳細は、東京大学のサイトや、cytiva のサイトを参考にしてください。
+
+<br />
+**参考文献** : [新領域：RNAi の仕組みに 1 分子観察で迫る ～複合体 RISC が標的 RNA
+を素早く正確に切る仕組み～ (u-tokyo.ac.jp)](https://www.iqb.u-tokyo.ac.jp/wordpress/wp-content/uploads/2015/07/270703_sasaki.pdf)
+
+**参考文献** : [どうやってノックダウンしますか？ - バイオダイレクトメール Technical Tips vol.34 (cytivalifesciences.co.jp)](https://www.cytivalifesciences.co.jp/newsletter/biodirect_mail/technical_tips/tips34.html)
+
+## 研究の概要
+
+SZU-China チームの最終目標は、RNAi 技術を用いたツルヒヨドリの一次代謝遺伝子の発현抑制による除草剤の作成でした。
+
+<br />
+実験の大まかな流れは以下のようになります。
+
+1\. ベクターの選択
+2\. ベクターの合成
+3\. 除草効果の有効性の検証
+4\. セルフクラッキングメカニズムの設計
+5\. 除草剤「Micrancide」の生産
+6\. 噴霧方法の検討
+
+### 1a. RNAi 分子の選択
+
+siRNA の合成に用いられたの組み換え pET-28a(+)プラスミドは、ツルヒヨドリから全 RNA を抽出し、トランスクリプトーム解析を行うことで発見された特異的な RNAi の配列を用いて設計されました。
+
+<br />
+RNAi 分子をふるい分けるプログラムはチームが独自に設計しました。[GitHub](https://github.com/Pinuslin/siRNA_Designer_1.1)にアップロードされています。
+作成したプログラムを BLAST による相同性検索を用いて SZU-China は、ツルヒヨドリの全
+RNA から最も特異性の高い配列を選択しました。
+
+<br />
+SZU-China の RNAi 技術を用いて除草剤を作成するという取り組みはそれまで前例のないものでした。
+そこで彼らは、実際に RNAi 技術によってツルヒヨドリの生育を抑制することが出来るか確かめるために最も基礎的な手法である
+dsRNA 法による確認実験を行いました。
+
+<br />
+この時の RNAi 標的遺伝子は、クエン酸シンテターゼ関連タンパク室をコードしており、高い発現レベルを有する６つの遺伝子でした。
+結果、作成した dsRNA をツルヒヨドリに与えたところ、有意に遺伝子発現の抑制ができることが分かりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig3.png"
+  alt="図 3 dsRNA による標的遺伝子発現抑制"
+  caption="図 3 dsRNA による標的遺伝子発現抑制"
+/>
+__SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig4.png"
+  alt="図 4 3 週間 dsRNA 処理した葉(下)と対照群(上)"
+  caption="図 4 3 週間 dsRNA 処理した葉(下)と対照群(上)"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+### 1b. RNAi ナノ粒子
+
+dsRNA 法による検証により RNAi 技術を除草剤作成に応用可能であることが分かりました。一方で、dsRNA 方では除草剤に応用できるほど得性が高くなく、また効率性も低いことが分かりました。
+
+<br />
+そこで SZU-China は別のアプローチとして、ヘアピン構造を持つ siRNA 前駆体が複数個集まり形成された
+RNAi ナノ粒子をベクターとして合成し、植物中に取り込ませることにしました。
+
+<br />
+合成は 3 段階に分かれており、一本鎖 DNA のリン酸化、一本鎖 DNA の環状化、転写による
+RNAi ナノ粒子の形成から構成されます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig5.png"
+  alt="図 5 RNAi ナノ粒子の形成概略"
+  caption="図 5 RNAi ナノ粒子の形成概略"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+チームは標的遺伝子を dsRNA 法の時から変更し、異なる種類のクロロフィル合成関連遺伝子を標的とした siRNA を設計しました。これにより除草剤の効果を目視で観察出来るようになりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-table1.png"
+  alt="表 1 クロロフィル合成関連遺伝子を標的とした RNAi 分子"
+  caption="表 1 クロロフィル合成関連遺伝子を標的とした RNAi 分子"
+/>
+
+新たに設計した RNAi ナノ粒子で処理したツルヒヨドリのクロロフィル合成関連遺伝子に対する RT-qPCR を行った結果、標的遺伝子の抑制が十分に抑制されていることが分かりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig6.png"
+  alt="図 6 RNAi ナノ粒子処理による相対的な遺伝子発現"
+  caption="図 6 RNAi ナノ粒子処理による相対的な遺伝子発現"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+RNAi ナノ粒子を散布した葉には白い斑点が生じています。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig7.png"
+  alt="図 7 10 日間 RNAi ナノ粒子処理した葉（下）と対照群"
+  caption="図 7 10 日間 RNAi ナノ粒子処理した葉（下）と対照群"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+### 2\. RNAi 分子の合成
+
+SZU-China はナノ粒子をベクターとする除草剤を作成しようとしましたが、ナノ粒子の合成にはコストがかかり、工業的に生産するには採算が取れないとしてこの方法を断念しました。
+そして代替案として、shRNA をベクターとする手法による開発を取り組みました。
+
+<br />
+チームはヘアピン構造の合成の難しさを考慮して 4 種類の異なる siRNA の配列が連続してコードされた
+shRNA 設計しました。この shRNA は細胞内に取り込まれると、4 つの異なる遺伝子を標的とする
+siRNA に分解されるため、効率的に複数の遺伝子を抑制することが出来ます。
+
+<br />
+この配列を含むプラスミド pET-28a(+)を用いて形質転換した ht115(DE3)大腸菌を用いて、shRNA
+を製造しました。 電気泳動により確認したところ shRNA が産生されていることが分かりました。
+
+参考 : SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)
+
+#### shRNA の安定性を検証
+
+SZU-China は shRNA の安定性を検証する実験を行いました。保管条件を以下の 4 つについて、検討しました。
+
+1\. 室温条件下で 1 日
+2\. 4℃ で 10 日間
+3\. -20℃ で 10 日間
+4\. -80℃ で 10 日間
+
+<br />1 と 2 の条件では、shRNA が分解されており、3 と 4
+の条件では、分解されていません。この結果からチームは-20℃
+を保管推奨温度としました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig9.png"
+  alt="図 9 異なる温度条件下での shRNA の安定性"
+  caption="図 9 異なる温度条件下での shRNA の安定性"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+### 3\. 有効性の検証
+
+SZU-China は、葉に取り込まれた siRNA を検出するため、ノーザンブロットを試みました。Micrancide を噴霧した 6 日後に試験を行いましたが、siRNA は検出されませんでした。siRNA のサイズが小さすぎたために検出できなかったと考えられます。
+
+<br />
+そこで、新たな方法として G 四重鎖(G-quadruplex-DNA)を用いた検出を試みました。グアニンリッチな鎖は、二重らせんと
+K+などの１価陽イオンが存在する生理的条件下では、グアニンが 4 つ並んだ G-カルテット（G-quartet）という平面構造を取ることがあります。G-カルテットはさらに
+π-π スタッキング相互作用によって重層することで G 四重鎖と呼ばれる特殊な高次構造を形成します。
+近年の研究によりこのような平面構造を取る G 四重鎖は三重鎖や二重鎖、一重鎖の DNA とは異なり、チオフラビン
+T（ThT）によって非常に高い選択性で認識されることが明らかになりました。ThT は G 四重鎖
+DNA に結合すると蛍光強度が大幅に増加するためシグナルレポーターとして利用することができます。
+
+<br />
+今回、SZU-China は標的 miRNA に完全に相補的かつ G-richDNA と部分的に相補的に結合する
+cDNA 鎖を設計しました。この cDNA は miRNA 非存在下では G-richDNA に結合することで
+G-richDNA が高次構造を取ることを阻害するため、蛍光が検出されません。 一方で、ターゲット
+siRNA が存在する場合は、cDNA/G-richDNA 二重鎖から競合して、cDNA/RNA ヘテロ二重鎖を形成し、G-rich
+オリゴヌクレオチドを放出することができます。 放出された G-rich オリゴヌクレオチドは、2.0mM
+の K+存在下でグアニン四重鎖に構造変化し、ThT がこの G-四重らせん DNA を認識して選択的に結合することで、蛍光シグナルが顕著に増強されます。この蛍光強度を測定することで、miRNA
+の検出が可能になります。（図.11）
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig11.png"
+  alt="図 11 miRNA 検出法の概略図"
+  caption="図 11 miRNA 検出法の概略図"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Measurement](https://2019.igem.org/Team:SZU-China/Measurement)_
+
+<br />
+この測定法を利用して測定すると、RT-qPCR の結果から標的遺伝子は、2 日間抑制されたのち
+4 日後に回復したことが分かりました。siRNA の量は 1 日後に劇的に増加し、そこから徐々に減少しました。二つの結果を比較すると整合性が取れており、siRNA
+が機能していることが分かります。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig12.png"
+  alt="図 12 RT-qPCR と siRNA の結果"
+  caption="図 12 RT-qPCR と siRNA の結果"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+shRNA を噴霧した後、遺伝子発現を確認したところ、すべての標的遺伝子が２日後に抑制された一方で、対照群は変化しませんでした。RNAi ナノ粒子の結果と比較すると、shRNA の遺伝子発現抑制機能は RNAi ナノ粒子よりも安定していることが分かりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig13.png"
+  alt="図 13 shRNA を用いた相対遺伝子発現"
+  caption="図 13 shRNA を用いた相対遺伝子発現"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+SZU-China は Jiangnan-China チームとコラボレーションし、Jiangnan-China チームが開発したバイオサーファクタント（微生物由来の界面活性剤）が shRNA の効果を促進するか検証を行いました。
+shRNA と界面活性剤の溶液を葉に噴霧した場合と shRNA の水溶液を噴霧した場合では、10 日間の検証でともに葉がしおれて黒くなりましたが、両者に有意な差は生じませんでした。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig14.png"
+  alt="図 14 10 日間 shRNA と界面活性剤を噴霧させた葉の形態"
+  caption="図 14 10 日間 shRNA と界面活性剤を噴霧させた葉の形態"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+SZU-China は、10 日当たりの葉の変色率をもとに Etiolation-Rate-Model という統計分析を行い、葉の枯れ具合を評価しました。見かけの変化を定量的に検出するために、葉の色の変化を画像処理によって測定し、緑色と変色した部分の葉面積に対する割合をもとに変色率を算出します。この変色率が 80％を超えると葉は枯れたと判断できるとしています。
+
+この測定を行う[Matlabscript](https://2019.igem.org/wiki/images/4/40/T--SZU-CHINA--ERSt.txt)は独自にこのチームが開発しました。
+
+shRNA 処理した葉が何日後に枯れるのかをこのツールを用いて測定しました。予測は 13 日後に枯れるとしたところ、結果は 15 日後に枯れたため、このモデルがある程度信頼性のあるものであることがわかりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig15.png"
+  alt="図 15 Etiolation Rate Model"
+  caption="図 15 Etiolation Rate Model"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+#### 種特異性の検証
+
+シロイヌナズナとタバコを用いて検証したところ、両者とも枯れることなく、ツルヒヨドリに特異性を示すことがわかりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig16-1.png"
+  alt="図 16 a)siRNA 散布後の Arabidopsis thaliana"
+  caption="図 16 a)siRNA 散布後の Arabidopsis thaliana"
+/>
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig16-2.png"
+  alt="図 16 b)siRNA 散布後の Nicotiana tabacum L."
+  caption="図 16 b)siRNA 散布後の Nicotiana tabacum L."
+/>
+
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Product](https://2019.igem.org/Team:SZU-China/Product)_
+
+### 4\. セルフクラッキングメカニズム
+
+生物学的封じ込めの観点と、安定した RNAi 分子の収量の保証のため、SZU-China は大腸菌に、pH 変化により制御される R-body という屈折体という自己破壊機構をプラスミドの中に組み込みました。
+
+<br />
+これにより、原料の製造過程で pH を酸 k 制に傾けることで、大腸菌の細胞膜を突き破り内容物を流出させて
+RNAi 分子を得られます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig17.png"
+  alt="図 17 pH=6 および pH=3 の時の R-body"
+  caption="図 17 pH=6 および pH=3 の時の R-body"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Results](https://2019.igem.org/Team:SZU-China/Results)_
+
+### 5\. Micrancide
+
+以上の検証、除草剤の原料となる shRNA の安定的な生産、shRNA の効果、ツルヒヨドリへの特異的な作用、shRNA の分解までの時間から、環境への負荷が小さく、ツルヒヨドリ以外の植物には外を及ぼさず、また植物の遺伝子発現を永久的に変化させないことにより、安全性は高いとされています。
+
+<br />
+SZU-China はこの除草剤をツルヒヨドリに対して特異的な除草剤として「Micrancide」と名付けました。Micrancide
+を用いることで、即効性は低いものの、15 日間で確実にツルヒヨドリを枯らすことができます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig18.png"
+  alt="図 18 Micrancide および他の除草剤との比較"
+  caption="図 18 Micrancide および他の除草剤との比較"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Product](https://2019.igem.org/Team:SZU-China/Product)_
+
+### 6\. 噴霧方法
+
+SZU-China は、実際の自然環境下での使用を想定して、薬剤の代わりに純水を用いた噴霧試験を行いました。噴霧は、ドローンによる上空からの画像識別と噴霧の判定をソフトウェアで制御して行います。
+
+<br />
+屋内試験では、ツルヒヨドリとシロイヌナズナを正確に区別して除草剤を噴霧しました。屋外試験では、より複雑な植物種が生育する環境下でドローンを飛ばしましたが高い精度で噴霧することが可能であることを示しました。
+
+<br />
+今後は農業用ドローンと組み合わせた大規模な除草や、山間部などの人の手による作業が困難な場所での利用を想定しています。
+
+## まとめ
+
+SZU-China は、iGEM プロジェクトを通して作成した Micrancide を生産、販売、普及させることを次の目標に定めています。実際に Micrancide 用のボトルとケース、原料の合成キットを作成しています。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/qdai/images/igem-japan-journal-club-szuchina2019-fig19.png"
+  alt="図 19 Micrancide 除草剤製造の概略"
+  caption="図 19 Micrancide 除草剤製造の概略"
+/>
+_SZU-China 2019, 2019, Micrancide Fight GREEN for More Green, [https://2019.igem.org/Team:SZU-China/Prospect](https://2019.igem.org/Team:SZU-China/Prospect)_
+
+<br />
+さらに社会の環境に対する意識の高揚、市場の確保など、実用化に向けた活動を続けています。その一環として「GREEN
+Hunter」というアプリを開発しました。このアプリは WeChat のプラットファームに対応しており、中国国内でのツルヒヨドリへの関心を高める狙いです。
+
+<br />
+日本においても、ツルヒヨドリは沖縄県などの地域で生息していることが確認されており、特定外来生物として駆除の対象になっています。生態系の維持と景観の保全を行うための手段として
+Micrancide を活用することができれば、環境への被害を最小限に抑えて対処することが出来るでしょう。
+
+<br />
+しかし、RNA 干渉技術を用いた除草剤に関して一般の理解を得ることは難しいことが予想され、丁寧な説明が必要になると考えられます。安全性の確保と環境への影響をさらに吟味して、広く理解を得られるような手立てを今後も続けることができれば、世界中の生態系の保全に有用な除草剤になると予想されます。
+
+<br />
+SZU-China 2019 は、ラボレベルの実験を実用段階に進め、流通や生産に関しても合理的な方法を模索することで、iGEM
+の枠にとらわれない活動を進めることに成功しました。より実用的で社会に影響力のあるプロジェクトの設定方法や活動の進め方に関して、今後の
+iGEMer のよい参考になると思いますので、ぜひ一度 Wiki をご覧になってみてください。

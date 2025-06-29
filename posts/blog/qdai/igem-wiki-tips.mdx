@@ -33,10 +33,282 @@ iGEM WikiはMedia Wikiというツールを利用しており、想定しない�
 ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3)
 " # 記事の説明
 tag: ["information"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem-wiki-tips" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published" # "published" or "draft"
 ---
 
-## サイト移行中です。
+> (追記 2023/12/29) ※iGEM 2022 以降では、Mediawiki システムによる Wiki の管理が変更されたため、本記事が参考にならない可能性があります。 iGEM 2023 に参加し、その時のログを残してくださっている、ろぼいんさんのブログを確認しましょう。 [iGEM のチーム Wiki 担当としての振り返り](https://roboin.io/article/2023/12/08/behind-the-scenes-of-japan-united-teams-igem-2023/) Great Tips for iGEM Wiki!
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-wiki-tips)から記事をお読みください。
+## Q1. Wiki を書き終えることができるか不安です！
+
+Wiki を書くためには最低限の HTML タグや CSS を書く必要があります。間に合わなかったらどうしよう...
+
+**安心してください！最低限の Wiki は一瞬で作ることができます。**
+
+<br />
+やり方は簡単です。
+
+- 1\. 原稿を PDF に変換する。
+- 2\. HTML に PDF を埋め込む。
+
+<br />
+これだけです。画像や数式があっても綺麗に反映できます！
+
+不安な方はとりあえず PDF で最低限の Wiki を作ったあとで作業すると精神的にも現実的にも良いかもしれません。
+
+---
+
+## Q2. 新しいページを作るには？
+
+iGEM Wiki の作成ページは初見では非常に見にくい UI ですので新規ページの作り方さえ最初はわからないかもしれません。
+
+<br />
+方法は以下のようになります。{" "}
+
+- 1\. `https://2021.igem.org/Main_Page` にいき、上部黒いバーからログインします。
+
+- 2\. login を押すと、Username, Password を求められるので入力しましょう。
+
+- 3\. その後、`https://2021.igem.org/Team:○○/xxxxx` にアクセスし、上部黒いバー -\> wiki tools -\> create で作成できます。
+
+リンクの ○○ には自チームの参加登録名、xxxxx には任意の文字列を入れることが可能です。
+
+---
+
+## Q3. 他のチームのようなかっこいい HOME をつくりたい！
+
+一般的な web ページは `html UI デザイン -\> コーディング`の流れで最終的にコードを書くことで出来上がります。
+
+かっこいいデザインを作れたとしても実装上難しくてできない場合があります。
+
+<br />
+これを解決する方法としてパワポなどで作成したデザインをそのまま画像として出力し、Wiki
+に画像として埋め込むという方法があります。
+
+<br />
+画像にするとテキストが選択できなかったり、レスポンジブ対応ができないという問題がありますが、iGEM
+Wiki では pc サイズでのみ見ることができればいいのでそれに最適化された画像を用意し、埋め込むだけで大丈夫です。(目安
+`1280 * 800 pixels`)
+
+<br />
+不安になるかもしれませんが、2019 年に Best wiki で受賞した Linkoping_Sweden チームの
+HP を参考にしましょう。
+
+彼らのトップページを見るとわかるのですが、メインになる部分は画像が埋め込まれています。
+
+<br />
+このように、不要なコーディングを避けつつ、iGEM Wiki として良い Wiki を作ることを心がけましょう。
+
+---
+
+## Q4. 自分で書いた css が Mediawiki ではうまく反映されない？
+
+iGEM が採用している Media Wiki ではデフォルトでいくつかの CSS が適応されています。
+
+よってこの CSS のせいで想定していたデザインにならないことが多々あります。
+
+<br />
+以下のコードで、デフォルトでの CSS の問題が解決できます。
+
+```css
+#sideMenu,
+#toptitle,
+.patrollink,
+#firstHeading,
+#homelogo,
+#sideMenu {
+  display: none;
+}
+#content {
+  padding: 0px;
+  width: 100%;
+  margin-top: -7px;
+  margin-left: 0px;
+  border: none;
+}
+body,
+html {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+#bodyContent h1,
+#bodyContent h2,
+#bodyContent h3,
+#bodyContent h4,
+#bodyContent h5 {
+  margin-bottom: 0px;
+}
+#bodyContent a[href ^="https://"], .link-https
+{
+  padding-right: 0px;
+}
+```
+
+(これらを Style タグで囲んで使用してください。)
+
+参考 : [https://2021.igem.org/Resources/Template_Documentation](https://2021.igem.org/Resources/Template_Documentation)
+
+---
+
+## Q5. 画像や pdf はどこにアップロードしたらいい？
+
+iGEM Wiki では画像などの静的なファイルは外部サーバーでホストしてはいけないというルールがあります。(Wiki freeze 後に変更できなくするため)
+
+<br />
+**必ず iGEM 専用ストレージにアップロードするようにしましょう。**
+
+<br />
+新規ページを作る時と同様にログインします。
+
+```html
+上部黒いバー -\> wiki tools -\> upload files`
+```
+
+からアップロードしましょう。
+
+<br />
+この際、Destination filename を`T--Qdai--test.png`のように `T--チーム名--任意のファイル名`
+になるようにしましょう。
+
+<br />
+アップロード後、File history の上に Original file というリンクがあるのでそこに行き、画像の
+URL を取得します。 (≠ 画像の iGEM サーバーでのアップロード画面のページ URL)
+
+そのアドレスを画像であれば、`src =` に入れることで使うことができます。
+
+```html
+○ `https://2021.igem.org/wiki/images/e/e6/T--Qdai--test.png`
+```
+
+```html
+× `https://2021.igem.org/File:T--Qdai--test.png`
+```
+
+下の URL を src に入れるとページのロードでバグおこり、ページが表示されなくなるので、ご注意を。
+
+---
+
+## Q6. link タグで CSS や JS を読み込みたい
+
+CSS や JS (JavaScript)を link タグで使用する際の注意点を話しておきます。
+
+`https://2021.igem.org/Template:Qdai/sample.css`
+
+にいき、新規ページと同じように作成します。
+
+<br />
+そのリンクを元に
+
+```html
+<link
+  href="https://2021.igem.org/Template:●●/css/sample.css?action=raw&ctype=text/css&ver=1.0"
+  rel="stylesheet"
+/>
+```
+
+のように `?action=raw&ctype=text/css&ver=1.0"` を付ける必要があります。
+
+Wiki を作成する上で必ずこの問題が出てくると思います。
+
+---
+
+## Q7. 自分のアップロードしたもの一覧が見たい
+
+### チームで作成されているページ一覧
+
+以下のページで、チーム名を入力することで確認できます。
+
+```html
+https://2021.igem.org/wiki/index.php?title=Special%3AAllPages
+```
+
+```html
+Display pages starting at: Team:〇〇
+```
+
+というようにいれいれば、チームが作成したすべての wiki ページを確認できます。
+
+### 個人でアップロードした画像等
+
+以下のページで、個人の Username を入力することで確認できます。
+
+```html
+`https://2020.igem.org/Special:ListFiles`?
+```
+
+```html
+`Username: 〇〇`
+```
+
+というようにいれいれば、一覧で特定のユーザーがアップしたものを確認できます。
+
+<br />
+各ファイルは、対象とする URL を変更することなく、更新することができるようになっています。
+
+ファイルのアップロードのみで、コードを変更することなく、Wiki 画像を変更することができます。
+
+---
+
+## Q8. Parts Registry の編集ができません
+
+環境依存ではなく、ユーザーの権限設定上のバグです。iGEM HQ にメールをして、諦めましょう。
+チーム内で、編集できるユーザーを探しましょう。
+
+<br />
+また、WIki のサーバーと Parts Registry のサーバーは別物です。
+
+<br />
+Wiki サーバーは、各年新しくなっていきますが、Parts Registry サーバーは、年度による更新がありません。
+画像などについても、2 度手間になりますが、それぞれのサーバーにアップしましょう。
+
+- **Wiki サーバー (2021)** : `https://2021.igem.org/Main_Page`
+- **Parts Registry サーバー** : `https://parts.igem.org/Main_Page`
+
+---
+
+## Q9. 自動でアップロードしたい
+
+仮想ブラウザでログインすれば、Github と紐づけて、自動アップロードもできます。
+
+<br />
+iGEM 2020 の、BITSPilani-Goa_India チームが作成した igem-wikisync は、自動アップロードのための便利なツールです。
+
+<br />
+彼らに感謝して、自分たちの形に合わせて使用しましょう。 この方法であれば、アクセスが困難な、締め切りギリギリな状況でも対応できます。
+
+---
+
+## Q10. ローカルとの挙動がどうしても異なってしまいます
+
+iGEM Wiki では Media Wiki というバグの温床ともいえるものが使われていることを忘れないでください。
+
+<br />
+時には、Media Wiki が悪いと決めつけることが解決策かもしれません。
+
+---
+
+## まとめ
+
+Wiki は、iGEM で大きな役割を持ちます。
+
+<br />
+ルールについて再確認し、ミスなくできるようにしましょう。
+
+**一般的な良い web ページを作るというより大会の要件を満たすページを作るということを意識して wiki 作成に望みましょう。**
+
+**そして Wiki は、完成させることが大切です。**
+
+<br />
+例年、アップロードが間に合わないということが多発しています。
+
+どのチームでも、質をあげることを求めるため、必ずギリギリまで修正することになります。
+
+**もしまだ書き始めていないチームがいましたら、”いますぐ”、仮の文章でもよいので、すべてのページを埋めてから他のことを行いましょう。**
+
+<br />
+また、iGEM 公式が発表している Wiki に関する情報についても簡単にまとめましたので、合わせてお読みください。
+
+<br />
+iGEM 公式発表の Wiki ルール
+<LinkCard url="https://yomogy.com/igem/igem-hq-wiki-rule/" size="small" />

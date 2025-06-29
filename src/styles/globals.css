@@ -142,6 +142,22 @@ blockquote {
   text-decoration: none;
 }
 
+.table-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+.table-scroll table {
+  min-width: 600px;
+  border-collapse: collapse;
+}
+.table-scroll th,
+.table-scroll td {
+  background: #f7f7fa;
+  white-space: nowrap; /* 折り返さない */
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+
 /* footerのスタイル */
 .footer h2 {
   font-size: 1.4rem; /* text-2xl */

@@ -82,7 +82,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-safety-policies",
     "coverImage": "/blog/gifu/images/igem-safety-policies_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-safety-policies",
+    "rePost": false,
     "status": "published"
   },
   "igem-wiki-bootstrap-adopt": {

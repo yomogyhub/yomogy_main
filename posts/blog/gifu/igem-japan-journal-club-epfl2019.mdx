@@ -14,10 +14,289 @@ Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 
 本記事は、iGEM Japan 輪読会にて、iGEM Gifuによって紹介された、iGEM EPFL 2019 のプロジェクトについて紹介していきます。
 " #  記事の説明
 tag: ["journal-club","information", "history"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-epfl2019" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published"
 ---
 
-## サイト移行中です。
+# テーマ
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-japan-journal-club-epfl2019)から記事をお読みください。
+チーム : iGEM EPFL 2019 <br />
+プロジェクト : Toehold switch を用いたファイトプラズマ病検出用バイオセンサー開発
+
+## 導入
+
+iGEM EPFL が活動しているスイスでは、ワイン醸造用のブドウ栽培が盛んにおこなわれています。現在、ヨーロッパをはじめとしたブドウの栽培地域では Flavescence Dorée (FD)、Bois Noir (BN)という二つのファイトプラズマ (Phytoplasma) 病が問題となっています。
+
+<br />
+FD は植物病原菌の一種である Candidatus Phytoplasma vitis がブドウに感染することで生じるファイトプラズマ病です。FD
+を発症したブドウの樹木には葉の変色や収縮、果実の萎縮や乾燥といった症状が現れます。
+
+<br />
+この病気は昆虫によって媒介され、非常に高い感染力を持ちます。FD の感染が発覚した場合、媒介する昆虫を死滅させるため農家は大量の農薬を散布します。また、感染した樹木は直ちに焼却処分されます。仮に農場の
+20%以上の樹木の感染が発覚した場合は、感染の有無に関わらず全ての樹木を焼却処分する必要があり、農家は甚大な損害を被ることになります。
+
+<br />
+これに対して BN は Candidatus Phytoplasma solani の感染によってブドウが発症するファイトプラズマ感染症です。BN
+を発症したブドウには FD とほとんど同じ症状が現れますが、感染力は FD に比べて弱いため、農園内で被害が拡大する危険性は低いという特徴があります。そのため、感染した木を処分することで対処が可能です。
+
+<br />
+FD と BN は発症後にほとんど同じ症状が現れるため、目視で区別することは極めて難しいです。これらを識別できる精密な検査を行うためには専門の機関に依頼する必要があり、結果が判明するまでには
+3 日から 15 日間の期間を要します。
+
+<br />
+これらの問題からファイトプラズマ病の症状が確認された場合は FD の感染による被害の拡大を抑えるために、FD、BN
+の検査を行う前に農薬の散布と焼却処分が行われています。
+
+<br />
+そこで、EPFL チームは環境に負担が大きい過剰な対応を取っている現状を改善があると考えました。そこで
+EPFL チームでは農家が自ら検査を行うことができ、結果が即日判明する、迅速で簡単に使用可能な検査キットを作成することを目指しました。
+
+## toehold switch について
+
+実験概要の前にこのプロジェクトでバイオセンサーとして重要な役目を担う toehold switch について簡単に説明します。
+toehold switch とは、RNA の二次構造を利用した翻訳調節機構のことです。
+
+<br />
+toehold switch は toehold 領域と呼ばれる配列とその配列に相補的な RNA（trigger RNA）によって下流の遺伝子発現を調節します。toehold
+領域は下流に存在する配列と部分的に相補となる配列を持っているためステムループ構造を形成します。
+
+<br />
+このステムループ構造にはリボソーム結合部位（RBS）や開始コドンが内包されます。RBS
+がステムループ内に格納されるとリボソームの結合が著しく阻害されるため、下流に配置された遺伝子の発現が抑制されます。一方で、trigger
+RNA が存在する条件下では、toehold 領域は自身と完全に相補的な配列である trigger RNA
+と優先的に結合します。
+
+<br />
+toehold 領域と trigger RNA の結合により、ステムループ構造が解けて RBS や開始コドンが解放されます。これにより、リボソームが結合しやすい状態になり、toehold
+switch 下流の遺伝子発現が促進されます。 toehold 領域を任意の配列に設計することにより、特定の
+trigger RNA 存在下で遺伝子発現を行うサーキットを組み立てることが可能になります。
+
+<br />
+また、toehold switch はステムループ構造に RBS や開始コドンを内包するものの、toehold
+領域に RBS( AAGGAG )や開始コドン(AUG)の相補配列を必要としません。
+
+<br />
+この特徴により、他の翻訳調節機構と比べて塩基の制約が少なくなり、設計の自由度が高いといった利点を持ちます。
+toehold switch は遺伝子発現を制御するためのツールとして利用できるだけでなく、toehold
+領域を標的となるウイルスや細菌に特異的な配列に設計することで、病原体を検出するバイオセンサーとして応用することも可能です。
+
+<br />
+toehold switch の詳しい説明に関しましては、Green らの論文に記載してありますので参考にしてください
+参考文献 : [Green et al., Toehold Switches: De-Novo-Designed Regulators of Gene Expression,
+2014](https://doi.org/10.1016/j.cell.2014.10.002)
+
+## 研究概要
+
+このチームが行った実験は、大きく分けて 1. DNA 抽出、増幅、2. 標的の検出、3. OnePot Pure の三段階に分けられます。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig1.png"
+  alt="図 1 実験のワークフロー"
+  caption="図 1 実験のワークフロー"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/Design](https://2019.igem.org/Team:EPFL/Design)_
+
+<br />
+マイクロニードルをブドウの葉に刺し、これを専用のバッファーで洗い流すことで標的の
+DNA を抽出します。獲得した DNA を増幅し、Toehold-Switch によるバイオセンサーで検査を行い、感染の有無を確認します。
+
+### 1a. DNA 抽出、増幅
+
+DNA 抽出は EPFL チームが 3D プリンタを用いて自作したハードウェアを使用して行われました。マイクロニードルは PVAL (ポリビニルアルコール) を用いて作成されたスタンプ状のもので、ケースに直接シリンジを装着できるように設計されています。シリンジとチューブを装着してバッファーを流し込むことで、マイクロニードルで葉から抽出した DNA を直接回収することが可能になりました。
+
+<br />
+一般のキットで用いられるスピンカラム法のような複数の作業工程を経ずに DNA 抽出を行うことができるため、専門的な知識や高価な機器を必要とせず、簡単に利用できることが示唆されました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig1.png"
+  alt="図 2 DNA 抽出のためのハードウェア"
+  caption="図 2 DNA 抽出のためのハードウェア"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/Hardware](https://2019.igem.org/Team:EPFL/Hardware)_
+
+<br />
+このツールは農地での使用を想定しているため、DNA の増幅を行う際にサーマルサイクラーのような機器を用いずに利用できることを目標としました。
+
+<br />
+DNA の増幅方法を選択するにあたり、EPFL は以下のような条件を設けました。
+
+- 1\. 等温条件で DNA の増幅が可能である。
+- 2\. 一度の反応で複数種の DNA 配列を増幅可能である。
+- 3\. DNA を迅速に増幅可能である。
+
+<br />
+上記の条件を元に Nucleic Acid Sequence-Based Amplification(NASBA)、Loop Mediated
+Isothermal Amplification(LAMP)、Recombinase Polymerase Amplification(RPA)の 3 種の増幅方法による増幅を検討した結果、EPFL
+は RPA 法による DNA 増幅が適しているとして採用しました。
+
+<br />
+RPA では、標的配列を囲む Fw プライマーと Rv プライマー、相同組み換え酵素、一本鎖
+DNA 結合タンパク質、DNA ポリメラーゼが機能して DNA を増幅します。また、EPFL はバイオセンサーとして
+RNA を標的とする調節機構 Toehold Switch を採用したため、Fw プライマーの５‘末端側には
+T ７プロモーターを付加しました。 RPA は、まずプライマーと相補配列の DNA が相同組み換え酵素によって入れ替わることで開始されます。これにより二本鎖
+DNA 中に相補性を失った一本鎖 DNA 領域が生じ、ここに一本鎖 DNA 結合タンパク質が結合することで再会合を防ぎます。そして、DNA
+ポリメラーゼによる DNA 合成が進行し新たな鎖が合成されます。
+
+<br />
+この反応を繰り返すことで DNA は増幅されます。RPA 法の詳しい説明はこちらの NEB のサイトを参考にしてください。
+参考文献 : [NEB のサイト](https://www.nebj.jp/f/859)
+
+<br />
+FD を検出するための標的配列には、FD を引き起こす C. Phytoplasma vitis の 16s rRNA
+遺伝子の R16F2n/R16R2 (F2N/R2) 内の配列が選択しました。 選定された F2N/R2N 内の標的配列は
+C. phytoplasma vitis 間で保存されています。さらに、誤検出を抑えるため、BN を生じさせる
+C. phytoplasma solani の 16s rRNA 上の配列とは相同性が低い配列が選択されました。BN
+を引き起こす C. phytoplasma solani の標的配列とは異なる 16S rRNA をコードする領域を選択しました。
+BN の標的配列は C. phytoplasma solani に特異的なゲノム配列領域から選択されました（GenBank
+accession number AF447593）。
+
+<br />
+内部コントロール（Endogenous Control, EC）の標的配列はヨーロッパブドウの葉緑体ゲノムから得られた配列を選択されました。EC
+はブドウの葉からの DNA 抽出や等温増幅が確実に行われたのかを確認するために必要になります。
+実際の検査キットで EC が検出できなければ DNA の抽出、あるいは増幅が正確に行われていなかったことが分かるため、誤って陰性と判定される危険性を抑えることが出来ます。
+
+<br />
+RPA により FD を検出するための DNA の増幅がどの程度行われるのか検証したところ、DNA
+濃度は 10 コピー、100 コピーという低濃度でも検出可能であることが判明しました（図
+3 a）。BN 検出 DNA に関しては検出限界を評価できませんでした。加えて、複数種の DNA
+断片を同時に増幅させた際も正常に増幅されたことが示唆されました（図 3 b）。 さらに、ブドウ抽出物中のフェノール等が増幅を妨げる可能性を考慮して、ブドウ抽出物が反応液中に存在する状態でも
+DNA 増幅が可能か検証しました。 結果、RPA が正常に機能し FD に関しては検出限界も 10
+コピーであることが分かりました（図 3 c）。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig3.png"
+  alt="図 3 a:FD 検出遺伝子の濃度別増幅後アガロースゲル電気泳動、b:複数遺伝子の同時増幅後のアガロースゲル電気泳動、c:ブドウ抽出液を含むサンプルでの DNA 増幅産物のアガロースゲル電気泳動"
+  caption="図 3 a:FD 検出遺伝子の濃度別増幅後アガロースゲル電気泳動、b:複数遺伝子の同時増幅後のアガロースゲル電気泳動、c:ブドウ抽出液を含むサンプルでの DNA 増幅産物のアガロースゲル電気泳動"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/Amplification](https://2019.igem.org/Team:EPFL/Amplification)_
+
+### 1b. ブドウの葉から抽出した DNA の増幅、発現
+
+実際に病気に感染したブドウの葉からキットを用いて DNA 検出を行いました。内部コントロール、FD ともに DNA が増幅されていることが確認されました(図 4 a, b)。次にこれらの DNA アンプリコンが転写可能であるのかを HiScribe™ T7 Quick High Yield RNA Synthesis Kit を使用して in vitro で確認したところ、内部コントロール、FD、BN のすべてのアンプリコンにおいて充分に転写が行われていました(図 4 c)。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig4.png"
+  alt="図 4 a:合成 EC とブドウの葉からマイクロニードル抽出した DNA の増幅後アガロースゲル電気泳動 b:合成 FD とブドウの葉からマイクロニードル抽出した DNA の増幅後アガロースゲル電気泳動 c:RPA 転写産物のアガロースゲル電気泳動"
+  caption="図 4 a:合成 EC とブドウの葉からマイクロニードル抽出した DNA の増幅後アガロースゲル電気泳動 b:合成 FD とブドウの葉からマイクロニードル抽出した DNA の増幅後アガロースゲル電気泳動 c:RPA 転写産物のアガロースゲル電気泳動"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/Amplification](https://2019.igem.org/Team:EPFL/Amplification)_
+
+### 2. 検出
+
+シグナル検出には toehold switch を利用しました。また、EPFL では trigger によって発現する遺伝子としてカテコールの酸化反応を触媒するカテコール-2,3-デヒドロゲナーゼを選択しました。この酵素によってカテコールは 2 ヒドロキシムコン酸セミアルデヒドに変換され無色のカテコールから黄色に変化します。
+
+<br />
+設計した検査キットは屋外での使用が想定されており、呈色反応を選択することで、白昼のような強い光の元でも簡単に陰性と陽性を容易に判定出来るようにするためです。trigger
+RNA は FD、BN、EC 由来の DNA を転写して得られたものです。
+
+<br />
+toehold 領域、RBS、開始コドン、リンカーにより toehold switch は構成されています。目的の
+toehold switch を得るために、設計した DNA 配列を含むプラスミドを作成し、形質転換して発現させました。このとき、プラスミドが転写されて
+Toehold-Switch が生じたことを確認するためにカテコール-2,3-デヒドロゲナーゼの代わりにレポーター遺伝子として
+GFP を用いました。
+
+<br />
+設計した toehold switch の性能を確かめるため、dsDNA の転写産物と ssDNA をトリガーとしてシグナルを検出する実験を行いました。ssDNA
+はトリガーとして機能し、dsDNA と異なり転写等の要素に影響されないため、toehold switch
+が機能しているのかを確認するのに適しています。これらを比較すると転写産物であっても十分にトリガーとして機能することが分かりました。ssDNA
+については、100nM であっても toehold switch が機能することが分かりました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig5.png"
+  alt="図 5 a:ssDNA、dsDNA による Toehold-Switch 発現に伴う蛍光強度測定 b:トリガー濃度別 toehold switch 発現に伴う蛍光強度測定"
+  caption="図 5 a:ssDNA、dsDNA による Toehold-Switch 発現に伴う蛍光強度測定 b:トリガー濃度別 toehold switch 発現に伴う蛍光強度測定"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/Detection](https://2019.igem.org/Team:EPFL/Detection)_
+
+<br />
+次に実際に toehold switch の下流にカテコール酸化酵酵素を配置し toehold switch によって発현可能か
+cell-free system を用いて検証しました。30 分で呈色が確認され、45 分、60 分、90 分と経つにつれ色が濃くなりました。これにより、toehold
+switch と cell-free system によってカテコール酸化酵素が発現可能であることが示唆されました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig6.png"
+  alt="図 6 Toehold-Switch 発現によるカテコールの酸化に伴う呈色反応"
+  caption="図 6 Toehold-Switch 発現によるカテコールの酸化に伴う呈色反応"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/Results](https://2019.igem.org/Team:EPFL/Results)_
+
+### 3. OnePot Pure
+
+これらの toehold switch と Cell-free system を用いて、レポータータンパク質の転写、翻訳を行いました。Call-free system は in vitro での転写、翻訳が可能にするツールです。中でも Pure system は転写、翻訳に必要な因子のみで構成された Cell-free、夾雑物をほとんど含まないため、精製を前提としたタンパク質の合成などに利用されます。
+
+<br />
+一方で、市販のキットを使用すると実験に運用コストが高いことが難点です。EPFL では Pure
+system を自作することで安易かつ安価にタンパク質を発現させようと考えました。
+
+<br />
+本体の Pure system では転写、翻訳に必要な遺伝子のクローニングや精製を別々で行っているため、製造には時間とコストが掛かります。そこで
+EPFL では個々の遺伝子を少量ずつ大腸菌でクローニングし、最終的に一つの容器に併せて大量培養、同時に精製することで必要な時間と経費を抑える
+OnePot Pure を考案しました。遺伝子を OnePot Pure は大きく分けて翻訳因子アミノアシル
+tRNA シンターゼ、リン酸基転移酵素に分類されるタンパク質 36 種から構成されます。
+
+<br />
+OnePot Pure に必要なタンパク質は、96 ウェルマイクロプレートで目的タンパク質遺伝子を含む組み換えプラスミドで形質転換した大腸菌を少量培養したのち、別の大きなフラスコに集め大量培養することで合成しました。
+
+<br />
+その後遠心分離で集菌、バッファーで懸濁、夾雑物を除去しニッケルカラムで精製しタンパク質を集めました。
+
+<br />
+リボソームを集める際には大腸菌を少量培養後に大量培養を行い、集菌、溶菌、二段階遠心分離により夾雑物を除去します。その後疎水性相互作用クロマトグラフィーで精製し、スクロースバッファーを加えて超遠心をかけて精製します。最後にフィルターで濃縮し数回分の反応に使用可能なリボソームを得ます。
+
+<br />
+このような方法で得られた精製後のタンパク質を SDS-PAGE で同時に確認しました。これは個々のタンパク質の機能を確認しているわけではなくマーカーのサイズから予想されるタンパク質の発現を確認しているものです。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig7.png"
+  alt="図 7 OnePot Pure に必要なタンパク質精製後の SDS-PAGE"
+  caption="図 7 OnePot Pure に必要なタンパク質精製後の SDS-PAGE"
+/>
+_Team:EPFL-2019, 2019, ViTEST,[https://2019.igem.org/Team:EPFL/OnePot_Pure](https://2019.igem.org/Team:EPFL/OnePot_Pure)_
+
+<br />
+得られたタンパク質を用いて作成した OnePot Pure と市販の Pure system、それぞれのネガティブコントロールを比較したところ、自作した
+OnePot Pure で発現したタンパク質が最も多いという結果が得られました。
+
+<br />
+DNA のテンプレート量を変化させても同様の結果が得られました。サンプルとして使用した
+DNA 溶液の濃度と得られたタンパク質の量を比較した結果から、OnePot Pure を用いた反応に最適な
+DNA 量は 5nM であるとしています。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-japan-journal-club-epfl2019-fig8.png"
+  alt="図 8 a, b, c:各 DNA 濃度の OnePot Pure、Pure system、コントロールで発現した GFPの蛍光濃度 d:DNA 濃度ごとの蛍光物質発現量の比較"
+  caption="図 8 a, b, c:各 DNA 濃度の OnePot Pure、Pure system、コントロールで発現した GFPの蛍光濃度 d:DNA 濃度ごとの蛍光物質発現量の比較"
+/>
+_Team:EPFL-2019, 2019, ViTEST, [https://2019.igem.org/Team:EPFL/OnePot_Pure](https://2019.igem.org/Team:EPFL/OnePot_Pure)_
+
+## まとめ
+
+実験室レベルでの実験では、ブドウが FD 及び BN を発症させるファイトプラズマに感染しているのか否かを判別することができるツールの設計と、各反応段階における結果を得ることができました。
+
+<br />
+
+これらの要素を組み合わせることで迅速な FD 検出ツールの作成が可能になることが予想されます。
+
+<br />
+一方で、抽出、増幅、検出の一連の操作を連続して検証し、検出可能であると結論づけられたわけでありません。
+現場で利用可能な検査方法として確立されるには一連の操作を通して検出が可能と証明される必要があり、実際に検査キットとして利用されるためには再現性の確認、検査精度の検証などの追加実験が必要不可欠です。
+
+<br />
+試作キットを使用した反応が、検査として信頼性の高いデータを安定的に示すような実証実験を繰り返すことで、実用化への道が開かれると予想されます。
+
+<br />
+EPFL2019 は 2019 の Grand Prize を獲得しており、さらに 2 つの Award を受賞、3 つの
+Award にノミネートされている非常に完成度の高いプロジェクトです。
+
+<br />
+特にウイルスや細菌の核酸を標的としたバイオセンサーを設計をするチームには参考になる点が多いです。プロジェクトの内容だけでなく
+Wiki やプレゼンの構成など、非常に参考になる点が多いチームです。是非、一度 Wiki や
+YouTube のプレゼンなどを視聴してみてください。

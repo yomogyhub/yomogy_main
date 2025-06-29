@@ -28,10 +28,82 @@ iGEMではあらかじめWikiページのテンプレートが用意されてい
 ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3)
 " #  記事の説明
 tag: ["history"] # タグ任意 1つ以上 3つ程度まで
-rePost: "https://yomogy-old.netlify.app/igem/igem-wiki-bootstrap-adopt" # 記事の転載の場合は"url"を記入。例 : "https//yomogy"
+rePost: false
 status: "published"
 ---
 
-## サイト移行中です。
+## CSS フレームワークとは？
 
-もうしばらく、[こちら](https://yomogy-old.netlify.app/igem/igem-wiki-bootstrap-adopt)から記事をお読みください。
+分かりやすくいうと Web ページのパーツ集のようなものです。CSS フレームワークにはボタンやテキストのスタイルから、タブ切り替えコンテンツ、ドロップダウンメニューなど、さまざまなパーツがあらかじめデザインとコーディングがされた状態で配布されています。
+
+<br />
+したがって、フレームワークを利用することで、デザインに沿ってCSSで見た目を指定し、ひとつひとつの部品を組み立てていく作業が省略できます。
+
+<br />
+パーツデザインをする必要がないので、デザイナーでなくても簡単にクオリティの高いWikiページを作ることができます。
+
+<br />
+また、要素を横並びにしたり、全画面表示にしたりといったページのレイアウトも簡単に組めるように、あらかじめCSSが用意されています。iGEM
+Wikiのテンプレートを加工することに比べても同等の学習コストで編集技術を習得することができます。
+
+<br />
+CSS フレームワーク利用することで、Wiki ページのクオリティアップと製作時間の短縮を同時にかなえることができるでしょう。
+
+## BootStrap の導入方法
+
+このトピックでは Gifu チームがどのように BootStrap を導入したのかを紹介します。Gifu チームでは過去に US AFRL CarrollHS 2019 チーム ([https://2019.igem.org/Team:US_AFRL_CarrollHS](https://2019.igem.org/Team:US_AFRL_CarrollHS)) が提供している方法で導入を行っています。
+
+### 1\. BootStrap のダウンロード
+
+[https://github.com/us-afrl-carrollhs/iGEM-Wiki-Bootstrap](https://github.com/us-afrl-carrollhs/iGEM-Wiki-Bootstrap)
+
+<br />
+上のリンクを踏み、git から以下のファイルをダウンロードします。
+
+<br />
+このレポジトリは iGEM US AFRL CarrollHS が 2019 年にコラボレーションの一環として公開しているものです。
+
+<br />
+
+- ・BootStrapCSS 1
+- ・BootStrapCSS 2
+- ・BootStrapCSS 3
+- ・BootStrapCSS 4
+- ・BootStrapCSS 5
+- ・BootStrapCSS 6
+- ・BootStrapJS 1
+- ・BootStrapJS 2
+- ・BootStrapJS 3
+
+### 2\. iGEM Wiki 内で JS、CSS ファイルの作成
+
+Wiki tools ->Edit から Wiki 編集画面に移動します。`{{ チーム名(任意の名前) }}`と記述し、Save Page することで任意の名前のファイル生成、参照します。
+Save page を終えると Edit 画面上に Templates used on this page という使われているテンプレート一覧が現れるので、このテンプレートを Edit から編集していきます。
+
+<br />
+Gifu チームでは以下の写真のように `{{Gifu/BootStrapcss1}}`～`{{Gifu/BootStrapcss6}}`と`{{Gifu/BootStrapJS}}`で計７つのファイルを生成、参照しました。
+
+<MediaCard
+  mediaType="image"
+  src="https://yomogy.com/blog/gifu/images/igem-wiki-bootstrap-adopt-fig1.png"
+  alt="Fig.1 - iGEM Wiki BootStrap ファイルの生成"
+  caption="Fig.1 - iGEM Wiki BootStrap ファイルの生成"
+/>
+### 3\. 生成したファイルにダウンロードしたファイルの中身をコピーする
+
+各 Template の URL に移動したのち、メニューバーから Edit を選択し、それぞれ生成したファイルにダウンロードしたファイルの中身をコピー＆ペーストし、Save Page をします。
+
+<br />
+Gifu チームではダウンロードした BootStrapJS1 ～ BootStrapJS3 の中身はすべてまとめて生成した
+Gifu/BootStrapJS に移しました。
+
+<br />
+以上の操作を行えば iGEM Wiki で通常どおり BootStrap を使用できるようになります。
+
+## まとめ
+
+今回の記事では、BootStrap の導入方法にのみ焦点を当てました。iGEM Wiki を楽に編集するためにはテンプレートを使うという選択肢だけでなく、Bootstrap やその他過去の iGEM チームがコラボレーションの一環として提供した方法を利用していく方法もあります。
+
+<br />
+岐阜チームでは Bootstrap を利用していますが、最低限の学習コストで、できるだけ分かりやすい
+Wiki を作り、実験の集中していくという姿勢が大事だと考えています。

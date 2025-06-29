@@ -12,13 +12,13 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-gifu-2021",
     "coverImage": "/blog/gifu/images/igem-gifu-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-gifu-2021",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-10-1": {
     "id": "igem-japan-2022-meeting-10-1",
     "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(NEFU-China2020 BOLD) - iGEM Japan 2022 定例会 (輪読会) #10-1",
-    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・NEFU-China2020 BOLD <br /> ・Bielefeld-CeBiTec2021 P.L.A.N.T.\n\n<br /><br /> 本記事では、1つ目のプロジェクトである、NEFU-China2020について紹介していきます。\n<br /><br /> このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
+    "description": " iGEM Japan 2022 輪読会 # 10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・[NEFU-China2020 BOLD](https://2020.igem.org/Team:NEFU_China) <br /> ・[Bielefeld-CeBiTec2021 P.L.A.N.T.](https://2021.igem.org/Team:Bielefeld-CeBiTec)\n\n<br /><br /> 本記事では、1つ目のプロジェクトである、NEFU-China2020について紹介していきます。\n<br /><br /> このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -30,13 +30,13 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-1",
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-1_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-1",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-2022-meeting-10-2": {
     "id": "igem-japan-2022-meeting-10-2",
     "title": "「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」(Bielefeld-CeBiTec 2021 P.L.A.N.T.) - iGEM Japan 2022 定例会 (輪読会) #10-2",
-    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・NEFU-China2020 BOLD <br /> ・Bielefeld-CeBiTec2021 P.L.A.N.T.\n\n<br /><br /> 本記事では、2つ目のプロジェクトである、Bielefeld-CeBiTec2021について紹介していきます。\n<br /><br /> このプロジェクトは、レポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みるプロジェクトです。このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
+    "description": " iGEM Japan 2022 輪読会 #10では、「安全な除去ルートを割り出す地雷探知装置を合成生物学を応用して作る」をテーマに、以下の2つのプロジェクトが紹介されました。 <br />\n<br /> ・[NEFU-China2020 BOLD](https://2020.igem.org/Team:NEFU_China) <br /> ・[Bielefeld-CeBiTec2021 P.L.A.N.T.](https://2021.igem.org/Team:Bielefeld-CeBiTec)\n\n<br /><br /> 本記事では、2つ目のプロジェクトである、Bielefeld-CeBiTec2021について紹介していきます。\n<br /><br /> このプロジェクトは、レポーターシステムを取り入れた植物ベースの検出システムを利用して、広範囲における化学兵器の検出を試みるプロジェクトです。このプロジェクトは、地雷から土壌中に放出された化学物質を感知することによって、地雷の存在確率を計算し最適な地雷除去ルートを提案しようというプロジェクトです。 ",
     "publishedAt": "2022-04-12",
     "updatedAt": "2022-04-12",
     "category": "igem",
@@ -48,7 +48,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-2022-meeting-10-2",
     "coverImage": "/blog/gifu/images/igem-japan-2022-meeting-10-2_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-2022-meeting-10-",
+    "rePost": false,
     "status": "published"
   },
   "igem-japan-journal-club-epfl2019": {
@@ -66,7 +66,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-japan-journal-club-epfl2019",
     "coverImage": "/blog/gifu/images/igem-japan-journal-club-epfl2019_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-japan-journal-club-epfl2019",
+    "rePost": false,
     "status": "published"
   },
   "igem-safety-policies": {
@@ -82,7 +82,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-safety-policies",
     "coverImage": "/blog/gifu/images/igem-safety-policies_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-safety-policies",
+    "rePost": false,
     "status": "published"
   },
   "igem-wiki-bootstrap-adopt": {
@@ -98,12 +98,12 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-wiki-bootstrap-adopt",
     "coverImage": "/blog/gifu/images/igem-wiki-bootstrap-adopt_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-bootstrap-adopt",
+    "rePost": false,
     "status": "published"
   },
   "igem-wiki-editing-first-step-tips": {
     "id": "igem-wiki-editing-first-step-tips",
-    "title": "iGEMにおける安全性に関する基本方針について",
+    "title": "初めてのiGEM Wiki編集で困ったこと2選",
     "description": " Dear iGEMers <br /><br /> This website is operated in collaboration with iGEM Qdai and iGEM Gifu. This article have compiled information about iGEM in Japanese to provide a new information resource for new Japanese iGEMers in the future.  Let's go  [iGEM Qdai wiki](https://2021.igem.org/Team:Qdai) and [iGEM Gifu 2021 wiki](https://2021.igem.org/Team:Gifu) ! <br /> ※ iGEM Gifu is nominated for the Best Wiki (iGEM 2021). Congratulations!\n\n<br /><br /> 本記事では今年初めてWiki製作に携わった岐阜チームの1年生がiGEMでWikiページの制作がややこしくなっている原因であると考える以下の２点について解説を行います。\n<br /><br /> 1. サイト保全のため、Wikiページに使用するファイルはすべてiGEMサーバーにアップロードする必要がある <br /> 2. WikiページにMediaWikiが用いられており、その仕様に従う必要がある\n<br /><br /> ※iGEM 2022以降では、MediawikiシステムによるWikiの管理が変更されたため、本記事が参考にならない可能性があります。(追記 2022/5/3) ",
     "publishedAt": "2021-10-13",
     "updatedAt": "2021-10-13",
@@ -114,7 +114,7 @@
     "author": "gifu",
     "path": "/posts/blog/gifu/igem-wiki-editing-first-step-tips",
     "coverImage": "/blog/gifu/images/igem-wiki-editing-first-step-tips_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-wiki-editing-first-step-tips",
+    "rePost": false,
     "status": "published"
   },
   "igem2019-experience": {
@@ -147,7 +147,7 @@
     "author": "gunma",
     "path": "/posts/blog/gunma/igem-gunma-2021",
     "coverImage": "/blog/gunma/images/igem-gunma-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-gunma-2021",
+    "rePost": false,
     "status": "published"
   },
   "igem-hokkaidou-2021": {
@@ -163,7 +163,7 @@
     "author": "hokkaidou",
     "path": "/posts/blog/hokkaidou/igem-hokkaidou-2021",
     "coverImage": "/blog/hokkaidou/images/igem-hokkaidou-2021_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-hokkaidou-2021",
+    "rePost": false,
     "status": "published"
   },
   "biosensor-overview": {
@@ -263,7 +263,7 @@
     "author": "ishish",
     "path": "/posts/blog/ishish/ginkgo-history",
     "coverImage": "/blog/ishish/images/ginkgo-history_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/synbio/ginkgo-history",
+    "rePost": false,
     "status": "published"
   },
   "igem-high-school-links-china": {

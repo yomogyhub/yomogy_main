@@ -62,8 +62,11 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
     "https://github.com/yomogyhub/yomogy_main/tree/dev";
 
   // IDを生成するヘルパー関数
-  const generateId = (text: string) => {
-    return text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const generateId = (text: any) => {
+    if (typeof text === 'string') {
+      return text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    }
+    return String(text).toLowerCase().replace(/[^a-z0-9]+/g, "-");
   };
 
   const H1WithId = ({

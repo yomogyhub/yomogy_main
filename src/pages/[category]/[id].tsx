@@ -10,7 +10,10 @@ import {
   getAuthorDetails,
 } from "../../lib/posts";
 import { Category, PostID, BlogPostProps } from "../../utils/posts-type";
-import { processMDXContent, extractOGPMetadata } from "../../utils/mdx-link-card";
+import {
+  processMDXContent,
+  extractOGPMetadata,
+} from "../../utils/mdx-link-card";
 import { processMDXContentForMediaCard } from "../../utils/mdx-media-card";
 
 import Seo from "../../components/seo";
@@ -20,6 +23,7 @@ import Sidebar from "../../components/sidebar";
 
 import remarkPrism from "remark-prism";
 import rehypePrism from "rehype-prism";
+import remarkGfm from "remark-gfm";
 
 export async function getStaticPaths() {
   const paths = await getPostsPaths();
@@ -44,9 +48,12 @@ export async function getStaticProps({
     ? getAuthorDetails(blogPostProps.data.author)
     : null;
 
-  const listDataResult = blogPostProps.data && blogPostProps.data.tag && blogPostProps.data.tag.length > 0
-    ? await getListData(params.category, blogPostProps.data.tag[0])
-    : await getListData(params.category);
+  const listDataResult =
+    blogPostProps.data &&
+    blogPostProps.data.tag &&
+    blogPostProps.data.tag.length > 0
+      ? await getListData(params.category, blogPostProps.data.tag[0])
+      : await getListData(params.category);
 
   const relatedPosts = "posts" in listDataResult ? listDataResult.posts : [];
 
@@ -62,10 +69,12 @@ export async function getStaticProps({
   // Read MDX file directly in getStaticProps
   let mdxSource = null;
   let ogpMetadata = {};
-  
+
   try {
     // Use the path from JSON instead of constructing from author
-    const relativePath = blogPostProps.data?.path || `/posts/blog/${blogPostProps.data?.author}/${params.id}`;
+    const relativePath =
+      blogPostProps.data?.path ||
+      `/posts/blog/${blogPostProps.data?.author}/${params.id}`;
     const filePath = path.join(process.cwd(), `${relativePath}.mdx`);
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { content } = matter(fileContents);
@@ -73,11 +82,11 @@ export async function getStaticProps({
     // Process MDX content and extract OGP metadata
     const processedContent = await processMDXContent(content);
     ogpMetadata = await extractOGPMetadata(content);
-    
+
     mdxSource = processedContent
       ? await serialize(processedContent, {
           mdxOptions: {
-            remarkPlugins: [remarkPrism as any],
+            remarkPlugins: [remarkGfm as any, remarkPrism as any],
             rehypePlugins: [rehypePrism as any],
           },
         })

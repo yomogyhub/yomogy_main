@@ -32,6 +32,12 @@ const Seo: React.FC<MetaData> = ({
   return (
     <Head>
       <title key="pageTitle">{title}</title>
+      {process.env.GOOGLE_SITE_VERIFICATION && (
+        <meta
+          name="google-site-verification"
+          content={process.env.GOOGLE_SITE_VERIFICATION}
+        />
+      )}
       <meta
         key="metaViewport"
         name="viewport"

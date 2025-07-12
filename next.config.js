@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
+  output: "export",
   trailingSlash: true,
   images: {
     unoptimized: true,
@@ -11,6 +11,7 @@ const nextConfig = {
     SEARCH_BASE_URL: process.env.SEARCH_BASE_URL,
     GA_ADSENSE_ID: process.env.GA_ADSENSE_ID,
     GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
+    GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION,
   },
   // basePath: process.env.NODE_ENV === "development" ? "" : "/main", //  Sub directory
   // assetPrefix: process.env.NODE_ENV === "development" ? undefined : "/main/", // Nginx

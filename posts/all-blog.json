@@ -431,7 +431,7 @@
     "author": "toyaku",
     "path": "/posts/blog/toyaku/igem-toyaku-2022",
     "coverImage": "/blog/toyaku/images/igem-toyaku-2022_cover.png",
-    "rePost": "https://yomogy-old.netlify.app/igem/igem-toyaku-2022",
+    "rePost": false,
     "status": "published"
   },
   "dissolution-of-igem-community-2023": {
@@ -827,6 +827,22 @@
     "author": "yomogy",
     "path": "/posts/blog/yomogy/igem2023-judging-handbook-summary",
     "coverImage": "/blog/yomogy/images/igem2023-judging-handbook-summary_cover.png",
+    "rePost": false,
+    "status": "published"
+  },
+  "igem2025-now": {
+    "id": "igem2025-now",
+    "title": "The Vision and Mission of iGEM (2025)",
+    "description": " 2025年も終わりに近づき、現状認識を改めるには適切な時期です。<br /> 日本のチームは、ガラパゴス化に突き進み独自性を築くことも良いですが、iGEM HQが提示する中心的な立ち位置を確認することも重要でしょう。\n<br /><br /> 本記事では、AIの登場により2023年時点から変化している、iGEM HPにあるVisionについて確認します。(2025年12月時点)\n<br /><br /> ※ iGEM Competition のみが iGEM ではありません。 ※本記事では LLM による翻訳や要約を使用し、日本語を中心とします。原文に関しては、文末に引用させていただきます。",
+    "publishedAt": "2025-12-30",
+    "updatedAt": "2025-12-30",
+    "category": "igem",
+    "tag": [
+      "information"
+    ],
+    "author": "yomogy",
+    "path": "/posts/blog/yomogy/igem2025-now",
+    "coverImage": "/blog/yomogy/images/igem2025-now_cover.png",
     "rePost": false,
     "status": "published"
   },

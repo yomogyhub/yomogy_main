@@ -1,13 +1,13 @@
 {
   "categories": {
-    "igem": 45,
+    "igem": 46,
     "synbio": 7,
     "book": 1,
     "tech": 1
   },
   "categoryTags": {
     "igem": {
-      "information": 37,
+      "information": 38,
       "journal-club": 8,
       "history": 18,
       "event": 6
@@ -34,6 +34,6 @@
     "ishish": 10,
     "qdai": 5,
     "toyaku": 1,
-    "yomogy": 28
+    "yomogy": 29
   }
 }

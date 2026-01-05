@@ -9,14 +9,17 @@
     "export": "next export",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
-    "@netlify/plugin-nextjs": "5.11.4",
+    "@netlify/plugin-nextjs": "^5.15.3",
     "@octokit/rest": "^20.0.1",
     "@types/jsdom": "^21.1.2",
     "@types/node": "20.3.2",
     "@types/react": "18.2.14",
     "autoprefixer": "^10.4.15",
-    "canvas": "^2.11.2",
+    "canvas": "^3.2.0",
     "date-fns": "^2.30.0",
     "eslint": "8.43.0",
     "eslint-config-next": "15.3.4",
@@ -26,7 +29,6 @@
     "next-auth": "4.24.11",
     "next-mdx-remote": "5.0.0",
     "react": "18.2.0",
-    "react-ace": "^10.1.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
     "react-share": "^4.4.1",

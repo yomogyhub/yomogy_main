@@ -1,8 +1,8 @@
 # netlify.toml
 
 [build]
-  # 依存の再インストールとcanvasの再ビルドを行ってから、事前処理とNext.jsビルドを実行
-  command = "npm ci && npm rebuild canvas && npx ts-node runFunction.ts && npm run build"
+  # canvas 3.xを使用してNode 22互換性を確保
+  command = "npm install && npx ts-node runFunction.ts && npm run build"
   publish = "out"
 
 [context.production.environment]

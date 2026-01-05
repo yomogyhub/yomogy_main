@@ -121,5 +121,6 @@ export async function createImage(
 
   // 画像を保存する
   const buffer = canvas.toBuffer("image/png");
-  fs.writeFileSync(savePath, buffer);
+  // Node 22 + 最新@types/nodeでも型互換のあるUint8Arrayへ変換して保存
+  fs.writeFileSync(savePath, new Uint8Array(buffer));
 }

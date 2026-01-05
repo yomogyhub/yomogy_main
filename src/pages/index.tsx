@@ -9,7 +9,7 @@ import { withCoalescedInvoke } from "next/dist/lib/coalesced-function";
 // Fetch data and generate static pages with getStaticProps
 export async function getStaticProps() {
   const category = "igem";
-  const page = "1" ? parseInt("1") : null;
+  const page = parseInt("1");
   if (!category || !page) return { notFound: true };
   {
     const allPosts: PostLists = (await getListData(category)) as PostLists;

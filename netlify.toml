@@ -5,7 +5,7 @@
   publish = "out"
 
 [context.production.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   # 必要に応じて下記を有効化
   # BASE_URL = "https://yomogy.com"
   # GA_MEASUREMENT_ID = "G-XXXXXXXXXX"

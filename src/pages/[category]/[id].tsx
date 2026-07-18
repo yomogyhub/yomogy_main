@@ -6,15 +6,19 @@ import {
   getPostsPaths,
   getData,
   getAdjacentPosts,
-  getListData,
   getAuthorDetails,
+  getRelatedSidebarPosts,
 } from "../../lib/posts";
-import { Category, PostID, BlogPostProps } from "../../utils/posts-type";
+import {
+  ArticlePost,
+  Category,
+  PostID,
+  BlogPostProps,
+} from "../../utils/posts-type";
 import {
   processMDXContent,
   extractOGPMetadata,
 } from "../../utils/mdx-link-card";
-import { processMDXContentForMediaCard } from "../../utils/mdx-media-card";
 
 import Seo from "../../components/seo";
 import { FrameTemplate } from "../../components/frame-template";
@@ -42,26 +46,28 @@ export async function getStaticProps({
   if ("notFound" in blogPostProps && blogPostProps.notFound) {
     return { notFound: true };
   }
+  if (!blogPostProps.data) return { notFound: true };
 
-  // Check if blogPostProps.data exists before referencing it
-  const authorDetails = blogPostProps.data
-    ? getAuthorDetails(blogPostProps.data.author)
-    : null;
+  const post = blogPostProps.data;
+  const articleData: ArticlePost = {
+    title: post.title,
+    description: post.description,
+    publishedAt: post.publishedAt,
+    updatedAt: post.updatedAt,
+    category: post.category,
+    author: post.author,
+    tag: post.tag,
+    rePost: post.rePost || false,
+    coverImage: post.coverImage,
+  };
 
-  const listDataResult =
-    blogPostProps.data &&
-    blogPostProps.data.tag &&
-    blogPostProps.data.tag.length > 0
-      ? await getListData(params.category, blogPostProps.data.tag[0])
-      : await getListData(params.category);
+  const authorDetails = getAuthorDetails(post.author);
 
-  const relatedPosts = "posts" in listDataResult ? listDataResult.posts : [];
-
-  // Check if data.id is undefined, and if so, replace it with empty string
-  if (blogPostProps.data && blogPostProps.data.id === undefined) {
-    (blogPostProps.data as any).id = params.id;
-    blogPostProps.data.coverImage = blogPostProps.coverImage ?? null;
-  }
+  const relatedPosts = await getRelatedSidebarPosts(
+    params.category,
+    post.tag,
+    params.id
+  );
 
   // 前後の記事を取得
   const adjacentPosts = await getAdjacentPosts(params.id);
@@ -98,15 +104,14 @@ export async function getStaticProps({
 
   return {
     props: {
-      ...blogPostProps,
+      data: articleData,
       content: mdxSource,
       relatedPosts,
       author: authorDetails,
       id: params.id,
-      adjacentPosts: adjacentPosts,
-      coverImage: blogPostProps.coverImage,
+      adjacentPosts,
       path: blogPostProps.path,
-      ogpMetadata: ogpMetadata,
+      ogpMetadata,
     },
   };
 }

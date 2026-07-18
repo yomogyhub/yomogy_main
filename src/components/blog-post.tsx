@@ -9,7 +9,6 @@ import SNSCard from "../components/sns-card";
 import MediaCard from "../components/media-card";
 import IframeCard from "../components/iframe-card";
 import AdComponent from "../components/ad";
-import tocbot from "tocbot";
 import React, { useEffect } from "react";
 import Router from "next/router";
 import ReactMarkdown from "react-markdown";
@@ -27,18 +26,25 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
   ogpMetadata,
 }) => {
   useEffect(() => {
+    let isUnmounted = false;
+    let tocbotModule: typeof import("tocbot").default | null = null;
+
     const initTocbot = () => {
-      tocbot.init({
+      tocbotModule?.init({
         tocSelector: ".toc",
         contentSelector: ".mdx-content",
         headingSelector: "h2, h3",
       });
     };
 
-    initTocbot();
+    void import("tocbot").then(({ default: tocbot }) => {
+      if (isUnmounted) return;
+      tocbotModule = tocbot;
+      initTocbot();
+    });
 
     const handleCustomEvent = () => {
-      tocbot.destroy();
+      tocbotModule?.destroy();
       initTocbot();
     };
 
@@ -52,7 +58,8 @@ const BlogPost: React.FC<BlogPostOnlyProps> = ({
     Router.events.on("routeChangeComplete", handleRouteChange);
 
     return () => {
-      tocbot.destroy();
+      isUnmounted = true;
+      tocbotModule?.destroy();
       window.removeEventListener("customNavigationEvent", handleCustomEvent);
       Router.events.off("routeChangeComplete", handleRouteChange); // イベントリスナーの解除
     };

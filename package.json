@@ -7,10 +7,15 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update:link-card-metadata": "ts-node scripts/update-link-card-metadata.ts",
+    "seed:link-card-metadata": "ts-node scripts/seed-link-card-metadata.ts",
+    "generate:metadata": "ts-node runFunction.ts metadata",
+    "generate:images": "ts-node runFunction.ts images",
+    "verify:generated": "ts-node scripts/verify-generated.ts"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22 <23"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.15.3",

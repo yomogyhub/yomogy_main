@@ -1,9 +1,6 @@
-import { Inter } from "next/font/google";
 import Header from "./header";
 import Footer from "./footer";
 import { DarkModeProvider } from "./dark-mode";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -12,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <div
-      className={`${inter.className}`}
+      className="font-sans"
       style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
     >
       <DarkModeProvider>

@@ -2,7 +2,7 @@
 
 [build]
   # canvas 3.xを使用してNode 22互換性を確保
-  command = "npm install && npx ts-node runFunction.ts && npm run build"
+  command = "npm ci && npx ts-node runFunction.ts && npm run build"
   publish = "out"
 
 [context.production.environment]

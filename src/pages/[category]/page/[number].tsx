@@ -5,7 +5,7 @@ import {
 } from "../../../lib/posts";
 import { FrameTemplate } from "../../../components/frame-template";
 import PageList from "../../../components/page-list";
-import { PostLists, PageNationProps } from "../../../utils/posts-type";
+import { PostLists, PageNationProps, SidebarPostLists } from "../../../utils/posts-type";
 import Pagination from "../../../components/pagination"; // 実際のパスはあなたのプロジェクト構成に基づいて調整してください
 import Sidebar from "../../../components/sidebar";
 
@@ -56,7 +56,7 @@ export default function CategoryPage({
   totalPages,
   newPosts,
   recommendPosts,
-}: PageNationProps & { newPosts: PostLists; recommendPosts: PostLists }) {
+}: PageNationProps & { newPosts: SidebarPostLists; recommendPosts: SidebarPostLists }) {
   return (
     <FrameTemplate
       leftComponent={

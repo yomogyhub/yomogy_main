@@ -1,11 +1,51 @@
 import https from "https";
 import http from "http";
+import fs from "fs";
+import path from "path";
 
-interface Metadata {
+export interface Metadata {
   url: string;
   title: string | null;
   description: string | null;
   image: string | null;
+}
+
+const metadataCachePath = path.join(
+  process.cwd(),
+  "posts",
+  "link-card-metadata.json"
+);
+
+function readMetadataCache(): Record<string, Metadata> {
+  if (!fs.existsSync(metadataCachePath)) return {};
+
+  try {
+    return JSON.parse(fs.readFileSync(metadataCachePath, "utf8"));
+  } catch (error) {
+    console.warn("Failed to read LinkCard metadata cache:", error);
+    return {};
+  }
+}
+
+function writeMetadataCache(cache: Record<string, Metadata>) {
+  fs.writeFileSync(metadataCachePath, JSON.stringify(cache, null, 2) + "\n");
+}
+
+function fallbackMetadata(url: string): Metadata {
+  return {
+    url,
+    title: new URL(url).hostname,
+    description: "External link",
+    image: null,
+  };
+}
+
+function isFallbackMetadata(metadata: Metadata): boolean {
+  return (
+    metadata.title === new URL(metadata.url).hostname &&
+    metadata.description === "External link" &&
+    metadata.image === null
+  );
 }
 
 /**
@@ -17,12 +57,7 @@ export async function fetchPageMetadata(url: string): Promise<Metadata> {
     return extractMetadata(html, url);
   } catch (error) {
     console.warn(`Failed to fetch metadata for ${url}:`, error);
-    return {
-      url: url,
-      title: new URL(url).hostname,
-      description: "External link",
-      image: null,
-    };
+    return fallbackMetadata(url);
   }
 }
 
@@ -203,7 +238,7 @@ async function fetchInternalMetadata(url: string): Promise<Metadata> {
   }
 }
 
-export async function extractOGPMetadata(content: string): Promise<Record<string, Metadata>> {
+export function extractLinkCardUrls(content: string): string[] {
   const linkCardPattern = /<LinkCard\s+url="([^"]+)"[^>]*\/>/g;
   const urlsToProcess = new Set<string>();
   
@@ -213,31 +248,61 @@ export async function extractOGPMetadata(content: string): Promise<Record<string
     urlsToProcess.add(match[1]);
   }
 
-  const metadataMap: Record<string, Metadata> = {};
-  
-  for (const url of Array.from(urlsToProcess)) {
+  return Array.from(urlsToProcess);
+}
+
+/**
+ * LinkCard の OGP 情報を明示的に更新する。
+ * 通常の静的ビルドからは呼ばないため、外部サイトの応答でビルド時間は変動しない。
+ */
+export async function refreshOGPMetadata(urls: string[]) {
+  const cache = readMetadataCache();
+
+  for (const url of urls) {
     try {
-      // 内部リンクかどうかチェック
-      if (url.includes('yomogy.com/synbio/') || url.includes('yomogy.com/igem/')) {
-        const metadata = await fetchInternalMetadata(url);
-        metadataMap[url] = metadata;
+      const metadata =
+        url.includes("yomogy.com/synbio/") || url.includes("yomogy.com/igem/")
+          ? await fetchInternalMetadata(url)
+          : await fetchPageMetadata(url);
+      const existingMetadata = cache[url];
+
+      // A temporary network failure must not replace a previously rich card.
+      if (
+        isFallbackMetadata(metadata) &&
+        existingMetadata &&
+        !isFallbackMetadata(existingMetadata)
+      ) {
+        console.warn(`Keeping existing metadata after failed refresh: ${url}`);
       } else {
-        // 外部リンクの場合は通常のOGP取得
-        const metadata = await fetchPageMetadata(url);
-        metadataMap[url] = metadata;
-        
-        // Add delay to be respectful to servers
-        await new Promise(resolve => setTimeout(resolve, 500));
+        cache[url] = metadata;
+      }
+
+      if (!url.includes("yomogy.com/synbio/") && !url.includes("yomogy.com/igem/")) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
       }
     } catch (error) {
-      console.warn(`Failed to fetch metadata for ${url}:`, error);
-      metadataMap[url] = {
-        url: url,
-        title: new URL(url).hostname,
-        description: "External link",
-        image: null,
-      };
+      console.warn(`Failed to refresh metadata for ${url}:`, error);
+      if (!cache[url] || isFallbackMetadata(cache[url])) {
+        cache[url] = fallbackMetadata(url);
+      }
     }
+  }
+
+  writeMetadataCache(cache);
+  return cache;
+}
+
+/**
+ * 静的ビルド用。キャッシュ済みデータだけを返し、外部 HTTP リクエストは行わない。
+ */
+export async function extractOGPMetadata(content: string): Promise<Record<string, Metadata>> {
+  const urls = extractLinkCardUrls(content);
+  const cache = readMetadataCache();
+
+  const metadataMap: Record<string, Metadata> = {};
+
+  for (const url of urls) {
+    metadataMap[url] = cache[url] || fallbackMetadata(url);
   }
 
   return metadataMap;

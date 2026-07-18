@@ -5,7 +5,7 @@ import {
   getBasicContent,
 } from "../../../lib/posts";
 import PageList from "../../../components/page-list";
-import { PageNationProps, PostLists } from "../../../utils/posts-type";
+import { PageNationProps, PostLists, SidebarPostLists } from "../../../utils/posts-type";
 import Sidebar from "../../../components/sidebar";
 import { FrameTemplate } from "../../../components/frame-template";
 import Pagination from "../../../components/pagination"; // 実際のパスはあなたのプロジェクト構成に基づいて調整してください
@@ -55,7 +55,7 @@ export default function AuthorPage({
   totalPages,
   newPosts,
   recommendPosts,
-}: PageNationProps & { newPosts: PostLists; recommendPosts: PostLists }) {
+}: PageNationProps & { newPosts: SidebarPostLists; recommendPosts: SidebarPostLists }) {
   return (
     <FrameTemplate
       leftComponent={

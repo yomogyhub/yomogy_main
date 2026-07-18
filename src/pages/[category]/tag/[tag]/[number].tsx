@@ -7,6 +7,7 @@ import {
 import PageList from "../../../../components/page-list";
 import {
   PostLists,
+  SidebarPostLists,
   Category,
   Tag,
   PageNationProps,
@@ -63,7 +64,7 @@ export default function TagPage({
   totalPages,
   newPosts,
   recommendPosts,
-}: PageNationProps & { newPosts: PostLists; recommendPosts: PostLists }) {
+}: PageNationProps & { newPosts: SidebarPostLists; recommendPosts: SidebarPostLists }) {
   return (
     <FrameTemplate
       leftComponent={

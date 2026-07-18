@@ -1,7 +1,7 @@
 import { FrameTemplate } from "../../components/frame-template";
 import Sidebar from "../../components/sidebar";
 import { getBasicContent } from "../../lib/posts";
-import { PostLists } from "../../utils/posts-type";
+import { SidebarPostLists } from "../../utils/posts-type";
 
 export async function getStaticProps() {
   const basicContent = await getBasicContent();
@@ -16,8 +16,8 @@ export default function Privacy({
   newPosts,
   recommendPosts,
 }: {
-  newPosts: PostLists;
-  recommendPosts: PostLists;
+  newPosts: SidebarPostLists;
+  recommendPosts: SidebarPostLists;
 }) {
   return (
     <FrameTemplate

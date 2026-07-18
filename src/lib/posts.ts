@@ -7,36 +7,60 @@ import {
   Category,
   PostID,
   PostLists,
+  SidebarPost,
+  SidebarPostLists,
   AuthorData,
   AdjacentPosts,
 } from "../utils/posts-type";
 
+let postsCache: Record<string, Post> | null = null;
+let listCountCache: ListCount | null = null;
+let authorsCache: Record<string, AuthorData> | null = null;
+
+function readPostsData(): Record<string, Post> {
+  if (postsCache) return postsCache;
+
+  const jsonPath = path.join(process.cwd(), "posts", "all-blog.json");
+  const posts = JSON.parse(fs.readFileSync(jsonPath, "utf8")) as Record<string, Post>;
+  postsCache = posts;
+  return posts;
+}
+
+function readListCount(): ListCount {
+  if (listCountCache) return listCountCache;
+
+  const jsonPath = path.join(process.cwd(), "posts", "all-list-count.json");
+  const listCount = JSON.parse(fs.readFileSync(jsonPath, "utf8")) as ListCount;
+  listCountCache = listCount;
+  return listCount;
+}
+
+function readAuthorsData(): Record<string, AuthorData> {
+  if (authorsCache) return authorsCache;
+
+  const jsonPath = path.join(process.cwd(), "posts", "all-author.json");
+  const authors = JSON.parse(fs.readFileSync(jsonPath, "utf8")) as Record<
+    string,
+    AuthorData
+  >;
+  authorsCache = authors;
+  return authors;
+}
+
 // 全記事を取得
 export async function getAllPosts(): Promise<Post[]> {
-  const jsonPath = path.join(process.cwd(), "posts", "all-blog.json");
-  const jsonString = fs.readFileSync(jsonPath, "utf8");
-  const allPostsData: Record<string, Post> = JSON.parse(jsonString);
-  const allPostsArray: Post[] = Object.values(allPostsData);
-
-  return allPostsArray;
+  // Object.values creates a new array, so callers can safely sort it.
+  return Object.values(readPostsData());
 }
 
 // IDから記事を取得
 export async function getJsonPost(id: string): Promise<Post> {
-  const jsonPath = path.join(process.cwd(), "posts", "all-blog.json");
-  const jsonString = fs.readFileSync(jsonPath, "utf8");
-  const allPostsData: Record<string, Post> = JSON.parse(jsonString);
-  const post: Post = allPostsData[id];
-
-  return post;
+  return readPostsData()[id];
 }
 
 // リストカウント取得
 export async function getJsonAllList() {
-  const jsonPath = path.join(process.cwd(), "posts", "all-list-count.json");
-  const jsonString = fs.readFileSync(jsonPath, "utf8");
-  const allListCount: ListCount = JSON.parse(jsonString);
-  return allListCount;
+  return readListCount();
 }
 
 // Path用 - Post Path
@@ -130,9 +154,7 @@ export async function getAllCategoryTagsPath() {
 
 // Author Path
 export async function getAllAuthorPath() {
-  const jsonPath = path.join(process.cwd(), "posts", "all-list-count.json");
-  const jsonString = fs.readFileSync(jsonPath, "utf8");
-  const allListCount: ListCount = JSON.parse(jsonString);
+  const allListCount = readListCount();
 
   const allAuthors = Object.keys(allListCount.authors);
 
@@ -219,7 +241,38 @@ export async function getRecommendPosts(): Promise<Post[]> {
   return recommendedPosts;
 }
 
-export async function getBasicContent() {
+function toSidebarPosts(posts: Post[]): SidebarPost[] {
+  return posts.map(({ id, title, category, updatedAt }) => ({
+    id,
+    title,
+    category,
+    updatedAt,
+  }));
+}
+
+/** Returns tag-related posts first, followed by posts in the same category. */
+export async function getRelatedSidebarPosts(
+  category: string,
+  tags: string[],
+  currentId: string,
+  limit = 5
+): Promise<SidebarPost[]> {
+  const categoryPosts = (await getPostsByCategory(category))
+    .filter((post) => post.id !== currentId)
+    .sort(sortByPublishedDate);
+  const matchingTags = categoryPosts.filter((post) =>
+    post.tag.some((tag) => tags.includes(tag))
+  );
+  const remainingPosts = categoryPosts.filter(
+    (post) => !matchingTags.some((matchingPost) => matchingPost.id === post.id)
+  );
+
+  return toSidebarPosts([...matchingTags, ...remainingPosts].slice(0, limit));
+}
+
+export async function getBasicContent(): Promise<{
+  props: { newPosts: SidebarPostLists; recommendPosts: SidebarPostLists };
+}> {
   const newPosts = await getLatestPosts();
   const recommendPosts = await getRecommendPosts();
 
@@ -227,11 +280,11 @@ export async function getBasicContent() {
     props: {
       newPosts: {
         title: "新着記事",
-        posts: newPosts,
+        posts: toSidebarPosts(newPosts),
       },
       recommendPosts: {
         title: "おすすめ記事",
-        posts: recommendPosts,
+        posts: toSidebarPosts(recommendPosts),
       },
     },
   };
@@ -260,19 +313,15 @@ import { getPublicPath } from "../utils/getImagePath";
 
 // 著者の詳細を取得する
 export function getAuthorDetails(authorName: string): AuthorData {
-  const jsonPath = path.join(process.cwd(), "posts", "all-author.json");
-  const jsonString = fs.readFileSync(jsonPath, "utf8");
-  const allAuthorsData: Record<string, AuthorData> = JSON.parse(jsonString);
-
-  const authorDetails = allAuthorsData[authorName];
+  const authorDetails = readAuthorsData()[authorName];
   
-  // Add default image if not exists
-  if (authorDetails) {
-    const defaultImage = `/authors/${authorName.toLowerCase()}.png`;
-    authorDetails.image = authorDetails.image ? getPublicPath(authorDetails.image) : defaultImage;
-  }
+  if (!authorDetails) return authorDetails;
 
-  return authorDetails;
+  const defaultImage = `/authors/${authorName.toLowerCase()}.png`;
+  return {
+    ...authorDetails,
+    image: authorDetails.image ? getPublicPath(authorDetails.image) : defaultImage,
+  }
 }
 
 // 前後の記事を取得する

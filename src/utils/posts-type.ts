@@ -37,6 +37,32 @@ export interface PostLists {
   posts: Post[];
 }
 
+/** Sidebar renders only these fields, so static props must not include full post metadata. */
+export interface SidebarPost {
+  id: string;
+  title: string;
+  category: string;
+  updatedAt: string;
+}
+
+export interface SidebarPostLists {
+  title: string;
+  posts: SidebarPost[];
+}
+
+/** Fields rendered by an article page. Internal generation fields are excluded. */
+export interface ArticlePost {
+  title: string;
+  description: string;
+  publishedAt: string;
+  updatedAt: string;
+  category: string;
+  author: string;
+  tag: string[];
+  rePost: string | false;
+  coverImage: string;
+}
+
 export interface ListCount {
   categories: Record<string, number>;
   authors: Record<string, number>;
@@ -53,7 +79,7 @@ export interface PageNationProps {
 
 export interface SidebarProps {
   title: string;
-  relatedPosts: Post[];
+  relatedPosts: SidebarPost[];
 }
 
 export interface AdjacentPosts {
@@ -69,11 +95,10 @@ export interface Metadata {
 }
 
 export interface BlogPostProps {
-  category: string;
   id: string;
   content: MDXRemoteSerializeResult;
-  data: Post;
-  relatedPosts: Post[];
+  data: ArticlePost;
+  relatedPosts: SidebarPost[];
   author: AuthorData;
   adjacentPosts: AdjacentPosts;
   path: string;
@@ -82,7 +107,7 @@ export interface BlogPostProps {
 
 export interface BlogPostOnlyProps {
   content: MDXRemoteSerializeResult;
-  data: Post;
+  data: ArticlePost;
   author: AuthorData;
   id: string;
   adjacentPosts: AdjacentPosts;

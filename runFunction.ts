@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { createImage } from "./src/utils/make-fig";
-import { copyImagesToPublic } from "./src/utils/copy-image-to-public";
+import { syncImagesToPublic } from "./src/utils/copy-image-to-public";
 
 interface Post {
   id: string;
@@ -34,6 +34,10 @@ interface ListCount {
 }
 
 async function generateJSONFiles() {
+  const task = process.argv[2] || "all";
+  if (!["all", "metadata", "images"].includes(task)) {
+    throw new Error("Usage: ts-node runFunction.ts [all|metadata|images]");
+  }
   const postsDirectory = path.join(process.cwd(), "posts", "blog");
   const allPosts: Record<string, Post> = {};
   const allAuthors: Record<string, AuthorData> = {};
@@ -127,14 +131,21 @@ async function generateJSONFiles() {
     }
   }
 
-  // Write JSON files
-  const postsOutputPath = path.join(process.cwd(), "posts", "all-blog.json");
-  const authorsOutputPath = path.join(process.cwd(), "posts", "all-author.json");
-  const listCountOutputPath = path.join(process.cwd(), "posts", "all-list-count.json");
+  if (task !== "images") {
+    const postsOutputPath = path.join(process.cwd(), "posts", "all-blog.json");
+    const authorsOutputPath = path.join(process.cwd(), "posts", "all-author.json");
+    const listCountOutputPath = path.join(process.cwd(), "posts", "all-list-count.json");
 
-  fs.writeFileSync(postsOutputPath, JSON.stringify(allPosts, null, 2));
-  fs.writeFileSync(authorsOutputPath, JSON.stringify(allAuthors, null, 2));
-  fs.writeFileSync(listCountOutputPath, JSON.stringify(listCount, null, 2));
+    fs.writeFileSync(postsOutputPath, JSON.stringify(allPosts, null, 2));
+    fs.writeFileSync(authorsOutputPath, JSON.stringify(allAuthors, null, 2));
+    fs.writeFileSync(listCountOutputPath, JSON.stringify(listCount, null, 2));
+  }
+
+  if (task === "metadata") {
+    console.log(`Generated ${Object.keys(allPosts).length} posts`);
+    console.log(`Generated ${Object.keys(allAuthors).length} authors`);
+    return;
+  }
 
   // Generate missing cover images in posts directory
   for (const [id, post] of Object.entries(allPosts)) {
@@ -162,7 +173,7 @@ async function generateJSONFiles() {
     }
   }
 
-  // Sync images to public directory (removes old files and copies new ones)
+  // Sync only changed images to the public directory.
   const blogDirectory = path.join(process.cwd(), "posts", "blog");
   const authorDirsForSync = fs.readdirSync(blogDirectory).filter(item => {
     const itemPath = path.join(blogDirectory, item);
@@ -174,14 +185,7 @@ async function generateJSONFiles() {
     const destinationPath = path.join(process.cwd(), "public", "blog", author);
     
     try {
-      // Simple sync: remove existing directory and copy fresh
-      if (fs.existsSync(destinationPath)) {
-        fs.rmSync(destinationPath, { recursive: true, force: true });
-        console.log(`Removed existing directory: ${destinationPath}`);
-      }
-      
-      copyImagesToPublic(sourcePath, destinationPath);
-      console.log(`Synced images for author: ${author}`);
+      syncImagesToPublic(sourcePath, destinationPath);
     } catch (error) {
       console.error(`Failed to sync images for ${author}:`, error);
     }

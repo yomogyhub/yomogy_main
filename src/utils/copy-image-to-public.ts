@@ -29,12 +29,18 @@ export function filterValidFiles(files: string[]): string[] {
   const validExtensions = [".png", ".jpg", ".jpeg", ".gif", ".webp"];
 
   return files.filter((file) => {
-    const ext = path.extname(file);
+    const ext = path.extname(file).toLowerCase();
     const fileStat = fs.statSync(file);
     const fileSizeInMB = fileStat.size / (1024 * 1024);
 
     return validExtensions.includes(ext) && fileSizeInMB <= 3;
   });
+}
+
+function isSupportedImage(file: string): boolean {
+  return [".png", ".jpg", ".jpeg", ".gif", ".webp"].includes(
+    path.extname(file).toLowerCase()
+  );
 }
 
 export function copyFilesToDestination(
@@ -79,17 +85,53 @@ export function copyImagesToPublic(
   copyFilesToDestination(validFiles, sourceDir, destinationDir);
 }
 
-// 同期機能：古いファイルを削除してから新しいファイルをコピー
+/** 公開画像を差分同期し、投稿元から消えた画像だけを削除する。 */
 export function syncImagesToPublic(
   sourceDir: string,
   destinationDir: string
-): void {
-  // 既存の宛先ディレクトリが存在する場合は削除
-  if (fs.existsSync(destinationDir)) {
-    fs.rmSync(destinationDir, { recursive: true, force: true });
-    console.log(`Removed existing directory: ${destinationDir}`);
+): { copied: number; skipped: number; removed: number } {
+  const sourceFiles = filterValidFiles(getFilesFromDirectory(sourceDir));
+  const sourceRelativePaths = new Set(
+    sourceFiles.map((file) => path.relative(sourceDir, file))
+  );
+  let copied = 0;
+  let skipped = 0;
+  let removed = 0;
+
+  for (const sourceFile of sourceFiles) {
+    const relativePath = path.relative(sourceDir, sourceFile);
+    const destinationFile = path.join(destinationDir, relativePath);
+    const sourceStat = fs.statSync(sourceFile);
+    const destinationStat = fs.existsSync(destinationFile)
+      ? fs.statSync(destinationFile)
+      : null;
+
+    if (
+      destinationStat &&
+      destinationStat.size === sourceStat.size &&
+      destinationStat.mtimeMs >= sourceStat.mtimeMs
+    ) {
+      skipped++;
+      continue;
+    }
+
+    fs.mkdirSync(path.dirname(destinationFile), { recursive: true });
+    fs.copyFileSync(sourceFile, destinationFile);
+    copied++;
   }
 
-  // 新しくディレクトリを作成してファイルをコピー
-  copyImagesToPublic(sourceDir, destinationDir);
+  if (fs.existsSync(destinationDir)) {
+    for (const destinationFile of getFilesFromDirectory(destinationDir)) {
+      const relativePath = path.relative(destinationDir, destinationFile);
+      if (isSupportedImage(destinationFile) && !sourceRelativePaths.has(relativePath)) {
+        fs.rmSync(destinationFile);
+        removed++;
+      }
+    }
+  }
+
+  console.log(
+    `Image sync ${path.basename(sourceDir)}: ${copied} copied, ${skipped} unchanged, ${removed} removed`
+  );
+  return { copied, skipped, removed };
 }

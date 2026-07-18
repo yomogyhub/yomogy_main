@@ -19,6 +19,8 @@
 body {
   background-color: #f5f9f5; /* ライトモードの背景色 */
   color: #333333; /* ライトモードのテキスト色 */
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+    sans-serif;
 }
 
 .dark body {

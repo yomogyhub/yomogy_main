@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FrameTemplate } from "../../components/frame-template";
 import Sidebar from "../../components/sidebar";
 import { getBasicContent, getJsonAllList } from "../../lib/posts";
-import { PostLists, ListCount } from "../../utils/posts-type";
+import { SidebarPostLists, ListCount } from "../../utils/posts-type";
 
 export async function getStaticProps() {
   const basicContent = await getBasicContent();
@@ -19,8 +19,8 @@ export default function Privacy({
   recommendPosts,
   allListCount,
 }: {
-  newPosts: PostLists;
-  recommendPosts: PostLists;
+  newPosts: SidebarPostLists;
+  recommendPosts: SidebarPostLists;
   allListCount: ListCount;
 }) {
   return (
